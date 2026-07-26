@@ -17,7 +17,7 @@ class UserController:
 
     
     def signup(self, username: str, email: str, password: str)->User:
-        if any(user.username == username for user in self.users):
+        if (user.username == username for user in self.users):
             raise ValueError("Username already exists.")
 
         if any(user.email == email for user in self.users):
@@ -62,6 +62,14 @@ class UserController:
 
         for msg in self.messages:
 
+            is_user1_to_user2= (msg.sender.id==user1_id and msg.raiseiver.id==user2_id)
+
+            is_user2_to_user1= (msg.sender.id==user2_id and msg.receiver.id==user1_id)
+
+            if not (is_user1_to_user2 or is_user2_to_user1):
+                continue
+
+            
             if (msg.sender_id == user1_id and msg.receiver_id == user2_id) or (msg.sender_id == user2_id and msg.receiver_id == user1_id):
                         
                 sender = self.get_user_by_id(str(msg.sender_id))
@@ -169,6 +177,7 @@ class UserController:
         for user in self.users:
             user_list.append(f"User ID: {user.id}, Username: {user.username}")
         return user_list
+
 
     def get_all_groups(self):
         group_list = []
