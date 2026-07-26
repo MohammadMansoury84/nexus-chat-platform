@@ -1,0 +1,28 @@
+07/26/2026 14:30:32 - INFO - User created | username: user2 | email: user1@example.com
+07/26/2026 14:30:32 - INFO - User created | username: user23 | email: user12@example.com
+07/26/2026 14:30:32 - INFO - User logged in successfully | username: user2
+07/26/2026 14:30:32 - INFO - User logged in successfully | username: user23
+07/26/2026 14:36:01 - INFO - User created | username: user2 | email: user1@example.com
+07/26/2026 14:36:01 - WARNING - Email already exists | email: user1@example.com
+07/26/2026 14:36:12 - INFO - User created | username: user2 | email: user1@example.com
+07/26/2026 14:36:12 - WARNING - Email already exists | email: user1@example.com
+07/26/2026 14:36:19 - INFO - User created | username: user2 | email: user1@example.com
+07/26/2026 14:36:19 - INFO - User created | username: user23 | email: user1e@example.com
+07/26/2026 14:36:19 - INFO - User logged in successfully | username: user2
+07/26/2026 14:36:19 - INFO - User logged in successfully | username: user23
+07/26/2026 14:37:30 - INFO - User created | username: user2 | email: user1@example.com
+07/26/2026 14:37:30 - INFO - User created | username: user23 | email: user1e@example.com
+07/26/2026 14:37:30 - INFO - User logged in successfully | username: user2
+07/26/2026 14:37:30 - INFO - User logged in successfully | username: user23
+07/26/2026 15:20:01 - INFO - User created | username: sirlala | email: mamad1298@gmail.com
+07/26/2026 15:21:17 - INFO - User created | username: sirlala | email: mamad1298@gmail.com
+07/26/2026 15:21:38 - WARNING - Username already exists | username: sirlala
+07/26/2026 15:33:00 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+07/26/2026 16:03:43 - ERROR - Failed to log in user | username: mamad
+07/26/2026 16:04:54 - ERROR - Failed to log in user | username: mamad
+07/26/2026 16:05:19 - INFO - User created | username: mamad12 | email: mamad1298@gmail.com
+07/26/2026 16:05:40 - INFO - User logged in successfully | username: mamad12
+07/26/2026 16:37:22 - INFO - User created | username: mamad12 | email: mamad1298@gmail.com
+07/26/2026 16:37:50 - INFO - User created | username: mamad123 | email: mamad129812@gmail.com
+07/26/2026 16:39:29 - INFO - User logged in successfully | username: mamad12
+07/26/2026 16:40:11 - INFO - User logged in successfully | username: mamad123

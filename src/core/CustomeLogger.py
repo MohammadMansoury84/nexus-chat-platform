@@ -4,7 +4,7 @@ from src.core.ConsoleHandler import ConsoleHandler
 from src.core.CustomFileHandler import CustomFileHandler
 
 
-class Logger(logging.Logger):
+class CustomLogger(logging.Logger):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
@@ -37,7 +37,7 @@ class Logger(logging.Logger):
 
         message = self.merge_msg_and_additional_info(msg,kwargs)
 
-        self._log(level,message,())
+        super()._log(level,message,())
         
 
     def get_additional_info(self,kwargs: dict) -> str:
