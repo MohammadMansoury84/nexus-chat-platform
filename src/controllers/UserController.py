@@ -4,30 +4,38 @@ from src.models.Group import Group
 from src.models.Message import Message
 from src.models.User import User
 from src.models.MessageStatus import MessageStatus
+from src.core.Logger import Logger
 
 
     
 class UserController:
 
     def __init__(self)->None:
+    
         self.users: list[User] = []
         self.messages: list[Message] = []
         self.groups: list[Group] = []
+        self.Logger= Logger("UserController")
         
   
 
     
     def signup(self, username: str, email: str, password: str)->User:
+
+        self.Logger.debug("Attempting to sign up user", username=username, email=email, password=password)
         if any(user.username == username for user in self.users):
+            Logger.error(f"Username already exists", username=username)
             raise ValueError("Username already exists.")
 
         if any(user.email == email for user in self.users):
+            Logger.error(f"Email already exists", email=email)
             raise ValueError("Email already exists.")
 
         user = User(username=username,email=email,password=password)
 
         self.users.append(user)
-        return user
+        Logger.info(f"User created", username=username, email=email)
+        return user.id
 
 
     def login(self, username: str, password: str)-> User | None:
@@ -63,7 +71,7 @@ class UserController:
 
         for msg in self.messages:
 
-            is_user1_to_user2= (msg.sender.id==user1_id and msg.raiseiver.id==user2_id)
+            is_user1_to_user2= (msg.sender.id==user1_id and msg.receiver.id==user2_id)
 
             is_user2_to_user1= (msg.sender.id==user2_id and msg.receiver.id==user1_id)
 

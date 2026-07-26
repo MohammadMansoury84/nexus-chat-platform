@@ -6,7 +6,7 @@ from src.models.MessageStatus import MessageStatus
 
 class Message(BaseModel):
 
-    model_config = ConfigDict(validation_assignment=True,populate_by_name=True)
+    model_config = ConfigDict(validation_assignment=True,populate_by_name=True,strict=True)
     id: UUID4=Field(default_factory=uuid4, alias="_id")
     sender_id:UUID4 
     receiver_id:UUID4|None

@@ -5,7 +5,7 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class User(BaseModel):
-    model_config = ConfigDict(validation_assignment=True,populate_by_name=True)
+    model_config = ConfigDict(validation_assignment=True,populate_by_name=True,strict=True)
     id: uuid4=Field(default_factory=uuid4)
     username: str=Field(min_length=4,max_length=20)
     email: EmailStr
