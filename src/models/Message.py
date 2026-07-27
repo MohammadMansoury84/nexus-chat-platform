@@ -1,16 +1,16 @@
 
-from pydantic import BaseModel, ConfigDict,Field,UUID4
+from pydantic import BaseModel, ConfigDict,Field
 from datetime import datetime ,timezone
-from uuid import uuid4
+from uuid import uuid4,UUID
 from src.models.MessageStatus import MessageStatus
 
 class Message(BaseModel):
 
-    model_config = ConfigDict(validation_assignment=True,populate_by_name=True,strict=True)
-    id: UUID4=Field(default_factory=uuid4, alias="_id")
-    sender_id:UUID4 
-    receiver_id:UUID4|None
-    group_id:UUID4|None
+    model_config = ConfigDict(validate_assignment=True,populate_by_name=True,strict=True)
+    id: UUID=Field(default_factory=uuid4)
+    sender_id:UUID
+    receiver_id:UUID|None=None
+    group_id:UUID|None=None
     content: str=Field(min_length=1)
-    timestamp: str=Field(default_factory=lambda: datetime.now(timezone.utc))
+    timestamp: datetime=Field(default_factory=lambda: datetime.now(timezone.utc))
     status: MessageStatus=Field(default=MessageStatus.SENT)

@@ -1,27 +1,26 @@
 
-from uuid import uuid4
+from uuid import UUID
 
 from src.models.Group import Group
 from src.models.Message import Message
 from src.models.User import User
 from src.models.MessageStatus import MessageStatus
 from src.core.CustomeLogger import CustomLogger
-
-
+from src.models.PrivateChat import PrivateChat
     
 class UserController:
 
     def __init__(self)->None:
     
         self.users: list[User] = []
-        self.messages: list[Message] = []
-        self.groups: list[Group] = []
+        self.groups: list[Group]=[]
+        
         self.custome_logger= CustomLogger("UserController")
         
   
 
     
-    def signup(self, username: str, email: str, password: str)->User:
+    def signup(self, username: str, email: str, password: str)->UUID | None:
 
         self.custome_logger.debug("Attempting to sign up user", username=username, email=email, password=password)
 
@@ -63,125 +62,110 @@ class UserController:
 
   
 
-    def send_message(self, sender_id: uuid4 , receiver_id: uuid4, content: str)-> Message:
-
+    def send_message(self, sender_id: UUID, receiver_id: UUID, content: str):
         self.custome_logger.debug("Attempting to send message", sender_id=sender_id, receiver_id=receiver_id, content=content)
 
-        sender = self.get_user_by_id(sender_id)
-        receiver = self.get_user_by_id(receiver_id)
+        sender = self._get_user_by_id(sender_id)
+        receiver = self._get_user_by_id(receiver_id)
 
         if sender is None:
-            self.custome_logger.warning("Sender not found", sender_id=sender_id)
             raise ValueError("Sender not found.")
-
         if receiver is None:
-            self.custome_logger.warning("Receiver not found", receiver_id=receiver_id)
             raise ValueError("Receiver not found.")
 
+    
+        target_chat = self._get_private_chat(sender_id, receiver_id)
+
+    
+        if target_chat is None:
+            target_chat = PrivateChat(user1_id=sender_id, user2_id=receiver_id)
+            self.custome_logger.info("PrivateChat create successfully", sender_id=sender_id, receiver_id=receiver_id)
+            receiver.private_chats.append(target_chat)
+            sender.private_chats.append(target_chat)
+    
         message = Message(sender_id=sender.id,receiver_id=receiver.id,content=content,status=MessageStatus.SENT)
-            
-        self.messages.append(message)
+                    
+        
+        target_chat.messages.append(message)
 
-        self.custome_logger.info("Message sent", sender_id=sender_id, receiver_id=receiver_id, content=content)
-
+        self.custome_logger.info("Message sent successfully", sender_id=sender_id, receiver_id=receiver_id)
         return message
 
 
+    def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[dict]:
+        self.custome_logger.debug("Attempting to get chat", user1_id=user1_id, user2_id=user2_id)
 
-    def get_chat(self, user1_id: uuid4, user2_id: uuid4)-> list[str]:
+    
+        target_chat = self._get_private_chat(user1_id, user2_id)
 
-        self.custome_logger.debug("Attempting to get chat between users", user1_id=user1_id, user2_id=user2_id)
+    
+        if target_chat is None:
+            self.custome_logger.warning("No chat history found")
+            return []
 
-        chat = []
-
-        for msg in self.messages:
-
-            is_user1_to_user2= (msg.sender.id==user1_id and msg.receiver.id==user2_id)
-
-            is_user2_to_user1= (msg.sender.id==user2_id and msg.receiver.id==user1_id)
-
-            if not (is_user1_to_user2 or is_user2_to_user1):
-                continue
-
-            if (is_user1_to_user2 or is_user2_to_user1):
-                        
-                sender = self.get_user_by_id(str(msg.sender_id))
-
-
-            if (is_user1_to_user2 and msg.receiver_id==user2_id) or (is_user2_to_user1 and msg.receiver_id==user1_id):
-
+    
+        chat_result = []
+        for msg in target_chat.messages:
+        
+       
+            if msg.receiver_id == user1_id and msg.status != MessageStatus.READ:
                 msg.status = MessageStatus.READ
 
-                self.custome_logger.debug("Message marked as read", message_id=msg.id, sender_id=msg.sender_id, receiver_id=msg.receiver_id)
-
-
-                chat.append({"username": sender.username, "message": msg.content})
+            sender = self._get_user_by_id(msg.sender_id)
+            chat_result.append({"username": sender.username if sender else "Unknown","message": msg.content})
                 
-
-        self.custome_logger.info("Chat retrieved successfully", user1_id=user1_id, user2_id=user2_id)
-
-        return chat
+        return chat_result
 
 
-#شاید اصلا نیازی به این تابع نباشه و میشه از get_chat استفاده کرد
-    def get_messages_for_user(self, user_id: uuid4):
 
-        chat = []
-
-        user = self.get_user_by_id(user_id)
-
-        if user is None:
-             raise ValueError(f"User {user_id} not found.")
-
-
-        for msg in self.messages:
-
-            if (msg.sender_id == user.id or msg.receiver_id == user.id):
-
-                if msg.receiver_id == user.id:
-                    msg.status = MessageStatus.READ
-
-                sender = self.get_user_by_id(str(msg.sender_id))
-
-                chat.append({"username": sender.username,"message": msg.content})
-        return chat
-
-
-    def create_group(self, name: str, creator_id: uuid4):
+    def create_group(self, name: str, creator_id: UUID):
 
         self.custome_logger.debug("Attempting to create group", name=name, creator_id=creator_id)
 
         group = Group(name=name, creator_id=creator_id)
+        target_user=self._get_user_by_id(user_id=creator_id)
+
+        if target_user is None:
+            self.custome_logger.warning("User not found", user_id=creator_id)
+            raise ValueError(f"User {creator_id} not found.")
+
+        target_user.groups_created.append(group)
+        target_user.joined_groups.append(group)
+        group.members.append(target_user)
+        self.groups.append(group)
+
+
 
         self.custome_logger.info("Group created successfully", group_id=group.id, name=name, creator_id=creator_id)
 
-        self.groups.append(group)
         return group.id
     
 
-    def add_user_to_group(self, group_id: uuid4, creator_id: uuid4, user_id: uuid4):
+    def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID):
 
         self.custome_logger.debug("Attempting to add user to group", group_id=group_id, creator_id=creator_id, user_id=user_id)
 
-        group = next((g for g in self.groups if g.id == group_id), None)
-        user = self.get_user_by_id(user_id)
-
-        if creator_id != group.creator_id:
-            self.custome_logger.warning("User is not the creator of the group", creator_id=creator_id, group_id=group_id)
-            raise ValueError(f"User {creator_id} is not the creator of the group.only the creator can add members to the group.")
-
-
-        if group is None:
-
-            self.custome_logger.warning("Group not found", group_id=group_id)
-
-            raise ValueError(f"Group {group_id} not found.")
+        group = self._get_group_by_id(group_id=group_id)
+        user = self._get_user_by_id(user_id)
 
         if user is None:
 
             self.custome_logger.warning("User not found", user_id=user_id)
 
             raise ValueError(f"User {user_id} not found.")
+
+        if group is None:
+
+            self.custome_logger.warning("Group not found", group_id=group_id)
+
+            raise ValueError(f"Group {group_id} not found.")
+        
+
+        if creator_id != group.creator_id:
+            self.custome_logger.warning("User is not the creator of the group", creator_id=creator_id, group_id=group_id)
+            raise ValueError(f"User {creator_id} is not the creator of the group.only the creator can add members to the group.")
+
+
 
         if user in group.members:
 
@@ -190,17 +174,18 @@ class UserController:
             raise ValueError(f"User {user.username} is already in the group.")
 
         group.members.append(user)
+        user.joined_groups.append(group)
 
         self.custome_logger.info("User added to group successfully", user_id=user_id, group_id=group_id)
         return f"User {user.username} added to group {group.name}."
 
 
-    def send_message_to_group(self, group_id: uuid4, sender_id: uuid4, content: str):
+    def send_message_to_group(self, group_id: UUID, sender_id: UUID, content: str):
 
         self.custome_logger.debug("Attempting to send message to group", group_id=group_id, sender_id=sender_id, content=content)
 
-        group = next((g for g in self.groups if g.id == group_id), None)
-        sender = self.get_user_by_id(sender_id)
+        group = self._get_group_by_id(group_id=group_id)
+        sender = self._get_user_by_id(sender_id)
 
         if group is None:
             self.custome_logger.warning("Group not found", group_id=group_id)
@@ -214,35 +199,40 @@ class UserController:
             self.custome_logger.warning("Sender is not a member of the group", sender_id=sender_id, group_id=group_id)
             raise ValueError(f"User {sender_id} is not a member of the group.")
 
-        message = Message(sender_id=sender.id, content=content, status=MessageStatus.SENT)
+        message = Message(sender_id=sender.id,group_id = group.id ,content=content, status=MessageStatus.SENT)
         group.messages.append(message)
-        message.group_id = group.id
+        
 
         self.custome_logger.info("Message sent to group successfully", group_id=group_id, sender_id=sender_id, content=content)
 
         return message
 
-    def get_group_chat(self, group_id: uuid4):
+    def get_group_chat(self, group_id: UUID):
 
         self.custome_logger.debug("Attempting to get group chat", group_id=group_id)
 
-        group = next((g for g in self.groups if g.id == group_id), None)
+        group = self._get_group_by_id(group_id=group_id)
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
             raise ValueError(f"Group {group_id} not found.")
 
         chat = []
-        for msg in group.messages:
-            sender = self.get_user_by_id(str(msg.sender_id))
-            chat.append({"username": sender.username, "message": msg.content})
+        if group.messages:
+            for msg in group.messages:
+                sender = self._get_user_by_id(msg.sender_id)
+                
+                chat.append({"username": sender.username, "message": msg.content})
 
-        self.custome_logger.info("Group chat retrieved successfully", group_id=group_id)
+            self.custome_logger.info("Group chat retrieved successfully", group_id=group_id)
+            return chat
+        else:
+            return None
 
-        return chat
+        
 
 
-    def _get_user_by_id(self, user_id: uuid4):
+    def _get_user_by_id(self, user_id: UUID)-> User |None:
         self.custome_logger.debug("Attempting to get user by ID", user_id=user_id)
 
         for user in self.users:
@@ -251,7 +241,18 @@ class UserController:
 
         return None
 
-    def _get_all_users(self):
+    def _get_group_by_id(self, group_id : UUID)-> Group | None:
+
+        self.custome_logger.debug("Attempting to get group by ID", group_id=group_id)
+
+        for group in self.groups:
+            if group.id == group_id:
+                return group
+
+        return None
+
+
+    def get_all_users(self):
         self.custome_logger.debug("Attempting to get all users")
         user_list = []
         for user in self.users:
@@ -265,6 +266,24 @@ class UserController:
         for group in self.groups:
             group_list.append(f"Group ID: {group.id}, Group Name: {group.name}")
         return group_list
+
+
+
+    def _get_private_chat(self, user1_id: UUID, user2_id: UUID) -> PrivateChat | None:
+        self.custome_logger.debug("Attempting to get private chat ", user1_id=user1_id,user2_id=user2_id)
+        user=self._get_user_by_id(user_id=user1_id)
+        for chat in user.private_chats:
+            is_user1_to_user2 = (chat.user1_id == user1_id and chat.user2_id == user2_id)
+            is_user2_to_user1 = (chat.user1_id == user2_id and chat.user2_id == user1_id)
+        
+            if is_user1_to_user2 or is_user2_to_user1:
+                return chat
+            
+        return None
+    
+
+
+
 
 
     

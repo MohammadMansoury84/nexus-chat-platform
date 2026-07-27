@@ -26,3 +26,33 @@
 07/26/2026 16:37:50 - INFO - User created | username: mamad123 | email: mamad129812@gmail.com
 07/26/2026 16:39:29 - INFO - User logged in successfully | username: mamad12
 07/26/2026 16:40:11 - INFO - User logged in successfully | username: mamad123
+07/26/2026 17:25:51 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+07/26/2026 17:26:29 - INFO - User created | username: mamad12 | email: mamad129822@gmail.com
+07/26/2026 17:26:49 - INFO - User logged in successfully | username: mamad
+07/26/2026 17:27:01 - INFO - User logged in successfully | username: mamad12
+07/27/2026 23:46:46 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+07/27/2026 23:47:16 - INFO - User logged in successfully | username: mamad
+07/27/2026 23:48:12 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+07/27/2026 23:48:21 - INFO - User logged in successfully | username: mamad11
+07/27/2026 23:48:34 - WARNING - No chat history found
+07/27/2026 23:48:55 - INFO - PrivateChat create successfully | sender_id: 98802696-ea5b-4961-8f84-6a5c2229c5bd | receiver_id: a999b23a-fe46-43b9-aa1b-612b95188939
+07/27/2026 23:48:55 - INFO - Message sent successfully | sender_id: 98802696-ea5b-4961-8f84-6a5c2229c5bd | receiver_id: a999b23a-fe46-43b9-aa1b-612b95188939
+07/28/2026 00:06:28 - INFO - User created | username: mamad12 | email: mamad1298@gamil.com
+07/28/2026 00:07:23 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+07/28/2026 00:07:43 - INFO - User created | username: mamad123 | email: mamad123@gmail.com
+07/28/2026 00:08:23 - INFO - User logged in successfully | username: mamad12
+07/28/2026 00:09:15 - INFO - User logged in successfully | username: mamad123
+07/28/2026 00:09:25 - INFO - User logged in successfully | username: mamad12
+07/28/2026 00:10:29 - INFO - User logged in successfully | username: mamad11
+07/28/2026 00:10:54 - WARNING - No chat history found
+07/28/2026 00:11:01 - INFO - PrivateChat create successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 1b68f907-be0d-4221-a7c1-6c4af8c55c53
+07/28/2026 00:11:01 - INFO - Message sent successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 1b68f907-be0d-4221-a7c1-6c4af8c55c53
+07/28/2026 00:11:04 - INFO - Message sent successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 1b68f907-be0d-4221-a7c1-6c4af8c55c53
+07/28/2026 00:11:23 - WARNING - No chat history found
+07/28/2026 00:11:25 - INFO - PrivateChat create successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 15c520df-db88-4fcf-b596-b0458f812a30
+07/28/2026 00:11:25 - INFO - Message sent successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 15c520df-db88-4fcf-b596-b0458f812a30
+07/28/2026 00:11:26 - INFO - Message sent successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 15c520df-db88-4fcf-b596-b0458f812a30
+07/28/2026 00:11:30 - INFO - Message sent successfully | sender_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12 | receiver_id: 15c520df-db88-4fcf-b596-b0458f812a30
+07/28/2026 00:12:25 - WARNING - No chat history found
+07/28/2026 00:14:07 - INFO - Group created successfully | group_id: c07c30da-c8d2-4410-abfd-0452014ea256 | name: mamad1234 | creator_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12
+07/28/2026 00:14:26 - INFO - User added to group successfully | user_id: 15c520df-db88-4fcf-b596-b0458f812a30 | group_id: c07c30da-c8d2-4410-abfd-0452014ea256
