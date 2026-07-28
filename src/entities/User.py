@@ -1,10 +1,10 @@
 from datetime import datetime, timezone
 from uuid import uuid4,UUID
-from src.models.PrivateChat import PrivateChat
+from src.entities.PrivateChat import PrivateChat
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.models.Group import Group
+    from src.entities.Group import Group
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
@@ -22,6 +22,6 @@ class User(BaseModel):
 
 
 
-from src.models.Group import Group
+from src.entities.Group import Group
 
 User.model_rebuild()

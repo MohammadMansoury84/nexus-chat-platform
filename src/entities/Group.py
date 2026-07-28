@@ -1,11 +1,11 @@
 from datetime import datetime,timezone
 from uuid import uuid4
 from pydantic import UUID4, BaseModel, Field,ConfigDict
-from src.models.Message import Message
+from src.entities.Message import Message
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.models.User import User
+    from src.entities.User import User
 
 class Group(BaseModel):
     model_config = ConfigDict(validate_assignment=True,populate_by_name=True,strict=True)
@@ -17,6 +17,6 @@ class Group(BaseModel):
     messages: list[Message] = Field(default_factory=list)
 
 
-from src.models.User import User
+from src.entities.User import User
 
 Group.model_rebuild()

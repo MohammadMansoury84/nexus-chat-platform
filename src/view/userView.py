@@ -1,15 +1,20 @@
-from src.controllers.UserController import UserController
-from src.models.User import User
-from src.models.Group import Group
+
+from src.entities.User import User
+from src.entities.Group import Group
 from typing import Optional
+from src.controllers.MessageController import MessageController
+from src.controllers.AuthController import AuthController
+from src.controllers.GroupController import GroupController
 
 
 class UserView():
 
-        def __init__(self, controller: UserController)->None:
-            self.controller = controller
+        def __init__(self,auth_controller: AuthController, message_controller: MessageController, group_controller: GroupController )->None:
+            self._auth_controller = auth_controller
+            self._message_controller = message_controller
+            self._group_controller = group_controller
             self.login_users :list[User]=[]
-            self.current_user : User
+            self.current_user : User | None =None
 
 
         def show_Main_menu(self):
@@ -94,7 +99,7 @@ class UserView():
             email=input("email : ").strip()
             password=input("password : ").strip()
 
-            user_id=self.controller.signup(username=userName,email=email,password=password)
+            user_id=self._auth_controller.signup(username=userName,email=email,password=password)
 
             if user_id is not None:
                     print(f"User created successfully.login first")
@@ -111,7 +116,7 @@ class UserView():
             userName=input("username: ").strip()
             password=input("password : ").strip()
 
-            user=self.controller.login(username=userName,password=password)
+            user=self._auth_controller.login(username=userName,password=password)
 
             if user is None:
                     print("Username or password is incorrect.")
@@ -221,7 +226,7 @@ class UserView():
             print("-----------------------------------")
 
         
-            chat_history = self.controller.get_chat(self.current_user.id, receiver.id)
+            chat_history = self._message_controller.get_chat(self.current_user.id, receiver.id)
             if chat_history:
                 print("\n[Previous Messages]")
                 self._print_chat(chat_history)
@@ -244,7 +249,7 @@ class UserView():
                         print(f"\n--- Chat with {receiver.username} ---")
                     
            
-                        chat_history = self.controller.get_chat(self.current_user.id, receiver.id)
+                        chat_history = self._message_controller.get_chat(self.current_user.id, receiver.id)
                         if chat_history:
                             print("\n[Previous Messages]")
                             self._print_chat(chat_history)
@@ -260,7 +265,7 @@ class UserView():
                     continue
 
                 try:
-                    self.controller.send_message(sender_id=self.current_user.id,receiver_id=receiver.id,content=content)
+                    self._message_controller.send_message(sender_id=self.current_user.id,receiver_id=receiver.id,content=content)
                         
                 except Exception as e:
                     print(f"Message could not be sent: {e}")
@@ -287,7 +292,7 @@ class UserView():
                 print("user not found")
                 return
 
-            chat = self.controller.get_chat(user1_id=self.current_user.id,user2_id=other_user.id)
+            chat = self._message_controller.get_chat(user1_id=self.current_user.id,user2_id=other_user.id)
                 
 
             print(
@@ -317,6 +322,8 @@ class UserView():
             for index, group in enumerate(groups, start=1):
                 print(f"{index}. {group.name}")
 
+
+
         def create_group(self) -> None:
 
             if not self._require_login():
@@ -327,7 +334,7 @@ class UserView():
             name = input("Group name: ").strip()
 
 
-            group_id = self.controller.create_group(name=name,creator_id=self.current_user.id)
+            group_id = self._group_controller.create_group(name=name,creator_id=self.current_user.id)
 
             if group_id:
                 print("Group created successfully.")
@@ -377,7 +384,7 @@ class UserView():
                 print("user not found")
                 return
 
-            result = self.controller.add_user_to_group(group_id=group.id,creator_id=self.current_user.id,user_id=user.id)
+            result = self._group_controller.add_user_to_group(group_id=group.id,creator_id=self.current_user.id,user_id=user.id)
     
             print(result)
 
@@ -409,7 +416,7 @@ class UserView():
             print("---------------------------")
 
         
-            group_history = self.controller.get_group_chat(group.id)
+            group_history = self._group_controller.get_group_chat(group.id)
             if group_history:
                 print("\n[Previous Messages]")
                 self._print_chat(group_history)
@@ -433,7 +440,7 @@ class UserView():
                         print(f"\n--- Chat with {group.name} ---")
                     
            
-                        chat_history = self.controller.get_group_chat(group.id)
+                        chat_history = self._group_controller.get_group_chat(group.id)
                         if chat_history:
                             print("\n[Previous Messages]")
                             self._print_chat(chat_history) 
@@ -447,11 +454,8 @@ class UserView():
                     continue
 
                 try:
-                    self.controller.send_message_to_group(
-                        group_id=group.id,
-                        sender_id=self.current_user.id,
-                        content=content
-                    )
+                    self._group_controller.send_message_to_group(group_id=group.id,sender_id=self.current_user.id,content=content)
+                        
                 except Exception as e:
                     print(f"Message could not be sent: {e}")
 
@@ -462,7 +466,7 @@ class UserView():
 
             member_groups = [
                 group
-                for group in self.controller.groups
+                for group in self._group_controller.get_all_Groups()
                 if self.current_user in group.members
             ]
 
@@ -479,7 +483,7 @@ class UserView():
                 return
 
             
-            chat = self.controller.get_group_chat(group.id)
+            chat = self._group_controller.get_group_chat(group.id)
 
             if chat :
                 print(f"\n========== {group.name} ==========")

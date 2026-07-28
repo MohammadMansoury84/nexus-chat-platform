@@ -1,19 +1,18 @@
 
 from uuid import UUID
 
-from src.models.Group import Group
-from src.models.Message import Message
-from src.models.User import User
-from src.models.MessageStatus import MessageStatus
+from src.entities.Group import Group
+from src.entities.Message import Message
+from src.entities.User import User
+from src.entities.MessageStatus import MessageStatus
 from src.core.CustomeLogger import CustomLogger
-from src.models.PrivateChat import PrivateChat
+from src.entities.PrivateChat import PrivateChat
 from src.Exceptions import (
     DuplicateEmailError,
     DuplicateUsernameError,
     UserNotFoundError,
     AuthorizationError,
     GroupNotFoundError,
-    InvalidMessageError,
     UserAlreadyInGroupError
 )
     

@@ -1,6 +1,6 @@
 from uuid import uuid4,UUID
 from pydantic import BaseModel, Field, ConfigDict
-from src.models.Message import Message
+from src.entities.Message import Message
 
 class PrivateChat(BaseModel):
     model_config = ConfigDict(validate_assignment=True,populate_by_name=True,strict=True)

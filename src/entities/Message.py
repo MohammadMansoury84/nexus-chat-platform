@@ -2,7 +2,7 @@
 from pydantic import BaseModel, ConfigDict,Field
 from datetime import datetime ,timezone
 from uuid import uuid4,UUID
-from src.models.MessageStatus import MessageStatus
+from src.entities.MessageStatus import MessageStatus
 
 class Message(BaseModel):
 

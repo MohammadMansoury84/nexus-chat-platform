@@ -57,3 +57,29 @@
 07/28/2026 00:14:07 - INFO - Group created successfully | group_id: c07c30da-c8d2-4410-abfd-0452014ea256 | name: mamad1234 | creator_id: 6fcadce6-af50-4a92-9ceb-cbf3a2e09d12
 07/28/2026 00:14:26 - INFO - User added to group successfully | user_id: 15c520df-db88-4fcf-b596-b0458f812a30 | group_id: c07c30da-c8d2-4410-abfd-0452014ea256
 07/28/2026 12:35:38 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/28/2026 12:36:37 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/28/2026 12:45:40 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+07/28/2026 23:04:04 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/28/2026 23:07:31 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/28/2026 23:08:42 - INFO - User logged in successfully | username: mamad1
+07/28/2026 23:14:29 - INFO - User created | username: mamad1298 | email: mamad1298@gmail.com
+07/28/2026 23:14:57 - INFO - User logged in successfully | username: mamad1298
+07/28/2026 23:17:04 - INFO - User created | username: mamad1298@gmail.com | email: mamad129SS8@gmail.com
+07/28/2026 23:17:16 - INFO - User logged in successfully | username: mamad1298@gmail.com
+07/28/2026 23:24:05 - INFO - User created | username: mamad1298 | email: mamad1298@gmail.com
+07/28/2026 23:24:46 - INFO - User created | username: mamad1298@gmail.com | email: Vmamad1298@gmail.com
+07/28/2026 23:25:15 - INFO - User logged in successfully | username: mamad1298
+07/28/2026 23:25:30 - INFO - User logged in successfully | username: mamad1298@gmail.com
+07/28/2026 23:25:39 - WARNING - No chat history found
+07/28/2026 23:25:42 - INFO - PrivateChat create successfully | sender_id: 839c1b5c-0856-4ac7-92e7-b37d52b878b9 | receiver_id: 40eb2fe6-b64d-40ed-9ef0-94d022a4830a
+07/28/2026 23:25:42 - INFO - Message sent successfully | sender_id: 839c1b5c-0856-4ac7-92e7-b37d52b878b9 | receiver_id: 40eb2fe6-b64d-40ed-9ef0-94d022a4830a
+07/28/2026 23:25:43 - INFO - Message sent successfully | sender_id: 839c1b5c-0856-4ac7-92e7-b37d52b878b9 | receiver_id: 40eb2fe6-b64d-40ed-9ef0-94d022a4830a
+07/28/2026 23:26:29 - INFO - Message sent successfully | sender_id: 40eb2fe6-b64d-40ed-9ef0-94d022a4830a | receiver_id: 839c1b5c-0856-4ac7-92e7-b37d52b878b9
+07/28/2026 23:26:30 - INFO - Message sent successfully | sender_id: 40eb2fe6-b64d-40ed-9ef0-94d022a4830a | receiver_id: 839c1b5c-0856-4ac7-92e7-b37d52b878b9
+07/28/2026 23:30:20 - INFO - User created | username: mamad1298 | email: mamad1298@gmail.com
+07/28/2026 23:30:37 - INFO - User created | username: mamad1298@gmail.com | email: aamamad1298@gmail.com
+07/28/2026 23:31:00 - INFO - User created | username: mamad1 | email: mamad129ww8@gmail.com
+07/28/2026 23:31:16 - INFO - User logged in successfully | username: mamad1298
+07/28/2026 23:31:26 - INFO - User logged in successfully | username: mamad1298@gmail.com
+07/28/2026 23:31:35 - INFO - User logged in successfully | username: mamad1
+07/28/2026 23:31:43 - ERROR - Failed to log in user | username: dd
