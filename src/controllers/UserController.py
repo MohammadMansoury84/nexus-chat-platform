@@ -7,6 +7,15 @@ from src.models.User import User
 from src.models.MessageStatus import MessageStatus
 from src.core.CustomeLogger import CustomLogger
 from src.models.PrivateChat import PrivateChat
+from src.Exceptions import (
+    DuplicateEmailError,
+    DuplicateUsernameError,
+    UserNotFoundError,
+    AuthorizationError,
+    GroupNotFoundError,
+    InvalidMessageError,
+    UserAlreadyInGroupError
+)
     
 class UserController:
 
@@ -28,13 +37,13 @@ class UserController:
 
             self.custome_logger.warning(f"Username already exists", username=username)
 
-            raise ValueError("Username already exists.")
+            raise DuplicateUsernameError("Username already exists.")
 
         if any(user.email == email for user in self.users):
 
             self.custome_logger.warning(f"Email already exists", email=email)
 
-            raise ValueError("Email already exists.")
+            raise DuplicateEmailError("Email already exists.")
 
         user = User(username=username,email=email,password=password)
 
@@ -69,9 +78,9 @@ class UserController:
         receiver = self._get_user_by_id(receiver_id)
 
         if sender is None:
-            raise ValueError("Sender not found.")
+            raise UserNotFoundError("Sender not found.")
         if receiver is None:
-            raise ValueError("Receiver not found.")
+            raise UserNotFoundError("Receiver not found.")
 
     
         target_chat = self._get_private_chat(sender_id, receiver_id)
@@ -127,7 +136,7 @@ class UserController:
 
         if target_user is None:
             self.custome_logger.warning("User not found", user_id=creator_id)
-            raise ValueError(f"User {creator_id} not found.")
+            raise UserNotFoundError(f"User {creator_id} not found.")
 
         target_user.groups_created.append(group)
         target_user.joined_groups.append(group)
@@ -152,18 +161,18 @@ class UserController:
 
             self.custome_logger.warning("User not found", user_id=user_id)
 
-            raise ValueError(f"User {user_id} not found.")
+            raise UserNotFoundError(f"User {user_id} not found.")
 
         if group is None:
 
             self.custome_logger.warning("Group not found", group_id=group_id)
 
-            raise ValueError(f"Group {group_id} not found.")
+            raise GroupNotFoundError(f"Group {group_id} not found.")
         
 
         if creator_id != group.creator_id:
             self.custome_logger.warning("User is not the creator of the group", creator_id=creator_id, group_id=group_id)
-            raise ValueError(f"User {creator_id} is not the creator of the group.only the creator can add members to the group.")
+            raise AuthorizationError(f"User {creator_id} is not the creator of the group.only the creator can add members to the group.")
 
 
 
@@ -171,7 +180,7 @@ class UserController:
 
             self.custome_logger.warning("User is already in the group", user_id=user_id, group_id=group_id)
 
-            raise ValueError(f"User {user.username} is already in the group.")
+            raise UserAlreadyInGroupError(f"User {user.username} is already in the group.")
 
         group.members.append(user)
         user.joined_groups.append(group)
@@ -189,15 +198,15 @@ class UserController:
 
         if group is None:
             self.custome_logger.warning("Group not found", group_id=group_id)
-            raise ValueError(f"Group {group_id} not found.")
+            raise GroupNotFoundError(f"Group {group_id} not found.")
 
         if sender is None:
             self.custome_logger.warning("Sender not found", sender_id=sender_id)
-            raise ValueError(f"User {sender_id} not found.")
+            raise UserNotFoundError(f"User {sender_id} not found.")
 
         if sender not in group.members:
             self.custome_logger.warning("Sender is not a member of the group", sender_id=sender_id, group_id=group_id)
-            raise ValueError(f"User {sender_id} is not a member of the group.")
+            raise UserNotFoundError(f"User {sender_id} is not a member of the group.")
 
         message = Message(sender_id=sender.id,group_id = group.id ,content=content, status=MessageStatus.SENT)
         group.messages.append(message)
@@ -215,7 +224,7 @@ class UserController:
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
-            raise ValueError(f"Group {group_id} not found.")
+            raise GroupNotFoundError(f"Group {group_id} not found.")
 
         chat = []
         if group.messages:
