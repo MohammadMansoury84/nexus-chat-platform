@@ -2,18 +2,23 @@ import logging
 
 from src.core.ConsoleHandler import ConsoleHandler
 from src.core.CustomFileHandler import CustomFileHandler
+from src.config import Setting
 
 
 class CustomLogger(logging.Logger):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-
+        setting=Setting()
         self.setLevel(logging.DEBUG)
         self.propagate = False
 
-        self.addHandler(ConsoleHandler())
+        
+        if setting.show_log_in_cli:
+            self.addHandler(ConsoleHandler())
+
         self.addHandler(CustomFileHandler())
+
 
     def info(self, msg: str, **kwargs) -> None:
         self._custom_log(logging.INFO, msg, **kwargs)

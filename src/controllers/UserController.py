@@ -180,7 +180,7 @@ class UserController:
 
             self.custome_logger.warning("User is already in the group", user_id=user_id, group_id=group_id)
 
-            raise UserAlreadyInGroupError(f"User {user.username} is already in the group.")
+            raise UserAlreadyInGroupError(f"User {user.username} is already in the group.") 
 
         group.members.append(user)
         user.joined_groups.append(group)
