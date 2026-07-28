@@ -83,3 +83,49 @@
 07/28/2026 23:31:26 - INFO - User logged in successfully | username: mamad1298@gmail.com
 07/28/2026 23:31:35 - INFO - User logged in successfully | username: mamad1
 07/28/2026 23:31:43 - ERROR - Failed to log in user | username: dd
+07/28/2026 23:35:24 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/28/2026 23:35:40 - INFO - User created | username: mamad1298@gmail.com | email: mamad129سس8@gmail.com
+07/28/2026 23:35:51 - INFO - User logged in successfully | username: mamad1
+07/28/2026 23:36:04 - INFO - User logged in successfully | username: mamad1298@gmail.com
+07/28/2026 23:36:30 - INFO - Group created successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f | name: بببببببب | creator_id: 83ddb5f5-5791-4856-8daa-84f83822d739
+07/28/2026 23:36:48 - INFO - User added to group successfully | user_id: 4b4dbed4-b568-41e5-b3f5-b3cfc2c2c986 | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f
+07/28/2026 23:37:01 - INFO - Message sent to group successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f | sender_id: 83ddb5f5-5791-4856-8daa-84f83822d739 | content: ئئئ
+07/28/2026 23:37:02 - INFO - Message sent to group successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f | sender_id: 83ddb5f5-5791-4856-8daa-84f83822d739 | content: ئئئئئ
+07/28/2026 23:37:25 - INFO - Group chat retrieved successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f
+07/28/2026 23:38:07 - INFO - Group chat retrieved successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f
+07/28/2026 23:38:09 - INFO - Message sent to group successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f | sender_id: 4b4dbed4-b568-41e5-b3f5-b3cfc2c2c986 | content: fff
+07/28/2026 23:38:10 - INFO - Message sent to group successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f | sender_id: 4b4dbed4-b568-41e5-b3f5-b3cfc2c2c986 | content: fff
+07/28/2026 23:38:26 - INFO - User logged in successfully | username: mamad1298@gmail.com
+07/28/2026 23:38:47 - INFO - Group chat retrieved successfully | group_id: 2f6f8e77-57ff-42ce-ad73-820efda7ee3f
+07/28/2026 23:39:38 - INFO - User created | username: mamad1298 | email: mamad1298mamad1298@gmail.com
+07/28/2026 23:39:47 - INFO - User logged in successfully | username: mamad1298
+07/29/2026 00:03:52 - INFO - User created | username: mamad1 | email: mamad1298@gmail.com
+07/29/2026 00:04:11 - INFO - User created | username: mamad2 | email: mamad21@gmail.com
+07/29/2026 00:04:27 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+07/29/2026 00:04:36 - INFO - User logged in successfully | username: mamad1
+07/29/2026 00:04:43 - INFO - User logged in successfully | username: mamad2
+07/29/2026 00:04:49 - INFO - User logged in successfully | username: mamad3
+07/29/2026 00:05:01 - WARNING - No chat history found
+07/29/2026 00:07:29 - INFO - User created | username: mamad1 | email: mamad1@gmai.com
+07/29/2026 00:07:41 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+07/29/2026 00:08:00 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+07/29/2026 00:08:09 - INFO - User logged in successfully | username: mamad1
+07/29/2026 00:08:14 - INFO - User logged in successfully | username: mamad2
+07/29/2026 00:08:21 - INFO - User logged in successfully | username: mamad3
+07/29/2026 00:08:27 - WARNING - No chat history found
+07/29/2026 00:08:29 - INFO - PrivateChat create successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa
+07/29/2026 00:08:29 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa
+07/29/2026 00:08:31 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa
+07/29/2026 00:08:37 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa
+07/29/2026 00:08:46 - WARNING - No chat history found
+07/29/2026 00:08:48 - INFO - PrivateChat create successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: b1f8243b-367c-437a-93fd-27078b866772
+07/29/2026 00:08:48 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: b1f8243b-367c-437a-93fd-27078b866772
+07/29/2026 00:08:49 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: b1f8243b-367c-437a-93fd-27078b866772
+07/29/2026 00:08:55 - INFO - Message sent successfully | sender_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | receiver_id: b1f8243b-367c-437a-93fd-27078b866772
+07/29/2026 00:09:55 - INFO - Group created successfully | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951 | name: mamad | creator_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa
+07/29/2026 00:10:06 - INFO - User added to group successfully | user_id: b1f8243b-367c-437a-93fd-27078b866772 | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951
+07/29/2026 00:10:14 - INFO - User added to group successfully | user_id: 51c40b52-250a-4218-a7ec-38fc81f0f626 | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951
+07/29/2026 00:10:23 - INFO - Message sent to group successfully | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951 | sender_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa | content: mqmq
+07/29/2026 00:10:24 - INFO - Message sent to group successfully | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951 | sender_id: 75b958d2-c01d-4c71-965c-0409d9d0ffaa | content: mss
+07/29/2026 00:10:32 - INFO - Group chat retrieved successfully | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951
+07/29/2026 00:10:38 - INFO - Group chat retrieved successfully | group_id: 568c59e0-3ebe-42af-98eb-cb797664a951

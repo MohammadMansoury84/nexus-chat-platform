@@ -7,7 +7,7 @@ from src.entities.Message import Message
 from src.entities.User import User
 from src.entities.MessageStatus import MessageStatus
 from src.core.CustomeLogger import CustomLogger
-from src.entities.PrivateChat import PrivateChat
+from src.entities.GroupMessage import GroupMessage
 from src.Exceptions import (
 
     UserNotFoundError,
@@ -106,7 +106,7 @@ class GroupService:
             self.custome_logger.warning("Sender is not a member of the group", sender_id=sender_id, group_id=group_id)
             raise UserNotFoundError(f"User {sender_id} is not a member of the group.")
 
-        message = Message(sender_id=sender.id,group_id = group.id ,content=content, status=MessageStatus.SENT)
+        message = GroupMessage(sender_id=sender.id,group_id = group.id ,content=content, status=MessageStatus.SENT)
         group.messages.append(message)
         
 

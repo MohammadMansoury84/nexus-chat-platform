@@ -4,6 +4,7 @@ from src.entities.Message import Message
 from src.entities.User import User
 from src.entities.MessageStatus import MessageStatus
 from src.core.CustomeLogger import CustomLogger
+from src.entities.PrivateChatMessage import PrivateChatMessage
 from src.entities.PrivateChat import PrivateChat
 from src.Exceptions import UserNotFoundError
     
@@ -41,7 +42,7 @@ class MessageService:
             receiver.private_chats.append(target_chat)
             sender.private_chats.append(target_chat)
     
-        message = Message(sender_id=sender.id,receiver_id=receiver.id,content=content,status=MessageStatus.SENT)
+        message = PrivateChatMessage(sender_id=sender.id,receiver_id=receiver.id,content=content,status=MessageStatus.SENT)
                     
         
         target_chat.messages.append(message)
