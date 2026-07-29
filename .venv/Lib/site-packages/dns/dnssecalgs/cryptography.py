@@ -1,4 +1,4 @@
-from typing import Any, Type
+from typing import Any
 
 from cryptography.hazmat.primitives import serialization
 
@@ -34,7 +34,7 @@ class CryptographyPublicKey(GenericPublicKey):
 class CryptographyPrivateKey(GenericPrivateKey):
     key: Any = None
     key_cls: Any = None
-    public_cls: Type[CryptographyPublicKey]  # pyright: ignore
+    public_cls: type[CryptographyPublicKey]  # pyright: ignore
 
     def __init__(self, key: Any) -> None:  # pylint: disable=super-init-not-called
         if self.key_cls is None:

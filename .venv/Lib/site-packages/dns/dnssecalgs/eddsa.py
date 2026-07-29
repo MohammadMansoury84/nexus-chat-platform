@@ -1,5 +1,3 @@
-from typing import Type
-
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import ed448, ed25519
 
@@ -27,7 +25,7 @@ class PublicEDDSA(CryptographyPublicKey):
 
 
 class PrivateEDDSA(CryptographyPrivateKey):
-    public_cls: Type[PublicEDDSA]  # pyright: ignore
+    public_cls: type[PublicEDDSA]  # pyright: ignore
 
     def sign(
         self,

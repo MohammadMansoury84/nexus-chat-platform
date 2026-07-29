@@ -1,5 +1,5 @@
-
 import logging
+
 
 class ConsoleHandler(logging.StreamHandler):
     def __init__(self, level: int = logging.DEBUG) -> None:

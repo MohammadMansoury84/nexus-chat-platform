@@ -1,35 +1,38 @@
-
-from src.entities.Message import Message
-from src.entities.Group import Group
-from src.service.GroupService import GroupService
-
 from uuid import UUID
 
-class GroupController:
+from src.entities.Group import Group
+from src.entities.Message import Message
+from src.service.GroupService import GroupService
 
+
+class GroupController:
     def __init__(self, group_service: GroupService) -> None:
         self._group_service = group_service
 
-    def create_group(self, name: str, creator_id: UUID)-> UUID:
-        return self._group_service.create_group(name=name,creator_id=creator_id)
+    def create_group(self, name: str, creator_id: UUID) -> UUID:
+        return self._group_service.create_group(name=name, creator_id=creator_id)
 
-    def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID)->str:
-        return self._group_service.add_user_to_group(group_id=group_id,creator_id=creator_id,user_id=user_id)
+    def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID) -> str:
 
-    def send_message_to_group(self, group_id: UUID, sender_id: UUID, content: str)->Message:
-        return self._group_service.send_message_to_group(group_id=group_id,sender_id=sender_id,content=content)
+        return self._group_service.add_user_to_group(
+            group_id=group_id, creator_id=creator_id, user_id=user_id
+        )
 
-    def get_group_chat(self, group_id: UUID)-> list[dict] | None:
+    def send_message_to_group(
+        self, group_id: UUID, sender_id: UUID, content: str
+    ) -> Message:
+        return self._group_service.send_message_to_group(
+            group_id=group_id, sender_id=sender_id, content=content
+        )
+
+    def get_group_chat(self, group_id: UUID) -> list[dict] | None:
         return self._group_service.get_group_chat(group_id=group_id)
 
-    def get_group_by_id(self, group_id : UUID)-> Group | None:
+    def get_group_by_id(self, group_id: UUID) -> Group | None:
         return self._group_service.get_group_by_id(group_id=group_id)
 
-    def get_all_users_for_show_users(self)->list[dict]:
+    def get_all_users_for_show_users(self) -> list[dict]:
         return self._group_service.get_all_groups_for_show_users()
 
-    def get_all_Groups(self)->list[Group]:
-        return self._group_service.get_all_Groups()
-
-    
-
+    def get_all_groups(self) -> list[Group]:
+        return self._group_service.get_all_groups()

@@ -1,8 +1,9 @@
 from uuid import UUID
+
 from src.entities.User import User
 
-class UserRepository:
 
+class UserRepository:
     def __init__(self) -> None:
         self._users: list[User] = []
 

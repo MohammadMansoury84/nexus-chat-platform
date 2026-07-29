@@ -1,24 +1,21 @@
 import logging
 
+from src.config import Setting
 from src.core.ConsoleHandler import ConsoleHandler
 from src.core.CustomFileHandler import CustomFileHandler
-from src.config import Setting
 
 
 class CustomLogger(logging.Logger):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        setting=Setting()
+        setting = Setting()
         self.setLevel(logging.DEBUG)
         self.propagate = False
 
-        
         if setting.show_log_in_cli:
             self.addHandler(ConsoleHandler())
 
         self.addHandler(CustomFileHandler())
-
 
     def info(self, msg: str, **kwargs) -> None:
         self._custom_log(logging.INFO, msg, **kwargs)
@@ -35,35 +32,27 @@ class CustomLogger(logging.Logger):
     def critical(self, msg: str, **kwargs) -> None:
         self._custom_log(logging.CRITICAL, msg, **kwargs)
 
-    def _custom_log(self,level: int,msg: str,**kwargs) -> None:
+    def _custom_log(self, level: int, msg: str, **kwargs) -> None:
 
         if not self.isEnabledFor(level):
             return
 
-        message = self.merge_msg_and_additional_info(msg,kwargs)
+        message = self.merge_msg_and_additional_info(msg, kwargs)
 
-        super()._log(level,message,())
-        
+        super()._log(level, message, ())
 
-    def get_additional_info(self,kwargs: dict) -> str:
+    def get_additional_info(self, kwargs: dict) -> str:
 
         if not kwargs:
             return ""
-        
-    
-        return " | ".join(
-            f"{key}: {value}"
-            for key, value in kwargs.items()
-        )
 
-    def merge_msg_and_additional_info(self,msg: str,kwargs: dict) -> str:
+        return " | ".join(f"{key}: {value}" for key, value in kwargs.items())
+
+    def merge_msg_and_additional_info(self, msg: str, kwargs: dict) -> str:
 
         additional_info = self.get_additional_info(kwargs)
 
         if additional_info == "":
             return msg
-    
-        return (
-            f"{msg} | "
-            f"{additional_info}"
-        )
+
+        return f"{msg} | {additional_info}"

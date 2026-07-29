@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import StrEnum
 
-class MessageStatus(str,Enum):
+
+class MessageStatus(StrEnum):
     SENT = "sent"
     READ = "read"
-

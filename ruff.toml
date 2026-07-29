@@ -29,6 +29,8 @@ exclude = [
   "prompt_defaults.py",
   "migrations",
   "**/migrations/*.py",
+   "src/view",
+   "src/controllers_old/UserController.py"
 ]
 
 # Same as Black.
@@ -43,7 +45,13 @@ target-version = "py313"
 # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
 # McCabe complexity (`C901`) by default.
 select = ["ALL"]
-ignore = [
+ignore = [ 
+  "W293",
+  "EM101",     
+  "TC001",
+  "INP001",
+  "CPY001",
+  "PIE790",
   "ANN002",
   "ANN003",
   "ANN201",
@@ -131,6 +139,10 @@ docstring-code-format = false
 docstring-code-line-length = "dynamic"
 
 [lint.per-file-ignores]
+"src/view/**/*.py" = [
+    "T201"
+]
+
 "**/tests/**" = [
   "C901",    # is too complex
   "D103",    # test cases could ignore docstrings
