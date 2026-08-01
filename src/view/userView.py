@@ -28,7 +28,7 @@ class UserView:
             print("2. Login")
             print("3. Send Private Message")
             print("4. Show Private Chat")
-            print("5. Change Current User")
+            print("5. Change Current User") 
             print("6. Show Logged-in Users")
             print("7. Show Groups")
             print("8. Create Group")
