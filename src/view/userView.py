@@ -477,7 +477,7 @@ class UserView:
         else:
             print("There is no history of this in this group.")
 
-    # -------------------- Helper Methods --------------------
+
 
     def _require_login(self) -> bool:
 
