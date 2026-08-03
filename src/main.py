@@ -27,4 +27,3 @@ user_view = UserView(
     message_controller=message_controller,
     group_controller=group_controller,
 )
-user_view.show_Main_menu()

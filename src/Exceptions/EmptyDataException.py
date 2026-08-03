@@ -1,0 +1,2 @@
+class EmptyDataException(Exception):
+    pass
