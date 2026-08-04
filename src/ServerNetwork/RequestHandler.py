@@ -14,6 +14,7 @@ from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
 from src.entities.DTO.Request.SignupRequest import SignupRequest
+from src.entities.MessageStatus import MessageStatus
 from src.ServerNetwork.ConnectionManagement import ConnectionManagement
 
 
@@ -42,8 +43,13 @@ class RequestHandler:
         return {"user_id": str(user_id), "message": "User signed up successfully."}
 
     async def login(self, data: dict, writer: asyncio.StreamWriter) -> dict:
+        current_user = self._connectionsManagement.get_logged_in_users(writer)
+
+        if current_user is not None:
+            return {"logged_in": False, "message": "You are already logged in."}
+
         dto = LoginRequest(**data)
-        user = self._auth_controller.login(username=dto.userName, password=dto.password)
+        user = self._auth_controller.login(username=dto.username, password=dto.password)
         if not user:
             return {"logged_in": False, "message": "Username or password is wrong."}
 
@@ -55,25 +61,52 @@ class RequestHandler:
         }
 
     async def logout(self, writer: asyncio.StreamWriter) -> dict:
+        current_user_id = self._connectionsManagement.get_logged_in_user_id(writer)
+
+        if current_user_id is None:
+            return {
+                "message": "You are not logged in.",
+            }
+
         self._connectionsManagement.logout(writer=writer)
         return {"message": "Logged out."}
 
-    async def get_all_users(self) -> dict:
-        return {"users": self._auth_controller.get_all_users_for_show_users()}
+    async def get_all_users(
+        self,
+        data: dict,
+        writer: asyncio.StreamWriter,
+    ) -> dict:
+        current_user_id = self._require_login(writer)
+
+        logged_in_user_ids = self._connectionsManagement.get_logged_in_user_ids()
+
+        users = self._auth_controller.get_other_logged_in_users_for_show(
+            current_user_id=current_user_id,
+            logged_in_user_ids=logged_in_user_ids,
+        )
+
+        if not users:
+            return {
+                "users": [],
+                "message": "No other users are logged in.",
+            }
+
+        return {
+            "users": users,
+            "message": "Logged-in users retrieved successfully.",
+        }
 
     async def send_private_message(
         self,
         data: dict,
         writer: asyncio.StreamWriter,
     ) -> dict:
+        dto = SendMessageToPrivateChatRequest(**data)
 
-        dto = SendMessageToPrivateChatRequest(
-            sender_id=UUID(data["sender_id"]),
-            receiver_id=UUID(data["receiver_id"]),
-            message_content=data["message"],
+        self._check_current_user(
+            writer=writer,
+            request_user_id=dto.sender_id,
         )
-
-        self._check_current_user(writer, dto.sender_id)
 
         message = self._message_controller.send_message(
             sender_id=dto.sender_id,
@@ -83,19 +116,26 @@ class RequestHandler:
 
         sender = self._auth_controller.get_user_by_id(dto.sender_id)
 
-        await self._connectionsManagement.send_to_user(
+        delivered = await self._connectionsManagement.send_to_user(
             dto.receiver_id,
             {
                 "message_type": "event",
                 "event": "private_message",
                 "data": {
                     "sender_id": str(dto.sender_id),
-                    "sender_username": sender.username if sender else "Unknown",
+                    "sender_username": (sender.username if sender else "Unknown"),
                     "content": message.content,
                 },
             },
         )
-        return {"message_id": str(message.id), "message": "Message sent."}
+
+        return {
+            "message_id": str(message.id),
+            "message": (
+                "Message delivered." if delivered else "Message saved. User is offline."
+            ),
+            "delivered": MessageStatus.DELIVERED,
+        }
 
     async def get_private_chat(self, data: dict, writer: asyncio.StreamWriter) -> dict:
 
@@ -176,7 +216,7 @@ class RequestHandler:
                         "data": {
                             "group_id": str(dto.group_id),
                             "sender_username": sender.username if sender else "Unknown",
-                            "content": message.content,
+                            "message": message.content,
                         },
                     },
                 )

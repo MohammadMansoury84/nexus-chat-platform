@@ -165,3 +165,386 @@
 07/29/2026 11:39:18 - INFO - Message sent successfully | sender_id: bb74479c-c2ea-4ee3-a4e5-f9729f493de7 | receiver_id: 9f32c4fa-5149-48e0-84b2-3f0bce799baf
 07/29/2026 11:39:38 - INFO - Message sent successfully | sender_id: bb74479c-c2ea-4ee3-a4e5-f9729f493de7 | receiver_id: 9f32c4fa-5149-48e0-84b2-3f0bce799baf
 07/29/2026 11:40:00 - INFO - Group created successfully | group_id: 2b3e5c57-ddd4-41b7-9ee6-7e31ccdd466a | name: msms | creator_id: bb74479c-c2ea-4ee3-a4e5-f9729f493de7
+08/03/2026 14:26:37 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:27:10 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:35:13 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:37:32 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:45:34 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:45:39 - INFO - New client connected | client_address: ('127.0.0.1', 11912)
+08/03/2026 14:46:26 - INFO - Client disconnected | client_address: ('127.0.0.1', 11912)
+08/03/2026 14:49:19 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:49:23 - INFO - New client connected | client_address: ('127.0.0.1', 2517)
+08/03/2026 14:49:57 - INFO - Client disconnected | client_address: ('127.0.0.1', 2517)
+08/03/2026 14:56:42 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 14:56:45 - INFO - New client connected | client_address: ('127.0.0.1', 14295)
+08/03/2026 14:57:01 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 14:57:01 - INFO - Client disconnected | client_address: ('127.0.0.1', 14295)
+08/03/2026 15:00:12 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:00:16 - INFO - New client connected | client_address: ('127.0.0.1', 13042)
+08/03/2026 15:00:32 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 15:00:32 - INFO - Client disconnected | client_address: ('127.0.0.1', 13042)
+08/03/2026 15:00:57 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:01:00 - INFO - New client connected | client_address: ('127.0.0.1', 3718)
+08/03/2026 15:01:12 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/03/2026 15:01:40 - INFO - Client disconnected | client_address: ('127.0.0.1', 3718)
+08/03/2026 15:14:06 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:14:09 - INFO - New client connected | client_address: ('127.0.0.1', 1048)
+08/03/2026 15:14:22 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+08/03/2026 15:18:57 - INFO - Client disconnected | client_address: ('127.0.0.1', 1048)
+08/03/2026 15:19:08 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:19:16 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:19:19 - INFO - New client connected | client_address: ('127.0.0.1', 13423)
+08/03/2026 15:19:37 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+08/03/2026 15:19:56 - INFO - Client disconnected | client_address: ('127.0.0.1', 13423)
+08/03/2026 15:28:43 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:28:47 - INFO - New client connected | client_address: ('127.0.0.1', 13160)
+08/03/2026 15:29:16 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+08/03/2026 15:29:52 - INFO - Client disconnected | client_address: ('127.0.0.1', 13160)
+08/03/2026 15:29:55 - INFO - New client connected | client_address: ('127.0.0.1', 11301)
+08/03/2026 15:30:09 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 15:30:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 11301)
+08/03/2026 15:58:24 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 15:58:27 - INFO - New client connected | client_address: ('127.0.0.1', 5625)
+08/03/2026 15:58:48 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 16:02:51 - INFO - Client disconnected | client_address: ('127.0.0.1', 5625)
+08/03/2026 16:03:01 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:03:04 - INFO - New client connected | client_address: ('127.0.0.1', 6995)
+08/03/2026 16:03:20 - INFO - User created | username: MAMAD | email: MAMAD1@gmail.com
+08/03/2026 16:05:01 - INFO - Client disconnected | client_address: ('127.0.0.1', 6995)
+08/03/2026 16:26:32 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:26:34 - INFO - New client connected | client_address: ('127.0.0.1', 10307)
+08/03/2026 16:26:41 - INFO - New client connected | client_address: ('127.0.0.1', 11728)
+08/03/2026 16:26:57 - INFO - Client disconnected | client_address: ('127.0.0.1', 10307)
+08/03/2026 16:26:58 - INFO - Client disconnected | client_address: ('127.0.0.1', 11728)
+08/03/2026 16:28:38 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:28:40 - INFO - New client connected | client_address: ('127.0.0.1', 2583)
+08/03/2026 16:28:51 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/03/2026 16:29:14 - INFO - Client disconnected | client_address: ('127.0.0.1', 2583)
+08/03/2026 16:29:42 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:29:44 - INFO - New client connected | client_address: ('127.0.0.1', 8808)
+08/03/2026 16:30:00 - INFO - User created | username: mamad | email: mamad1298@gmail.com
+08/03/2026 16:31:24 - INFO - Client disconnected | client_address: ('127.0.0.1', 8808)
+08/03/2026 16:31:31 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:31:35 - INFO - New client connected | client_address: ('127.0.0.1', 3173)
+08/03/2026 16:31:53 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 16:33:22 - INFO - Client disconnected | client_address: ('127.0.0.1', 3173)
+08/03/2026 16:33:27 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:33:29 - INFO - New client connected | client_address: ('127.0.0.1', 1381)
+08/03/2026 16:33:43 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+password
+  String should have at least 6 characters [type=string_too_short, input_value='mamd1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/03/2026 16:33:43 - INFO - Client disconnected | client_address: ('127.0.0.1', 1381)
+08/03/2026 16:35:03 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:35:08 - INFO - New client connected | client_address: ('127.0.0.1', 9051)
+08/03/2026 16:35:22 - INFO - User created | username: mamad11 | email: mamad1@gmail.com
+08/03/2026 16:35:49 - INFO - Client disconnected | client_address: ('127.0.0.1', 9051)
+08/03/2026 16:36:01 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:36:07 - INFO - New client connected | client_address: ('127.0.0.1', 9582)
+08/03/2026 16:36:21 - INFO - User created | username: mamad11 | email: mamad1@gmail.com
+08/03/2026 16:37:49 - INFO - Client disconnected | client_address: ('127.0.0.1', 9582)
+08/03/2026 16:37:54 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:37:57 - INFO - New client connected | client_address: ('127.0.0.1', 8641)
+08/03/2026 16:38:09 - INFO - User created | username: mamad111 | email: mamad111@gmail.com
+08/03/2026 16:40:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 8641)
+08/03/2026 16:40:52 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:40:54 - INFO - New client connected | client_address: ('127.0.0.1', 12564)
+08/03/2026 16:41:04 - INFO - User created | username: MAMAD | email: MAMAD1@GMAIL.COM
+08/03/2026 16:42:55 - INFO - User created | username: mamamd1111 | email: mamamd1111@gmail.com
+08/03/2026 16:43:13 - INFO - Client disconnected | client_address: ('127.0.0.1', 12564)
+08/03/2026 16:47:16 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:47:18 - INFO - New client connected | client_address: ('127.0.0.1', 9240)
+08/03/2026 16:47:33 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+08/03/2026 16:48:33 - INFO - Client disconnected | client_address: ('127.0.0.1', 9240)
+08/03/2026 16:48:38 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:48:40 - INFO - New client connected | client_address: ('127.0.0.1', 9185)
+08/03/2026 16:48:53 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+08/03/2026 16:48:56 - INFO - Client disconnected | client_address: ('127.0.0.1', 9185)
+08/03/2026 16:49:48 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:49:50 - INFO - New client connected | client_address: ('127.0.0.1', 7325)
+08/03/2026 16:50:01 - INFO - User created | username: mamad111 | email: mamad11@gmail.com
+08/03/2026 16:52:19 - INFO - Client disconnected | client_address: ('127.0.0.1', 7325)
+08/03/2026 16:52:23 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:52:26 - INFO - New client connected | client_address: ('127.0.0.1', 8920)
+08/03/2026 16:52:38 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/03/2026 16:53:42 - INFO - Client disconnected | client_address: ('127.0.0.1', 8920)
+08/03/2026 16:53:45 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:53:48 - INFO - New client connected | client_address: ('127.0.0.1', 7126)
+08/03/2026 16:53:59 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+08/03/2026 16:56:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 7126)
+08/03/2026 16:56:25 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/03/2026 16:56:28 - INFO - New client connected | client_address: ('127.0.0.1', 10457)
+08/03/2026 16:56:44 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/03/2026 16:57:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 10457)
+08/04/2026 16:31:02 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:31:06 - INFO - New client connected | client_address: ('127.0.0.1', 11834)
+08/04/2026 16:31:29 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 16:32:27 - INFO - Client disconnected | client_address: ('127.0.0.1', 11834)
+08/04/2026 16:32:33 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:32:36 - INFO - New client connected | client_address: ('127.0.0.1', 9832)
+08/04/2026 16:32:53 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 16:36:13 - INFO - Client disconnected | client_address: ('127.0.0.1', 9832)
+08/04/2026 16:36:20 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:36:24 - INFO - New client connected | client_address: ('127.0.0.1', 3442)
+08/04/2026 16:36:36 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 16:38:42 - INFO - Client disconnected | client_address: ('127.0.0.1', 3442)
+08/04/2026 16:38:47 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:38:49 - INFO - New client connected | client_address: ('127.0.0.1', 5086)
+08/04/2026 16:39:03 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 16:40:08 - INFO - Client disconnected | client_address: ('127.0.0.1', 5086)
+08/04/2026 16:40:15 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:40:17 - INFO - New client connected | client_address: ('127.0.0.1', 1042)
+08/04/2026 16:40:26 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 16:41:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 1042)
+08/04/2026 16:42:05 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:42:07 - INFO - New client connected | client_address: ('127.0.0.1', 14366)
+08/04/2026 16:42:13 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad1', input_type=str]
+08/04/2026 16:42:13 - INFO - Client disconnected | client_address: ('127.0.0.1', 14366)
+08/04/2026 16:45:30 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 16:45:35 - INFO - New client connected | client_address: ('127.0.0.1', 7681)
+08/04/2026 16:45:43 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad', input_type=str]
+08/04/2026 16:45:43 - INFO - Client disconnected | client_address: ('127.0.0.1', 7681)
+08/04/2026 17:03:30 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:03:33 - INFO - New client connected | client_address: ('127.0.0.1', 6484)
+08/04/2026 17:03:41 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad', input_type=str]
+08/04/2026 17:05:28 - INFO - Client disconnected | client_address: ('127.0.0.1', 6484)
+08/04/2026 17:05:33 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:05:37 - INFO - New client connected | client_address: ('127.0.0.1', 6261)
+08/04/2026 17:05:41 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad', input_type=str]
+08/04/2026 17:10:41 - INFO - Client disconnected | client_address: ('127.0.0.1', 6261)
+08/04/2026 17:13:45 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:13:47 - INFO - New client connected | client_address: ('127.0.0.1', 7248)
+08/04/2026 17:13:53 - ERROR - Error processing request | exc_info: True | error: 2 validation errors for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad', input_type=str]
+password
+  String should have at least 6 characters [type=string_too_short, input_value='mamad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/04/2026 17:25:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 7248)
+08/04/2026 17:25:10 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:25:11 - INFO - New client connected | client_address: ('127.0.0.1', 7907)
+08/04/2026 17:25:17 - ERROR - Error processing request | exc_info: True | error: 2 validation errors for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='ئشئشی', input_type=str]
+password
+  String should have at least 6 characters [type=string_too_short, input_value='ئشئشی', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/04/2026 17:25:44 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+08/04/2026 17:29:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 7907)
+08/04/2026 17:29:52 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:29:55 - INFO - New client connected | client_address: ('127.0.0.1', 1630)
+08/04/2026 17:30:06 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 17:30:22 - ERROR - Error processing request | exc_info: True | error: 'LoginRequest' object has no attribute 'userName'
+08/04/2026 17:35:25 - ERROR - Error processing request | exc_info: True | error: 'LoginRequest' object has no attribute 'userName'
+08/04/2026 17:35:29 - INFO - Client disconnected | client_address: ('127.0.0.1', 1630)
+08/04/2026 17:35:40 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 17:35:42 - INFO - New client connected | client_address: ('127.0.0.1', 10127)
+08/04/2026 17:35:52 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 17:36:01 - INFO - User logged in successfully | username: mamad
+08/04/2026 17:36:29 - INFO - User logged in successfully | username: mamad
+08/04/2026 17:38:11 - WARNING - Username already exists | username: mamad
+08/04/2026 17:38:11 - ERROR - Error processing request | exc_info: True | error: 'module' object is not callable
+08/04/2026 17:38:56 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/04/2026 18:00:15 - INFO - Client disconnected | client_address: ('127.0.0.1', 10127)
+08/04/2026 18:03:41 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 18:03:45 - INFO - New client connected | client_address: ('127.0.0.1', 4600)
+08/04/2026 18:03:58 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 18:04:22 - WARNING - Username already exists | username: mamad1
+08/04/2026 18:04:22 - ERROR - Error processing request | exc_info: True | error: Username already exists.
+08/04/2026 18:04:40 - INFO - Client disconnected | client_address: ('127.0.0.1', 4600)
+08/04/2026 18:11:03 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 18:11:05 - INFO - New client connected | client_address: ('127.0.0.1', 8731)
+08/04/2026 18:11:17 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 18:11:23 - INFO - User logged in successfully | username: mamad1
+08/04/2026 18:13:13 - INFO - Client disconnected | client_address: ('127.0.0.1', 8731)
+08/04/2026 18:42:08 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 18:42:12 - INFO - New client connected | client_address: ('127.0.0.1', 8121)
+08/04/2026 18:42:33 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 18:42:50 - ERROR - Failed to log in user | username: mamad1
+08/04/2026 18:43:01 - INFO - User logged in successfully | username: mamad
+08/04/2026 18:43:01 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+logged_in
+  Object has no attribute 'logged_in' [type=no_such_attribute, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.13/v/no_such_attribute
+08/04/2026 18:43:21 - INFO - Client disconnected | client_address: ('127.0.0.1', 8121)
+08/04/2026 18:43:23 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 18:43:25 - INFO - New client connected | client_address: ('127.0.0.1', 2388)
+08/04/2026 18:43:35 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 18:43:43 - INFO - User logged in successfully | username: mamad1
+08/04/2026 18:44:52 - INFO - New client connected | client_address: ('127.0.0.1', 6121)
+08/04/2026 18:44:54 - INFO - Client disconnected | client_address: ('127.0.0.1', 6121)
+08/04/2026 18:44:57 - INFO - New client connected | client_address: ('127.0.0.1', 8721)
+08/04/2026 18:45:11 - INFO - User logged in successfully | username: mamad1
+08/04/2026 18:45:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 8721)
+08/04/2026 18:51:40 - INFO - Client disconnected | client_address: ('127.0.0.1', 2388)
+08/04/2026 18:55:58 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 18:56:01 - INFO - New client connected | client_address: ('127.0.0.1', 10858)
+08/04/2026 18:56:24 - INFO - User created | username: mamad | email: mamad1/@2gmail.com
+08/04/2026 18:56:31 - INFO - User logged in successfully | username: mamad
+08/04/2026 19:00:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 10858)
+08/04/2026 19:00:15 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:00:20 - INFO - New client connected | client_address: ('127.0.0.1', 8311)
+08/04/2026 19:00:35 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 19:00:41 - INFO - User logged in successfully | username: mamad
+08/04/2026 19:00:43 - ERROR - Error processing request | exc_info: True | error: RequestHandler.get_all_users() takes 1 positional argument but 3 were given
+08/04/2026 19:05:04 - INFO - Client disconnected | client_address: ('127.0.0.1', 8311)
+08/04/2026 19:05:08 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:05:10 - INFO - New client connected | client_address: ('127.0.0.1', 6525)
+08/04/2026 19:05:21 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 19:05:25 - INFO - User logged in successfully | username: mamad
+08/04/2026 19:05:52 - INFO - New client connected | client_address: ('127.0.0.1', 6599)
+08/04/2026 19:05:54 - INFO - Client disconnected | client_address: ('127.0.0.1', 6599)
+08/04/2026 19:05:57 - INFO - New client connected | client_address: ('127.0.0.1', 8379)
+08/04/2026 19:06:09 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/04/2026 19:06:22 - INFO - User logged in successfully | username: mamad3
+08/04/2026 19:06:53 - INFO - New client connected | client_address: ('127.0.0.1', 8456)
+08/04/2026 19:06:55 - INFO - Client disconnected | client_address: ('127.0.0.1', 8456)
+08/04/2026 19:06:58 - INFO - New client connected | client_address: ('127.0.0.1', 8470)
+08/04/2026 19:07:19 - INFO - Client disconnected | client_address: ('127.0.0.1', 8470)
+08/04/2026 19:07:20 - INFO - Client disconnected | client_address: ('127.0.0.1', 6525)
+08/04/2026 19:08:45 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:08:48 - INFO - New client connected | client_address: ('127.0.0.1', 14874)
+08/04/2026 19:08:52 - INFO - New client connected | client_address: ('127.0.0.1', 14881)
+08/04/2026 19:09:14 - INFO - Client disconnected | client_address: ('127.0.0.1', 14874)
+08/04/2026 19:09:15 - INFO - Client disconnected | client_address: ('127.0.0.1', 14881)
+08/04/2026 19:46:30 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:46:32 - INFO - New client connected | client_address: ('127.0.0.1', 6185)
+08/04/2026 19:46:44 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 19:47:30 - INFO - Client disconnected | client_address: ('127.0.0.1', 6185)
+08/04/2026 19:55:45 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:55:48 - INFO - New client connected | client_address: ('127.0.0.1', 9352)
+08/04/2026 19:56:02 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 19:56:28 - INFO - User logged in successfully | username: mamad
+08/04/2026 19:56:30 - ERROR - Error processing request | exc_info: True | error: RequestHandler._require_login() missing 1 required positional argument: 'writer'
+08/04/2026 19:57:41 - INFO - Client disconnected | client_address: ('127.0.0.1', 9352)
+08/04/2026 19:57:46 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 19:57:48 - INFO - New client connected | client_address: ('127.0.0.1', 10728)
+08/04/2026 19:57:59 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 19:58:13 - INFO - User logged in successfully | username: mamad
+08/04/2026 19:58:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 10728)
+08/04/2026 20:09:48 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 20:09:51 - INFO - New client connected | client_address: ('127.0.0.1', 3060)
+08/04/2026 20:10:05 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 20:10:16 - INFO - User logged in successfully | username: mamad
+08/04/2026 20:10:38 - INFO - New client connected | client_address: ('127.0.0.1', 2784)
+08/04/2026 20:10:40 - INFO - Client disconnected | client_address: ('127.0.0.1', 2784)
+08/04/2026 20:10:43 - INFO - New client connected | client_address: ('127.0.0.1', 2795)
+08/04/2026 20:10:54 - INFO - User created | username: mamad11 | email: mamad11@gmail.com
+08/04/2026 20:11:01 - INFO - User logged in successfully | username: mamad11
+08/04/2026 20:11:22 - INFO - Client disconnected | client_address: ('127.0.0.1', 2795)
+08/04/2026 20:11:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 3060)
+08/04/2026 20:12:24 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 20:12:26 - INFO - New client connected | client_address: ('127.0.0.1', 8704)
+08/04/2026 20:12:37 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 20:15:21 - INFO - User logged in successfully | username: mamad1
+08/04/2026 20:15:53 - INFO - Client disconnected | client_address: ('127.0.0.1', 8704)
+08/04/2026 20:37:32 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 20:37:34 - INFO - New client connected | client_address: ('127.0.0.1', 5759)
+08/04/2026 20:37:51 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 20:37:59 - ERROR - Failed to log in user | username: mamad2
+08/04/2026 20:38:13 - INFO - User logged in successfully | username: mamad1
+08/04/2026 20:38:38 - INFO - Client disconnected | client_address: ('127.0.0.1', 5759)
+08/04/2026 20:38:50 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 20:38:53 - INFO - New client connected | client_address: ('127.0.0.1', 6145)
+08/04/2026 20:39:03 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 20:39:09 - INFO - User logged in successfully | username: mamad1
+08/04/2026 20:39:17 - INFO - New client connected | client_address: ('127.0.0.1', 6189)
+08/04/2026 20:39:29 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/04/2026 20:39:35 - INFO - User logged in successfully | username: mamad2
+08/04/2026 20:39:48 - WARNING - No chat history found
+08/04/2026 20:39:53 - WARNING - No chat history found
+08/04/2026 20:40:01 - INFO - Client disconnected | client_address: ('127.0.0.1', 6145)
+08/04/2026 20:40:02 - INFO - Client disconnected | client_address: ('127.0.0.1', 6189)
+08/04/2026 21:01:36 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 21:01:38 - INFO - New client connected | client_address: ('127.0.0.1', 12773)
+08/04/2026 21:01:42 - INFO - New client connected | client_address: ('127.0.0.1', 12785)
+08/04/2026 21:01:57 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 21:02:05 - INFO - User logged in successfully | username: mamad
+08/04/2026 21:02:16 - INFO - Client disconnected | client_address: ('127.0.0.1', 12773)
+08/04/2026 21:02:17 - INFO - Client disconnected | client_address: ('127.0.0.1', 12785)
+08/04/2026 21:02:27 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 21:02:28 - INFO - New client connected | client_address: ('127.0.0.1', 3688)
+08/04/2026 21:02:31 - INFO - New client connected | client_address: ('127.0.0.1', 3697)
+08/04/2026 21:02:41 - INFO - User created | username: mamad | email: mamad@gmail.com
+08/04/2026 21:02:47 - INFO - User logged in successfully | username: mamad
+08/04/2026 21:03:11 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+username
+  String should have at least 4 characters [type=string_too_short, input_value='ali', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/04/2026 21:03:39 - INFO - User created | username: reza11 | email: reza11@gmail.com
+08/04/2026 21:04:10 - INFO - Client disconnected | client_address: ('127.0.0.1', 3697)
+08/04/2026 21:04:11 - INFO - Client disconnected | client_address: ('127.0.0.1', 3688)
+08/04/2026 21:07:15 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 21:07:17 - INFO - New client connected | client_address: ('127.0.0.1', 14633)
+08/04/2026 21:07:20 - INFO - New client connected | client_address: ('127.0.0.1', 14640)
+08/04/2026 21:07:34 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 21:07:45 - INFO - User logged in successfully | username: mamad
+08/04/2026 21:08:19 - INFO - User created | username: reza11 | email: reza11@gmail.com
+08/04/2026 21:08:31 - INFO - User logged in successfully | username: reza11
+08/04/2026 21:11:08 - INFO - Client disconnected | client_address: ('127.0.0.1', 14640)
+08/04/2026 21:11:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 14633)
+08/04/2026 21:11:14 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 21:11:16 - INFO - New client connected | client_address: ('127.0.0.1', 2818)
+08/04/2026 21:11:19 - INFO - New client connected | client_address: ('127.0.0.1', 2833)
+08/04/2026 21:11:29 - INFO - User created | username: mamad | email: mamad1@gmail.com
+08/04/2026 21:11:35 - INFO - User logged in successfully | username: mamad
+08/04/2026 21:11:58 - INFO - User created | username: reza11 | email: reza11@gmail.com
+08/04/2026 21:12:10 - INFO - User logged in successfully | username: reza11
+08/04/2026 21:12:20 - WARNING - No chat history found
+08/04/2026 21:12:24 - INFO - PrivateChat create successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:12:24 - INFO - Message sent successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:12:32 - INFO - Message sent successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:12:36 - INFO - Message sent successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:12:47 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:12:51 - INFO - Message sent successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:13:00 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:02 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:03 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:05 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:07 - INFO - Message sent successfully | sender_id: 66971008-369b-44fc-93f1-a5e9dfa35444 | receiver_id: e0957993-491d-4644-935d-6333f8748e7a
+08/04/2026 21:13:20 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:22 - INFO - Message sent successfully | sender_id: e0957993-491d-4644-935d-6333f8748e7a | receiver_id: 66971008-369b-44fc-93f1-a5e9dfa35444
+08/04/2026 21:13:34 - INFO - Client disconnected | client_address: ('127.0.0.1', 2818)
+08/04/2026 21:13:36 - INFO - Client disconnected | client_address: ('127.0.0.1', 2833)
+08/04/2026 22:12:24 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 22:12:27 - INFO - New client connected | client_address: ('127.0.0.1', 10230)
+08/04/2026 22:12:29 - INFO - New client connected | client_address: ('127.0.0.1', 10237)
+08/04/2026 22:12:45 - INFO - User created | username: mamad1 | email: mamad@gmail.com
+08/04/2026 22:12:52 - INFO - User logged in successfully | username: mamad1
+08/04/2026 22:13:48 - INFO - User created | username: reza1 | email: reza1@gmail.com
+08/04/2026 22:14:00 - INFO - User logged in successfully | username: reza1
+08/04/2026 22:14:13 - WARNING - No chat history found
+08/04/2026 22:14:17 - WARNING - No chat history found
+08/04/2026 22:14:19 - INFO - PrivateChat create successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:14:19 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:14:21 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:14:36 - INFO - Message sent successfully | sender_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:14:39 - INFO - Message sent successfully | sender_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:14:41 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:14:42 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:14:54 - INFO - New client connected | client_address: ('127.0.0.1', 12232)
+08/04/2026 22:15:17 - INFO - User created | username: mamad44 | email: mamad44@gmail.com
+08/04/2026 22:15:25 - INFO - User logged in successfully | username: mamad44
+08/04/2026 22:15:33 - WARNING - No chat history found
+08/04/2026 22:15:36 - INFO - PrivateChat create successfully | sender_id: 88a157a1-b334-4972-9d6b-c6752cffda55 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:36 - INFO - Message sent successfully | sender_id: 88a157a1-b334-4972-9d6b-c6752cffda55 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:37 - INFO - Message sent successfully | sender_id: 88a157a1-b334-4972-9d6b-c6752cffda55 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:42 - INFO - Message sent successfully | sender_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:43 - INFO - Message sent successfully | sender_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:45 - INFO - Message sent successfully | sender_id: 88a157a1-b334-4972-9d6b-c6752cffda55 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:15:53 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:15:55 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:15:57 - INFO - Message sent successfully | sender_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7 | receiver_id: c510b703-fdfd-4682-86de-7116cf74f404
+08/04/2026 22:16:00 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:16:02 - INFO - Message sent successfully | sender_id: c510b703-fdfd-4682-86de-7116cf74f404 | receiver_id: 2d794537-ba1b-4717-86e0-7fd8df00abe7
+08/04/2026 22:16:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 10230)
+08/04/2026 22:16:07 - INFO - Client disconnected | client_address: ('127.0.0.1', 10237)
+08/04/2026 22:16:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 12232)

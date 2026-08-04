@@ -5,12 +5,10 @@ from src.entities.Group import Group
 from src.entities.GroupMessage import GroupMessage
 from src.entities.Message import Message
 from src.entities.MessageStatus import MessageStatus
-from src.Exceptions import (
-    AuthorizationError,
-    GroupNotFoundError,
-    UserAlreadyInGroupError,
-    UserNotFoundError,
-)
+from src.Exceptions.AuthorizationError import AuthorizationError
+from src.Exceptions.GroupNotFoundError import GroupNotFoundError
+from src.Exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
+from src.Exceptions.UserNotFoundError import UserNotFoundError
 from src.repository.GroupRepository import GroupRepository
 from src.repository.UserRepository import UserRepository
 

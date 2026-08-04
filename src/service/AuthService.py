@@ -2,10 +2,8 @@ from uuid import UUID
 
 from src.core.CustomeLogger import CustomLogger
 from src.entities.User import User
-from src.Exceptions import (
-    DuplicateEmailError,
-    DuplicateUsernameError,
-)
+from src.Exceptions.DuplicateEmailError import DuplicateEmailError
+from src.Exceptions.DuplicateUsernameError import DuplicateUsernameError
 from src.repository.UserRepository import UserRepository
 
 
@@ -60,10 +58,18 @@ class AuthService:
     def get_user_by_id(self, user_id: UUID) -> User | None:
         return self._user_repository.get_by_id(user_id=user_id)
 
-    def get_all_users_for_show_users(self) -> list[dict]:
+    def get_other_logged_in_users_for_show(
+        self,
+        current_user_id: UUID,
+        logged_in_user_ids: set[UUID],
+    ) -> list[dict]:
         return [
-            f"User ID: {user.id}, Username: {user.username}"
+            {
+                "id": str(user.id),
+                "username": user.username,
+            }
             for user in self._user_repository.list_all()
+            if user.id in logged_in_user_ids and user.id != current_user_id
         ]
 
     def get_all_users(self) -> list[User]:

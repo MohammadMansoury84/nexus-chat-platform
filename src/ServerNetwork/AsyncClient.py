@@ -2,11 +2,12 @@ import asyncio
 import inspect
 import json
 from collections.abc import Awaitable, Callable
+from typing import Any
+from uuid import UUID
 
 from src.entities.DTO.Request.RequestModel import RequestModel
 from src.entities.RequestType import RequestType
 from src.Exceptions.ClientConnectionError import ClientConnectionError
-from src.Exceptions.EmptyDataException import EmptyDataException
 from src.Exceptions.ResponseError import ResponseError
 
 EventCallback = Callable[[dict], Awaitable[None]]
@@ -19,20 +20,21 @@ class AsyncClient:
         self._reader: asyncio.StreamReader | None = None
         self._writer: asyncio.StreamWriter | None = None
         self._listen_task: asyncio.Task[None] | None = None
-        self._pending: dict[str, asyncio.Future[None]] = {}
+        self._pending: dict[str, asyncio.Future[dict]] = {}
         self._event_callback: EventCallback | None = None
 
     def set_event_callback(self, callback: EventCallback) -> None:
         self._event_callback = callback
 
-    async def connet(self) -> None:
-        self._reader, self._writer = await asyncio.open_connection(self._host, self._host)
+    async def connect(self) -> None:
+        self._reader, self._writer = await asyncio.open_connection(self._host, self._port)
         self._listen_task = asyncio.create_task(self._listen_server())
 
     async def send_request(self, request_type: RequestType, data: dict | None = None):
         if not self._writer:
             raise ClientConnectionError("Client is not connected.")
-        request = RequestModel(request_type=request_type, data=data)
+
+        request = RequestModel(request_type=request_type, data=data or {})
 
         loop = asyncio.get_running_loop()
 
@@ -41,12 +43,16 @@ class AsyncClient:
         self._pending[request.request_id] = future
 
         raw = json.dumps(request.model_dump(), default=str) + "\n"
+
         self._writer.write(raw.encode("utf-8"))
+
         await self._writer.drain()
 
         response = await future
-        if not response.get("ok", False):
-            raise ResponseError(response.get("message", "Request failed."))
+
+        if not response.get("status", False):
+            raise ResponseError(response.get("data", {}).get("message", "Request failed."))
+
         return response.get("data", {})
 
     async def close(self) -> None:
@@ -66,17 +72,20 @@ class AsyncClient:
 
         while True:
             raw = await self._reader.readline()
-            if not raw:
-                raise EmptyDataException("You cannot send an empty message.")
 
-            message: dict[str, str] = json.loads(raw.decode("utf-8"))
+            message: dict[str, Any] = json.loads(raw.decode("utf-8"))
+
             if message.get("message_type") == "response":
                 request_id = message.get("request_id")
-                future: asyncio.Future[dict] = self._pending.pop(request_id, None)
+
+                future: asyncio.Future[dict] = self._pending.pop(UUID(request_id))
+
                 if future is not None and not future.done():
                     future.set_result(message)
                 continue
+
             if message.get("message_type") == "event":
                 result = self._event_callback(message)
+
                 if inspect.isawaitable(result):
                     await result

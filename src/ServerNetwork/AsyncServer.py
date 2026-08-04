@@ -2,6 +2,8 @@ import asyncio
 import json
 from asyncio import Server
 
+from pydantic import ValidationError
+
 from src.core.CustomeLogger import CustomLogger
 from src.entities.DTO.Response.ResponseModel import ResponseModel
 from src.Exceptions.EmptyDataException import EmptyDataException
@@ -38,9 +40,6 @@ class AsyncServer:
         if self._server is None:
             await self.start()
 
-        if self._server.is_serving():
-            return
-
         async with self._server:
             await self._server.serve_forever()
 
@@ -67,15 +66,20 @@ class AsyncServer:
                     raise EmptyDataException("Data cannot be empty")
 
                 request = json.loads(data.decode("utf-8"))
+
                 try:
                     response = await self._requestRouter.dispatch(request, writer)
+
                     response = ResponseModel(
                         request_id=request.get("request_id"), status=True, data=response
                     )
+
                 except Exception as e:
                     self.custome_logger.exception("Error processing request", error=str(e))
                     response = ResponseModel(
-                        request_id=request.get("request_id"), status=False, data=str(e)
+                        request_id=request.get("request_id"),
+                        status=False,
+                        data={"message": self._get_error_message(e)},
                     )
 
                 await self._connectionManagement.send(writer, response)
@@ -87,3 +91,18 @@ class AsyncServer:
             self.custome_logger.info(
                 "Client disconnected", client_address=writer.get_extra_info("peername")
             )
+
+    @staticmethod
+    def _get_error_message(error: Exception) -> str:
+        if isinstance(error, ValidationError):
+            messages: list[str] = []
+
+            for item in error.errors():
+                field = ".".join(str(part) for part in item["loc"])
+                message = item["msg"]
+
+                messages.append(f"{field}: {message}")
+
+            return " | ".join(messages)
+
+        return str(error) or "An unexpected server error occurred."
