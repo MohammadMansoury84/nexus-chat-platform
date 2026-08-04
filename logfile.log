@@ -548,3 +548,150 @@ username
 08/04/2026 22:16:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 10230)
 08/04/2026 22:16:07 - INFO - Client disconnected | client_address: ('127.0.0.1', 10237)
 08/04/2026 22:16:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 12232)
+08/04/2026 23:13:11 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 23:13:18 - INFO - New client connected | client_address: ('127.0.0.1', 13317)
+08/04/2026 23:13:20 - INFO - New client connected | client_address: ('127.0.0.1', 13327)
+08/04/2026 23:13:21 - INFO - New client connected | client_address: ('127.0.0.1', 13337)
+08/04/2026 23:13:35 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 23:13:46 - INFO - User logged in successfully | username: mamad1
+08/04/2026 23:14:10 - INFO - User created | username: ali1234 | email: alu1234@gmail.com
+08/04/2026 23:14:21 - INFO - User logged in successfully | username: ali1234
+08/04/2026 23:14:49 - INFO - User created | username: reza123 | email: reza123@gmail.com
+08/04/2026 23:15:00 - INFO - User logged in successfully | username: reza123
+08/04/2026 23:15:40 - WARNING - No chat history found
+08/04/2026 23:15:42 - INFO - PrivateChat create successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 59c21cac-3701-47d2-bf10-6022b3533a9c
+08/04/2026 23:15:42 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 59c21cac-3701-47d2-bf10-6022b3533a9c
+08/04/2026 23:15:44 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 59c21cac-3701-47d2-bf10-6022b3533a9c
+08/04/2026 23:15:52 - WARNING - No chat history found
+08/04/2026 23:15:55 - INFO - PrivateChat create successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:15:55 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:15:57 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:15:58 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:10 - INFO - Message sent successfully | sender_id: 35876844-9ef5-4a82-9fda-ae9141a0e388 | receiver_id: ad864022-2f2b-4cc2-a568-965912964e7b
+08/04/2026 23:16:12 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:15 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:16 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:17 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:18 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:19 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:16:20 - INFO - Message sent successfully | sender_id: ad864022-2f2b-4cc2-a568-965912964e7b | receiver_id: 35876844-9ef5-4a82-9fda-ae9141a0e388
+08/04/2026 23:17:56 - INFO - Client disconnected | client_address: ('127.0.0.1', 13317)
+08/04/2026 23:17:57 - INFO - Client disconnected | client_address: ('127.0.0.1', 13327)
+08/04/2026 23:17:58 - INFO - Client disconnected | client_address: ('127.0.0.1', 13337)
+08/04/2026 23:21:04 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 23:21:06 - INFO - New client connected | client_address: ('127.0.0.1', 3100)
+08/04/2026 23:21:19 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 23:21:34 - INFO - User logged in successfully | username: mamad1
+08/04/2026 23:21:45 - INFO - Group created successfully | group_id: 4d27147e-2480-4ba5-9bc6-c9fc6b935f09 | name: mamad | creator_id: c8f7236e-b3f8-47b4-a3ea-daa6bcb8bd74
+08/04/2026 23:22:01 - ERROR - Error processing request | exc_info: True | error: RequestHandler.get_all_groups() takes 1 positional argument but 3 were given
+08/04/2026 23:22:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 3100)
+08/04/2026 23:25:00 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 23:25:03 - INFO - New client connected | client_address: ('127.0.0.1', 3699)
+08/04/2026 23:25:13 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 23:25:17 - INFO - User logged in successfully | username: mamad1
+08/04/2026 23:25:22 - INFO - Client disconnected | client_address: ('127.0.0.1', 3699)
+08/04/2026 23:25:25 - INFO - New client connected | client_address: ('127.0.0.1', 6894)
+08/04/2026 23:25:39 - WARNING - Username already exists | username: mamad1
+08/04/2026 23:25:39 - ERROR - Error processing request | exc_info: True | error: Username already exists.
+08/04/2026 23:26:13 - ERROR - Error processing request | exc_info: True | error: RequestHandler._require_login() missing 1 required positional argument: 'writer'
+08/04/2026 23:26:32 - INFO - User logged in successfully | username: mamad1
+08/04/2026 23:26:39 - INFO - Group created successfully | group_id: 3ca76cfc-a18e-4a32-bd75-1c05b26b007c | name: mamad | creator_id: 463d0883-4bdb-48a4-af42-a39027b1710d
+08/04/2026 23:29:25 - ERROR - Error processing request | exc_info: True | error: RequestHandler._require_login() missing 1 required positional argument: 'writer'
+08/04/2026 23:30:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 6894)
+08/04/2026 23:30:31 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/04/2026 23:30:33 - INFO - New client connected | client_address: ('127.0.0.1', 11089)
+08/04/2026 23:30:44 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/04/2026 23:30:55 - INFO - User logged in successfully | username: mamad1
+08/04/2026 23:31:22 - INFO - Group created successfully | group_id: cd385800-335a-4763-a455-b03c263b8429 | name: mamad | creator_id: 3c226145-2224-4ff9-b256-e140f7fadb6c
+08/04/2026 23:31:39 - INFO - New client connected | client_address: ('127.0.0.1', 13392)
+08/04/2026 23:31:50 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='ali1234', input_type=str]
+08/04/2026 23:32:11 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/04/2026 23:32:14 - ERROR - Error processing request | exc_info: True | error: Please login first.
+08/04/2026 23:32:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 13392)
+08/04/2026 23:32:25 - INFO - Client disconnected | client_address: ('127.0.0.1', 11089)
+08/05/2026 01:19:02 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:19:05 - INFO - New client connected | client_address: ('127.0.0.1', 11380)
+08/05/2026 01:19:18 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:19:22 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:19:24 - INFO - New client connected | client_address: ('127.0.0.1', 10197)
+08/05/2026 01:19:33 - INFO - User created | username: mamad2 | email: mamad@gamil.com
+08/05/2026 01:19:37 - INFO - User logged in successfully | username: mamad2
+08/05/2026 01:19:49 - WARNING - No chat history found
+08/05/2026 01:20:07 - WARNING - No chat history found
+08/05/2026 01:20:12 - INFO - PrivateChat create successfully | sender_id: 02eaf56b-1ac5-4184-bee1-dbd4dc88e087 | receiver_id: d6ddf270-f897-49da-a5b8-7e5be1fd4d27
+08/05/2026 01:20:12 - INFO - Message sent successfully | sender_id: 02eaf56b-1ac5-4184-bee1-dbd4dc88e087 | receiver_id: d6ddf270-f897-49da-a5b8-7e5be1fd4d27
+08/05/2026 01:20:25 - INFO - Client disconnected | client_address: ('127.0.0.1', 10197)
+08/05/2026 01:20:26 - INFO - Client disconnected | client_address: ('127.0.0.1', 11380)
+08/05/2026 01:23:25 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:23:29 - INFO - New client connected | client_address: ('127.0.0.1', 13992)
+08/05/2026 01:23:43 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:23:48 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:24:24 - INFO - Client disconnected | client_address: ('127.0.0.1', 13992)
+08/05/2026 01:30:37 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:30:39 - INFO - New client connected | client_address: ('127.0.0.1', 9932)
+08/05/2026 01:30:52 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:30:55 - ERROR - Error processing request | exc_info: True | error: Please login first.
+08/05/2026 01:31:13 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:31:15 - ERROR - Error processing request | exc_info: True | error: GroupController.get_all_groups_for_show_users() takes 1 positional argument but 2 were given
+08/05/2026 01:32:20 - INFO - Client disconnected | client_address: ('127.0.0.1', 9932)
+08/05/2026 01:32:26 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:32:29 - INFO - New client connected | client_address: ('127.0.0.1', 13137)
+08/05/2026 01:32:35 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='', input_type=str]
+08/05/2026 01:32:46 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:32:55 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:32:57 - ERROR - Error processing request | exc_info: True | error: GroupService._get_joined_groups_and_groups_created_users() missing 1 required positional argument: 'user_id'
+08/05/2026 01:34:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 13137)
+08/05/2026 01:34:15 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:34:17 - INFO - New client connected | client_address: ('127.0.0.1', 2104)
+08/05/2026 01:34:30 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:34:37 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:37:17 - INFO - Group created successfully | group_id: 6a4ebffa-1183-4cf9-b57d-84feb111664d | name: mamad | creator_id: ecf8ac79-c26e-40a6-9353-7f5ae8dfacdf
+08/05/2026 01:40:01 - INFO - Client disconnected | client_address: ('127.0.0.1', 2104)
+08/05/2026 01:40:10 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:40:13 - INFO - New client connected | client_address: ('127.0.0.1', 10275)
+08/05/2026 01:40:36 - INFO - User created | username: ئشئشی1 | email: ئشئشی1@gmail.com
+08/05/2026 01:40:50 - INFO - User logged in successfully | username: ئشئشی1
+08/05/2026 01:41:04 - INFO - Group created successfully | group_id: 63c20403-f78e-463e-8351-572bbaafeee9 | name: ئشئشی | creator_id: 63ae857d-5f71-4d33-a254-e20a451d8e7f
+08/05/2026 01:41:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 10275)
+08/05/2026 01:52:05 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 01:52:07 - INFO - New client connected | client_address: ('127.0.0.1', 6953)
+08/05/2026 01:52:22 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 01:52:27 - INFO - User logged in successfully | username: mamad1
+08/05/2026 01:52:29 - INFO - New client connected | client_address: ('127.0.0.1', 1658)
+08/05/2026 01:52:40 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 01:53:49 - INFO - Group created successfully | group_id: 0979af22-dbda-4dc7-a322-e60431f591e9 | name: mamad | creator_id: 2d0f9f02-9018-4d11-80c2-5929a698a51b
+08/05/2026 01:54:11 - ERROR - Error processing request | exc_info: True | error: 3 validation errors for User
+username
+  String should have at least 4 characters [type=string_too_short, input_value='ma', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mam', input_type=str]
+password
+  String should have at least 6 characters [type=string_too_short, input_value='mam', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/05/2026 01:55:07 - INFO - User logged in successfully | username: mamad2
+08/05/2026 01:55:15 - INFO - User added to group successfully | user_id: a44684af-f0aa-41f2-b524-1cbc1a085430 | group_id: 0979af22-dbda-4dc7-a322-e60431f591e9
+08/05/2026 01:55:58 - INFO - Client disconnected | client_address: ('127.0.0.1', 6953)
+08/05/2026 01:56:00 - INFO - Client disconnected | client_address: ('127.0.0.1', 1658)
+08/05/2026 02:03:41 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 02:03:42 - INFO - New client connected | client_address: ('127.0.0.1', 11522)
+08/05/2026 02:03:44 - INFO - New client connected | client_address: ('127.0.0.1', 11530)
+08/05/2026 02:03:55 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 02:03:59 - INFO - User logged in successfully | username: mamad1
+08/05/2026 02:04:13 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 02:04:44 - INFO - Group created successfully | group_id: 44045803-b1ab-4bec-bedb-444f87bd5937 | name: mamad111111 | creator_id: 4810d2e4-8651-483c-a09d-5aaabc4a9576
+08/05/2026 02:05:14 - INFO - User logged in successfully | username: mamad2
+08/05/2026 02:05:23 - INFO - User added to group successfully | user_id: de497b4a-ec38-40b9-9248-1f8a40e4539e | group_id: 44045803-b1ab-4bec-bedb-444f87bd5937
+08/05/2026 02:06:44 - WARNING - User is already in the group | user_id: de497b4a-ec38-40b9-9248-1f8a40e4539e | group_id: 44045803-b1ab-4bec-bedb-444f87bd5937
+08/05/2026 02:06:44 - ERROR - Error processing request | exc_info: True | error: User is already in the group.
+08/05/2026 02:07:24 - INFO - New client connected | client_address: ('127.0.0.1', 1057)
+08/05/2026 02:07:35 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/05/2026 02:07:43 - INFO - User logged in successfully | username: mamad3
+08/05/2026 02:07:56 - INFO - User added to group successfully | user_id: 2d65f61f-422c-4200-a750-458bfac7662a | group_id: 44045803-b1ab-4bec-bedb-444f87bd5937
+08/05/2026 02:08:29 - INFO - Client disconnected | client_address: ('127.0.0.1', 11530)
+08/05/2026 02:08:30 - INFO - Client disconnected | client_address: ('127.0.0.1', 11522)
+08/05/2026 02:08:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 1057)

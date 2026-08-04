@@ -165,11 +165,27 @@ class GroupService:
     def get_group_by_id(self, group_id: UUID) -> Group | None:
         return self._group_repository.get_by_id(group_id=group_id)
 
-    def get_all_groups_for_show_users(self) -> list[dict]:
+    def get_all_groups_for_show_users(self, user_id: UUID) -> list[dict]:
         return [
-            f"Group  ID: {group.id}, name: {group.name}"
-            for group in self._group_repository.list_all()
+            {"id": group.id, "name": group.name}
+            for group in self._get_joined_groups_and_groups_created_users(user_id=user_id)
         ]
 
     def get_all_groups(self) -> list[Group]:
         return self._group_repository.list_all()
+
+    def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
+
+        user = self._user_repository.get_by_id(user_id=user_id)
+        list1 = user.groups_created
+        list2 = user.joined_groups
+
+        merge_list = []
+        seen_ids = set()
+
+        for group in list1 + list2:
+            if group.id not in seen_ids:
+                merge_list.append(group)
+                seen_ids.add(group.id)
+
+        return merge_list

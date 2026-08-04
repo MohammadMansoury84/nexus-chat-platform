@@ -257,11 +257,21 @@ class UserView:
 
 
     async def _list_groups(self) -> None:
+        
         result = await self._client.send_request(RequestType.GET_ALL_GROUPS_FOR_SHOW_USERS)
-        if result:
-            print(result)
-        else:
-            print("You are not a member or creator of any group.")
+        groups=result.get("groups",[])
+        if not groups:
+            print(
+                result.get("message","You are not a member or creator of any group.")
+                )
+            return
+        print("\n========== groups ==========")
+
+        for index, group in enumerate(groups, start=1):
+            print(f"{index}. {group['name']}")
+
+            
+
 
 
 
@@ -272,18 +282,45 @@ class UserView:
             group_name=await self._input("Group name: "),
             creator_id=user_id,
         )
-        print(await self._client.send_request(RequestType.CREATE_GROUP, dto))
+        print(await self._client.send_request(RequestType.CREATE_GROUP, dto.model_dump()))
 
 
     async def _add_user_to_group(self) -> None:
-        print("\n==========add user to group==========")
-        user_id = self._require_login()
-        dto = AddUserToGroupRequest(
-            group_id=UUID(await self._input("Group UUID: ")),
-            creator_id=user_id,
-            user_id=UUID(await self._input("User UUID: ")),
+        print("\n========== Add User To Group ==========")
+
+        creator_id = self._require_login()
+
+        selected_group = await self._select_group(
+            title="Choose Group"
         )
-        print(await self._client.send_request(RequestType.ADD_USER_TO_GROUP, dto))
+
+        if selected_group is None:
+            return
+
+        selected_user = await self._select_user(
+            title="Choose User To Add"
+        )
+
+        if selected_user is None:
+            return
+
+        dto = AddUserToGroupRequest(
+            group_id=UUID(selected_group["id"]),
+            creator_id=creator_id,
+            user_id=UUID(selected_user["id"]),
+        )
+
+        result = await self._client.send_request(
+            RequestType.ADD_USER_TO_GROUP,
+            dto.model_dump(),
+        )
+
+        print(
+            result.get(
+                "message",
+                "User added to group successfully.",
+            )
+        )
 
 
     async def _send_group_message(self) -> None:
@@ -316,41 +353,43 @@ class UserView:
 
         if event == "private_message":
             sender_id_text = data.get("sender_id")
+
             sender_username = data.get(
                 "sender_username",
                 "Unknown",
             )
-            content = data.get("content", "")
+
+            content = data.get(
+                "content",
+                "",
+            )
 
             try:
                 sender_id = UUID(sender_id_text)
             except (ValueError, TypeError):
                 sender_id = None
 
-        
-            if sender_id == self._active_private_user_id:
-                print(f"\n{sender_username}: {content}")
-
             
-                if self._current_username:
-                    print(
-                        f"{self._current_username}: ",
-                        end="",
-                        flush=True,
-                    )
+            if sender_id == self._active_private_user_id:
 
-           
+                print(
+                    f"\n{sender_username}: {content}"
+                )
+
+      
             else:
                 print(
                     f"\n[New private message from "
                     f"{sender_username}] {content}"
                 )
+
                 print(
                     "Choose 'Send private message' "
                     "to open the conversation."
                 )
 
             return
+
 
         if event == "group_message":
             print(
@@ -360,10 +399,11 @@ class UserView:
             )
             return
 
+
         if event == "added_to_group":
             print(
                 f"\nYou were added to group "
-                f"{data.get('group_id')}"
+                f"{data.get('group_name')}"
             )
 
     @staticmethod
@@ -407,6 +447,48 @@ class UserView:
             return None
 
         return users[choice - 1]
+
+
+    async def _select_group(self, title: str) -> dict | None:
+        result = await self._client.send_request(
+            RequestType.GET_ALL_GROUPS_FOR_SHOW_USERS
+        )
+
+        groups = result.get("groups", [])
+
+        if not groups:
+            print(
+                result.get(
+                    "message",
+                    "You have not created any groups.",
+                )
+            )
+            return None
+
+        print(f"\n========== {title} ==========")
+
+        for index, group in enumerate(groups, start=1):
+            print(f"{index}. {group['name']}")
+
+        
+
+        while True:
+            choice_text = await self._input("Choose group: ")
+
+            try:
+                choice = int(choice_text)
+            except ValueError:
+                print("Please enter a number.")
+                continue
+
+            if choice == 0:
+                return None
+
+            if choice < 1 or choice > len(groups):
+                print("Invalid group selection.")
+                continue
+
+            return groups[choice - 1]
 
     async def _show_private_chat_history(
         self,

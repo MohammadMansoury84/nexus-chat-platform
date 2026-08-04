@@ -160,8 +160,9 @@ class RequestHandler:
         )
         return {"group_id": str(group_id), "message": "Group created."}
 
-    async def get_all_groups(self) -> dict:
-        return {"groups": self._group_controller.get_all_groups_for_show_users()}
+    async def get_all_groups(self, data: dict, writer: asyncio.StreamWriter) -> dict:
+        user_id = self._require_login(writer=writer)
+        return {"groups": self._group_controller.get_all_groups_for_show_users(user_id)}
 
     async def add_user_to_group(self, data: dict, writer: asyncio.StreamWriter) -> dict:
         dto = AddUserToGroupRequest(
@@ -177,12 +178,17 @@ class RequestHandler:
             user_id=dto.user_id,
         )
 
+        group = self._group_controller.get_group_by_id(group_id=dto.group_id)
+
         await self._connectionsManagement.send_to_user(
             dto.user_id,
             {
                 "message_type": "event",
                 "event": "added_to_group",
-                "data": {"group_id": str(dto.group_id)},
+                "data": {
+                    "group_id": str(dto.group_id),
+                    "group_name": group.name,
+                },
             },
         )
         return {"message": result}

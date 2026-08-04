@@ -31,8 +31,8 @@ class GroupController:
     def get_group_by_id(self, group_id: UUID) -> Group | None:
         return self._group_service.get_group_by_id(group_id=group_id)
 
-    def get_all_groups_for_show_users(self) -> list[dict]:
-        return self._group_service.get_all_groups_for_show_users()
+    def get_all_groups_for_show_users(self, user_id: UUID) -> list[dict]:
+        return self._group_service.get_all_groups_for_show_users(user_id=user_id)
 
     def get_all_groups(self) -> list[Group]:
         return self._group_service.get_all_groups()
