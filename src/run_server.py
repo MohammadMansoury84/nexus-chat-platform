@@ -48,6 +48,7 @@ router.register_route(RequestType.GET_ALL_GROUPS_FOR_SHOW_USERS, handler.get_all
 router.register_route(RequestType.ADD_USER_TO_GROUP, handler.add_user_to_group)
 router.register_route(RequestType.SEND_MESSAGE_TO_GROUP, handler.send_group_message)
 router.register_route(RequestType.GET_GROUP_CHAT, handler.get_group_chat)
+router.register_route(RequestType.DELETE_GROUP_BY_ID, handler=handler.delete_group_by_id)
 
 
 server = AsyncServer(

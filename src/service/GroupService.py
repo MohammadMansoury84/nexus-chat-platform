@@ -174,6 +174,35 @@ class GroupService:
     def get_all_groups(self) -> list[Group]:
         return self._group_repository.list_all()
 
+    def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
+
+        group = self.get_group_by_id(group_id=group_id)
+        if group is None:
+            self.custome_logger.error("Group not found", group_id=group_id)
+            raise GroupNotFoundError("Group not found.")
+
+        if user_id == group.creator_id:
+            group.messages.clear()
+            members = group.members
+
+            for member in members:
+                if group in member.groups_created:
+                    member.groups_created.remove(group)
+
+                if group in member.joined_groups:
+                    member.joined_groups.remove(group)
+
+            group.members.clear()
+            is_remove = self._group_repository.remove_group(group=group)
+            if is_remove:
+                self.custome_logger.info(
+                    "Group deleted successfully",
+                    group_id=str(group_id),
+                )
+                return True
+
+        raise AuthorizationError("only admin can delete group")
+
     def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
 
         user = self._user_repository.get_by_id(user_id=user_id)

@@ -13,3 +13,4 @@ class RequestType(StrEnum):
     ADD_USER_TO_GROUP = "add_user_to_group"
     SEND_MESSAGE_TO_GROUP = "send_message_to_group"
     GET_GROUP_CHAT = "get_group_chat"
+    DELETE_GROUP_BY_ID = "delete_group_by_id"

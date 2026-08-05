@@ -6,6 +6,7 @@ from src.controllers.GroupController import GroupController
 from src.controllers.MessageController import MessageController
 from src.entities.DTO.Request.AddUserToGroupRequest import AddUserToGroupRequest
 from src.entities.DTO.Request.CreateGroupRequest import CreateGroupRequest
+from src.entities.DTO.Request.DeleteGroupByIdRequest import DeleteGroupByIdRequest
 from src.entities.DTO.Request.GetChatRequest import GetChatRequest
 from src.entities.DTO.Request.GetGroupChatRequest import GetGroupChatRequest
 from src.entities.DTO.Request.LoginRequest import LoginRequest
@@ -242,6 +243,52 @@ class RequestHandler:
             return {"chat": [], "message": "Group was not found or user is not a member."}
 
         return {"chat": self._group_controller.get_group_chat(dto.group_id)}
+
+    async def delete_group_by_id(self, data: dict, writer: asyncio.StreamWriter) -> dict:
+
+        current_user_id = self._connectionsManagement.get_logged_in_users(writer)
+
+        dto = DeleteGroupByIdRequest(
+            group_id=UUID(data["group_id"]),
+        )
+
+        group = self._group_controller.get_group_by_id(dto.group_id)
+
+        if group is None:
+            return {
+                "message": "Group not found.",
+                "deleted": False,
+            }
+
+        members = list(group.members)
+
+        result = self._group_controller.delete_group_by_id(
+            user_id=current_user_id,
+            group_id=dto.group_id,
+        )
+
+        if result:
+            for member in members:
+                if member.id == current_user_id:
+                    continue
+
+                await self._connectionsManagement.send_to_user(
+                    member.id,
+                    {
+                        "message_type": "event",
+                        "event": "delete_group",
+                        "data": {
+                            "group_id": str(dto.group_id),
+                            "group_name": group.name,
+                            "content": f"Group {group.name} deleted successfully.",
+                        },
+                    },
+                )
+
+        return {
+            "message": "Group deleted successfully.",
+            "deleted": result,
+        }
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:
         user_id = self._connectionsManagement.get_logged_in_users(writer)

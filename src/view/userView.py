@@ -9,7 +9,7 @@ from src.entities.DTO.Request.SendMessageTOGroupRequest import SendMessageToGrou
 from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
-
+from src.entities.DTO.Request.DeleteGroupByIdRequest import DeleteGroupByIdRequest
 from src.entities.DTO.Request.SignupRequest import SignupRequest
 from src.ServerNetwork.AsyncClient import AsyncClient
 from uuid import UUID
@@ -64,8 +64,9 @@ class UserView:
         print("8. Add user to group")
         print("9. Send group message")
         print("10. Show group chat")
-        print("11. Logout")
-        print("12. Exit")
+        print("11.delete group")
+        print("12. Logout")
+
 
     async def _run_choice(self, choice: str) -> bool:
         actions = {
@@ -79,7 +80,8 @@ class UserView:
             "8": self._add_user_to_group,
             "9": self._send_group_message,
             "10": self._show_group_chat,
-            "11": self._logout,
+            "11":self.delete_group,
+            "12": self._logout,
         }
 
         if choice == "12":
@@ -247,9 +249,6 @@ class UserView:
 
             
 
-
-
-
     async def _create_group(self) -> None:
         print("\n========== Create Group ==========")
         user_id = self._require_login()
@@ -359,6 +358,34 @@ class UserView:
                 await self._client.send_request(RequestType.SEND_MESSAGE_TO_GROUP,dto.model_dump())
 
 
+    async def delete_group(self) -> None:
+
+        self._require_login()
+
+        print("\n========= Delete Group =========")
+
+        selected_group = await self._select_group(
+            "Choose group to delete"
+        )
+
+        if selected_group is None:
+            return
+
+        dto = DeleteGroupByIdRequest(
+            group_id=UUID(selected_group["id"])
+        )
+
+        result = await self._client.send_request(
+            RequestType.DELETE_GROUP_BY_ID,
+            dto.model_dump()
+        )
+
+        print(
+            result.get(
+                "message",
+                "Group deleted."
+            )
+        )
                 
     async def _show_group_chat(self) -> None:
         self._require_login()
@@ -367,12 +394,6 @@ class UserView:
             return
         await self._show_group_chat_history(selected_group=selected_group)
         
-
-
-
-
-
-
 
 
     async def _show_event(self, message: dict) -> None:
@@ -453,6 +474,14 @@ class UserView:
                 f"\nYou were added to group "
                 f"{data.get('group_name')}"
             )
+
+        if event == "delete_group":
+            print(
+                f"\n group was deleted "
+                f"{data.get('group_name')}"
+            )
+            
+    
 
     @staticmethod
     async def _input(prompt: str) -> str:

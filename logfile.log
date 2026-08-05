@@ -880,3 +880,97 @@ email
 08/05/2026 11:28:33 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
 08/05/2026 11:28:58 - INFO - Client disconnected | client_address: ('127.0.0.1', 7387)
 08/05/2026 11:29:00 - INFO - Client disconnected | client_address: ('127.0.0.1', 7373)
+08/05/2026 14:05:05 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:05:09 - INFO - New client connected | client_address: ('127.0.0.1', 10250)
+08/05/2026 14:05:14 - INFO - New client connected | client_address: ('127.0.0.1', 2230)
+08/05/2026 14:05:15 - INFO - New client connected | client_address: ('127.0.0.1', 2237)
+08/05/2026 14:05:30 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:05:36 - ERROR - Failed to log in user | username: kk
+08/05/2026 14:05:47 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:06:08 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 14:06:14 - INFO - User logged in successfully | username: mamad2
+08/05/2026 14:06:29 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/05/2026 14:06:38 - INFO - User logged in successfully | username: mamad3
+08/05/2026 14:06:49 - INFO - Group created successfully | group_id: 05ee3491-b42d-44e4-a963-8203d8b88943 | name: ddddddddd | creator_id: 78f7f795-3017-48d8-91dc-5c83a95be482
+08/05/2026 14:07:04 - INFO - User added to group successfully | user_id: 561ecfd1-30a2-45da-b746-d668d738d82a | group_id: 05ee3491-b42d-44e4-a963-8203d8b88943
+08/05/2026 14:07:50 - ERROR - Error processing request | exc_info: True | error: 'DeleteGroupByIdRequest' object has no attribute 'user_id'
+08/05/2026 14:10:47 - INFO - Client disconnected | client_address: ('127.0.0.1', 10250)
+08/05/2026 14:10:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 2230)
+08/05/2026 14:10:49 - INFO - Client disconnected | client_address: ('127.0.0.1', 2237)
+08/05/2026 14:10:56 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:10:58 - INFO - New client connected | client_address: ('127.0.0.1', 10270)
+08/05/2026 14:11:16 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:11:20 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:11:27 - INFO - Group created successfully | group_id: d82cb933-6e78-4bf2-8737-b6f56cf15dba | name: mamad1 | creator_id: 1ccc012e-4290-4a5c-8c5e-bffa633391cd
+08/05/2026 14:11:32 - ERROR - Error processing request | exc_info: True | error: 'DeleteGroupByIdRequest' object has no attribute 'user_id'
+08/05/2026 14:12:41 - INFO - Client disconnected | client_address: ('127.0.0.1', 10270)
+08/05/2026 14:12:44 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:12:45 - INFO - New client connected | client_address: ('127.0.0.1', 8384)
+08/05/2026 14:12:56 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:12:59 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:13:03 - INFO - Group created successfully | group_id: b121a823-9ed7-4ae8-9179-d9b95fe1f97a | name: mamamd | creator_id: f58be2e5-c76a-4a6e-bd04-7748dee328a9
+08/05/2026 14:13:06 - ERROR - Error processing request | exc_info: True | error: 'DeleteGroupByIdRequest' object has no attribute 'user_id'
+08/05/2026 14:13:34 - INFO - Client disconnected | client_address: ('127.0.0.1', 8384)
+08/05/2026 14:14:53 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:14:55 - INFO - New client connected | client_address: ('127.0.0.1', 3930)
+08/05/2026 14:15:05 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:15:09 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:15:17 - INFO - Group created successfully | group_id: d39fe60d-8178-4880-98a6-f6fdfe67337d | name: mamamd | creator_id: 353512e2-68ce-4f57-9a0e-d48f304ba544
+08/05/2026 14:15:20 - ERROR - Error processing request | exc_info: True | error: 'DeleteGroupByIdRequest' object has no attribute 'user_id'
+08/05/2026 14:16:11 - INFO - Client disconnected | client_address: ('127.0.0.1', 3930)
+08/05/2026 14:16:14 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:16:15 - INFO - New client connected | client_address: ('127.0.0.1', 3834)
+08/05/2026 14:16:25 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:16:34 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:16:38 - INFO - Group created successfully | group_id: d06bd588-dbb0-421e-8b78-342c1eed9782 | name: mamam | creator_id: d8f9d801-c1bf-4a93-bc54-f0773eb3e53b
+08/05/2026 14:16:41 - ERROR - Error processing request | exc_info: True | error: only admin can delete group
+08/05/2026 14:19:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 3834)
+08/05/2026 14:19:12 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:19:13 - INFO - New client connected | client_address: ('127.0.0.1', 13943)
+08/05/2026 14:19:22 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:19:27 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:19:33 - INFO - Group created successfully | group_id: 3a6fd424-da57-46be-b50a-147a64af74ef | name: mmmmmm | creator_id: b74448ad-4564-4add-9bd9-8357d91de5f9
+08/05/2026 14:19:41 - INFO - Group deleted successfully | group_id: 3a6fd424-da57-46be-b50a-147a64af74ef
+08/05/2026 14:21:14 - INFO - New client connected | client_address: ('127.0.0.1', 2241)
+08/05/2026 14:21:25 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 14:21:29 - INFO - User logged in successfully | username: mamad2
+08/05/2026 14:21:43 - WARNING - Group not found | group_id: 3a6fd424-da57-46be-b50a-147a64af74ef
+08/05/2026 14:21:43 - ERROR - Error processing request | exc_info: True | error: Group not found.
+08/05/2026 14:25:04 - INFO - Client disconnected | client_address: ('127.0.0.1', 13943)
+08/05/2026 14:25:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 2241)
+08/05/2026 14:27:57 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 14:27:59 - INFO - New client connected | client_address: ('127.0.0.1', 1634)
+08/05/2026 14:28:08 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 14:28:12 - INFO - User logged in successfully | username: mamad1
+08/05/2026 14:28:16 - INFO - Group created successfully | group_id: 26914021-6bb6-49a6-9b19-b6618fc59660 | name: mamamaa | creator_id: 023ec195-7c83-4810-b009-4a11d160f934
+08/05/2026 14:28:26 - INFO - Group deleted successfully | group_id: 26914021-6bb6-49a6-9b19-b6618fc59660
+08/05/2026 14:28:37 - INFO - Group created successfully | group_id: 173ff3f7-65a2-4963-9e03-d0383ba3dc55 | name: mamama | creator_id: 023ec195-7c83-4810-b009-4a11d160f934
+08/05/2026 14:28:46 - INFO - New client connected | client_address: ('127.0.0.1', 3979)
+08/05/2026 14:28:57 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 14:29:05 - INFO - User logged in successfully | username: mamad2
+08/05/2026 14:29:15 - INFO - User added to group successfully | user_id: d059576d-2198-4bdc-9e16-d6734fc66f81 | group_id: 173ff3f7-65a2-4963-9e03-d0383ba3dc55
+08/05/2026 14:29:21 - INFO - Group deleted successfully | group_id: 173ff3f7-65a2-4963-9e03-d0383ba3dc55
+08/05/2026 14:29:47 - INFO - Group created successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | name: amamamamaa | creator_id: 023ec195-7c83-4810-b009-4a11d160f934
+08/05/2026 14:30:08 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: mmmd
+08/05/2026 14:30:10 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: mdmd
+08/05/2026 14:30:54 - INFO - User added to group successfully | user_id: d059576d-2198-4bdc-9e16-d6734fc66f81 | group_id: 35229442-440a-4680-9962-2fd496a3cc3c
+08/05/2026 14:31:03 - INFO - Group chat retrieved successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c
+08/05/2026 14:31:05 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: msmsm
+08/05/2026 14:31:07 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: msmsm
+08/05/2026 14:31:07 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: msms
+08/05/2026 14:31:08 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: msms
+08/05/2026 14:31:10 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: mmmmm
+08/05/2026 14:31:17 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: 023ec195-7c83-4810-b009-4a11d160f934 | content: ddd
+08/05/2026 14:31:24 - INFO - Group chat retrieved successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c
+08/05/2026 14:31:26 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: d059576d-2198-4bdc-9e16-d6734fc66f81 | content: mfmf
+08/05/2026 14:31:26 - INFO - Message sent to group successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c | sender_id: d059576d-2198-4bdc-9e16-d6734fc66f81 | content: mfmf
+08/05/2026 14:31:36 - INFO - Group deleted successfully | group_id: 35229442-440a-4680-9962-2fd496a3cc3c
+08/05/2026 14:31:39 - WARNING - Group not found | group_id: 35229442-440a-4680-9962-2fd496a3cc3c
+08/05/2026 14:31:39 - ERROR - Error processing request | exc_info: True | error: Group not found.
+08/05/2026 14:32:04 - INFO - New client connected | client_address: ('127.0.0.1', 6520)
+08/05/2026 14:34:05 - INFO - Group created successfully | group_id: 26a431a5-ea9f-4c5f-a1a2-738df0b71073 | name: jjjjjj | creator_id: 023ec195-7c83-4810-b009-4a11d160f934
+08/05/2026 14:34:11 - INFO - User added to group successfully | user_id: d059576d-2198-4bdc-9e16-d6734fc66f81 | group_id: 26a431a5-ea9f-4c5f-a1a2-738df0b71073
+08/05/2026 14:34:24 - ERROR - Error processing request | exc_info: True | error: only admin can delete group
+08/05/2026 14:34:28 - INFO - Client disconnected | client_address: ('127.0.0.1', 3979)
+08/05/2026 14:34:28 - INFO - Client disconnected | client_address: ('127.0.0.1', 1634)
+08/05/2026 14:34:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 6520)

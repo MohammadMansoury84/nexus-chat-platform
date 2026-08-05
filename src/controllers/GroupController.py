@@ -36,3 +36,6 @@ class GroupController:
 
     def get_all_groups(self) -> list[Group]:
         return self._group_service.get_all_groups()
+
+    def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
+        return self._group_service.delete_group_by_id(user_id=user_id, group_id=group_id)

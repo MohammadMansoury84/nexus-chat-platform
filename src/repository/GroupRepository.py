@@ -21,3 +21,9 @@ class GroupRepository:
 
     def list_all(self) -> list[Group]:
         return self._groups
+
+    def remove_group(self, group: Group) -> bool:
+        if group in self._groups:
+            self._groups.remove(group)
+            return True
+        return False
