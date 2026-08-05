@@ -695,3 +695,188 @@ password
 08/05/2026 02:08:29 - INFO - Client disconnected | client_address: ('127.0.0.1', 11530)
 08/05/2026 02:08:30 - INFO - Client disconnected | client_address: ('127.0.0.1', 11522)
 08/05/2026 02:08:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 1057)
+08/05/2026 10:02:43 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:02:44 - INFO - New client connected | client_address: ('127.0.0.1', 6909)
+08/05/2026 10:02:48 - INFO - New client connected | client_address: ('127.0.0.1', 4703)
+08/05/2026 10:03:02 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:03:11 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:03:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 6909)
+08/05/2026 10:03:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 4703)
+08/05/2026 10:03:41 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:03:43 - INFO - New client connected | client_address: ('127.0.0.1', 1287)
+08/05/2026 10:03:47 - INFO - New client connected | client_address: ('127.0.0.1', 1310)
+08/05/2026 10:04:02 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:04:12 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:04:28 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 10:04:34 - INFO - User logged in successfully | username: mamad2
+08/05/2026 10:05:08 - INFO - Group created successfully | group_id: 819b6d92-b974-4a89-971c-9c0854262f1c | name: mamad1111111 | creator_id: f15b5f3d-c5be-4a19-b2e7-3231133e0cd9
+08/05/2026 10:05:44 - INFO - User added to group successfully | user_id: a7c2d5ee-4fe5-40b8-9743-b3a1c2a46b76 | group_id: 819b6d92-b974-4a89-971c-9c0854262f1c
+08/05/2026 10:06:22 - INFO - Client disconnected | client_address: ('127.0.0.1', 1287)
+08/05/2026 10:06:23 - INFO - Client disconnected | client_address: ('127.0.0.1', 1310)
+08/05/2026 10:22:02 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:22:04 - INFO - New client connected | client_address: ('127.0.0.1', 14279)
+08/05/2026 10:22:09 - INFO - New client connected | client_address: ('127.0.0.1', 9466)
+08/05/2026 10:22:24 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:22:29 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:22:46 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 10:22:53 - INFO - User logged in successfully | username: mamad2
+08/05/2026 10:23:01 - INFO - Group created successfully | group_id: 142d6711-1c71-45e8-bb42-f1c477ec7b0f | name: mamad111111 | creator_id: a92e3da4-2089-4e81-a8f2-35a6801bc523
+08/05/2026 10:23:12 - INFO - User added to group successfully | user_id: e8db6fc3-8b08-4cf2-a74e-a63596d8a5f4 | group_id: 142d6711-1c71-45e8-bb42-f1c477ec7b0f
+08/05/2026 10:23:39 - INFO - Client disconnected | client_address: ('127.0.0.1', 9466)
+08/05/2026 10:23:42 - INFO - Client disconnected | client_address: ('127.0.0.1', 14279)
+08/05/2026 10:25:20 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:25:23 - INFO - New client connected | client_address: ('127.0.0.1', 8630)
+08/05/2026 10:25:25 - INFO - New client connected | client_address: ('127.0.0.1', 8638)
+08/05/2026 10:26:10 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:26:26 - ERROR - Failed to log in user | username: mamad2
+08/05/2026 10:26:32 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:26:44 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 10:26:57 - INFO - User logged in successfully | username: mamad2
+08/05/2026 10:27:10 - INFO - Group created successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | name: uuuuuuu | creator_id: 639f3be5-d842-411e-9cdd-2a371689e147
+08/05/2026 10:27:18 - INFO - User added to group successfully | user_id: 6725df99-3075-430c-bf0e-02792f9d0556 | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335
+08/05/2026 10:27:26 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: mamad
+08/05/2026 10:27:43 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: ,,,d
+08/05/2026 10:27:44 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: f
+08/05/2026 10:27:45 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: ff
+08/05/2026 10:27:49 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: d
+08/05/2026 10:27:50 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: dd
+08/05/2026 10:27:51 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: d
+08/05/2026 10:27:53 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: ddd
+08/05/2026 10:27:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: d
+08/05/2026 10:27:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: d
+08/05/2026 10:28:09 - INFO - Group chat retrieved successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335
+08/05/2026 10:28:11 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: msms
+08/05/2026 10:28:53 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: dddd
+08/05/2026 10:28:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: d
+08/05/2026 10:28:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: d
+08/05/2026 10:28:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: d
+08/05/2026 10:28:54 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: d
+08/05/2026 10:28:58 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: dkdk
+08/05/2026 10:29:07 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 639f3be5-d842-411e-9cdd-2a371689e147 | content: dd
+08/05/2026 10:29:12 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: dsks
+08/05/2026 10:29:13 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: s
+08/05/2026 10:29:13 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: s
+08/05/2026 10:29:14 - INFO - Message sent to group successfully | group_id: 5fa5b3de-5f55-49c2-8e91-e2c60f89f335 | sender_id: 6725df99-3075-430c-bf0e-02792f9d0556 | content: s
+08/05/2026 10:29:17 - INFO - Client disconnected | client_address: ('127.0.0.1', 8638)
+08/05/2026 10:29:17 - INFO - Client disconnected | client_address: ('127.0.0.1', 8630)
+08/05/2026 10:31:35 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:31:38 - INFO - New client connected | client_address: ('127.0.0.1', 9095)
+08/05/2026 10:31:50 - INFO - New client connected | client_address: ('127.0.0.1', 9123)
+08/05/2026 10:32:01 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:32:05 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:32:19 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 10:32:25 - INFO - User logged in successfully | username: mamad2
+08/05/2026 10:32:34 - INFO - Group created successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | name: mamadeeeeee | creator_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f
+08/05/2026 10:32:39 - INFO - User added to group successfully | user_id: f7ef08c2-1570-4290-a198-14470924ac73 | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef
+08/05/2026 10:32:49 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: mamad
+08/05/2026 10:32:51 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: mdmd
+08/05/2026 10:32:52 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: mdmdm
+08/05/2026 10:33:00 - INFO - Group chat retrieved successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef
+08/05/2026 10:33:03 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: f7ef08c2-1570-4290-a198-14470924ac73 | content: mama
+08/05/2026 10:33:05 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: mjdmjd
+08/05/2026 10:33:09 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: f7ef08c2-1570-4290-a198-14470924ac73 | content: mdnd
+08/05/2026 10:33:14 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: f7ef08c2-1570-4290-a198-14470924ac73 | content: mdnd
+08/05/2026 10:33:15 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: f7ef08c2-1570-4290-a198-14470924ac73 | content: ndnd
+08/05/2026 10:33:18 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: jdjd
+08/05/2026 10:33:19 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: dnjdj
+08/05/2026 10:33:21 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: nddnd
+08/05/2026 10:33:22 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: n ddn
+08/05/2026 10:33:24 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: f7ef08c2-1570-4290-a198-14470924ac73 | content: ndnd
+08/05/2026 10:33:45 - INFO - New client connected | client_address: ('127.0.0.1', 4192)
+08/05/2026 10:33:59 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/05/2026 10:34:06 - INFO - User logged in successfully | username: mamad3
+08/05/2026 10:34:48 - WARNING - User is not the creator of the group | creator_id: f7ef08c2-1570-4290-a198-14470924ac73 | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef
+08/05/2026 10:34:48 - ERROR - Error processing request | exc_info: True | error: only the creator can add members to the group.
+08/05/2026 10:34:57 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: 540dd9fc-4ee3-41a2-9be0-40a6f703812f | content: smsms
+08/05/2026 10:35:48 - INFO - User added to group successfully | user_id: aededd3f-2992-4730-b3c1-bd5e1e384fe9 | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef
+08/05/2026 10:36:00 - INFO - Group chat retrieved successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef
+08/05/2026 10:36:02 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: aededd3f-2992-4730-b3c1-bd5e1e384fe9 | content: mamad
+08/05/2026 10:36:03 - INFO - Message sent to group successfully | group_id: bed8729c-7f34-4e47-b2cb-7f800033f9ef | sender_id: aededd3f-2992-4730-b3c1-bd5e1e384fe9 | content: ndnd
+08/05/2026 10:36:31 - INFO - Client disconnected | client_address: ('127.0.0.1', 4192)
+08/05/2026 10:36:32 - INFO - Client disconnected | client_address: ('127.0.0.1', 9123)
+08/05/2026 10:36:33 - INFO - Client disconnected | client_address: ('127.0.0.1', 9095)
+08/05/2026 10:44:36 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 10:44:39 - INFO - New client connected | client_address: ('127.0.0.1', 11858)
+08/05/2026 10:44:42 - INFO - New client connected | client_address: ('127.0.0.1', 11868)
+08/05/2026 10:44:48 - INFO - New client connected | client_address: ('127.0.0.1', 11885)
+08/05/2026 10:45:16 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 10:45:21 - INFO - User logged in successfully | username: mamad1
+08/05/2026 10:45:41 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 10:45:47 - INFO - User logged in successfully | username: mamad2
+08/05/2026 10:45:58 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+email
+  value is not a valid email address: An email address must have an @-sign. [type=value_error, input_value='mamad3', input_type=str]
+08/05/2026 10:46:10 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/05/2026 10:46:14 - INFO - User logged in successfully | username: mamad3
+08/05/2026 10:46:26 - INFO - Group created successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | name: hhhhhhhhh | creator_id: 2b07a776-cb09-496a-b264-f12f431f5bbc
+08/05/2026 10:46:33 - INFO - User added to group successfully | user_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1
+08/05/2026 10:46:55 - INFO - User added to group successfully | user_id: 28b910f4-6fcb-4168-8b01-1dd1a3d1bded | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1
+08/05/2026 10:47:04 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: mamad
+08/05/2026 10:47:06 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: mamad
+08/05/2026 10:47:07 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: mamad
+08/05/2026 10:47:14 - INFO - Group chat retrieved successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1
+08/05/2026 10:47:16 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: mamad
+08/05/2026 10:47:18 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: dnnd
+08/05/2026 10:47:18 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: ndnd
+08/05/2026 10:47:19 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 2b07a776-cb09-496a-b264-f12f431f5bbc | content: ndnd
+08/05/2026 10:47:21 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndnd
+08/05/2026 10:47:22 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndnd
+08/05/2026 10:47:23 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndnd
+08/05/2026 10:47:33 - INFO - Group chat retrieved successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1
+08/05/2026 10:47:34 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 28b910f4-6fcb-4168-8b01-1dd1a3d1bded | content: nddn
+08/05/2026 10:47:35 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 28b910f4-6fcb-4168-8b01-1dd1a3d1bded | content: ndnd
+08/05/2026 10:47:38 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: bdbd
+08/05/2026 10:47:39 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: bdbbd
+08/05/2026 10:47:41 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndndn
+08/05/2026 10:47:41 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndnd
+08/05/2026 10:47:42 - INFO - Message sent to group successfully | group_id: cdb1e910-277a-4063-9f74-347b0daf39b1 | sender_id: 18f894be-4a99-4375-8fc3-fa8a79c426a6 | content: ndnd
+08/05/2026 10:47:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 11885)
+08/05/2026 10:47:47 - INFO - Client disconnected | client_address: ('127.0.0.1', 11868)
+08/05/2026 10:47:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 11858)
+08/05/2026 11:18:16 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 11:18:18 - INFO - New client connected | client_address: ('127.0.0.1', 14287)
+08/05/2026 11:18:21 - INFO - New client connected | client_address: ('127.0.0.1', 14301)
+08/05/2026 11:18:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 14287)
+08/05/2026 11:18:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 14301)
+08/05/2026 11:21:47 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 11:21:49 - INFO - New client connected | client_address: ('127.0.0.1', 10186)
+08/05/2026 11:21:51 - INFO - New client connected | client_address: ('127.0.0.1', 10197)
+08/05/2026 11:22:14 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 11:22:19 - INFO - User logged in successfully | username: mamad1
+08/05/2026 11:23:32 - INFO - Client disconnected | client_address: ('127.0.0.1', 10197)
+08/05/2026 11:23:33 - INFO - Client disconnected | client_address: ('127.0.0.1', 10186)
+08/05/2026 11:23:36 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 11:23:38 - INFO - New client connected | client_address: ('127.0.0.1', 3415)
+08/05/2026 11:23:40 - INFO - New client connected | client_address: ('127.0.0.1', 3425)
+08/05/2026 11:23:50 - INFO - User created | username: mamad1 | email: mamad1@gmail.con
+08/05/2026 11:24:03 - INFO - User logged in successfully | username: mamad1
+08/05/2026 11:24:59 - INFO - Client disconnected | client_address: ('127.0.0.1', 3415)
+08/05/2026 11:25:00 - INFO - Client disconnected | client_address: ('127.0.0.1', 3425)
+08/05/2026 11:25:04 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 11:25:12 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/05/2026 11:25:13 - INFO - New client connected | client_address: ('127.0.0.1', 7373)
+08/05/2026 11:25:15 - INFO - New client connected | client_address: ('127.0.0.1', 7387)
+08/05/2026 11:25:25 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/05/2026 11:25:53 - INFO - User logged in successfully | username: mamad1
+08/05/2026 11:26:27 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/05/2026 11:26:31 - INFO - User logged in successfully | username: mamad2
+08/05/2026 11:27:05 - WARNING - No chat history found
+08/05/2026 11:27:42 - INFO - Group created successfully | group_id: 25aa4769-1c65-4609-9dc8-9ae1021d3781 | name: eeeee | creator_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:14 - WARNING - No chat history found
+08/05/2026 11:28:15 - INFO - PrivateChat create successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:15 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:17 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:22 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:24 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:25 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:26 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:27 - INFO - Message sent successfully | sender_id: 1da8e0c7-1315-486a-bce7-2535012d2f74 | receiver_id: 183c0b1e-51c6-44f3-b398-352b3b18af71
+08/05/2026 11:28:29 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:29 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:30 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:31 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:32 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:32 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:33 - INFO - Message sent successfully | sender_id: 183c0b1e-51c6-44f3-b398-352b3b18af71 | receiver_id: 1da8e0c7-1315-486a-bce7-2535012d2f74
+08/05/2026 11:28:58 - INFO - Client disconnected | client_address: ('127.0.0.1', 7387)
+08/05/2026 11:29:00 - INFO - Client disconnected | client_address: ('127.0.0.1', 7373)

@@ -207,6 +207,7 @@ class RequestHandler:
             sender_id=dto.sender_id,
             content=dto.message_content,
         )
+
         group = self._group_controller.get_group_by_id(group_id=dto.group_id)
         sender = self._auth_controller.get_user_by_id(user_id=dto.sender_id)
 
@@ -221,8 +222,9 @@ class RequestHandler:
                         "event": "group_message",
                         "data": {
                             "group_id": str(dto.group_id),
+                            "group_name": group.name,
                             "sender_username": sender.username if sender else "Unknown",
-                            "message": message.content,
+                            "content": message.content,
                         },
                     },
                 )

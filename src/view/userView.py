@@ -9,6 +9,7 @@ from src.entities.DTO.Request.SendMessageTOGroupRequest import SendMessageToGrou
 from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
+
 from src.entities.DTO.Request.SignupRequest import SignupRequest
 from src.ServerNetwork.AsyncClient import AsyncClient
 from uuid import UUID
@@ -24,8 +25,13 @@ class UserView:
         self._client = client
         self._current_user_id: UUID | None = None
         self._current_username: str | None = None
+
         self._active_private_user_id: UUID | None = None
         self._active_private_username: str | None = None
+
+        self._active_group_id :UUID | None = None
+        self._active_group_name:str | None = None
+
         self._client.set_event_callback(self._show_event)
 
     async def run(self) -> None:
@@ -179,16 +185,11 @@ class UserView:
                     message_content=content,
                 )
 
-                result = await self._client.send_request(
+                await self._client.send_request(
                     RequestType.SEND_PRIVATE_MESSAGE,
                     dto.model_dump(),
                 )
 
-                if not result.get("delivered", True):
-                    print(
-                        f"{selected_username} is currently offline. "
-                        "The message was saved."
-                    )
 
     async def _list_users(self) -> None:
         self._require_login()
@@ -216,45 +217,19 @@ class UserView:
 
 
     async def _show_private_chat(self) -> None:
-        current_user_id = self._require_login()
+        self._require_login()
 
         selected_user = await self._select_user(
-            title="Choose User For Private Chat"
+            "Choose user for show Private Chat"
         )
 
         if selected_user is None:
             return
 
-        dto = GetChatRequest(
-            user1_id=current_user_id,
-            user2_id=UUID(selected_user["id"]),
-        )
-
-        result = await self._client.send_request(
-            RequestType.GET_PRIVATE_CHAT,
-            dto.model_dump()
-        )
-
-        chat = result.get("chat", [])
-
-        if not chat:
-            print(
-                f"You have no chat history with "
-                f"{selected_user['username']}."
-            )
-            return
-
-        print(
-            f"\n========== Chat with "
-            f"{selected_user['username']} =========="
-        )
-
-        for item in chat:
-            username = item.get("username", "Unknown")
-            message = item.get("message", "")
-
-            print(f"{username}: {message}")
-
+        await self._show_private_chat_history(
+            selected_user
+    )
+    
 
     async def _list_groups(self) -> None:
         
@@ -324,52 +299,106 @@ class UserView:
 
 
     async def _send_group_message(self) -> None:
+        current_user_id=self._require_login()
         print("\n=========send group message===========")
-        user_id = self._require_login()
-        dto = SendMessageToGroupRequest(
-            group_id=UUID(await self._input("Group UUID: ")),
-            sender_id=user_id,
-            message_content=await self._input("Message: "),
-        )
-        print(await self._client.send_request(RequestType.SEND_MESSAGE_TO_GROUP, dto))
+        while True:
+            selected_group=await self._select_group(title="Choose group For Chat")
+            if selected_group is None:
+                return
+            
+            selected_group_id=UUID(selected_group["id"])
+            selected_group_name=selected_group["name"]
 
-        
+            self._active_group_id=selected_group_id
+            self._active_group_name=selected_group_name
+
+            print(f"\n========== group Chat {selected_group_name} ==========")
+            print("Type 'exit' to return to menu.")
+            print("Type 'change' to choose another group.")
+
+            await self._show_group_chat_history(selected_group)
+
+            while True:
+
+                print(
+                    f"{self._current_username}: ",
+                    end="",
+                    flush=True
+                )
+
+                content = await self._input("")
+
+                command = content.strip().lower()
+
+
+                if command == "exit":
+
+                    self._active_group_id = None
+                    self._active_group_name = None
+
+                    print("group chat closed.")
+                    return
+
+                if command == "change":
+
+                    self._active_group_id = None
+                    self._active_group_name = None
+
+                    break
+
+                if not content.strip():
+                    print("Message cannot be empty.")
+                    continue
+
+                dto=SendMessageToGroupRequest(
+                    sender_id=current_user_id,
+                    group_id=selected_group_id,
+                    message_content=content
+                )
+
+                await self._client.send_request(RequestType.SEND_MESSAGE_TO_GROUP,dto.model_dump())
+
+
+                
     async def _show_group_chat(self) -> None:
-        print("\n=========show group chat===========")
         self._require_login()
-        dto = GetGroupChatRequest(
-            group_id=UUID(await self._input("Group UUID: ")),
-        )
-        result = await self._client.send_request(RequestType.GET_GROUP_CHAT, dto)
-        if result :
-            print(result)
-        else:
-            print("There is no history of this in this group.")
+        selected_group= await self._select_group("Choose group for show group Chat")
+        if selected_group is None:
+            return
+        await self._show_group_chat_history(selected_group=selected_group)
+        
+
+
+
+
+
+
 
 
     async def _show_event(self, message: dict) -> None:
         event = message.get("event")
         data = message.get("data", {})
 
-        if event == "private_message":
-            sender_id_text = data.get("sender_id")
+        content = data.get(
+                "content",
+                "")
 
-            sender_username = data.get(
+        sender_username = data.get(
                 "sender_username",
                 "Unknown",
             )
 
-            content = data.get(
-                "content",
-                "",
-            )
+
+        if event == "private_message":
+
+            sender_id_text = data.get("sender_id")
 
             try:
                 sender_id = UUID(sender_id_text)
             except (ValueError, TypeError):
                 sender_id = None
 
-            
+
             if sender_id == self._active_private_user_id:
 
                 print(
@@ -380,7 +409,7 @@ class UserView:
             else:
                 print(
                     f"\n[New private message from "
-                    f"{sender_username}] {content}"
+                    f"{sender_username}]: {content}"
                 )
 
                 print(
@@ -392,11 +421,30 @@ class UserView:
 
 
         if event == "group_message":
-            print(
-                f"\n[Group {data.get('group_id')}] "
-                f"{data.get('sender_username')}: "
-                f"{data.get('content')}"
-            )
+
+            group_id_text = data.get("group_id")
+            try:
+                group_id = UUID(group_id_text)
+            except (ValueError, TypeError):
+                group_id = None
+
+            if group_id==self._active_group_id:
+                
+                print(
+                    f"\n{sender_username}: {content}"
+                )
+            else:
+                print(
+                    f"\n[New group message from "
+                    f"{sender_username}]: {content}"
+                )
+
+                print(
+                    "Choose 'Send group message' "
+                    "to open the conversation."
+                )
+                
+
             return
 
 
@@ -526,309 +574,41 @@ class UserView:
         print("=======================================")
 
 
+    async def _show_group_chat_history(self,selected_group:dict)->None:
+        self._require_login()
+        dto=GetGroupChatRequest(
+            group_id=UUID(selected_group["id"])
+        )
+
+        result=await self._client.send_request(
+            RequestType.GET_GROUP_CHAT,
+            dto.model_dump(),
+        )
+
+        chat = result.get("chat", [])
+
+        
+        if not chat:
+            print(
+                f"group have no chat history "
+            )
+            return
+
+        print("\n========== Previous Messages ==========")
+
+        for item in chat:
+            username = item.get("username", "Unknown")
+            message = item.get("message", "")
+
+            print(f"{username}: {message}")
+
+        print("=======================================")
+
+
+            
+
+
     def _require_login(self) -> UUID:
         if self._current_user_id is None:
             raise RuntimeError("Please login first.")
         return self._current_user_id
-
-
-
-
-
-
-
-
-
-    # def show_groups(self) -> None:
-    #     if not self._require_login():
-    #         return
-
-    #     print("\n========== Groups ==========")
-
-    #     groups = self.current_user.joined_groups
-
-    #     if not groups:
-    #         print("No groups have been found.")
-    #         return
-
-    #     for index, group in enumerate(groups, start=1):
-    #         print(f"{index}. {group.name}")
-    # def change_user(self) -> None:
-    #     if not self._require_login():
-    #         return
-
-    #     if not self.login_users:
-    #         print("No logged-in users.")
-    #         return
-
-    #     print("\n========== Change User ==========")
-
-    #     users = self._get_other_logged_in_users()
-
-    #     if users:
-    #         user = self._select_user(users=users, title="Choose current user")
-
-    #         if user is None:
-    #             print("user not found")
-    #             return
-
-    #         self.current_user = user
-    #         print(f"Current user changed to {user.username}.")
-    #     else:
-    #         print("No other logged-in users are available.")
-
-
-
-
-    # def show_logged_in_users(self) -> None:
-    #     if not self._require_login():
-    #         return
-
-    #     if not self.login_users:
-    #         print("No logged-in users.")
-    #         return
-
-    #     print("\n========== Logged-in Users ==========")
-
-    #     for index, user in enumerate(self.login_users, start=1):
-    #         current_sign = ""
-
-    #         if self.current_user is not None:
-    #             if user.id == self.current_user.id:
-    #                 current_sign = " <- Current User"
-
-    #         print(f"{index}. {user.username}{current_sign}")
-
-
-
-        # def add_user_to_group(self) -> None:
-
-    #     print("\n========== Add User to Group ==========")
-
-    #     group = self._select_group(
-    #         groups=self.current_user.groups_created, title="Choose a group"
-    #     )
-
-    #     if group is None:
-    #         print("group not found")
-    #         return
-
-    #     available_users = []
-
-    #     for user in self.login_users:
-    #         is_not_member = True
-
-    #         for member in group.members:
-    #             if member.id == user.id:
-    #                 is_not_member = False
-    #                 break
-
-    #         if is_not_member:
-    #             available_users.append(user)
-
-    #     if not available_users:
-    #         print("All registered users are already members of this group.")
-    #         return
-
-    #     user = self._select_user(users=available_users, title="Choose a user to add")
-
-    #     if user is None:
-    #         print("user not found")
-    #         return
-
-
-
-        # def send_message_to_group(self) -> None:
-
-    #     if not self._require_login():
-    #         return
-
-    #     groups = self._merge_list(
-    #         list1=self.current_user.groups_created, list2=self.current_user.joined_groups
-    #     )
-
-    #     if not groups:
-    #         print("you have not any group in your account")
-    #         return
-
-    #     print("\n========== Send Group Message ==========")
-
-    #     group = self._select_group(groups=groups, title="Choose a group")
-
-    #     if group is None:
-    #         print("group not found")
-    #         return
-
-    #     print(f"\n--- Group: {group.name} ---")
-    #     print("Write 'exit' to leave the group chat.")
-    #     print("Write 'change' to change group.")
-    #     print("---------------------------")
-
-    #     group_history = self._group_controller.get_group_chat(group.id)
-    #     if group_history:
-    #         print("\n[Previous Messages]")
-    #         self._print_chat(group_history)
-    #         print("-------------------\n")
-
-    #     else:
-    #         print("There are no messages in this group.")
-
-    #     while True:
-    #         content = input(f"{self.current_user.username}: ").strip()
-
-    #         if content.lower() == "exit":
-    #             print("Group chat closed.")
-    #             break
-
-    #         if content.lower() == "change":
-    #             new_group = self._select_group(
-    #                 users=groups, title="Who do you want to message?"
-    #             )
-
-    #             if new_group is not None:
-    #                 group = new_group
-    #                 print(f"\n--- Chat with {group.name} ---")
-
-    #                 chat_history = self._group_controller.get_group_chat(group.id)
-    #                 if chat_history:
-    #                     print("\n[Previous Messages]")
-    #                     self._print_chat(chat_history)
-    #                     print("-------------------\n")
-    #                     continue
-    #                 print("There are no messages in this group.")
-
-    #         if not content:
-    #             print("Message cannot be empty.")
-    #             continue
-
-    #         try:
-    #             self._group_controller.send_message_to_group(
-    #                 group_id=group.id, sender_id=self.current_user.id, content=content
-    #             )
-
-    #         except Exception as e:
-    #             print(f"Message could not be sent: {e}")
-
-
-
-
-        # def show_group_chat(self) -> None:
-
-    #     if not self._require_login():
-    #         return
-
-    #     member_groups = [
-    #         group
-    #         for group in self._group_controller.get_all_groups()
-    #         if self.current_user in group.members
-    #     ]
-
-    #     if not member_groups:
-    #         print("You are not a member of any group.")
-    #         return
-
-    #     print("\n========== Group Chat ==========")
-
-    #     group = self._select_group(groups=member_groups, title="Choose a group")
-
-    #     if group is None:
-    #         print("group not found")
-    #         return
-
-    #     chat = self._group_controller.get_group_chat(group.id)
-
-    #     if chat:
-    #         print(f"\n========== {group.name} ==========")
-    #         self._print_chat(chat)
-    #     else:
-    #         print("There is no history of this in this group.")
-
-
-
-        # def _require_login(self) -> bool:
-
-    #     if self.current_user is None:
-    #         print("Please login first.")
-    #         return False
-
-    #     return True
-
-    # def _get_other_logged_in_users(self) -> list[User]:
-
-    #     if self.current_user is None:
-    #         return []
-
-    #     return [user for user in self.login_users if user.id != self.current_user.id]
-
-    # def _select_user(self, users: list[User], title: str) -> User | None:
-
-    #     if not users:
-    #         print("No users are available.")
-    #         return None
-
-    #     print(f"\n{title}:")
-
-    #     for index, user in enumerate(users, start=1):
-    #         print(f"{index}. {user.username}")
-
-    #     try:
-    #         choice = int(input("Choose user: ").strip())
-
-    #         if choice < 1 or choice > len(users):
-    #             print("Invalid choice.")
-    #             return None
-
-    #         return users[choice - 1]
-
-    #     except ValueError:
-    #         print("Please enter a number.")
-    #         return None
-
-    # def _select_group(self, groups: list[Group], title: str) -> Group | None:
-
-    #     if not groups:
-    #         print("No groups are available.")
-    #         return None
-
-    #     print(f"\n{title}:")
-
-    #     for index, group in enumerate(groups, start=1):
-    #         print(f"{index}. {group.name}")
-
-    #     try:
-    #         choice = int(input("Choose group: ").strip())
-
-    #         if choice < 1 or choice > len(groups):
-    #             print("Invalid choice.")
-    #             return None
-
-    #         return groups[choice - 1]
-
-    #     except ValueError:
-    #         print("Please enter a number.")
-    #         return None
-
-    # @staticmethod
-    # def _print_chat(chat: list[dict]) -> None:
-
-    #     if not chat:
-    #         print("No messages found.")
-    #         return
-
-    #     for item in chat:
-    #         username = item.get("username", "Unknown")
-    #         message = item.get("message", "")
-    #         print(f"{username}: {message}")
-
-    # def _merge_list(self, list1: list[Group], list2: list[Group]):
-    #     merge_list = []
-    #     seen_ids = set()
-
-    #     for group in list1 + list2:
-    #         if group.id not in seen_ids:
-    #             merge_list.append(group)
-    #             seen_ids.add(group.id)
-
-    #     return merge_list
-
-
