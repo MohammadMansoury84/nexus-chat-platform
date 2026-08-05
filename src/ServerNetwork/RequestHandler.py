@@ -117,16 +117,14 @@ class RequestHandler:
 
         sender = self._auth_controller.get_user_by_id(dto.sender_id)
 
-        delivered = await self._connectionsManagement.send_to_user(
-            dto.receiver_id,
-            {
-                "message_type": "event",
-                "event": "private_message",
-                "data": {
-                    "sender_id": str(dto.sender_id),
-                    "sender_username": (sender.username if sender else "Unknown"),
-                    "content": message.content,
-                },
+        delivered = await self._send_request(
+            user_id=dto.receiver_id,
+            message_type="event",
+            event="private_message",
+            date={
+                "sender_id": str(dto.sender_id),
+                "sender_username": (sender.username if sender else "Unknown"),
+                "content": message.content,
             },
         )
 
@@ -181,17 +179,27 @@ class RequestHandler:
 
         group = self._group_controller.get_group_by_id(group_id=dto.group_id)
 
-        await self._connectionsManagement.send_to_user(
-            dto.user_id,
-            {
-                "message_type": "event",
-                "event": "added_to_group",
-                "data": {
-                    "group_id": str(dto.group_id),
-                    "group_name": group.name,
-                },
+        # await self._connectionsManagement.send_to_user(
+        #     dto.user_id,
+        #     {
+        #         "message_type": "event",
+        #         "event": "added_to_group",
+        #         "data": {
+        #             "group_id": str(dto.group_id),
+        #             "group_name": group.name,
+        #         },
+        #     },
+        # )
+        await self._send_request(
+            user_id=dto.user_id,
+            message_type="event",
+            event="added_to_group",
+            date={
+                "group_id": str(dto.group_id),
+                "group_name": group.name,
             },
         )
+
         return {"message": result}
 
     async def send_group_message(self, data: dict, writer: asyncio.StreamWriter) -> dict:
@@ -216,17 +224,15 @@ class RequestHandler:
             for member in group.members:
                 if member.id == dto.sender_id:
                     continue
-                await self._connectionsManagement.send_to_user(
-                    member.id,
-                    {
-                        "message_type": "event",
-                        "event": "group_message",
-                        "data": {
-                            "group_id": str(dto.group_id),
-                            "group_name": group.name,
-                            "sender_username": sender.username if sender else "Unknown",
-                            "content": message.content,
-                        },
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="group_message",
+                    date={
+                        "group_id": str(dto.group_id),
+                        "group_name": group.name,
+                        "sender_username": sender.username if sender else "Unknown",
+                        "content": message.content,
                     },
                 )
 
@@ -271,23 +277,68 @@ class RequestHandler:
             for member in members:
                 if member.id == current_user_id:
                     continue
-
-                await self._connectionsManagement.send_to_user(
-                    member.id,
-                    {
-                        "message_type": "event",
-                        "event": "delete_group",
-                        "data": {
-                            "group_id": str(dto.group_id),
-                            "group_name": group.name,
-                            "content": f"Group {group.name} deleted successfully.",
-                        },
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="delete_group",
+                    date={
+                        "group_id": str(dto.group_id),
+                        "group_name": group.name,
+                        "content": f"Group {group.name} deleted successfully.",
                     },
                 )
 
         return {
             "message": "Group deleted successfully.",
             "deleted": result,
+        }
+
+    async def leave_private_chat(self, data: dict, writer: asyncio.StreamWriter) -> dict:
+        user_id = self._connectionsManagement.get_logged_in_users(writer=writer)
+
+        other_user_id = UUID(data["other_user_id"])
+
+        current_user = self._auth_controller.get_user_by_id(user_id=user_id)
+
+        result = await self._send_request(
+            user_id=other_user_id,
+            message_type="event",
+            event="exit_private_chat",
+            date={
+                "user_id": str(user_id),
+                "username": (current_user.username if current_user else "Unknown"),
+            },
+        )
+        return {
+            "message": "Private chat closed.",
+            "delivered": result,
+        }
+
+    async def leave_group_chat(self, data: dict, writer: asyncio.StreamWriter) -> dict:
+        user_id = self._connectionsManagement.get_logged_in_users(writer=writer)
+        user = self._auth_controller.get_user_by_id(user_id=user_id)
+
+        group_id = UUID(data["group_id"])
+        group = self._group_controller.get_group_by_id(group_id=group_id)
+        members = group.members
+
+        for member in members:
+            if member.id == user_id:
+                continue
+            await self._send_request(
+                user_id=member.id,
+                message_type="event",
+                event="exit_group_chat",
+                date={
+                    "user_id": str(user_id),
+                    "username": user.username,
+                    "group_id": group_id,
+                    "group_name": group.name,
+                },
+            )
+
+        return {
+            "message": "group chat closed.",
         }
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:
@@ -302,3 +353,11 @@ class RequestHandler:
         current_user = self._require_login(writer)
         if current_user != request_user_id:
             raise ValueError("Request user does not match logged-in user.")
+
+    async def _send_request(
+        self, user_id: UUID, message_type: str, event: str, date: dict
+    ) -> bool:
+        return await self._connectionsManagement.send_to_user(
+            user_id=user_id,
+            message={"message_type": message_type, "event": event, "data": date},
+        )

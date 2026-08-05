@@ -165,15 +165,37 @@ class UserView:
                 command = content.strip().lower()
 
                 if command == "exit":
+
+                    await self._client.send_request(
+                        request_type=RequestType.LEAVE_PRIVATE_CHAT,
+                        data=
+                        {
+                            "other_user_id": str(selected_user_id)
+                        }
+                    )
+
                     self._active_private_user_id = None
                     self._active_private_username = None
+
+
 
                     print("Private chat closed.")
                     return
 
                 if command == "change":
+
+                    await self._client.send_request(
+                        request_type=RequestType.LEAVE_PRIVATE_CHAT,
+                        data=
+                        {
+                            "other_user_id": str(selected_user_id)
+                        }
+                    )
+
                     self._active_private_user_id = None
                     self._active_private_username = None
+
+
 
                     break
 
@@ -332,6 +354,13 @@ class UserView:
 
                 if command == "exit":
 
+                    await self._client.send_request(
+                        request_type=RequestType.LEAVE_GROUP_CHAT,
+                        data={"group_id":selected_group_id},
+                    )
+
+
+
                     self._active_group_id = None
                     self._active_group_name = None
 
@@ -339,6 +368,11 @@ class UserView:
                     return
 
                 if command == "change":
+
+                    await self._client.send_request(
+                        request_type=RequestType.LEAVE_GROUP_CHAT,
+                        data={"group_id":selected_group_id},
+                    )
 
                     self._active_group_id = None
                     self._active_group_name = None
@@ -475,13 +509,50 @@ class UserView:
                 f"{data.get('group_name')}"
             )
 
+            return
+        
+
         if event == "delete_group":
             print(
                 f"\n group was deleted "
                 f"{data.get('group_name')}"
             )
-            
-    
+            return
+        
+
+        if event == "exit_private_chat":
+            user_id_text = data.get("user_id")
+
+            try:
+                user_id = UUID(user_id_text)
+            except (ValueError, TypeError):
+                user_id = None
+
+
+            if user_id == self._active_private_user_id:
+                print(
+                    f"\n {data.get("username")} exit chat "
+                )
+
+            return
+        
+
+        if event =="exit_group_chat":
+
+            group_id_text = data.get("group_id")
+
+            try:
+                group_id = UUID(group_id_text)
+            except (ValueError, TypeError):
+                group_id = None
+
+            if group_id==self._active_group_id:
+
+                print(
+                    f"\n {data.get("username")} exit group chat "
+                )
+
+                return
 
     @staticmethod
     async def _input(prompt: str) -> str:
