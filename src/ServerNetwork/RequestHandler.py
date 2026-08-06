@@ -14,6 +14,7 @@ from src.entities.DTO.Request.SendMessageTOGroupRequest import SendMessageToGrou
 from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
+from src.entities.DTO.Request.ShowGroupMembersRequest import ShowGroupMembersRequest
 from src.entities.DTO.Request.SignupRequest import SignupRequest
 from src.entities.MessageStatus import MessageStatus
 from src.ServerNetwork.ConnectionManagement import ConnectionManagement
@@ -179,17 +180,6 @@ class RequestHandler:
 
         group = self._group_controller.get_group_by_id(group_id=dto.group_id)
 
-        # await self._connectionsManagement.send_to_user(
-        #     dto.user_id,
-        #     {
-        #         "message_type": "event",
-        #         "event": "added_to_group",
-        #         "data": {
-        #             "group_id": str(dto.group_id),
-        #             "group_name": group.name,
-        #         },
-        #     },
-        # )
         await self._send_request(
             user_id=dto.user_id,
             message_type="event",
@@ -339,6 +329,15 @@ class RequestHandler:
 
         return {
             "message": "group chat closed.",
+        }
+
+    async def show_group_members(self, data: dict, writer: asyncio.StreamWriter):
+        self._require_login(writer=writer)
+        dto = ShowGroupMembersRequest(**data)
+        return {
+            "users": self._group_controller.show_group_member(
+                user_id=dto.user_id, group_id=dto.group_id
+            )
         }
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:

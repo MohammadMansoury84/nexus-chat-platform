@@ -16,3 +16,4 @@ class RequestType(StrEnum):
     DELETE_GROUP_BY_ID = "delete_group_by_id"
     LEAVE_PRIVATE_CHAT = "leave_private_chat"
     LEAVE_GROUP_CHAT = "leave_group_chat"
+    SHOW_GROUP_MEMBER = "show_group_members"

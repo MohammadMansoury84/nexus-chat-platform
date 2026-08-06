@@ -10,6 +10,7 @@ from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
 from src.entities.DTO.Request.DeleteGroupByIdRequest import DeleteGroupByIdRequest
+from src.entities.DTO.Request.ShowGroupMembersRequest import ShowGroupMembersRequest
 from src.entities.DTO.Request.SignupRequest import SignupRequest
 from src.ServerNetwork.AsyncClient import AsyncClient
 from uuid import UUID
@@ -64,8 +65,9 @@ class UserView:
         print("8. Add user to group")
         print("9. Send group message")
         print("10. Show group chat")
-        print("11.delete group")
-        print("12. Logout")
+        print("11. delete group")
+        print("12. show group members")
+        print("13. Logout")
 
 
     async def _run_choice(self, choice: str) -> bool:
@@ -81,11 +83,9 @@ class UserView:
             "9": self._send_group_message,
             "10": self._show_group_chat,
             "11":self.delete_group,
-            "12": self._logout,
+            "12":self.show_group_members,
+            "13": self._logout,
         }
-
-        if choice == "12":
-            return True
 
         action = actions.get(choice)
         if action is None:
@@ -336,6 +336,7 @@ class UserView:
             print(f"\n========== group Chat {selected_group_name} ==========")
             print("Type 'exit' to return to menu.")
             print("Type 'change' to choose another group.")
+            print("Type 'members' to see group members.")
 
             await self._show_group_chat_history(selected_group)
 
@@ -379,6 +380,11 @@ class UserView:
 
                     break
 
+                if command == "members":
+                    await self._show_members(user_id=self._current_user_id,group_id=self._active_group_id)
+                    return
+
+
                 if not content.strip():
                     print("Message cannot be empty.")
                     continue
@@ -420,6 +426,28 @@ class UserView:
                 "Group deleted."
             )
         )
+
+    async def show_group_members(self)->None:
+        group=await self._select_group("Choose group for show group member") 
+        if group is not None:
+            dto=ShowGroupMembersRequest(user_id=self._current_user_id,group_id=group.get("id"))
+            result=await self._client.send_request(RequestType.SHOW_GROUP_MEMBER,dto.model_dump())
+            members = result.get("users", [])
+            for index, member in enumerate(members, start=1):
+                print(f"{index}. {member['username']}")
+
+    async def _show_members(self,user_id:UUID,group_id):
+
+        dto=ShowGroupMembersRequest(user_id=user_id,group_id=group_id)
+        result=await self._client.send_request(RequestType.SHOW_GROUP_MEMBER,dto.model_dump())
+        members = result.get("users", [])
+        for index, member in enumerate(members, start=1):
+            print(f"{index}. {member['username']}")
+
+
+
+
+
                 
     async def _show_group_chat(self) -> None:
         self._require_login()
@@ -553,6 +581,8 @@ class UserView:
                 )
 
                 return
+
+    
 
     @staticmethod
     async def _input(prompt: str) -> str:

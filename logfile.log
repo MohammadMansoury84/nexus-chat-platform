@@ -1307,3 +1307,92 @@ email
 08/05/2026 17:33:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 5314)
 08/05/2026 17:33:47 - INFO - Client disconnected | client_address: ('127.0.0.1', 5305)
 08/05/2026 17:33:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 5266)
+08/06/2026 16:54:44 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 16:54:47 - INFO - New client connected | client_address: ('127.0.0.1', 5469)
+08/06/2026 16:54:51 - INFO - New client connected | client_address: ('127.0.0.1', 7164)
+08/06/2026 16:55:06 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 16:55:11 - INFO - User logged in successfully | username: mamad1
+08/06/2026 16:55:24 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/06/2026 16:55:28 - INFO - User logged in successfully | username: mamad2
+08/06/2026 16:55:33 - INFO - Client disconnected | client_address: ('127.0.0.1', 5469)
+08/06/2026 16:56:26 - INFO - Client disconnected | client_address: ('127.0.0.1', 7164)
+08/06/2026 16:56:29 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 16:56:32 - INFO - New client connected | client_address: ('127.0.0.1', 10582)
+08/06/2026 16:56:46 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 16:56:55 - INFO - User logged in successfully | username: mamad1
+08/06/2026 16:57:01 - INFO - New client connected | client_address: ('127.0.0.1', 1598)
+08/06/2026 16:57:13 - INFO - User created | username: mamad2 | email: mammamm@gmail.com
+08/06/2026 16:57:17 - INFO - User logged in successfully | username: mamad2
+08/06/2026 16:57:20 - INFO - Client disconnected | client_address: ('127.0.0.1', 10582)
+08/06/2026 16:58:17 - INFO - Client disconnected | client_address: ('127.0.0.1', 1598)
+08/06/2026 16:58:21 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 16:58:23 - INFO - New client connected | client_address: ('127.0.0.1', 5069)
+08/06/2026 16:58:30 - INFO - New client connected | client_address: ('127.0.0.1', 5104)
+08/06/2026 16:58:42 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 16:58:47 - INFO - User logged in successfully | username: mamad1
+08/06/2026 17:00:06 - INFO - Group created successfully | group_id: 548bd862-fb88-4373-a7bf-6c50d2bc8d50 | name: ksks | creator_id: d9dd2efd-feda-4e75-bd14-97e5864e4cfd
+08/06/2026 17:00:25 - INFO - User created | username: mamad2 | email: mdmdm@gmail.com
+08/06/2026 17:00:30 - INFO - User logged in successfully | username: mamad2
+08/06/2026 17:02:19 - INFO - Client disconnected | client_address: ('127.0.0.1', 5069)
+08/06/2026 17:02:25 - INFO - Client disconnected | client_address: ('127.0.0.1', 5104)
+08/06/2026 17:02:49 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 17:02:51 - INFO - New client connected | client_address: ('127.0.0.1', 14088)
+08/06/2026 17:03:54 - INFO - User created | username: mamad1 | email: mamamam@gmail.com
+08/06/2026 17:03:58 - INFO - User logged in successfully | username: mamad1
+08/06/2026 17:04:05 - INFO - New client connected | client_address: ('127.0.0.1', 6024)
+08/06/2026 17:04:16 - INFO - User created | username: mamad2 | email: mamamama@gmail.com
+08/06/2026 17:04:20 - INFO - User logged in successfully | username: mamad2
+08/06/2026 17:05:08 - INFO - Group created successfully | group_id: aa67b778-2249-42f2-8dad-0fc3a05bc28d | name: 1sssss | creator_id: 943b51fa-fd36-419a-a33d-cfbc506be7e7
+08/06/2026 17:05:41 - INFO - Client disconnected | client_address: ('127.0.0.1', 14088)
+08/06/2026 17:05:42 - INFO - Client disconnected | client_address: ('127.0.0.1', 6024)
+08/06/2026 17:25:25 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 17:25:27 - INFO - New client connected | client_address: ('127.0.0.1', 5574)
+08/06/2026 17:25:29 - INFO - New client connected | client_address: ('127.0.0.1', 5593)
+08/06/2026 17:25:40 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 17:25:47 - ERROR - Failed to log in user | username: mamad2
+08/06/2026 17:25:56 - INFO - User logged in successfully | username: mamad1
+08/06/2026 17:26:34 - INFO - Client disconnected | client_address: ('127.0.0.1', 5574)
+08/06/2026 17:26:35 - INFO - Client disconnected | client_address: ('127.0.0.1', 5593)
+08/06/2026 17:26:43 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 17:26:45 - INFO - New client connected | client_address: ('127.0.0.1', 6535)
+08/06/2026 17:26:47 - INFO - New client connected | client_address: ('127.0.0.1', 6547)
+08/06/2026 17:27:07 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+username
+  String should have at most 20 characters [type=string_too_long, input_value='mamad1mamad1@gmail.com', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_long
+08/06/2026 17:27:11 - ERROR - Failed to log in user | username: mamad1mamad1@gmail.com
+08/06/2026 17:27:27 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 17:27:34 - INFO - User logged in successfully | username: mamad1
+08/06/2026 17:28:03 - INFO - Group created successfully | group_id: e57a80c0-3e70-45b2-9fc1-ad428ff6d3a9 | name: ssssss | creator_id: 3b3da2ba-ee3c-47f9-b36f-428239e73b88
+08/06/2026 17:28:53 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/06/2026 17:28:58 - INFO - User logged in successfully | username: mamad2
+08/06/2026 17:29:05 - INFO - Client disconnected | client_address: ('127.0.0.1', 6547)
+08/06/2026 17:29:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 6535)
+08/06/2026 17:39:18 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 17:39:19 - INFO - New client connected | client_address: ('127.0.0.1', 4806)
+08/06/2026 17:39:21 - INFO - New client connected | client_address: ('127.0.0.1', 4825)
+08/06/2026 17:39:32 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 17:39:36 - INFO - User logged in successfully | username: mamad1
+08/06/2026 17:39:48 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/06/2026 17:39:52 - INFO - User logged in successfully | username: mamad2
+08/06/2026 17:40:14 - INFO - Group created successfully | group_id: 1f62c50d-290c-4c59-8849-99e8126f1801 | name: mmfmfmf | creator_id: 90e4d60e-54ad-4aa1-a683-50b29cd854ed
+08/06/2026 17:40:32 - INFO - User added to group successfully | user_id: 395f4eb6-a7d6-4d32-b715-47b349849aec | group_id: 1f62c50d-290c-4c59-8849-99e8126f1801
+08/06/2026 17:40:43 - INFO - Client disconnected | client_address: ('127.0.0.1', 4825)
+08/06/2026 17:40:44 - INFO - Client disconnected | client_address: ('127.0.0.1', 4806)
+08/06/2026 18:43:41 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/06/2026 18:43:45 - INFO - New client connected | client_address: ('127.0.0.1', 5161)
+08/06/2026 18:43:46 - INFO - New client connected | client_address: ('127.0.0.1', 5169)
+08/06/2026 18:43:56 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/06/2026 18:44:00 - INFO - User logged in successfully | username: mamad1
+08/06/2026 18:44:15 - INFO - Group created successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | name: 1mfmf | creator_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab
+08/06/2026 18:44:46 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/06/2026 18:44:50 - INFO - User logged in successfully | username: mamad2
+08/06/2026 18:45:40 - INFO - User added to group successfully | user_id: 3da0728e-b901-480a-94fc-532a30befd8e | group_id: 14dd1656-6538-4edb-981d-88621b579577
+08/06/2026 18:45:46 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: fkfkfk
+08/06/2026 18:45:50 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: member
+08/06/2026 18:46:21 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: members
+08/06/2026 18:46:39 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: mfmf
+08/06/2026 18:46:40 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: nfnf
+08/06/2026 18:46:42 - INFO - Message sent to group successfully | group_id: 14dd1656-6538-4edb-981d-88621b579577 | sender_id: 804076a7-25cc-45b2-b05b-17a3d02e5eab | content: jfjfjfj
+08/06/2026 18:46:59 - INFO - Client disconnected | client_address: ('127.0.0.1', 5161)
+08/06/2026 18:47:01 - INFO - Client disconnected | client_address: ('127.0.0.1', 5169)

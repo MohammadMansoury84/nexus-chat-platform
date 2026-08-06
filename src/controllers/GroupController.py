@@ -39,3 +39,6 @@ class GroupController:
 
     def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
         return self._group_service.delete_group_by_id(user_id=user_id, group_id=group_id)
+
+    def show_group_member(self, user_id: UUID, group_id: UUID):
+        return self._group_service.show_group_member(user_id=user_id, group_id=group_id)

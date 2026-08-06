@@ -203,6 +203,25 @@ class GroupService:
 
         raise AuthorizationError("only admin can delete group")
 
+    def show_group_member(self, user_id: UUID, group_id: UUID) -> dict:
+        group = self.get_group_by_id(group_id=group_id)
+
+        if group is None:
+            raise GroupNotFoundError("Group not found.")
+
+        is_member = any(member.id == user_id for member in group.members)
+
+        if not is_member:
+            raise AuthorizationError("Only group members can see group members.")
+
+        return [
+            {
+                "id": member.id,
+                "username": member.username,
+            }
+            for member in group.members
+        ]
+
     def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
 
         user = self._user_repository.get_by_id(user_id=user_id)
