@@ -9,6 +9,7 @@ from src.Exceptions.AuthorizationError import AuthorizationError
 from src.Exceptions.GroupNotFoundError import GroupNotFoundError
 from src.Exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
 from src.Exceptions.UserNotFoundError import UserNotFoundError
+from src.Exceptions.UserNotInGroupError import UserNotInGroupError
 from src.repository.GroupRepository import GroupRepository
 from src.repository.UserRepository import UserRepository
 
@@ -253,6 +254,55 @@ class GroupService:
         group.messages.clear()
 
         return True
+
+    def remove_user_from_group(
+        self,
+        admin_id: UUID,
+        group_id: UUID,
+        user_id: UUID,
+    ) -> dict:
+        group = self.get_group_by_id(group_id=group_id)
+
+        if group is None:
+            raise GroupNotFoundError("Group not found.")
+
+        if group.creator_id != admin_id:
+            raise AuthorizationError("Only the group creator can remove members.")
+
+        if group.creator_id == user_id:
+            raise AuthorizationError("The group creator cannot be removed.")
+
+        target_user = self._user_repository.get_by_id(user_id=user_id)
+
+        if target_user is None:
+            raise UserNotFoundError("User not found.")
+
+        target_member = next(
+            (member for member in group.members if member.id == user_id),
+            None,
+        )
+
+        if target_member is None:
+            raise UserNotInGroupError("User is not a member of this group.")
+
+        group.members.remove(target_member)
+
+        if group in target_user.joined_groups:
+            target_user.joined_groups.remove(group)
+
+        self.custome_logger.info(
+            "User removed from group",
+            admin_id=str(admin_id),
+            user_id=str(user_id),
+            group_id=str(group_id),
+        )
+
+        return {
+            "group_id": str(group.id),
+            "group_name": group.name,
+            "removed_user_id": str(target_user.id),
+            "removed_username": target_user.username,
+        }
 
     def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
 

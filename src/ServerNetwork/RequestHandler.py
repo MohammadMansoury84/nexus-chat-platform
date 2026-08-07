@@ -16,6 +16,9 @@ from src.entities.DTO.Request.DeletePrivateChatHistoryRequest import (
 from src.entities.DTO.Request.GetChatRequest import GetChatRequest
 from src.entities.DTO.Request.GetGroupChatRequest import GetGroupChatRequest
 from src.entities.DTO.Request.LoginRequest import LoginRequest
+from src.entities.DTO.Request.RemoveUserFromGroupRequest import (
+    RemoveUserFromGroupRequest,
+)
 from src.entities.DTO.Request.SendMessageTOGroupRequest import SendMessageToGroupRequest
 from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
@@ -392,6 +395,68 @@ class RequestHandler:
             return {"data": "group chat history deleted"}
 
         return {"data": "request faild"}
+
+    async def remove_user_from_group(
+        self,
+        data: dict,
+        writer: asyncio.StreamWriter,
+    ) -> dict:
+
+        admin_id = self._require_login(writer)
+
+        dto = RemoveUserFromGroupRequest(**data)
+
+        group = self._group_controller.get_group_by_id(dto.group_id)
+
+        result = self._group_controller.remove_user_from_group(
+            admin_id=admin_id,
+            group_id=dto.group_id,
+            user_id=dto.user_id,
+        )
+
+        admin = self._auth_controller.get_user_by_id(admin_id)
+
+        admin_username = admin.username if admin else "Unknown"
+
+        event_data = {
+            "group_id": result["group_id"],
+            "group_name": result["group_name"],
+            "removed_user_id": result["removed_user_id"],
+            "removed_username": result["removed_username"],
+            "removed_by_id": str(admin_id),
+            "removed_by_username": admin_username,
+            "message": (
+                f"{result['removed_username']} was removed "
+                f"from group '{result['group_name']}'."
+            ),
+        }
+
+        if group is not None:
+            for member in group.members:
+                if member.id in {
+                    admin_id,
+                    dto.user_id,
+                }:
+                    continue
+
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="member_removed_from_group",
+                    date=event_data,
+                )
+
+        await self._send_request(
+            user_id=dto.user_id,
+            message_type="event",
+            event="member_removed_from_group",
+            date=event_data,
+        )
+
+        return {
+            "message": (f"{result['removed_username']} removed from group successfully."),
+            "removed": True,
+        }
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:
         user_id = self._connectionsManagement.get_logged_in_users(writer)

@@ -58,6 +58,10 @@ router.register_route(
 router.register_route(
     RequestType.DELETE_GROUP_CHAT_History, handler.delete_group_chat_history
 )
+router.register_route(
+    RequestType.REMOVE_USER_FROM_GROUP,
+    handler.remove_user_from_group,
+)
 
 
 server = AsyncServer(

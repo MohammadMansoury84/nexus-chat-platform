@@ -1520,3 +1520,46 @@ password
 08/07/2026 04:04:41 - INFO - Group chat history deleted successfully | group_id: 2e7255de-e397-4e2b-8d6e-4630d78747f0
 08/07/2026 04:04:47 - INFO - Client disconnected | client_address: ('127.0.0.1', 4029)
 08/07/2026 04:04:50 - INFO - Client disconnected | client_address: ('127.0.0.1', 4053)
+08/07/2026 16:10:18 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 16:10:19 - INFO - New client connected | client_address: ('127.0.0.1', 8054)
+08/07/2026 16:10:23 - INFO - New client connected | client_address: ('127.0.0.1', 4686)
+08/07/2026 16:10:27 - INFO - New client connected | client_address: ('127.0.0.1', 4701)
+08/07/2026 16:10:46 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 16:10:52 - INFO - User logged in successfully | username: mamad1
+08/07/2026 16:11:17 - INFO - Group created successfully | group_id: 56959ed7-3c92-4d36-93b9-1a89e7b6f6ba | name: dmdmdmdm | creator_id: 76f48a95-db01-4c94-ae97-c70f63febb11
+08/07/2026 16:11:28 - ERROR - Error processing request | exc_info: True | error: 1 validation error for ShowGroupMembersRequest
+user_id
+  Field required [type=missing, input_value={'group_id': '56959ed7-3c...4d36-93b9-1a89e7b6f6ba'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+08/07/2026 16:12:07 - INFO - User created | username: mamad2 | email: mamad@gmail.com
+08/07/2026 16:12:12 - INFO - User logged in successfully | username: mamad2
+08/07/2026 16:12:18 - INFO - User added to group successfully | user_id: 74c33a56-579b-4650-9e32-20ca366f44e7 | group_id: 56959ed7-3c92-4d36-93b9-1a89e7b6f6ba
+08/07/2026 16:12:25 - ERROR - Error processing request | exc_info: True | error: 1 validation error for ShowGroupMembersRequest
+user_id
+  Field required [type=missing, input_value={'group_id': '56959ed7-3c...4d36-93b9-1a89e7b6f6ba'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+08/07/2026 16:12:46 - INFO - Client disconnected | client_address: ('127.0.0.1', 8054)
+08/07/2026 16:12:47 - INFO - Client disconnected | client_address: ('127.0.0.1', 4686)
+08/07/2026 16:12:50 - INFO - Client disconnected | client_address: ('127.0.0.1', 4701)
+08/07/2026 16:20:24 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 16:20:26 - INFO - New client connected | client_address: ('127.0.0.1', 4831)
+08/07/2026 16:20:30 - INFO - New client connected | client_address: ('127.0.0.1', 4863)
+08/07/2026 16:20:42 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 16:20:48 - INFO - User logged in successfully | username: mamad1
+08/07/2026 16:21:02 - INFO - Group created successfully | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1 | name: mfkfjff | creator_id: da65683b-ed70-454f-95d7-d08c326978f3
+08/07/2026 16:21:05 - INFO - show Group members | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:21:22 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/07/2026 16:21:27 - INFO - User logged in successfully | username: mamad2
+08/07/2026 16:21:35 - INFO - User added to group successfully | user_id: e2fc77c5-61cb-449a-bb3f-bd215ae67025 | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:21:44 - INFO - New client connected | client_address: ('127.0.0.1', 5706)
+08/07/2026 16:21:56 - INFO - User created | username: mamad3 | email: mamad3@gmail.com
+08/07/2026 16:22:01 - INFO - User logged in successfully | username: mamad3
+08/07/2026 16:22:08 - INFO - User added to group successfully | user_id: a9de6964-9837-4d88-86a7-ad76be993fb2 | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:22:21 - INFO - Message sent to group successfully | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1 | sender_id: a9de6964-9837-4d88-86a7-ad76be993fb2 | content: dndn
+08/07/2026 16:22:31 - INFO - show Group members | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:22:36 - INFO - User removed from group | admin_id: da65683b-ed70-454f-95d7-d08c326978f3 | user_id: e2fc77c5-61cb-449a-bb3f-bd215ae67025 | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:22:46 - INFO - show Group members | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:22:49 - INFO - User removed from group | admin_id: da65683b-ed70-454f-95d7-d08c326978f3 | user_id: a9de6964-9837-4d88-86a7-ad76be993fb2 | group_id: ad6c79f2-efad-4c8f-8466-9eb7a4162be1
+08/07/2026 16:22:54 - INFO - Client disconnected | client_address: ('127.0.0.1', 4831)
+08/07/2026 16:22:55 - INFO - Client disconnected | client_address: ('127.0.0.1', 4863)
+08/07/2026 16:22:56 - INFO - Client disconnected | client_address: ('127.0.0.1', 5706)

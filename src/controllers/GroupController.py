@@ -48,3 +48,10 @@ class GroupController:
         return self._group_service.delete_group_chat_history(
             user_id=user_id, group_id=group_id
         )
+
+    def remove_user_from_group(self, admin_id: UUID, group_id: UUID, user_id: UUID) -> dict:
+        return self._group_service.remove_user_from_group(
+            admin_id=admin_id,
+            group_id=group_id,
+            user_id=user_id,
+        )

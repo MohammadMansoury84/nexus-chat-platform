@@ -17,6 +17,9 @@ from src.entities.DTO.Request.SignupRequest import SignupRequest
 from src.ServerNetwork.AsyncClient import AsyncClient
 from uuid import UUID
 from src.entities.RequestType import RequestType
+from src.entities.DTO.Request.RemoveUserFromGroupRequest import (
+    RemoveUserFromGroupRequest,
+)
 
 import asyncio
 
@@ -71,7 +74,8 @@ class UserView:
         print("12. show group members")
         print("13. delete private chat history")
         print("14. delete geoup chat history")
-        print("15. Logout")
+        print("15. Remove user from group")
+        print("16. Logout")
 
 
     async def _run_choice(self, choice: str) -> bool:
@@ -90,7 +94,8 @@ class UserView:
             "12":self.show_group_members,
             "13":self.delete_private_chat_history,
             "14":self.delete_group_chat_history,
-            "15": self._logout,
+            "15": self.remove_user_from_group,
+            "16": self._logout,
         }
 
         action = actions.get(choice)
@@ -458,6 +463,49 @@ class UserView:
             result=await self._client.send_request(RequestType.DELETE_GROUP_CHAT_History,dto.model_dump())
             print(result["data"])
 
+    async def remove_user_from_group(self) -> None:
+        self._require_login()
+
+        print(
+            "\n========== Remove User From Group =========="
+        )
+
+        selected_group = await self._select_group(
+            "Choose Group"
+        )
+
+        if selected_group is None:
+            return
+
+        group_id = UUID(
+            selected_group["id"]
+        )
+
+        selected_member = await self._select_group_member(
+            group_id=group_id,
+            title="Choose Member To Remove",
+        )
+
+        if selected_member is None:
+            return
+
+        dto = RemoveUserFromGroupRequest(
+            group_id=group_id,
+            user_id=UUID(selected_member["id"]),
+        )
+
+        result = await self._client.send_request(
+            RequestType.REMOVE_USER_FROM_GROUP,
+            dto.model_dump(),
+        )
+
+        print(
+            result.get(
+                "message",
+                "User removed from group.",
+            )
+        )
+
 
     async def _show_members(self,user_id:UUID,group_id):
 
@@ -474,6 +522,7 @@ class UserView:
         if selected_group is None:
             return
         await self._show_group_chat_history(selected_group=selected_group)
+
         
 
 
@@ -613,6 +662,58 @@ class UserView:
                
             return
 
+        if event == "member_removed_from_group":
+            group_id_text = data.get("group_id")
+            removed_user_id_text = data.get(
+                "removed_user_id"
+            )
+
+            try:
+                group_id = UUID(group_id_text)
+            except (ValueError, TypeError):
+                group_id = None
+
+            try:
+                removed_user_id = UUID(
+                    removed_user_id_text
+                )
+            except (ValueError, TypeError):
+                removed_user_id = None
+
+            group_name = data.get(
+                "group_name",
+                "Unknown group",
+            )
+
+            removed_username = data.get(
+                "removed_username",
+                "Unknown",
+            )
+
+            admin_username = data.get(
+                "removed_by_username",
+                "Unknown",
+            )
+
+            if removed_user_id == self._current_user_id:
+                print(
+                    f"\nYou were removed from group "
+                    f"'{group_name}' by {admin_username}."
+                )
+
+                if self._active_group_id == group_id:
+                    self._active_group_id = None
+                    self._active_group_name = None
+
+            else:
+                print(
+                    f"\n{removed_username} was removed "
+                    f"from group '{group_name}' "
+                    f"by {admin_username}."
+                )
+
+            return
+
     
 
     @staticmethod
@@ -690,14 +791,66 @@ class UserView:
                 print("Please enter a number.")
                 continue
 
-            if choice == 0:
-                return None
-
             if choice < 1 or choice > len(groups):
                 print("Invalid group selection.")
                 continue
 
             return groups[choice - 1]
+
+
+    async def _select_group_member(
+        self,
+        group_id: UUID,
+        title: str,
+    ) -> dict | None:
+        result = await self._client.send_request(
+            RequestType.SHOW_GROUP_MEMBER,
+            {
+                "user_id": str(self._current_user_id),
+                "group_id": str(group_id),
+            },
+        )
+
+        members = result.get("users", [])
+
+        
+        members = [
+            member
+            for member in members
+            if UUID(member["id"]) != self._current_user_id
+        ]
+
+        if not members:
+            print("There are no removable members.")
+            return None
+
+        print(f"\n========== {title} ==========")
+
+        for index, member in enumerate(
+            members,
+            start=1,
+        ):
+            print(
+                f"{index}. {member['username']}"
+            )
+
+        while True:
+            choice_text = await self._input(
+                "Choose member: "
+            )
+
+            try:
+                choice = int(choice_text)
+            except ValueError:
+                print("Please enter a number.")
+                continue
+
+            if choice < 1 or choice > len(members):
+                print("Invalid member selection.")
+                continue
+
+            return members[choice - 1]
+        
 
     async def _show_private_chat_history(
         self,
