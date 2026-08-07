@@ -15,3 +15,9 @@ class MessageController:
 
     def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[dict]:
         return self._message_service.get_chat(user1_id=user1_id, user2_id=user2_id)
+
+    def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID):
+
+        return self._message_service.delete_private_chat_history(
+            user1_id=user1_id, user2_id=user2_id
+        )

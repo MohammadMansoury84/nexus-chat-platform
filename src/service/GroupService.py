@@ -199,6 +199,7 @@ class GroupService:
                     "Group deleted successfully",
                     group_id=str(group_id),
                 )
+                self.custome_logger.info("Group deleted successfully", group_id=group_id)
                 return True
 
         raise AuthorizationError("only admin can delete group")
@@ -207,13 +208,18 @@ class GroupService:
         group = self.get_group_by_id(group_id=group_id)
 
         if group is None:
+            self.custome_logger.error("Group not found", group_id=group_id)
             raise GroupNotFoundError("Group not found.")
 
         is_member = any(member.id == user_id for member in group.members)
 
         if not is_member:
+            self.custome_logger.error(
+                "Only group members can see group members.", user_id=user_id
+            )
             raise AuthorizationError("Only group members can see group members.")
 
+        self.custome_logger.info("show Group members", group_id=group_id)
         return [
             {
                 "id": member.id,
@@ -221,6 +227,32 @@ class GroupService:
             }
             for member in group.members
         ]
+
+    def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
+        group = self.get_group_by_id(group_id=group_id)
+
+        if group is None:
+            self.custome_logger.error("Group not found", group_id=group_id)
+            raise GroupNotFoundError("Group not found.")
+
+        if group.creator_id != user_id:
+            self.custome_logger.error(
+                "Only Admin can delete group chat history", group_id=group_id
+            )
+            raise AuthorizationError("Only Admin can delete group chat history")
+
+        is_member = any(member.id == user_id for member in group.members)
+
+        if not is_member:
+            raise AuthorizationError("Only group members can see group members.")
+
+        self.custome_logger.info(
+            "Group chat history deleted successfully", group_id=group_id
+        )
+
+        group.messages.clear()
+
+        return True
 
     def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
 

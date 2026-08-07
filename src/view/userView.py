@@ -9,6 +9,8 @@ from src.entities.DTO.Request.SendMessageTOGroupRequest import SendMessageToGrou
 from src.entities.DTO.Request.SendMessageToPrivateChatRequest import (
     SendMessageToPrivateChatRequest,
 )
+from src.entities.DTO.Request.DeleteGroupChatHistoryRequest import DeleteGroupChatHistoryRequest
+from src.entities.DTO.Request.DeletePrivateChatHistoryRequest import DeletePrivateChatHistoryRequest
 from src.entities.DTO.Request.DeleteGroupByIdRequest import DeleteGroupByIdRequest
 from src.entities.DTO.Request.ShowGroupMembersRequest import ShowGroupMembersRequest
 from src.entities.DTO.Request.SignupRequest import SignupRequest
@@ -67,7 +69,9 @@ class UserView:
         print("10. Show group chat")
         print("11. delete group")
         print("12. show group members")
-        print("13. Logout")
+        print("13. delete private chat history")
+        print("14. delete geoup chat history")
+        print("15. Logout")
 
 
     async def _run_choice(self, choice: str) -> bool:
@@ -84,7 +88,9 @@ class UserView:
             "10": self._show_group_chat,
             "11":self.delete_group,
             "12":self.show_group_members,
-            "13": self._logout,
+            "13":self.delete_private_chat_history,
+            "14":self.delete_group_chat_history,
+            "15": self._logout,
         }
 
         action = actions.get(choice)
@@ -105,7 +111,7 @@ class UserView:
             password=await self._input("Password: "),
         )
         result = await self._client.send_request(RequestType.SINGUP, dto.model_dump())
-        print(result)
+        print(result["message"])
 
 
     async def _login(self) -> None:
@@ -436,6 +442,23 @@ class UserView:
             for index, member in enumerate(members, start=1):
                 print(f"{index}. {member['username']}")
 
+    async def delete_private_chat_history(self)->None:
+        self._require_login()
+        target_user=await self._select_user("Choose user to delete privet chat history")
+        if target_user is not None:
+            dto=DeletePrivateChatHistoryRequest(user1_id=self._current_user_id,user2_id=target_user["id"])
+            result=await self._client.send_request(RequestType.DELETE_PRIVATE_CHAT_History,dto.model_dump())
+            print(result["data"])
+
+    async def delete_group_chat_history(self)->None:
+        self._require_login()
+        target_group=await self._select_group("Choose group to delete group chat history")
+        if target_group is not None:
+            dto=DeleteGroupChatHistoryRequest(user_id=self._current_user_id,group_id=target_group["id"])
+            result=await self._client.send_request(RequestType.DELETE_GROUP_CHAT_History,dto.model_dump())
+            print(result["data"])
+
+
     async def _show_members(self,user_id:UUID,group_id):
 
         dto=ShowGroupMembersRequest(user_id=user_id,group_id=group_id)
@@ -445,10 +468,6 @@ class UserView:
             print(f"{index}. {member['username']}")
 
 
-
-
-
-                
     async def _show_group_chat(self) -> None:
         self._require_login()
         selected_group= await self._select_group("Choose group for show group Chat")
@@ -581,6 +600,18 @@ class UserView:
                 )
 
                 return
+
+        if event =="delete_private_chat_history":
+
+            print(data["message"])
+               
+            return
+
+        if event =="delete_group_chat_history":
+
+            print(data["message"])
+               
+            return
 
     
 

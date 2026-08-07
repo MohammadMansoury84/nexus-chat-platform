@@ -1,5 +1,5 @@
 from src.Exceptions.ApplicationError import ApplicationError
 
 
-class ResponseError(ApplicationError):
+class PrivateChatNotFoundError(ApplicationError):
     pass

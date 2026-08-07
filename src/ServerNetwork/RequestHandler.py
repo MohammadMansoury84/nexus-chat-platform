@@ -7,6 +7,12 @@ from src.controllers.MessageController import MessageController
 from src.entities.DTO.Request.AddUserToGroupRequest import AddUserToGroupRequest
 from src.entities.DTO.Request.CreateGroupRequest import CreateGroupRequest
 from src.entities.DTO.Request.DeleteGroupByIdRequest import DeleteGroupByIdRequest
+from src.entities.DTO.Request.DeleteGroupChatHistoryRequest import (
+    DeleteGroupChatHistoryRequest,
+)
+from src.entities.DTO.Request.DeletePrivateChatHistoryRequest import (
+    DeletePrivateChatHistoryRequest,
+)
 from src.entities.DTO.Request.GetChatRequest import GetChatRequest
 from src.entities.DTO.Request.GetGroupChatRequest import GetGroupChatRequest
 from src.entities.DTO.Request.LoginRequest import LoginRequest
@@ -331,7 +337,7 @@ class RequestHandler:
             "message": "group chat closed.",
         }
 
-    async def show_group_members(self, data: dict, writer: asyncio.StreamWriter):
+    async def show_group_members(self, data: dict, writer: asyncio.StreamWriter) -> dict:
         self._require_login(writer=writer)
         dto = ShowGroupMembersRequest(**data)
         return {
@@ -339,6 +345,53 @@ class RequestHandler:
                 user_id=dto.user_id, group_id=dto.group_id
             )
         }
+
+    async def delete_privet_chat_history(
+        self, data: dict, writer: asyncio.StreamWriter
+    ) -> dict:
+        self._require_login(writer=writer)
+        dto = DeletePrivateChatHistoryRequest(**data)
+        result = self._message_controller.delete_private_chat_history(
+            user1_id=dto.user1_id, user2_id=dto.user2_id
+        )
+        if result:
+            user = self._auth_controller.get_user_by_id(dto.user2_id)
+            await self._send_request(
+                user_id=dto.user2_id,
+                message_type="event",
+                event="delete_private_chat_history",
+                date={"message": f"{user.username} deleted privet chat history "},
+            )
+            return {"data": "privet chat history deleted"}
+
+        return {"data": "request faild"}
+
+    async def delete_group_chat_history(
+        self, data: dict, writer: asyncio.StreamWriter
+    ) -> dict:
+        self._require_login(writer=writer)
+        dto = DeleteGroupChatHistoryRequest(**data)
+        result = self._group_controller.delete_group_chat_history(
+            user_id=dto.user_id, group_id=dto.group_id
+        )
+        if result:
+            group = self._group_controller.get_group_by_id(dto.group_id)
+            user = self._auth_controller.get_user_by_id(dto.user_id)
+            for member in group.members:
+                if member.id == dto.user_id:
+                    continue
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="delete_group_chat_history",
+                    date={
+                        "message": f"{user.username} deleted "
+                        f"group '{group.name}' chat history"
+                    },
+                )
+            return {"data": "group chat history deleted"}
+
+        return {"data": "request faild"}
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:
         user_id = self._connectionsManagement.get_logged_in_users(writer)

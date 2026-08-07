@@ -5,7 +5,8 @@ from src.entities.Message import Message
 from src.entities.MessageStatus import MessageStatus
 from src.entities.PrivateChat import PrivateChat
 from src.entities.PrivateChatMessage import PrivateChatMessage
-from src.Exceptions import UserNotFoundError
+from src.Exceptions.PrivateChatNotFoundError import PrivateChatNotFoundError
+from src.Exceptions.UserNotFoundError import UserNotFoundError
 from src.repository.UserRepository import UserRepository
 
 
@@ -84,6 +85,22 @@ class MessageService:
             )
 
         return chat_result
+
+    def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID) -> bool:
+
+        if self._user_repository.get_by_id(user1_id) is None:
+            raise UserNotFoundError("user not found.")
+        if self._user_repository.get_by_id(user2_id) is None:
+            raise UserNotFoundError("user not found.")
+
+        target_chat = self._get_private_chat(user1_id=user1_id, user2_id=user2_id)
+
+        if target_chat is None:
+            raise PrivateChatNotFoundError("You have no chat history with this person.")
+
+        target_chat.messages.clear()
+
+        return True
 
     def _get_private_chat(self, user1_id: UUID, user2_id: UUID) -> PrivateChat | None:
         self.custome_logger.debug(

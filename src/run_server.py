@@ -52,6 +52,12 @@ router.register_route(RequestType.DELETE_GROUP_BY_ID, handler.delete_group_by_id
 router.register_route(RequestType.LEAVE_PRIVATE_CHAT, handler.leave_private_chat)
 router.register_route(RequestType.LEAVE_GROUP_CHAT, handler.leave_group_chat)
 router.register_route(RequestType.SHOW_GROUP_MEMBER, handler.show_group_members)
+router.register_route(
+    RequestType.DELETE_PRIVATE_CHAT_History, handler.delete_privet_chat_history
+)
+router.register_route(
+    RequestType.DELETE_GROUP_CHAT_History, handler.delete_group_chat_history
+)
 
 
 server = AsyncServer(
