@@ -261,16 +261,11 @@ class GroupService:
         group_id: UUID,
         user_id: UUID,
     ) -> dict:
+
         group = self.get_group_by_id(group_id=group_id)
 
         if group is None:
             raise GroupNotFoundError("Group not found.")
-
-        if group.creator_id != admin_id:
-            raise AuthorizationError("Only the group creator can remove members.")
-
-        if group.creator_id == user_id:
-            raise AuthorizationError("The group creator cannot be removed.")
 
         target_user = self._user_repository.get_by_id(user_id=user_id)
 
@@ -285,19 +280,50 @@ class GroupService:
         if target_member is None:
             raise UserNotInGroupError("User is not a member of this group.")
 
+        if admin_id == user_id:
+            if group.creator_id == user_id:
+                group_name = group.name
+                username = target_user.username
+
+                self.delete_group_by_id(
+                    user_id=user_id,
+                    group_id=group_id,
+                )
+
+                return {
+                    "action": "group_deleted",
+                    "group_id": str(group_id),
+                    "group_name": group_name,
+                    "user_id": str(user_id),
+                    "username": username,
+                }
+
+            group.members.remove(target_member)
+
+            if group in target_user.joined_groups:
+                target_user.joined_groups.remove(group)
+
+            return {
+                "action": "user_left",
+                "group_id": str(group.id),
+                "group_name": group.name,
+                "user_id": str(target_user.id),
+                "username": target_user.username,
+            }
+
+        if group.creator_id != admin_id:
+            raise AuthorizationError("Only group creator can remove members.")
+
+        if group.creator_id == user_id:
+            raise AuthorizationError("Group creator cannot be removed.")
+
         group.members.remove(target_member)
 
         if group in target_user.joined_groups:
             target_user.joined_groups.remove(group)
 
-        self.custome_logger.info(
-            "User removed from group",
-            admin_id=str(admin_id),
-            user_id=str(user_id),
-            group_id=str(group_id),
-        )
-
         return {
+            "action": "user_removed",
             "group_id": str(group.id),
             "group_name": group.name,
             "removed_user_id": str(target_user.id),

@@ -402,60 +402,113 @@ class RequestHandler:
         writer: asyncio.StreamWriter,
     ) -> dict:
 
-        admin_id = self._require_login(writer)
+        current_user_id = self._require_login(writer)
 
         dto = RemoveUserFromGroupRequest(**data)
 
         group = self._group_controller.get_group_by_id(dto.group_id)
 
+        if not group:
+            return {
+                "message": "Group not found.",
+                "success": False,
+            }
+
+        members = list(group.members)
+
         result = self._group_controller.remove_user_from_group(
-            admin_id=admin_id,
+            admin_id=current_user_id,
             group_id=dto.group_id,
             user_id=dto.user_id,
         )
 
-        admin = self._auth_controller.get_user_by_id(admin_id)
+        if result["action"] == "group_deleted":
+            for member in members:
+                if member.id == current_user_id:
+                    continue
 
-        admin_username = admin.username if admin else "Unknown"
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="delete_group",
+                    date={
+                        "group_id": result["group_id"],
+                        "group_name": result["group_name"],
+                        "message": (f"Group '{result['group_name']}' was deleted."),
+                    },
+                )
 
-        event_data = {
-            "group_id": result["group_id"],
-            "group_name": result["group_name"],
-            "removed_user_id": result["removed_user_id"],
-            "removed_username": result["removed_username"],
-            "removed_by_id": str(admin_id),
-            "removed_by_username": admin_username,
-            "message": (
-                f"{result['removed_username']} was removed "
-                f"from group '{result['group_name']}'."
-            ),
-        }
+            return {
+                "message": (f"Group '{result['group_name']}' deleted successfully."),
+                "success": True,
+                "action": "group_deleted",
+            }
 
-        if group is not None:
-            for member in group.members:
-                if member.id in {
-                    admin_id,
-                    dto.user_id,
-                }:
+        if result["action"] == "user_left":
+            for member in members:
+                if member.id == current_user_id:
+                    continue
+
+                await self._send_request(
+                    user_id=member.id,
+                    message_type="event",
+                    event="user_left_group",
+                    date={
+                        "group_id": result["group_id"],
+                        "group_name": result["group_name"],
+                        "user_id": result["user_id"],
+                        "username": result["username"],
+                        "message": (
+                            f"{result['username']} left group '{result['group_name']}'."
+                        ),
+                    },
+                )
+
+            return {
+                "message": (f"You left group '{result['group_name']}'."),
+                "success": True,
+                "action": "user_left",
+            }
+
+        if result["action"] == "user_removed":
+            admin = self._auth_controller.get_user_by_id(current_user_id)
+
+            admin_username = admin.username if admin is not None else "Unknown"
+
+            for member in members:
+                if member.id == current_user_id:
                     continue
 
                 await self._send_request(
                     user_id=member.id,
                     message_type="event",
                     event="member_removed_from_group",
-                    date=event_data,
+                    date={
+                        "group_id": result["group_id"],
+                        "group_name": result["group_name"],
+                        "removed_user_id": result["removed_user_id"],
+                        "removed_username": result["removed_username"],
+                        "removed_by_id": str(current_user_id),
+                        "removed_by_username": (admin_username),
+                        "message": (
+                            f"{result['removed_username']} "
+                            f"was removed from group "
+                            f"'{result['group_name']}'."
+                        ),
+                    },
                 )
 
-        await self._send_request(
-            user_id=dto.user_id,
-            message_type="event",
-            event="member_removed_from_group",
-            date=event_data,
-        )
+            return {
+                "message": (
+                    f"{result['removed_username']} removed from group successfully."
+                ),
+                "success": True,
+                "action": "user_removed",
+            }
 
         return {
-            "message": (f"{result['removed_username']} removed from group successfully."),
-            "removed": True,
+            "message": "Operation failed.",
+            "success": False,
         }
 
     def _require_login(self, writer: asyncio.StreamWriter) -> UUID:

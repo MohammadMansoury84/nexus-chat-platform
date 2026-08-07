@@ -20,3 +20,4 @@ class RequestType(StrEnum):
     DELETE_PRIVATE_CHAT_History = "delete_private_chat_history"
     DELETE_GROUP_CHAT_History = "delete_group_chat_history"
     REMOVE_USER_FROM_GROUP = "remove_user_from_group"
+    LEAVE_GROUP = "leave_group"

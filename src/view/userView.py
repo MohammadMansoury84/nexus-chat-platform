@@ -75,7 +75,8 @@ class UserView:
         print("13. delete private chat history")
         print("14. delete geoup chat history")
         print("15. Remove user from group")
-        print("16. Logout")
+        print("16. Leave group")
+        print("17. Logout")
 
 
     async def _run_choice(self, choice: str) -> bool:
@@ -95,7 +96,8 @@ class UserView:
             "13":self.delete_private_chat_history,
             "14":self.delete_group_chat_history,
             "15": self.remove_user_from_group,
-            "16": self._logout,
+            "16": self.leave_group,
+            "17": self._logout,
         }
 
         action = actions.get(choice)
@@ -140,6 +142,8 @@ class UserView:
         result = await self._client.send_request(RequestType.LOGOUT)
         self._current_user_id = None
         self._current_username = None
+        self._clear_private_chat_state()
+        self._clear_group_chat_state()
         print(result)
 
 
@@ -185,8 +189,7 @@ class UserView:
                         }
                     )
 
-                    self._active_private_user_id = None
-                    self._active_private_username = None
+                    self._clear_private_chat_state()
 
 
 
@@ -203,10 +206,7 @@ class UserView:
                         }
                     )
 
-                    self._active_private_user_id = None
-                    self._active_private_username = None
-
-
+                    self._clear_private_chat_state()
 
                     break
 
@@ -348,6 +348,7 @@ class UserView:
             print("Type 'exit' to return to menu.")
             print("Type 'change' to choose another group.")
             print("Type 'members' to see group members.")
+            print("Type 'leave' to left group.")
 
             await self._show_group_chat_history(selected_group)
 
@@ -373,8 +374,7 @@ class UserView:
 
 
 
-                    self._active_group_id = None
-                    self._active_group_name = None
+                    self._clear_group_chat_state()
 
                     print("group chat closed.")
                     return
@@ -386,14 +386,36 @@ class UserView:
                         data={"group_id":selected_group_id},
                     )
 
-                    self._active_group_id = None
-                    self._active_group_name = None
+                    self._clear_group_chat_state()
 
                     break
 
+                if command == "leave":
+
+                    dto = RemoveUserFromGroupRequest(
+                        group_id=selected_group_id,
+                        user_id=current_user_id,
+                    )
+
+                    result = await self._client.send_request(
+                        RequestType.REMOVE_USER_FROM_GROUP,
+                        dto.model_dump(),
+                    )
+
+                    print(
+                        result.get(
+                            "message",
+                            "You left the group.",
+                        )
+                    )
+
+                    self._clear_group_chat_state()
+
+                    return
+
                 if command == "members":
                     await self._show_members(user_id=self._current_user_id,group_id=self._active_group_id)
-                    return
+                    continue
 
 
                 if not content.strip():
@@ -506,6 +528,39 @@ class UserView:
             )
         )
 
+    async def leave_group(self) -> None:
+        current_user_id = self._require_login()
+
+        print("\n========== Leave Group ==========")
+
+        selected_group = await self._select_group(
+            "Choose Group To Leave"
+        )
+
+        if selected_group is None:
+            return
+
+        group_id = UUID(selected_group["id"])
+
+        dto = RemoveUserFromGroupRequest(
+            group_id=group_id,
+            user_id=current_user_id,
+        )
+
+        result = await self._client.send_request(
+            RequestType.REMOVE_USER_FROM_GROUP,
+            dto.model_dump(),
+        )
+
+        print(
+            result.get(
+                "message",
+                "You left the group.",
+            )
+        )
+
+        if self._active_group_id == group_id:
+            self._clear_group_chat_state()
 
     async def _show_members(self,user_id:UUID,group_id):
 
@@ -609,10 +664,22 @@ class UserView:
         
 
         if event == "delete_group":
+
+            group_id_text = data.get("group_id")
+
+            try:
+                group_id = UUID(group_id_text)
+            except (ValueError, TypeError):
+                group_id = None
+
             print(
-                f"\n group was deleted "
-                f"{data.get('group_name')}"
+                f"\nGroup '{data.get('group_name')}' "
+                "was deleted."
             )
+
+            if self._active_group_id == group_id:
+                self._clear_group_chat_state()
+
             return
         
 
@@ -702,8 +769,7 @@ class UserView:
                 )
 
                 if self._active_group_id == group_id:
-                    self._active_group_id = None
-                    self._active_group_name = None
+                    self._clear_group_chat_state()
 
             else:
                 print(
@@ -711,6 +777,16 @@ class UserView:
                     f"from group '{group_name}' "
                     f"by {admin_username}."
                 )
+
+            return
+
+
+        if event == "user_left_group":
+
+            print(
+                f"\n{data.get('username')} left "
+                f"group '{data.get('group_name')}'."
+            )
 
             return
 
@@ -919,8 +995,17 @@ class UserView:
         print("=======================================")
 
 
-            
+    def _clear_private_chat_state(self) -> None:
+        self._active_private_user_id = None
+        self._active_private_username = None
 
+
+    def _clear_group_chat_state(self) -> None:
+        self._active_group_id = None
+        self._active_group_name = None
+
+
+        
 
     def _require_login(self) -> UUID:
         if self._current_user_id is None:

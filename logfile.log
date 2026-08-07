@@ -1563,3 +1563,101 @@ user_id
 08/07/2026 16:22:54 - INFO - Client disconnected | client_address: ('127.0.0.1', 4831)
 08/07/2026 16:22:55 - INFO - Client disconnected | client_address: ('127.0.0.1', 4863)
 08/07/2026 16:22:56 - INFO - Client disconnected | client_address: ('127.0.0.1', 5706)
+08/07/2026 17:39:33 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 17:39:33 - INFO - New client connected | client_address: ('127.0.0.1', 9175)
+08/07/2026 17:39:42 - INFO - New client connected | client_address: ('127.0.0.1', 9209)
+08/07/2026 17:39:46 - INFO - New client connected | client_address: ('127.0.0.1', 9218)
+08/07/2026 17:40:06 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+password
+  String should have at least 6 characters [type=string_too_short, input_value='mamad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/07/2026 17:40:21 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 17:40:29 - ERROR - Failed to log in user | username: ddd
+08/07/2026 17:40:37 - ERROR - Error processing request | exc_info: True | error: Please login first.
+08/07/2026 17:40:45 - ERROR - Error processing request | exc_info: True | error: Please login first.
+08/07/2026 17:41:04 - INFO - User logged in successfully | username: mamad1
+08/07/2026 17:41:22 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/07/2026 17:41:27 - INFO - User logged in successfully | username: mamad2
+08/07/2026 17:41:38 - WARNING - No chat history found
+08/07/2026 17:41:39 - INFO - PrivateChat create successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:41:39 - INFO - Message sent successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:41:40 - INFO - Message sent successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:41:41 - INFO - Message sent successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:42:09 - INFO - Message sent successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:42:10 - INFO - Message sent successfully | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | receiver_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb
+08/07/2026 17:42:58 - INFO - Group created successfully | group_id: 15ee97a7-68a2-4c4e-9554-7d09e168ac4a | name: mfmfmf | creator_id: 80d9dd08-ca4e-40e0-9b55-358768638eac
+08/07/2026 17:43:27 - INFO - User added to group successfully | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: 15ee97a7-68a2-4c4e-9554-7d09e168ac4a
+08/07/2026 17:43:32 - INFO - Group deleted successfully | group_id: 15ee97a7-68a2-4c4e-9554-7d09e168ac4a
+08/07/2026 17:43:32 - INFO - Group deleted successfully | group_id: 15ee97a7-68a2-4c4e-9554-7d09e168ac4a
+08/07/2026 17:43:39 - INFO - Group created successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | name: dmdmdfmf | creator_id: 80d9dd08-ca4e-40e0-9b55-358768638eac
+08/07/2026 17:43:43 - INFO - User added to group successfully | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:43:49 - ERROR - Error processing request | exc_info: True | error: only admin can delete group
+08/07/2026 17:44:19 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: mdmdm
+08/07/2026 17:44:20 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: dmmd
+08/07/2026 17:44:21 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: mdmmf
+08/07/2026 17:44:34 - INFO - Group chat retrieved successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:44:38 - INFO - Group chat retrieved successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:44:39 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: dmmddm
+08/07/2026 17:44:40 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: dmmdd
+08/07/2026 17:44:58 - INFO - Group chat retrieved successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:45:09 - INFO - show Group members | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:45:13 - INFO - Message sent to group successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43 | sender_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | content: d d d
+08/07/2026 17:45:48 - INFO - show Group members | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:45:49 - INFO - User removed from group | admin_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:45:53 - WARNING - Sender is not a member of the group | sender_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:45:53 - ERROR - Error processing request | exc_info: True | error: User is not a member of the group.
+08/07/2026 17:46:09 - INFO - User added to group successfully | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:16 - INFO - show Group members | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:17 - INFO - User removed from group | admin_id: 80d9dd08-ca4e-40e0-9b55-358768638eac | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:36 - INFO - User added to group successfully | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:39 - INFO - Group deleted successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:39 - INFO - Group deleted successfully | group_id: cb2f291a-ba49-441e-a2f2-415a0130ce43
+08/07/2026 17:46:44 - INFO - Group created successfully | group_id: 1d201935-4c47-4fa3-96dd-81ff47c25170 | name: dmdmdm | creator_id: 80d9dd08-ca4e-40e0-9b55-358768638eac
+08/07/2026 17:46:54 - INFO - User added to group successfully | user_id: b34eb2cb-dd75-41d4-a0c9-64758b1e82cb | group_id: 1d201935-4c47-4fa3-96dd-81ff47c25170
+08/07/2026 17:49:48 - INFO - Client disconnected | client_address: ('127.0.0.1', 9175)
+08/07/2026 17:49:49 - INFO - Client disconnected | client_address: ('127.0.0.1', 9209)
+08/07/2026 17:49:50 - INFO - Client disconnected | client_address: ('127.0.0.1', 9218)
+08/07/2026 18:00:34 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 18:00:36 - INFO - New client connected | client_address: ('127.0.0.1', 13938)
+08/07/2026 18:00:39 - INFO - New client connected | client_address: ('127.0.0.1', 2045)
+08/07/2026 18:00:57 - ERROR - Error processing request | exc_info: True | error: 1 validation error for User
+password
+  String should have at least 6 characters [type=string_too_short, input_value='mamd1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_too_short
+08/07/2026 18:01:09 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 18:01:13 - INFO - User logged in successfully | username: mamad1
+08/07/2026 18:01:31 - INFO - Group created successfully | group_id: 00c6bd26-d935-4b59-882d-849807f29046 | name: mfmfmf | creator_id: 52ddf41a-196c-4e5a-9b7d-746f8da18669
+08/07/2026 18:01:35 - INFO - Group deleted successfully | group_id: 00c6bd26-d935-4b59-882d-849807f29046
+08/07/2026 18:01:35 - INFO - Group deleted successfully | group_id: 00c6bd26-d935-4b59-882d-849807f29046
+08/07/2026 18:01:35 - ERROR - Error processing request | exc_info: True | error: 'removed_user_id'
+08/07/2026 18:02:19 - INFO - Client disconnected | client_address: ('127.0.0.1', 13938)
+08/07/2026 18:02:21 - INFO - Client disconnected | client_address: ('127.0.0.1', 2045)
+08/07/2026 18:05:06 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 18:05:08 - INFO - New client connected | client_address: ('127.0.0.1', 14888)
+08/07/2026 18:05:09 - INFO - Client disconnected | client_address: ('127.0.0.1', 14888)
+08/07/2026 18:05:17 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 18:05:19 - INFO - New client connected | client_address: ('127.0.0.1', 14935)
+08/07/2026 18:05:21 - INFO - New client connected | client_address: ('127.0.0.1', 14943)
+08/07/2026 18:05:33 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 18:05:36 - INFO - User logged in successfully | username: mamad1
+08/07/2026 18:05:50 - INFO - Group created successfully | group_id: f14a0b14-c0b6-4f9a-ad92-d60299f3e195 | name: dndndnd | creator_id: 9a460e2e-ab74-49bd-93ff-fdf3d8f7ccfb
+08/07/2026 18:06:32 - INFO - show Group members | group_id: f14a0b14-c0b6-4f9a-ad92-d60299f3e195
+08/07/2026 18:06:41 - INFO - Group deleted successfully | group_id: f14a0b14-c0b6-4f9a-ad92-d60299f3e195
+08/07/2026 18:06:41 - INFO - Group deleted successfully | group_id: f14a0b14-c0b6-4f9a-ad92-d60299f3e195
+08/07/2026 18:06:53 - INFO - Group created successfully | group_id: 6256d52d-f96f-4072-b9d9-91cc4445b709 | name: mdmdmd | creator_id: 9a460e2e-ab74-49bd-93ff-fdf3d8f7ccfb
+08/07/2026 18:07:10 - INFO - User created | username: mamad2 | email: mamad2@gmail.com
+08/07/2026 18:07:15 - INFO - User logged in successfully | username: mamad2
+08/07/2026 18:07:22 - INFO - User added to group successfully | user_id: 9bf1b302-0d69-448f-9e14-7f3b65d554e7 | group_id: 6256d52d-f96f-4072-b9d9-91cc4445b709
+08/07/2026 18:07:26 - INFO - Group deleted successfully | group_id: 6256d52d-f96f-4072-b9d9-91cc4445b709
+08/07/2026 18:07:26 - INFO - Group deleted successfully | group_id: 6256d52d-f96f-4072-b9d9-91cc4445b709
+08/07/2026 18:07:35 - INFO - Group created successfully | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725 | name: dm,dmddmdm | creator_id: 9a460e2e-ab74-49bd-93ff-fdf3d8f7ccfb
+08/07/2026 18:07:37 - INFO - User added to group successfully | user_id: 9bf1b302-0d69-448f-9e14-7f3b65d554e7 | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:07:46 - INFO - show Group members | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:07:56 - INFO - User added to group successfully | user_id: 9bf1b302-0d69-448f-9e14-7f3b65d554e7 | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:08:29 - INFO - User added to group successfully | user_id: 9bf1b302-0d69-448f-9e14-7f3b65d554e7 | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:08:51 - INFO - Group deleted successfully | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:08:51 - INFO - Group deleted successfully | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:08:55 - WARNING - Group not found | group_id: 48301a99-672f-461f-b45c-ce8cfacbc725
+08/07/2026 18:08:55 - ERROR - Error processing request | exc_info: True | error: Group not found.
+08/07/2026 18:09:04 - INFO - Client disconnected | client_address: ('127.0.0.1', 14935)
+08/07/2026 18:09:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 14943)
