@@ -9,5 +9,6 @@ dependencies = [
     "pre-commit>=4.6.1",
     "pydantic==2.13.4",
     "pydantic-settings>=2.14.2",
+    "pytest>=9.1.1",
     "ruff>=0.16.0",
 ]

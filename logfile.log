@@ -1661,3 +1661,82 @@ password
 08/07/2026 18:08:55 - ERROR - Error processing request | exc_info: True | error: Group not found.
 08/07/2026 18:09:04 - INFO - Client disconnected | client_address: ('127.0.0.1', 14935)
 08/07/2026 18:09:06 - INFO - Client disconnected | client_address: ('127.0.0.1', 14943)
+08/07/2026 18:15:49 - INFO - Starting server | host: 127.0.0.1 | port: 65432
+08/07/2026 18:15:51 - INFO - New client connected | client_address: ('127.0.0.1', 13293)
+08/07/2026 18:15:53 - INFO - New client connected | client_address: ('127.0.0.1', 13307)
+08/07/2026 18:18:11 - ERROR - Error processing request | exc_info: True | error: Please login first.
+08/07/2026 18:18:28 - INFO - User created | username: mamad1 | email: mamad1@gmail.com
+08/07/2026 18:18:33 - INFO - User logged in successfully | username: mamad1
+08/07/2026 18:19:01 - WARNING - Username already exists | username: mamad1
+08/07/2026 18:19:01 - ERROR - Error processing request | exc_info: True | error: Username already exists.
+08/07/2026 18:19:15 - INFO - User created | username: mamad2 | email: mamamamd@gmail.com
+08/07/2026 18:19:20 - INFO - User logged in successfully | username: mamad2
+08/07/2026 18:19:31 - WARNING - No chat history found
+08/07/2026 18:19:37 - WARNING - No chat history found
+08/07/2026 18:19:39 - INFO - PrivateChat create successfully | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | receiver_id: 9a1a987d-33cc-46af-9750-1d531ed75738
+08/07/2026 18:19:39 - INFO - Message sent successfully | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | receiver_id: 9a1a987d-33cc-46af-9750-1d531ed75738
+08/07/2026 18:19:40 - INFO - Message sent successfully | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | receiver_id: 9a1a987d-33cc-46af-9750-1d531ed75738
+08/07/2026 18:19:41 - INFO - Message sent successfully | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | receiver_id: 9a1a987d-33cc-46af-9750-1d531ed75738
+08/07/2026 18:19:42 - INFO - Message sent successfully | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | receiver_id: 9a1a987d-33cc-46af-9750-1d531ed75738
+08/07/2026 18:19:48 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:19:49 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:19:59 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:20:00 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:20:01 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:20:02 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:20:04 - INFO - Message sent successfully | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | receiver_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:21:27 - INFO - Group created successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf | name: mdmdmd | creator_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:21:43 - INFO - Message sent to group successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | content: dndndn
+08/07/2026 18:21:44 - INFO - Message sent to group successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf | sender_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6 | content: dnndndnd
+08/07/2026 18:21:52 - INFO - Group chat retrieved successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf
+08/07/2026 18:21:58 - INFO - Group deleted successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf
+08/07/2026 18:21:58 - INFO - Group deleted successfully | group_id: 58ec91ca-a627-4c68-8efd-62875d798faf
+08/07/2026 18:22:05 - INFO - Group created successfully | group_id: e825d2ac-6041-471d-bdad-4850346d75c0 | name: fnfnfnf | creator_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:22:11 - INFO - show Group members | group_id: e825d2ac-6041-471d-bdad-4850346d75c0
+08/07/2026 18:22:20 - INFO - Group chat history deleted successfully | group_id: e825d2ac-6041-471d-bdad-4850346d75c0
+08/07/2026 18:22:36 - INFO - show Group members | group_id: e825d2ac-6041-471d-bdad-4850346d75c0
+08/07/2026 18:22:42 - INFO - Group deleted successfully | group_id: e825d2ac-6041-471d-bdad-4850346d75c0
+08/07/2026 18:22:42 - INFO - Group deleted successfully | group_id: e825d2ac-6041-471d-bdad-4850346d75c0
+08/07/2026 18:22:51 - INFO - Group created successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | name: mfmfmf | creator_id: 37ccea6d-f0c9-4a3a-91dc-2031794f17e6
+08/07/2026 18:22:55 - INFO - User added to group successfully | user_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:23:07 - INFO - Message sent to group successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | content: mdmdm
+08/07/2026 18:23:08 - INFO - Message sent to group successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | content: mdmdmd
+08/07/2026 18:23:24 - INFO - Group chat retrieved successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:23:26 - INFO - Message sent to group successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | content: rmrmr
+08/07/2026 18:23:27 - INFO - Message sent to group successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | content: mrmrmrm
+08/07/2026 18:23:37 - INFO - Group chat retrieved successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:23:43 - INFO - Group chat retrieved successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:23:45 - INFO - Message sent to group successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6 | sender_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | content: fmfm
+08/07/2026 18:24:03 - INFO - User added to group successfully | user_id: 9a1a987d-33cc-46af-9750-1d531ed75738 | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:24:15 - INFO - Group chat history deleted successfully | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:24:23 - ERROR - Only Admin can delete group chat history | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:24:23 - ERROR - Error processing request | exc_info: True | error: Only Admin can delete group chat history
+08/07/2026 18:24:29 - INFO - show Group members | group_id: 9703a953-8d0e-4e33-bddf-b05850dcf2b6
+08/07/2026 18:24:30 - ERROR - Error processing request | exc_info: True | error: Only group creator can remove members.
+08/07/2026 18:24:39 - INFO - Client disconnected | client_address: ('127.0.0.1', 13307)
+08/07/2026 18:24:40 - INFO - Client disconnected | client_address: ('127.0.0.1', 13293)
+08/07/2026 23:26:21 - WARNING - Username already exists | username: alice
+08/07/2026 23:26:26 - WARNING - Username already exists | username: alice
+08/07/2026 23:26:42 - WARNING - Username already exists | username: alice
+08/07/2026 23:27:01 - WARNING - Username already exists | username: alice
+08/07/2026 23:28:32 - WARNING - Username already exists | username: alice
+08/07/2026 23:28:32 - INFO - User logged in successfully | username: alice
+08/07/2026 23:34:20 - WARNING - Username already exists | username: alice
+08/07/2026 23:34:20 - INFO - User logged in successfully | username: alice
+08/07/2026 23:34:20 - INFO - PrivateChat create successfully | sender_id: a308bb07-b2f9-4241-afe5-135e63cf7388 | receiver_id: 6dbf47f4-263f-4a5e-bdce-7e6cecb85a49
+08/07/2026 23:34:20 - INFO - Message sent successfully | sender_id: a308bb07-b2f9-4241-afe5-135e63cf7388 | receiver_id: 6dbf47f4-263f-4a5e-bdce-7e6cecb85a49
+08/07/2026 23:35:52 - WARNING - Username already exists | username: alice
+08/07/2026 23:35:52 - INFO - User logged in successfully | username: alice
+08/07/2026 23:35:52 - INFO - PrivateChat create successfully | sender_id: 9126ada9-f2f6-423d-871c-286f2a0d8948 | receiver_id: eca72173-9af2-473d-b814-6080df81c18b
+08/07/2026 23:35:52 - INFO - Message sent successfully | sender_id: 9126ada9-f2f6-423d-871c-286f2a0d8948 | receiver_id: eca72173-9af2-473d-b814-6080df81c18b
+08/07/2026 23:35:52 - INFO - Message sent to group successfully | group_id: b57bae41-0424-4cce-9ad9-941cf0695aa4 | sender_id: de7f00e9-eb62-4526-b7f2-ff1816d71f05 | content: Hello Group
+08/07/2026 23:40:20 - WARNING - Username already exists | username: alice
+08/07/2026 23:40:20 - INFO - User logged in successfully | username: alice
+08/07/2026 23:40:20 - INFO - PrivateChat create successfully | sender_id: ca40c911-1120-4dfa-b43a-7d8c94d4586b | receiver_id: cd8843f7-6ee0-4168-b99f-63f2d0ef8df3
+08/07/2026 23:40:20 - INFO - Message sent successfully | sender_id: ca40c911-1120-4dfa-b43a-7d8c94d4586b | receiver_id: cd8843f7-6ee0-4168-b99f-63f2d0ef8df3
+08/07/2026 23:40:20 - INFO - Message sent to group successfully | group_id: 65f0c066-777a-48be-aec4-5cc95a235525 | sender_id: 2fa5eb31-a315-4ad1-a1e2-86c1ebd0f0f3 | content: Hello Group
+08/07/2026 23:40:25 - WARNING - Username already exists | username: alice
+08/07/2026 23:40:25 - INFO - User logged in successfully | username: alice
+08/07/2026 23:40:25 - INFO - PrivateChat create successfully | sender_id: 96d7f4a7-2459-47e9-ab0d-862c4a3a1828 | receiver_id: 9443c6df-c71a-4dde-8841-6a72e19ce81e
+08/07/2026 23:40:25 - INFO - Message sent successfully | sender_id: 96d7f4a7-2459-47e9-ab0d-862c4a3a1828 | receiver_id: 9443c6df-c71a-4dde-8841-6a72e19ce81e
+08/07/2026 23:40:25 - INFO - Message sent to group successfully | group_id: ca698b85-8ebe-4a9e-bfc8-fd1e0e71a68f | sender_id: 18d48557-b838-4378-94e0-06d3e992b0d4 | content: Hello Group

@@ -29,8 +29,8 @@ exclude = [
   "prompt_defaults.py",
   "migrations",
   "**/migrations/*.py",
-   "src/view",
-   "src/controllers_old/UserController.py"
+   "src/view"
+  
 ]
 
 # Same as Black.
