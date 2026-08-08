@@ -29,7 +29,8 @@ exclude = [
   "prompt_defaults.py",
   "migrations",
   "**/migrations/*.py",
-   "src/view"
+   "src/view",
+   "tests/*.py"
   
 ]
 

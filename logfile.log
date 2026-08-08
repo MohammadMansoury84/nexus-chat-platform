@@ -1740,3 +1740,232 @@ password
 08/07/2026 23:40:25 - INFO - PrivateChat create successfully | sender_id: 96d7f4a7-2459-47e9-ab0d-862c4a3a1828 | receiver_id: 9443c6df-c71a-4dde-8841-6a72e19ce81e
 08/07/2026 23:40:25 - INFO - Message sent successfully | sender_id: 96d7f4a7-2459-47e9-ab0d-862c4a3a1828 | receiver_id: 9443c6df-c71a-4dde-8841-6a72e19ce81e
 08/07/2026 23:40:25 - INFO - Message sent to group successfully | group_id: ca698b85-8ebe-4a9e-bfc8-fd1e0e71a68f | sender_id: 18d48557-b838-4378-94e0-06d3e992b0d4 | content: Hello Group
+08/08/2026 14:27:46 - WARNING - Username already exists | username: alice
+08/08/2026 14:27:46 - INFO - User logged in successfully | username: alice
+08/08/2026 14:27:46 - INFO - PrivateChat create successfully | sender_id: 1ca6d5b9-94b6-4cb4-b916-ee3aa6c4645c | receiver_id: 8ef6372a-8ff8-41b7-8dfa-11433a5541ff
+08/08/2026 14:27:46 - INFO - Message sent successfully | sender_id: 1ca6d5b9-94b6-4cb4-b916-ee3aa6c4645c | receiver_id: 8ef6372a-8ff8-41b7-8dfa-11433a5541ff
+08/08/2026 14:27:46 - INFO - Message sent to group successfully | group_id: 06673636-4305-4987-be6d-8a8325b122d1 | sender_id: 0b793107-b51d-4833-9b78-411ca4750de1 | content: Hello Group
+08/08/2026 15:54:12 - WARNING - Username already exists | username: alice
+08/08/2026 15:54:12 - INFO - User logged in successfully | username: alice
+08/08/2026 15:54:12 - INFO - PrivateChat create successfully | sender_id: e022e068-e6b0-4d75-8761-624f22ae8284 | receiver_id: 474a3483-8fb7-4384-af5a-34402c44a955
+08/08/2026 15:54:12 - INFO - Message sent successfully | sender_id: e022e068-e6b0-4d75-8761-624f22ae8284 | receiver_id: 474a3483-8fb7-4384-af5a-34402c44a955
+08/08/2026 15:54:12 - INFO - Message sent to group successfully | group_id: dc6bfd4e-9365-45d0-8db3-08425ff44356 | sender_id: ef648281-490e-4764-97d6-4a7f0679a501 | content: Hello Group
+08/08/2026 15:54:18 - WARNING - Username already exists | username: alice
+08/08/2026 15:54:18 - INFO - User logged in successfully | username: alice
+08/08/2026 15:54:18 - INFO - PrivateChat create successfully | sender_id: 32a2756e-d8f3-482a-b27c-6ba2447fd8ce | receiver_id: 779b5153-266f-4dff-9fc4-593c335ec27d
+08/08/2026 15:54:18 - INFO - Message sent successfully | sender_id: 32a2756e-d8f3-482a-b27c-6ba2447fd8ce | receiver_id: 779b5153-266f-4dff-9fc4-593c335ec27d
+08/08/2026 15:54:18 - INFO - Message sent to group successfully | group_id: ef32a6da-9b29-4741-a38f-97e05df49c11 | sender_id: c41b965f-d2f1-40aa-afba-dd8b97cd82a5 | content: Hello Group
+08/08/2026 15:54:53 - WARNING - Username already exists | username: alice
+08/08/2026 15:54:53 - WARNING - Email already exists | email: old@test.com
+08/08/2026 15:54:53 - INFO - User logged in successfully | username: alice
+08/08/2026 15:54:53 - INFO - PrivateChat create successfully | sender_id: eb28156b-d15e-4c6e-a253-09c2af428cd7 | receiver_id: 41dc2860-bfe0-4c76-953e-c776e8aa5c32
+08/08/2026 15:54:53 - INFO - Message sent successfully | sender_id: eb28156b-d15e-4c6e-a253-09c2af428cd7 | receiver_id: 41dc2860-bfe0-4c76-953e-c776e8aa5c32
+08/08/2026 15:54:53 - INFO - Message sent to group successfully | group_id: 7066ac6c-ab3b-45e1-9278-ea71b840113a | sender_id: a33f978a-6a49-46c1-b760-706e85545fc4 | content: Hello Group
+08/08/2026 15:56:00 - WARNING - Username already exists | username: alice
+08/08/2026 15:56:00 - WARNING - Email already exists | email: old@test.com
+08/08/2026 15:56:00 - INFO - User logged in successfully | username: alice
+08/08/2026 15:56:00 - INFO - PrivateChat create successfully | sender_id: fbd0d20e-6294-44e2-82df-84862a93c8d9 | receiver_id: bdba716f-eb28-4324-97fb-2cbb3dae0bdd
+08/08/2026 15:56:00 - INFO - Message sent successfully | sender_id: fbd0d20e-6294-44e2-82df-84862a93c8d9 | receiver_id: bdba716f-eb28-4324-97fb-2cbb3dae0bdd
+08/08/2026 15:56:00 - INFO - Message sent to group successfully | group_id: 6e2bb578-c9c8-4ef3-a672-8b8b1c9f201d | sender_id: 9fabef05-7704-41c6-8b20-8da91530109c | content: Hello Group
+08/08/2026 15:56:27 - WARNING - Username already exists | username: alice
+08/08/2026 15:56:27 - WARNING - Email already exists | email: old@test.com
+08/08/2026 15:56:27 - INFO - User logged in successfully | username: alice
+08/08/2026 15:56:27 - INFO - PrivateChat create successfully | sender_id: e0bd3fd3-26bb-477e-a476-f257850acea1 | receiver_id: 12bacaaf-cc32-4f17-9b52-5f6f7ad0c8c3
+08/08/2026 15:56:27 - INFO - Message sent successfully | sender_id: e0bd3fd3-26bb-477e-a476-f257850acea1 | receiver_id: 12bacaaf-cc32-4f17-9b52-5f6f7ad0c8c3
+08/08/2026 15:56:27 - INFO - Message sent to group successfully | group_id: 2327d0de-21ed-4cf0-910d-cbf9aad00344 | sender_id: 3d6b9a29-43ed-445c-948d-150de3ae1edf | content: Hello Group
+08/08/2026 16:04:52 - WARNING - Username already exists | username: alice
+08/08/2026 16:04:52 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:04:52 - INFO - User logged in successfully | username: alice
+08/08/2026 16:04:52 - INFO - PrivateChat create successfully | sender_id: 4a75614a-a217-48e8-9c1d-5fbfdf5d7295 | receiver_id: 1c55c79a-dad9-4eb9-9442-5920e0c74617
+08/08/2026 16:04:52 - INFO - Message sent successfully | sender_id: 4a75614a-a217-48e8-9c1d-5fbfdf5d7295 | receiver_id: 1c55c79a-dad9-4eb9-9442-5920e0c74617
+08/08/2026 16:04:52 - INFO - Message sent to group successfully | group_id: 454325aa-34f3-4314-97d2-4a545e92b17e | sender_id: a0e699c0-994a-4835-a149-06491eb7e3ea | content: Hello Group
+08/08/2026 16:05:48 - WARNING - Username already exists | username: alice
+08/08/2026 16:05:48 - WARNING - Username already exists | username: alice
+08/08/2026 16:05:48 - INFO - User logged in successfully | username: alice
+08/08/2026 16:05:48 - INFO - PrivateChat create successfully | sender_id: 50ef5d75-5f3e-4805-9bdc-dafe813ed9ad | receiver_id: f89c5fec-0044-4337-9c10-74b459cc228f
+08/08/2026 16:05:48 - INFO - Message sent successfully | sender_id: 50ef5d75-5f3e-4805-9bdc-dafe813ed9ad | receiver_id: f89c5fec-0044-4337-9c10-74b459cc228f
+08/08/2026 16:05:48 - INFO - Message sent to group successfully | group_id: 8fd237b8-f377-4c7e-bdc3-b7b35b2473ba | sender_id: ac2f5b36-2018-4fd4-a39a-5d9480863e51 | content: Hello Group
+08/08/2026 16:06:04 - WARNING - Username already exists | username: alice
+08/08/2026 16:06:04 - WARNING - Username already exists | username: alice
+08/08/2026 16:06:04 - INFO - User logged in successfully | username: alice
+08/08/2026 16:06:04 - INFO - PrivateChat create successfully | sender_id: 4a34ac6e-d40f-4cfa-a857-4e3186b51831 | receiver_id: 2822bde2-4065-4eda-a8e1-c3339c615a6a
+08/08/2026 16:06:04 - INFO - Message sent successfully | sender_id: 4a34ac6e-d40f-4cfa-a857-4e3186b51831 | receiver_id: 2822bde2-4065-4eda-a8e1-c3339c615a6a
+08/08/2026 16:06:04 - INFO - Message sent to group successfully | group_id: e56cd02c-2ea7-43bf-9451-cfff073f5221 | sender_id: 9a1c7523-6f15-4727-8afa-6c5b71b0d49d | content: Hello Group
+08/08/2026 16:07:15 - WARNING - Username already exists | username: alice
+08/08/2026 16:07:15 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:07:15 - INFO - User logged in successfully | username: alice
+08/08/2026 16:07:15 - INFO - PrivateChat create successfully | sender_id: 4bef5117-450d-4e25-9aff-79319fc09581 | receiver_id: c087aa8b-ba5f-4b54-9284-bb044d3ecaa7
+08/08/2026 16:07:15 - INFO - Message sent successfully | sender_id: 4bef5117-450d-4e25-9aff-79319fc09581 | receiver_id: c087aa8b-ba5f-4b54-9284-bb044d3ecaa7
+08/08/2026 16:07:15 - INFO - Message sent to group successfully | group_id: ee0ee753-3fd3-4810-a7e3-3289def83eb5 | sender_id: 4c8f03eb-1399-41f7-8746-a15e2303e9a8 | content: Hello Group
+08/08/2026 16:07:41 - WARNING - Username already exists | username: alice
+08/08/2026 16:07:41 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:07:41 - INFO - User logged in successfully | username: alice
+08/08/2026 16:07:41 - INFO - PrivateChat create successfully | sender_id: a23e79fe-2786-4bcb-a010-924ab2ac34f3 | receiver_id: 7cbea8d0-c432-48b6-b004-d5d72098301c
+08/08/2026 16:07:41 - INFO - Message sent successfully | sender_id: a23e79fe-2786-4bcb-a010-924ab2ac34f3 | receiver_id: 7cbea8d0-c432-48b6-b004-d5d72098301c
+08/08/2026 16:07:41 - INFO - Message sent to group successfully | group_id: 9b774939-2e82-49b3-bc9b-ea64d0bd7096 | sender_id: 9d933a15-c7bc-4686-856c-9441f117c4e8 | content: Hello Group
+08/08/2026 16:08:08 - WARNING - Username already exists | username: alice
+08/08/2026 16:08:08 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:08:08 - INFO - User logged in successfully | username: alice
+08/08/2026 16:08:08 - INFO - PrivateChat create successfully | sender_id: dc04a8a3-fc27-4e4a-b4ff-852c9b98799b | receiver_id: bc7fb99b-32e5-4e73-b82d-10f17516ad8b
+08/08/2026 16:08:08 - INFO - Message sent successfully | sender_id: dc04a8a3-fc27-4e4a-b4ff-852c9b98799b | receiver_id: bc7fb99b-32e5-4e73-b82d-10f17516ad8b
+08/08/2026 16:08:08 - INFO - Message sent to group successfully | group_id: 35517b7d-7558-4620-a20b-9063924308ae | sender_id: 0f0202b8-5c8d-48ac-8195-3e19f5e9c94a | content: Hello Group
+08/08/2026 16:12:53 - WARNING - Username already exists | username: alice
+08/08/2026 16:12:53 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:12:53 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:12:53 - INFO - User logged in successfully | username: alice
+08/08/2026 16:12:53 - INFO - PrivateChat create successfully | sender_id: 7a36727c-4790-4d34-a8e4-3e8ced7633a5 | receiver_id: 0e5462ba-0fab-4491-90ea-9e0a2988487b
+08/08/2026 16:12:53 - INFO - Message sent successfully | sender_id: 7a36727c-4790-4d34-a8e4-3e8ced7633a5 | receiver_id: 0e5462ba-0fab-4491-90ea-9e0a2988487b
+08/08/2026 16:12:53 - INFO - Message sent to group successfully | group_id: 68268174-7be0-4073-91a5-e5cf6cca8f6c | sender_id: 229b8206-1948-4f93-b5f3-bb367b9b3e75 | content: Hello Group
+08/08/2026 16:16:56 - WARNING - Username already exists | username: alice
+08/08/2026 16:16:56 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:16:56 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:16:56 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:16:56 - INFO - PrivateChat create successfully | sender_id: 8fd2d7ca-dac3-40b7-acf0-3e8611230d57 | receiver_id: 0ef75c75-4d2b-494f-aa35-180b4772de28
+08/08/2026 16:16:56 - INFO - Message sent successfully | sender_id: 8fd2d7ca-dac3-40b7-acf0-3e8611230d57 | receiver_id: 0ef75c75-4d2b-494f-aa35-180b4772de28
+08/08/2026 16:16:56 - INFO - Message sent to group successfully | group_id: bfcbb657-e11d-4765-b53b-645010934796 | sender_id: feca6447-e2e5-464e-9250-754b3cb7ee62 | content: Hello Group
+08/08/2026 16:17:42 - WARNING - Username already exists | username: alice
+08/08/2026 16:17:42 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:17:42 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:17:42 - INFO - User logged in successfully | username: alice
+08/08/2026 16:17:42 - INFO - PrivateChat create successfully | sender_id: 8566e0c6-0c5b-40ba-99e6-9e0e9e58af2b | receiver_id: 10565902-6bec-412c-8341-20c45cadee17
+08/08/2026 16:17:42 - INFO - Message sent successfully | sender_id: 8566e0c6-0c5b-40ba-99e6-9e0e9e58af2b | receiver_id: 10565902-6bec-412c-8341-20c45cadee17
+08/08/2026 16:17:42 - INFO - Message sent to group successfully | group_id: 6be71b29-106b-4cd3-8c5d-65e463aef2be | sender_id: a3fe2561-8bac-451d-87da-e68de1767e7b | content: Hello Group
+08/08/2026 16:25:15 - WARNING - Username already exists | username: alice
+08/08/2026 16:25:15 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:25:15 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:25:15 - INFO - User logged in successfully | username: alice
+08/08/2026 16:25:15 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:25:15 - INFO - PrivateChat create successfully | sender_id: 4e4f94ef-70d9-47a4-9c59-f78e27654b5b | receiver_id: 64223c4a-808a-48bb-b2cd-0381016784a4
+08/08/2026 16:25:15 - INFO - Message sent successfully | sender_id: 4e4f94ef-70d9-47a4-9c59-f78e27654b5b | receiver_id: 64223c4a-808a-48bb-b2cd-0381016784a4
+08/08/2026 16:25:15 - INFO - Message sent to group successfully | group_id: 5340e4af-9828-4727-8746-f95e5d53d4f6 | sender_id: a7c4d8f5-6d0a-48ab-8518-5fdc9adc4847 | content: Hello Group
+08/08/2026 16:25:42 - WARNING - Username already exists | username: alice
+08/08/2026 16:25:42 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:25:42 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:25:42 - INFO - User logged in successfully | username: alice
+08/08/2026 16:25:42 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:25:42 - INFO - PrivateChat create successfully | sender_id: 1220a3bc-6cd1-4113-848b-a2693f6a0b1a | receiver_id: d15a4bf9-dfd0-4f16-ab1b-5577db5ce1a8
+08/08/2026 16:25:42 - INFO - Message sent successfully | sender_id: 1220a3bc-6cd1-4113-848b-a2693f6a0b1a | receiver_id: d15a4bf9-dfd0-4f16-ab1b-5577db5ce1a8
+08/08/2026 16:25:42 - INFO - Message sent to group successfully | group_id: a23d916c-4a18-4edf-ba7e-a53537d8aff3 | sender_id: 77c7898c-4109-4cce-9e79-30798a50eee5 | content: Hello Group
+08/08/2026 16:28:55 - WARNING - Username already exists | username: alice
+08/08/2026 16:28:55 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:28:55 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:28:55 - INFO - User logged in successfully | username: alice
+08/08/2026 16:28:55 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:28:55 - INFO - PrivateChat create successfully | sender_id: 8ac5fe13-7769-4d2e-9cda-982e48d73625 | receiver_id: 1d3faa0f-b7b1-423e-bb8f-6ded4ffafedd
+08/08/2026 16:28:55 - INFO - Message sent successfully | sender_id: 8ac5fe13-7769-4d2e-9cda-982e48d73625 | receiver_id: 1d3faa0f-b7b1-423e-bb8f-6ded4ffafedd
+08/08/2026 16:28:55 - INFO - Message sent to group successfully | group_id: 04455126-90ad-4f27-8533-fa4e8391f374 | sender_id: 12793480-5005-4fcc-b53f-bc784d34534c | content: Hello Group
+08/08/2026 16:29:12 - WARNING - Username already exists | username: alice
+08/08/2026 16:29:12 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:29:12 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:29:12 - INFO - User logged in successfully | username: alice
+08/08/2026 16:29:12 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:29:12 - INFO - PrivateChat create successfully | sender_id: 8d5dade8-081b-4554-9410-687faa3c135a | receiver_id: d9d76c89-0184-4623-af29-287464e76e7b
+08/08/2026 16:29:12 - INFO - Message sent successfully | sender_id: 8d5dade8-081b-4554-9410-687faa3c135a | receiver_id: d9d76c89-0184-4623-af29-287464e76e7b
+08/08/2026 16:29:12 - INFO - Message sent to group successfully | group_id: 97ba07b8-7d41-4012-a191-f3a881c8065e | sender_id: 4950fa8d-8bb3-4354-af6c-3b9baf96af5c | content: Hello Group
+08/08/2026 16:29:29 - WARNING - Username already exists | username: alice
+08/08/2026 16:29:29 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:29:29 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:29:29 - INFO - User logged in successfully | username: alice
+08/08/2026 16:29:29 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:29:29 - INFO - PrivateChat create successfully | sender_id: e0b7adc4-c0b7-4e55-912a-3fd57af1b87a | receiver_id: 4fa44680-53c4-4a1c-ab04-144441f37eaa
+08/08/2026 16:29:29 - INFO - Message sent successfully | sender_id: e0b7adc4-c0b7-4e55-912a-3fd57af1b87a | receiver_id: 4fa44680-53c4-4a1c-ab04-144441f37eaa
+08/08/2026 16:29:29 - INFO - Message sent to group successfully | group_id: 6be82245-64e1-4dd5-b3b7-2db18a09a404 | sender_id: 8992043a-cec0-4a3b-a0e0-6f2cc771207c | content: Hello Group
+08/08/2026 16:29:47 - WARNING - Username already exists | username: alice
+08/08/2026 16:29:47 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:29:47 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:29:47 - INFO - User logged in successfully | username: alice
+08/08/2026 16:29:47 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:29:47 - INFO - PrivateChat create successfully | sender_id: cde4ddc1-6f55-46ae-984e-7a406d5b4af5 | receiver_id: 05b7f873-d1cf-4fb6-9846-e43a70d3cbf5
+08/08/2026 16:29:47 - INFO - Message sent successfully | sender_id: cde4ddc1-6f55-46ae-984e-7a406d5b4af5 | receiver_id: 05b7f873-d1cf-4fb6-9846-e43a70d3cbf5
+08/08/2026 16:29:47 - INFO - Message sent to group successfully | group_id: 33d8c556-76be-4f7d-9ce0-90d1bec0b5b9 | sender_id: 2427eee3-7c83-464a-ae15-cbf3685d1635 | content: Hello Group
+08/08/2026 16:30:03 - WARNING - Username already exists | username: alice
+08/08/2026 16:30:03 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:30:03 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:30:03 - INFO - User logged in successfully | username: alice
+08/08/2026 16:30:03 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:30:03 - INFO - PrivateChat create successfully | sender_id: 7e59c865-65ec-4f6d-a3c1-50d7d1cd1693 | receiver_id: 8d58bde7-655f-4c71-b89b-2d013112a1ce
+08/08/2026 16:30:03 - INFO - Message sent successfully | sender_id: 7e59c865-65ec-4f6d-a3c1-50d7d1cd1693 | receiver_id: 8d58bde7-655f-4c71-b89b-2d013112a1ce
+08/08/2026 16:30:03 - INFO - Message sent to group successfully | group_id: 6e9688b7-473e-4388-9b93-0029bda10cce | sender_id: 5be4b85b-e241-44d4-b26d-c6244982fab9 | content: Hello Group
+08/08/2026 16:31:20 - WARNING - Username already exists | username: alice
+08/08/2026 16:31:20 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:31:20 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:31:20 - INFO - User logged in successfully | username: alice
+08/08/2026 16:31:20 - ERROR - Failed to log in user | username: alice
+08/08/2026 16:31:21 - INFO - PrivateChat create successfully | sender_id: 959650ca-6cb6-41d6-9f00-379685c1777b | receiver_id: a213468e-b2af-4597-b3ca-90eaef404d2d
+08/08/2026 16:31:21 - INFO - Message sent successfully | sender_id: 959650ca-6cb6-41d6-9f00-379685c1777b | receiver_id: a213468e-b2af-4597-b3ca-90eaef404d2d
+08/08/2026 16:31:21 - INFO - Message sent to group successfully | group_id: 77b317bf-506c-4224-a36a-a3526ae8de59 | sender_id: 38e1deb0-b697-4266-92a4-37b4fa7372e4 | content: Hello Group
+08/08/2026 16:37:31 - WARNING - Username already exists | username: alice
+08/08/2026 16:37:31 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:37:31 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:37:31 - INFO - User logged in successfully | username: alice
+08/08/2026 16:37:31 - INFO - PrivateChat create successfully | sender_id: 31249a8d-947d-49ff-b9c7-75caf5873ef8 | receiver_id: cbc34d43-368b-4cc1-aae5-2ebc723a7820
+08/08/2026 16:37:31 - INFO - Message sent successfully | sender_id: 31249a8d-947d-49ff-b9c7-75caf5873ef8 | receiver_id: cbc34d43-368b-4cc1-aae5-2ebc723a7820
+08/08/2026 16:37:31 - INFO - Message sent to group successfully | group_id: 4424fbbb-bba4-4fc2-aa03-e3820b52db9c | sender_id: abb0339b-2e74-4d05-8b23-2d73fdda1de1 | content: Hello Group
+08/08/2026 16:38:14 - WARNING - Username already exists | username: alice
+08/08/2026 16:38:14 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:38:14 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:38:14 - INFO - User logged in successfully | username: alice
+08/08/2026 16:38:14 - INFO - PrivateChat create successfully | sender_id: 051a97c2-5d41-486a-a471-cb1553be5a6a | receiver_id: a0abff80-6821-4f59-93be-99728bfc930f
+08/08/2026 16:38:14 - INFO - Message sent successfully | sender_id: 051a97c2-5d41-486a-a471-cb1553be5a6a | receiver_id: a0abff80-6821-4f59-93be-99728bfc930f
+08/08/2026 16:38:14 - INFO - Message sent to group successfully | group_id: 3a5dc7e0-d074-4542-976b-b54ca87325d2 | sender_id: b1d9f61c-2390-4cc1-81b0-08728b0f692b | content: Hello Group
+08/08/2026 16:47:15 - WARNING - Username already exists | username: alice
+08/08/2026 16:47:15 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:47:15 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:47:15 - INFO - User logged in successfully | username: alice
+08/08/2026 16:47:15 - INFO - PrivateChat create successfully | sender_id: c47202fb-1603-4134-9160-f63e66cee4d8 | receiver_id: 47dbd46c-70ef-46f7-8d78-be0736fb1e73
+08/08/2026 16:47:15 - INFO - Message sent successfully | sender_id: c47202fb-1603-4134-9160-f63e66cee4d8 | receiver_id: 47dbd46c-70ef-46f7-8d78-be0736fb1e73
+08/08/2026 16:47:15 - INFO - Message sent to group successfully | group_id: 32f14f4d-f7ff-4681-8ff3-3b4b1c646f82 | sender_id: 96006cd1-eb85-48ff-93d5-ec595a2d4ca7 | content: Hello Group
+08/08/2026 16:56:26 - WARNING - Username already exists | username: alice
+08/08/2026 16:56:26 - WARNING - Email already exists | email: old@test.com
+08/08/2026 16:56:26 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 16:56:26 - INFO - User logged in successfully | username: alice
+08/08/2026 16:56:26 - INFO - PrivateChat create successfully | sender_id: a598fb2b-cd55-45fe-a312-42565f265d0e | receiver_id: d6bb3415-f3bb-484f-92a8-182bfd8ee79b
+08/08/2026 16:56:26 - INFO - Message sent successfully | sender_id: a598fb2b-cd55-45fe-a312-42565f265d0e | receiver_id: d6bb3415-f3bb-484f-92a8-182bfd8ee79b
+08/08/2026 16:56:26 - INFO - PrivateChat create successfully | sender_id: 01bbd01e-d71a-47bc-a8e6-460fa631224b | receiver_id: 5a55dfd5-7e04-4ff9-89dc-d14ef3fb1706
+08/08/2026 16:56:26 - INFO - Message sent to group successfully | group_id: 8b54f2ac-63d2-452d-8d95-5b52f69734ec | sender_id: e9367960-2bb3-45ee-992c-a5afb926c3b9 | content: Hello Group
+08/08/2026 17:02:33 - WARNING - Username already exists | username: alice
+08/08/2026 17:02:33 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:02:33 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:02:33 - INFO - User logged in successfully | username: alice
+08/08/2026 17:02:33 - INFO - PrivateChat create successfully | sender_id: ba25fb1c-7c0e-4b14-8ee5-1451910dd8ed | receiver_id: e8be41f0-069c-47b6-a0f2-d704b0c38a20
+08/08/2026 17:02:33 - INFO - Message sent successfully | sender_id: ba25fb1c-7c0e-4b14-8ee5-1451910dd8ed | receiver_id: e8be41f0-069c-47b6-a0f2-d704b0c38a20
+08/08/2026 17:02:33 - INFO - PrivateChat create successfully | sender_id: e6d2d12e-334d-48d0-a69d-cfb87e97a698 | receiver_id: 7e76d5d3-53a5-4567-ab60-b2321d218bff
+08/08/2026 17:02:34 - INFO - Message sent to group successfully | group_id: 64fd29f7-9828-4de2-9cea-5f9f0a44f713 | sender_id: bbd5195f-700a-4376-a264-7ca1eabd7f95 | content: Hello Group
+08/08/2026 17:06:05 - WARNING - Username already exists | username: alice
+08/08/2026 17:06:05 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:06:05 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:06:05 - INFO - User logged in successfully | username: alice
+08/08/2026 17:06:05 - INFO - PrivateChat create successfully | sender_id: a737bb9c-9717-4795-bdcc-683551b50bfe | receiver_id: 372f4f3f-488f-46f8-801c-a61b69ccb2ff
+08/08/2026 17:06:05 - INFO - Message sent successfully | sender_id: a737bb9c-9717-4795-bdcc-683551b50bfe | receiver_id: 372f4f3f-488f-46f8-801c-a61b69ccb2ff
+08/08/2026 17:06:05 - INFO - Message sent to group successfully | group_id: 5569660f-f262-4817-a2c0-e19fbb8e720a | sender_id: 2f72caba-ddfb-49d7-8770-0d8004b2f078 | content: Hello Group
+08/08/2026 17:07:06 - WARNING - Username already exists | username: alice
+08/08/2026 17:07:06 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:07:06 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:07:06 - INFO - User logged in successfully | username: alice
+08/08/2026 17:07:06 - INFO - PrivateChat create successfully | sender_id: 14c0be22-27b9-4249-ac79-4ae5eb647a40 | receiver_id: 92c2fc31-b3fe-4ffa-8b84-a8eed4c14b94
+08/08/2026 17:07:06 - INFO - Message sent successfully | sender_id: 14c0be22-27b9-4249-ac79-4ae5eb647a40 | receiver_id: 92c2fc31-b3fe-4ffa-8b84-a8eed4c14b94
+08/08/2026 17:07:06 - INFO - Message sent to group successfully | group_id: 5c36bd66-d6f3-4f01-9c6e-af2974027988 | sender_id: 9417a17c-5342-4f0a-9296-595f4ad89b37 | content: Hello Group
+08/08/2026 17:09:20 - WARNING - Username already exists | username: alice
+08/08/2026 17:09:20 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:09:20 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:09:20 - INFO - User logged in successfully | username: alice
+08/08/2026 17:09:20 - INFO - PrivateChat create successfully | sender_id: 483a1bcf-3357-4449-a236-e18ad76f36fc | receiver_id: 5d3092da-7e87-4cc5-af63-0f5a9a81aeb3
+08/08/2026 17:09:20 - INFO - Message sent successfully | sender_id: 483a1bcf-3357-4449-a236-e18ad76f36fc | receiver_id: 5d3092da-7e87-4cc5-af63-0f5a9a81aeb3
+08/08/2026 17:09:20 - INFO - Message sent to group successfully | group_id: 53dae87e-b112-4ed2-bacf-cbe9b3ebb377 | sender_id: 8b72d60f-9dd0-43db-b1ae-d66c7ac4bb41 | content: Hello Group
+08/08/2026 17:10:15 - WARNING - Username already exists | username: alice
+08/08/2026 17:10:15 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:10:15 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:10:15 - INFO - User logged in successfully | username: alice
+08/08/2026 17:10:15 - INFO - PrivateChat create successfully | sender_id: c8285268-6636-4114-b3cb-bfe694825d8a | receiver_id: c39b77b8-a66f-4bbd-94bb-7a2bddaa250a
+08/08/2026 17:10:15 - INFO - Message sent successfully | sender_id: c8285268-6636-4114-b3cb-bfe694825d8a | receiver_id: c39b77b8-a66f-4bbd-94bb-7a2bddaa250a
+08/08/2026 17:10:15 - INFO - Message sent to group successfully | group_id: 29e6a9eb-c419-4027-8895-afe541e0ef80 | sender_id: f7600396-e0ff-4bba-9908-c98a4281e9dd | content: Hello Group
+08/08/2026 17:19:45 - WARNING - Username already exists | username: alice
+08/08/2026 17:19:45 - WARNING - Email already exists | email: old@test.com
+08/08/2026 17:19:45 - INFO - User created | username: mamad | email: mamad@test.com
+08/08/2026 17:19:45 - INFO - User logged in successfully | username: alice
+08/08/2026 17:19:45 - INFO - PrivateChat create successfully | sender_id: 63a89116-6efb-4b17-b622-76f1817b7fd2 | receiver_id: 35f2da83-28f2-468d-a7f5-0ba5bcfc679f
+08/08/2026 17:19:45 - INFO - Message sent successfully | sender_id: 63a89116-6efb-4b17-b622-76f1817b7fd2 | receiver_id: 35f2da83-28f2-468d-a7f5-0ba5bcfc679f
+08/08/2026 17:19:45 - INFO - PrivateChat create successfully | sender_id: 729b3246-866e-4553-93c5-30bd74847213 | receiver_id: dc490e74-52ea-4205-a3de-18b6a4dddee6
+08/08/2026 17:19:45 - INFO - Message sent successfully | sender_id: 729b3246-866e-4553-93c5-30bd74847213 | receiver_id: dc490e74-52ea-4205-a3de-18b6a4dddee6
+08/08/2026 17:19:45 - INFO - Message sent successfully | sender_id: 729b3246-866e-4553-93c5-30bd74847213 | receiver_id: dc490e74-52ea-4205-a3de-18b6a4dddee6
+08/08/2026 17:19:45 - INFO - Message sent to group successfully | group_id: 39315041-91af-4241-aefa-0b5f0c2f46c4 | sender_id: 35b866a6-4d9b-4ed8-bd11-ad87a066aa5e | content: Hello Group

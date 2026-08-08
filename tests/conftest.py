@@ -2,8 +2,6 @@ from unittest.mock import create_autospec
 
 import pytest
 
-from src.entities.Group import Group
-from src.entities.User import User
 from src.repository.GroupRepository import GroupRepository
 from src.repository.UserRepository import UserRepository
 
