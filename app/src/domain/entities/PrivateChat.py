@@ -1,7 +1,6 @@
 from uuid import UUID, uuid4
 
 from pydantic import BaseModel, ConfigDict, Field
-
 from src.domain.entities.PrivateChatMessage import PrivateChatMessage
 
 
