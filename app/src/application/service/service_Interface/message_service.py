@@ -1,15 +1,16 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
-from src.domain.entities.Message import Message
+from app.src.application.DTO.private_message_dto.message_dto import MessageDTO
+from app.src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
 
 class MessageService(ABC):
 
     @abstractmethod
-    def send_message(self, sender_id: UUID, receiver_id: UUID, content: str) -> Message:
+    def send_message(self, sender_id: UUID, receiver_id: UUID, content: str) -> MessageDTO:
         pass
 
     @abstractmethod
-    def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[dict]:
+    def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[ChatMessageDTO]:
         pass
 
     @abstractmethod

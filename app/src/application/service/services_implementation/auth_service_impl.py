@@ -8,6 +8,9 @@ from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.exceptions.InvalidCredentialsError import InvalidCredentialsError
 from src.application.DTO.user.user_dto import UserDTO
 from src.application.DTO.user.user_summary_dto import UserSummaryDTO
+from app.src.domain.repositories_Interface.user_repository import UserRepository
+
+
 class AuthServiceImpl(AuthService):
 
     def __init__(self, user_repository: UserRepository) -> None:
