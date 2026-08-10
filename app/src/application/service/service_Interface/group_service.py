@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
-from src.domain.entities.Message import Message
-from src.domain.entities.Group import Group
+
 from app.src.application.DTO.group.grtoup_dto import GroupDTO
 from app.src.application.DTO.group.group_summary_dto import GroupSummaryDTO
 from app.src.application.DTO.group.group_member_dto import GroupMemberDTO
