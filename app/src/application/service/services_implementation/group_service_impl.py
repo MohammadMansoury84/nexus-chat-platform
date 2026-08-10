@@ -19,15 +19,21 @@ from app.src.application.DTO.group.group_chat_message_dto import GroupChatMessag
 from app.src.application.DTO.group.group_message_dto import GroupMessageDTO
 from app.src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
 from app.src.domain.entities.GroupMembershipAction import GroupMembershipAction
+from app.src.domain.repositories_Interface.user_repository import UserRepository
+from app.src.domain.repositories_Interface.group_repository import GroupRepository
+from app.src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
 
 
 class GroupServiceImpl(GroupService):
 
     def __init__(
-        self, user_repository: UserRepository, group_repository: GroupRepository
+        self, user_repository: UserRepository, 
+        group_repository: GroupRepository,
+        group_message_repository :GroupMessageRepository
     ) -> None:
         self._user_repository = user_repository
         self._group_repository = group_repository
+        self._group_message_repository=group_message_repository
 
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
@@ -145,6 +151,7 @@ class GroupServiceImpl(GroupService):
             status=MessageStatus.SENT,
         )
         group.messages.append(message)
+        self._group_message_repository.add(message)
 
         self.custome_logger.info(
             "Message sent to group successfully",
@@ -308,8 +315,6 @@ class GroupServiceImpl(GroupService):
 
         if admin_id == user_id:
             if group.creator_id == user_id:
-                group_name = group.name
-                username = target_user.username
 
                 self.delete_group_by_id(
                     user_id=user_id,
