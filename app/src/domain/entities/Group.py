@@ -3,10 +3,12 @@ from typing import TYPE_CHECKING
 from uuid import uuid4
 
 from pydantic import UUID4, BaseModel, ConfigDict, Field
+
 from src.domain.entities.GroupMessage import GroupMessage
 
 if TYPE_CHECKING:
     from src.domain.entities.User import User
+
 
 
 class Group(BaseModel):
