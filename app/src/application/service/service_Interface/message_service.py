@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
-from app.src.application.DTO.private_message_dto.message_dto import MessageDTO
-from app.src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
+from src.application.DTO.private_message_dto.message_dto import MessageDTO
+from src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
 
 class MessageService(ABC):
 

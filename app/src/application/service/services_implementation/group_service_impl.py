@@ -1,27 +1,27 @@
 from uuid import UUID
 
 
-from app.src.application.service.service_Interface.group_service import GroupService
-from app.src.core.logger.CustomLogger import CustomLogger
-from app.src.domain.entities.Group import Group
-from app.src.domain.entities.GroupMessage import GroupMessage
-from app.src.domain.entities.Message import Message
-from app.src.domain.entities.MessageStatus import MessageStatus
-from app.src.core.exceptions.AuthorizationError import AuthorizationError
-from app.src.core.exceptions.GroupNotFoundError import GroupNotFoundError
-from app.src.core.exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
-from app.src.core.exceptions.UserNotFoundError import UserNotFoundError
-from app.src.core.exceptions.UserNotInGroupError import UserNotInGroupError
-from app.src.application.DTO.group.grtoup_dto import GroupDTO
-from app.src.application.DTO.group.group_summary_dto import GroupSummaryDTO
-from app.src.application.DTO.group.group_member_dto import GroupMemberDTO
-from app.src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
-from app.src.application.DTO.group.group_message_dto import GroupMessageDTO
-from app.src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
-from app.src.domain.entities.GroupMembershipAction import GroupMembershipAction
-from app.src.domain.repositories_Interface.user_repository import UserRepository
-from app.src.domain.repositories_Interface.group_repository import GroupRepository
-from app.src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
+from src.application.service.service_Interface.group_service import GroupService
+from src.core.logger.CustomLogger import CustomLogger
+from src.domain.entities.Group import Group
+from src.domain.entities.GroupMessage import GroupMessage
+from src.domain.entities.Message import Message
+from src.domain.entities.MessageStatus import MessageStatus
+from src.core.exceptions.AuthorizationError import AuthorizationError
+from src.core.exceptions.GroupNotFoundError import GroupNotFoundError
+from src.core.exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
+from src.core.exceptions.UserNotFoundError import UserNotFoundError
+from src.core.exceptions.UserNotInGroupError import UserNotInGroupError
+from src.application.DTO.group.grtoup_dto import GroupDTO
+from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
+from src.application.DTO.group.group_member_dto import GroupMemberDTO
+from src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
+from src.application.DTO.group.group_message_dto import GroupMessageDTO
+from src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
+from src.domain.entities.GroupMembershipAction import GroupMembershipAction
+from src.domain.repositories_Interface.user_repository import UserRepository
+from src.domain.repositories_Interface.group_repository import GroupRepository
+from src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
 
 
 class GroupServiceImpl(GroupService):

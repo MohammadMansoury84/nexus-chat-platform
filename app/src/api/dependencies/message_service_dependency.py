@@ -1,7 +1,7 @@
 
 from fastapi import Depends
-from app.src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
-from app.src.domain.repositories_Interface.user_repository import UserRepository
+from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
+from src.domain.repositories_Interface.user_repository import UserRepository
 from src.infrastructure. repositories_implementation.private_chat_repositiry_impl import PrivateChatRepositoryImpl
 from src.infrastructure.repositories_implementation.user_repository_impl import UserRepositoryImpl
 from src.application.service.services_implementation.message_service_impl import MessageServiceImpl

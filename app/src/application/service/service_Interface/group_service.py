@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
 
-from app.src.application.DTO.group.grtoup_dto import GroupDTO
-from app.src.application.DTO.group.group_summary_dto import GroupSummaryDTO
-from app.src.application.DTO.group.group_member_dto import GroupMemberDTO
-from app.src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
-from app.src.application.DTO.group.group_message_dto import GroupMessageDTO
-from app.src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
+from src.application.DTO.group.grtoup_dto import GroupDTO
+from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
+from src.application.DTO.group.group_member_dto import GroupMemberDTO
+from src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
+from src.application.DTO.group.group_message_dto import GroupMessageDTO
+from src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
 
 class GroupService(ABC):
 

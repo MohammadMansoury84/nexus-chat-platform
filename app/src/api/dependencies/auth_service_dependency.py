@@ -1,7 +1,7 @@
 
 from fastapi import Depends
 
-from app.src.domain.repositories_Interface.user_repository import UserRepository
+from src.domain.repositories_Interface.user_repository import UserRepository
 
 from src.infrastructure.repositories_implementation.user_repository_impl import UserRepositoryImpl
 from src.application.service.services_implementation.auth_service_impl import AuthServiceImpl
