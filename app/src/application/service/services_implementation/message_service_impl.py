@@ -8,9 +8,9 @@ from src.domain.entities.PrivateChatMessage import PrivateChatMessage
 from src.core.exceptions.PrivateChatNotFoundError import PrivateChatNotFoundError
 from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
-from app.src.domain.repositories_Interface.user_repository import UserRepository
-from app.src.application.DTO.private_message_dto.message_dto import MessageDTO
-from app.src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
+from src.domain.repositories_Interface.user_repository import UserRepository
+from src.application.DTO.private_message_dto.message_dto import MessageDTO
+from src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
 
 class MessageServiceImpl(MessageService):
 

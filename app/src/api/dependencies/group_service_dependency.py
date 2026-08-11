@@ -1,8 +1,8 @@
 
 from fastapi import Depends
-from app.src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
-from app.src.domain.repositories_Interface.group_repository import GroupRepository
-from app.src.domain.repositories_Interface.user_repository import UserRepository
+from src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
+from src.domain.repositories_Interface.group_repository import GroupRepository
+from src.domain.repositories_Interface.user_repository import UserRepository
 from src.infrastructure.repositories_implementation.group_message_repository_impl import GroupMessageRepositoryImpl
 from src.infrastructure.repositories_implementation.group_repository_impl import GroupRepositoryImpl
 from src.infrastructure.repositories_implementation.user_repository_impl import UserRepositoryImpl
