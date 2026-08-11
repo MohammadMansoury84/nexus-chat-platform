@@ -8,12 +8,12 @@ from src.core.logger.CustomFileHandler import CustomFileHandler
 class CustomLogger(logging.Logger):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        setting = Setting()
+        # setting = Setting()
         self.setLevel(logging.DEBUG)
         self.propagate = False
 
-        if setting.show_log_in_cli:
-            self.addHandler(ConsoleHandler())
+        # if setting.show_log_in_cli:
+        self.addHandler(ConsoleHandler())
 
         self.addHandler(CustomFileHandler())
 
