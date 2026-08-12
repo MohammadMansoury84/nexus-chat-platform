@@ -5,7 +5,6 @@ from src.domain.repositories_Interface.user_repository import UserRepository
 
 
 class UserRepositoryImpl(UserRepository):
-    
     def __init__(self) -> None:
         self._users: list[User] = []
 
@@ -20,11 +19,11 @@ class UserRepositoryImpl(UserRepository):
 
         return None
 
-    def get_by_username(self,username: str) -> User | None:
+    def get_by_username(self, username: str) -> User | None:
         for user in self._users:
             if user.username == username:
                 return user
-            
+
         return None
 
     def list_all(self) -> list[User]:

@@ -1,27 +1,27 @@
 from uuid import UUID
+
+from src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
+from src.application.DTO.private_message_dto.message_dto import MessageDTO
 from src.application.service.service_Interface.message_service import MessageService
+from src.core.exceptions.PrivateChatNotFoundError import PrivateChatNotFoundError
+from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.logger.CustomLogger import CustomLogger
-from src.domain.entities.Message import Message
 from src.domain.entities.MessageStatus import MessageStatus
 from src.domain.entities.PrivateChat import PrivateChat
 from src.domain.entities.PrivateChatMessage import PrivateChatMessage
-from src.core.exceptions.PrivateChatNotFoundError import PrivateChatNotFoundError
-from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
 from src.domain.repositories_Interface.user_repository import UserRepository
-from src.application.DTO.private_message_dto.message_dto import MessageDTO
-from src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
+
 
 class MessageServiceImpl(MessageService):
+    def __init__(
+        self, user_repository: UserRepository, privateChat_repository: PrivateChatRepository
+    ) -> None:
 
-    def __init__(self, user_repository: UserRepository,privateChat_repository :PrivateChatRepository) -> None:
-
-        self._privateChat_repository= privateChat_repository
+        self._privateChat_repository = privateChat_repository
         self._user_repository = user_repository
 
         self.custome_logger = CustomLogger(self.__class__.__name__)
-
-
 
     def send_message(self, sender_id: UUID, receiver_id: UUID, content: str) -> MessageDTO:
 
@@ -66,12 +66,14 @@ class MessageServiceImpl(MessageService):
             "Message sent successfully", sender_id=sender_id, receiver_id=receiver_id
         )
 
-        return MessageDTO(id=message.id,sender_id=sender_id, 
-                        receiver_id=receiver.id,
-                        content=message.content,
-                        status=message.status
-                    )
-    
+        return MessageDTO(
+            id=message.id,
+            sender_id=sender_id,
+            receiver_id=receiver.id,
+            content=message.content,
+            status=message.status,
+        )
+
     def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[ChatMessageDTO]:
         self.custome_logger.debug(
             "Attempting to get chat", user1_id=user1_id, user2_id=user2_id
@@ -94,12 +96,11 @@ class MessageServiceImpl(MessageService):
                     sender_id=sender.id,
                     username=sender.username,
                     content=msg.content,
-                    status=msg.status)
+                    status=msg.status,
+                )
             )
         return chat_result
 
-
-        
     def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID) -> bool:
 
         if self._user_repository.get_by_id(user1_id) is None:
@@ -116,7 +117,6 @@ class MessageServiceImpl(MessageService):
 
         return True
 
-
     def _get_private_chat(self, user1_id: UUID, user2_id: UUID) -> PrivateChat | None:
         self.custome_logger.debug(
             "Attempting to get private chat ", user1_id=user1_id, user2_id=user2_id
@@ -130,5 +130,3 @@ class MessageServiceImpl(MessageService):
                 return chat
 
         return None
-
-    
