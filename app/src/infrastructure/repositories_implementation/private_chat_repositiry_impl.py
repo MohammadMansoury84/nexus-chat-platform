@@ -1,5 +1,3 @@
-from uuid import UUID
-
 from src.domain.entities.PrivateChat import PrivateChat
 from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
 
@@ -11,4 +9,3 @@ class PrivateChatRepositoryImpl(PrivateChatRepository):
     def add(self, private_chat: PrivateChat) -> PrivateChat:
         self._privateChats.append(private_chat)
         return private_chat
-

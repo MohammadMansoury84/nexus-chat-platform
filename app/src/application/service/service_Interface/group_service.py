@@ -1,16 +1,15 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
 
-from src.application.DTO.group.grtoup_dto import GroupDTO
-from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
-from src.application.DTO.group.group_member_dto import GroupMemberDTO
 from src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
-from src.application.DTO.group.group_message_dto import GroupMessageDTO
+from src.application.DTO.group.group_member_dto import GroupMemberDTO
 from src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
+from src.application.DTO.group.group_message_dto import GroupMessageDTO
+from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
+from src.application.DTO.group.grtoup_dto import GroupDTO
+
 
 class GroupService(ABC):
-
-
     @abstractmethod
     def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
         pass
@@ -30,7 +29,7 @@ class GroupService(ABC):
         pass
 
     @abstractmethod
-    def get_group_by_id(self, group_id: UUID) -> GroupDTO :
+    def get_group_by_id(self, group_id: UUID) -> GroupDTO:
         pass
 
     @abstractmethod
@@ -61,6 +60,3 @@ class GroupService(ABC):
         user_id: UUID,
     ) -> GroupMembershipActionDTO:
         pass
-
-
-

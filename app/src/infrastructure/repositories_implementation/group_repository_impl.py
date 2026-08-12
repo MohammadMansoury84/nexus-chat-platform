@@ -5,7 +5,6 @@ from src.domain.repositories_Interface.group_repository import GroupRepository
 
 
 class GroupRepositoryImpl(GroupRepository):
-
     def __init__(self) -> None:
         self._groups: list[Group] = []
 

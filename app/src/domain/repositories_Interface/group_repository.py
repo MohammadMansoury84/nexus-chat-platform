@@ -1,9 +1,10 @@
-from uuid import UUID
 from abc import ABC, abstractmethod
+from uuid import UUID
+
 from src.domain.entities.Group import Group
 
-class GroupRepository(ABC):
 
+class GroupRepository(ABC):
     @abstractmethod
     def add(self, group: Group) -> Group:
         pass

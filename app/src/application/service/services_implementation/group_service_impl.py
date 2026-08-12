@@ -1,43 +1,41 @@
 from uuid import UUID
 
-
+from src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
+from src.application.DTO.group.group_member_dto import GroupMemberDTO
+from src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
+from src.application.DTO.group.group_message_dto import GroupMessageDTO
+from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
+from src.application.DTO.group.grtoup_dto import GroupDTO
 from src.application.service.service_Interface.group_service import GroupService
-from src.core.logger.CustomLogger import CustomLogger
-from src.domain.entities.Group import Group
-from src.domain.entities.GroupMessage import GroupMessage
-from src.domain.entities.Message import Message
-from src.domain.entities.MessageStatus import MessageStatus
 from src.core.exceptions.AuthorizationError import AuthorizationError
 from src.core.exceptions.GroupNotFoundError import GroupNotFoundError
 from src.core.exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
 from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.exceptions.UserNotInGroupError import UserNotInGroupError
-from src.application.DTO.group.grtoup_dto import GroupDTO
-from src.application.DTO.group.group_summary_dto import GroupSummaryDTO
-from src.application.DTO.group.group_member_dto import GroupMemberDTO
-from src.application.DTO.group.group_chat_message_dto import GroupChatMessageDTO
-from src.application.DTO.group.group_message_dto import GroupMessageDTO
-from src.application.DTO.group.group_membership_action_dto import GroupMembershipActionDTO
+from src.core.logger.CustomLogger import CustomLogger
+from src.domain.entities.Group import Group
 from src.domain.entities.GroupMembershipAction import GroupMembershipAction
-from src.domain.repositories_Interface.user_repository import UserRepository
+from src.domain.entities.GroupMessage import GroupMessage
+from src.domain.entities.MessageStatus import MessageStatus
+from src.domain.repositories_Interface.group_message_repository import (
+    GroupMessageRepository,
+)
 from src.domain.repositories_Interface.group_repository import GroupRepository
-from src.domain.repositories_Interface.group_message_repository import GroupMessageRepository
+from src.domain.repositories_Interface.user_repository import UserRepository
 
 
 class GroupServiceImpl(GroupService):
-
     def __init__(
-        self, user_repository: UserRepository, 
+        self,
+        user_repository: UserRepository,
         group_repository: GroupRepository,
-        group_message_repository :GroupMessageRepository
+        group_message_repository: GroupMessageRepository,
     ) -> None:
         self._user_repository = user_repository
         self._group_repository = group_repository
-        self._group_message_repository=group_message_repository
+        self._group_message_repository = group_message_repository
 
         self.custome_logger = CustomLogger(self.__class__.__name__)
-
-
 
     def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
 
@@ -64,9 +62,7 @@ class GroupServiceImpl(GroupService):
             creator_id=creator_id,
         )
 
-        return GroupDTO(group_id=group.id,name=group.name,creator_id=group.creator_id)
-
-
+        return GroupDTO(group_id=group.id, name=group.name, creator_id=group.creator_id)
 
     def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID) -> bool:
 
@@ -112,7 +108,6 @@ class GroupServiceImpl(GroupService):
             "User added to group successfully", user_id=user_id, group_id=group_id
         )
         return True
-
 
     def send_message_to_group(
         self, group_id: UUID, sender_id: UUID, content: str
@@ -160,8 +155,12 @@ class GroupServiceImpl(GroupService):
             content=content,
         )
 
-        return GroupMessageDTO(sender_id=sender.id,group_id=group.id,content=message.content,status=message.status)
-
+        return GroupMessageDTO(
+            sender_id=sender.id,
+            group_id=group.id,
+            content=message.content,
+            status=message.status,
+        )
 
     def get_group_chat(self, group_id: UUID) -> list[GroupChatMessageDTO] | None:
 
@@ -178,21 +177,26 @@ class GroupServiceImpl(GroupService):
             for msg in group.messages:
                 sender = self._user_repository.get_by_id(msg.sender_id)
 
-                chat.append(GroupChatMessageDTO(sender_id=sender.id,username=sender.username,content=msg.content))
+                chat.append(
+                    GroupChatMessageDTO(
+                        sender_id=sender.id, username=sender.username, content=msg.content
+                    )
+                )
 
             self.custome_logger.info("Group chat retrieved successfully", group_id=group_id)
             return chat
-        
+
         return None
 
     def get_group_by_id(self, group_id: UUID) -> GroupDTO:
-        group=self._group_repository.get_by_id(group_id=group_id)
+        group = self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             raise GroupNotFoundError("Group not found.")
-        
-        return GroupDTO(group_id=group.id,group_name=group.name,creator_id=group.creator_id)
 
+        return GroupDTO(
+            group_id=group.id, group_name=group.name, creator_id=group.creator_id
+        )
 
     def get_all_groups_for_show_users(self, user_id: UUID) -> list[GroupSummaryDTO]:
         return [
@@ -202,10 +206,9 @@ class GroupServiceImpl(GroupService):
 
     def get_all_groups(self) -> list[GroupSummaryDTO]:
         return [
-            GroupSummaryDTO(group_id=group.id,group_name=group.name)
+            GroupSummaryDTO(group_id=group.id, group_name=group.name)
             for group in self._group_repository.list_all()
         ]
-
 
     def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
 
@@ -237,8 +240,6 @@ class GroupServiceImpl(GroupService):
 
         raise AuthorizationError("only admin can delete group")
 
-
-
     def show_group_member(self, user_id: UUID, group_id: UUID) -> list[GroupMemberDTO]:
         group = self.get_group_by_id(group_id=group_id)
 
@@ -256,10 +257,9 @@ class GroupServiceImpl(GroupService):
 
         self.custome_logger.info("show Group members", group_id=group_id)
         return [
-            GroupMemberDTO(id=member.id,username=member.username)
+            GroupMemberDTO(id=member.id, username=member.username)
             for member in group.members
         ]
-
 
     def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
         group = self.get_group_by_id(group_id=group_id)
@@ -286,7 +286,6 @@ class GroupServiceImpl(GroupService):
         group.messages.clear()
 
         return True
-
 
     def remove_user_from_group(
         self,
@@ -315,7 +314,6 @@ class GroupServiceImpl(GroupService):
 
         if admin_id == user_id:
             if group.creator_id == user_id:
-
                 self.delete_group_by_id(
                     user_id=user_id,
                     group_id=group_id,
@@ -326,9 +324,9 @@ class GroupServiceImpl(GroupService):
                     group_id=group.id,
                     group_name=group.name,
                     user_id=target_member.id,
-                    username=target_member.username
+                    username=target_member.username,
                 )
-                
+
             group.members.remove(target_member)
 
             if group in target_user.joined_groups:
@@ -338,7 +336,7 @@ class GroupServiceImpl(GroupService):
                 action=GroupMembershipAction.USER_LEFT,
                 group_name=group.name,
                 user_id=target_member.id,
-                username=target_member.username
+                username=target_member.username,
             )
 
         if group.creator_id != admin_id:
@@ -356,10 +354,5 @@ class GroupServiceImpl(GroupService):
                 action=GroupMembershipAction.USER_REMOVED,
                 group_name=group.name,
                 user_id=target_member.id,
-                username=target_member.username
+                username=target_member.username,
             )
-        
-
-
-
-    
