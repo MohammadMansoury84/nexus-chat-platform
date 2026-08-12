@@ -1,7 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr
+from uuid import UUID
 
 
 class SignupResponse(BaseModel):
-    user_data:dict
-    message: str
+    id:UUID
+    username:str
+    email:EmailStr
     

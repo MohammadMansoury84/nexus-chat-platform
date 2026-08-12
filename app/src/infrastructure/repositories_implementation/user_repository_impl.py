@@ -20,5 +20,12 @@ class UserRepositoryImpl(UserRepository):
 
         return None
 
+    def get_by_username(self,username: str) -> User | None:
+        for user in self._users:
+            if user.username == username:
+                return user
+            
+        return None
+
     def list_all(self) -> list[User]:
         return self._users

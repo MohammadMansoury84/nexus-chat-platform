@@ -9,13 +9,15 @@ from src.core.exceptions.InvalidCredentialsError import InvalidCredentialsError
 from src.application.DTO.user.user_dto import UserDTO
 from src.application.DTO.user.user_summary_dto import UserSummaryDTO
 from src.domain.repositories_Interface.user_repository import UserRepository
+from src.application.security.password_hasher import PasswordHasher
 
 
 class AuthServiceImpl(AuthService):
 
-    def __init__(self, user_repository: UserRepository) -> None:
+    def __init__(self, user_repository: UserRepository,passweord_hasher: PasswordHasher) -> None:
 
         self._user_repository = user_repository
+        self._passweord_hasher=passweord_hasher
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
 
@@ -37,7 +39,8 @@ class AuthServiceImpl(AuthService):
             message = "Email already exists."
             raise DuplicateEmailError(message)
 
-        user = User(username=username, email=email, password=password)
+        hashed_password=self._passweord_hasher.hash_password(password=password)
+        user = User(username=username, email=email, hashed_password=hashed_password)
 
         self._user_repository.add(user=user)
 
@@ -52,16 +55,26 @@ class AuthServiceImpl(AuthService):
             "Attempting to log in user", username=username, password=password
         )
 
-        for user in self._user_repository.list_all():
-            if user.username == username and user.password == password:
-                self.custome_logger.info("User logged in successfully", username=username)
+        user = self._user_repository.get_by_username(username=username)
 
-                return UserDTO(id=user.id,username=user.username,email=user.email)
+        if username is None:
+            self.custome_logger.error("Failed to log in user", username=username)
+            raise InvalidCredentialsError(
+                "Invalid username or password.")
+        
+        is_password__valid=self._passweord_hasher.verify_passwoed(plain_password=password,hashed_password=user.hashed_password)
 
-        self.custome_logger.error("Failed to log in user", username=username)
+        if not is_password__valid:
+            self.custome_logger.error("Failed to log in user", username=username)
+            raise InvalidCredentialsError(
+                "Invalid username or password.")
 
-        raise InvalidCredentialsError(
-            "Invalid username or password.")
+        self.custome_logger.info("User logged in successfully",username=username,)
+        
+        return UserDTO(id=user.id,username=user.username,email=user.email)
+
+        
+
 
 
 
