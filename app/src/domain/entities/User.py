@@ -15,7 +15,7 @@ class User(BaseModel):
     id: UUID = Field(default_factory=uuid4)
     username: str = Field(min_length=4, max_length=20)
     email: EmailStr
-    password: str = Field(min_length=6, max_length=150)
+    hashed_password: str
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     private_chats: list[PrivateChat] = Field(default_factory=list)
     groups_created: list["Group"] = Field(default_factory=list)
