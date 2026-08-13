@@ -11,7 +11,8 @@ from src.core.exceptions.ResponseError import ResponseError
 from src.core.exceptions.UserAlreadyInGroupError import UserAlreadyInGroupError
 from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.exceptions.UserNotInGroupError import UserNotInGroupError
-
+from src.core.exceptions.InvalidAccessTokenError import InvalidAccessTokenError
+from src.core.exceptions.ExpiredAccessTokenError import ExpiredAccessTokenError
 
 class GlobalExceptionHandler:
     def __init__(self, app: FastAPI):
@@ -48,12 +49,26 @@ class GlobalExceptionHandler:
         self.app.add_exception_handler(
             UserNotInGroupError, self.handle_user_not_in_group_error
         )
+        self.app.add_exception_handler(InvalidAccessTokenError,self.handle_invalid_access_token_error)
+        self.app.add_exception_handler(ExpiredAccessTokenError,self.handle_expired_access_token_error)
 
     # async def handle_application_error(self,request: Request , exc:ApplicationError):
     #     return JSONResponse(
     #         status_code=status.HTTP_400_BAD_REQUEST,
     #         content={"detail": str(exc)},
     #     )
+
+    async def handle_invalid_access_token_error(request :Request ,exc :InvalidAccessTokenError):
+        return JSONResponse(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            content={"detail": str(exc)},
+        )
+
+    async def handle_expired_access_token_error(request :Request ,exc :ExpiredAccessTokenError):
+        return JSONResponse(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            content={"detail": str(exc)},
+        )
 
     async def handle_authorization_error(self, request: Request, exc: AuthorizationError):
         return JSONResponse(
