@@ -9,15 +9,14 @@ from src.api.schemas.Response.signup_response import SignupResponse
 from src.application.service.service_Interface.auth_service import AuthService
 from src.api.schemas.Request.login_request import LoginRequest
 from src.api.schemas.Response.login_response import LoginResponse
-from src.api.dependencies.auth import get_current_user
 
-router = APIRouter(
+auth_router = APIRouter(
     prefix="/auth",
     tags=["Auth"],
 )
 
 
-@router.post("/", response_model=Response[SignupResponse])
+@auth_router.post("/", response_model=Response[SignupResponse])
 def signup(
     signup_request: SignupRequest, 
     auth_service: Annotated[AuthService , Depends(get_auth_service)]
@@ -37,7 +36,7 @@ def signup(
     )
 
 
-@router.post("/login",response_model=Response[LoginResponse])
+@auth_router.post("/login",response_model=Response[LoginResponse])
 def login(
     login_request:LoginRequest, 
     auth_service: Annotated[AuthService , Depends(get_auth_service)]
@@ -55,13 +54,10 @@ def login(
     )
 
 
-@router.get("/me")
-def me(
-    user_id: UUID = Depends(get_current_user),
-):
-    return {
-        "user": user_id
-    }
+
+
+
+
 
 
     

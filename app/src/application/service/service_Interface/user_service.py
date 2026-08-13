@@ -3,17 +3,9 @@ from uuid import UUID
 
 from src.application.DTO.user.user_dto import UserDTO
 from src.application.DTO.user.user_summary_dto import UserSummaryDTO
-from src.application.DTO.user.token_dto import TokenDTO
 
+class UserService(ABC):
 
-class AuthService(ABC):
-    @abstractmethod
-    def signup(self, username: str, email: str, password: str) -> UserDTO:
-        pass
-
-    @abstractmethod
-    def login(self, username: str, password: str) -> TokenDTO:
-        pass
 
     @abstractmethod
     def get_other_logged_in_users_for_show(
@@ -23,6 +15,18 @@ class AuthService(ABC):
     ) -> list[UserSummaryDTO]:
         pass
 
+
     @abstractmethod
-    def get_all_users(self) -> list[UserDTO]:
+    def get_user_by_id(self, user_id: UUID) -> UserDTO | None:
         pass
+
+
+    @abstractmethod
+    def get_all_users(self) -> list[UserSummaryDTO]:
+        pass
+
+
+    
+
+
+

@@ -24,3 +24,13 @@
 08/13/2026 07:25:44 - INFO - User logged in successfully | username: string
 08/13/2026 07:25:48 - INFO - User logged in successfully | username: string
 08/13/2026 07:25:50 - INFO - User logged in successfully | username: string
+08/13/2026 19:39:00 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 19:39:20 - INFO - User logged in successfully | username: string
+08/13/2026 19:41:00 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 19:41:08 - INFO - User logged in successfully | username: string
+08/13/2026 19:42:52 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 19:43:00 - INFO - User logged in successfully | username: string
+08/14/2026 01:34:04 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 01:34:16 - INFO - User logged in successfully | username: string
+08/14/2026 01:35:50 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 01:35:56 - INFO - User logged in successfully | username: string

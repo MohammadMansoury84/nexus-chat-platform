@@ -1,3 +1,5 @@
+from src.application.security.token_service_interface.token_service import TokenService
+from src.application.security.password_hasher import PasswordHasher
 from src.infrastructure.security.password_hasher_impl import PasswordHasherImpl
 from src.infrastructure.security.token_service_implementation.token_service_impl import TokenServiceImpl
 from src.core.config.Setting import Setting
@@ -11,8 +13,8 @@ _token_service=TokenServiceImpl(
     )
 
 
-def get_passweord_hasher():
+def get_passweord_hasher()->PasswordHasher:
     return _passweord_hasher
 
-def get_token_service():
+def get_token_service()->TokenService:
     return _token_service

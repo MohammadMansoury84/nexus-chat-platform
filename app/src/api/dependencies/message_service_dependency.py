@@ -1,4 +1,5 @@
 from fastapi import Depends
+from src.application.service.service_Interface.message_service import MessageService
 from src.application.service.services_implementation.message_service_impl import (
     MessageServiceImpl,
 )
@@ -14,7 +15,7 @@ from src.api.dependencies.repository_dependency import(
 def get_message_service(
     user_repository: UserRepository = Depends(get_user_repository),
     private_chat_repository: PrivateChatRepository = Depends(get_private_chat_repository),
-):
+)->MessageService:
     return MessageServiceImpl(
         user_repository=user_repository,
         privateChat_repository=private_chat_repository,
