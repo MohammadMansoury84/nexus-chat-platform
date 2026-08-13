@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from src.api.GlobalExceptionHandler.global_exception_handler import GlobalExceptionHandler
-from src.api.v1.endpoints.auth_router import router
+from src.api.v1.router import main_router
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
 app = FastAPI()
 GlobalExceptionHandler(app=app)
 app.include_router(
-    router,
+    main_router
 )
 
 

@@ -1,4 +1,5 @@
 from fastapi import Depends
+from src.application.service.service_Interface.group_service import GroupService
 from src.application.service.services_implementation.group_service_impl import (
     GroupServiceImpl,
 )
@@ -20,7 +21,7 @@ def get_group_service(
         get_group_message_repository
     ),
     user_repository: UserRepository = Depends(get_user_repository),
-):
+)->GroupService:
     return GroupServiceImpl(
         user_repository=user_repository,
         group_repository=group_repository,
