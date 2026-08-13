@@ -7,31 +7,11 @@ from src.domain.repositories_Interface.group_message_repository import (
 )
 from src.domain.repositories_Interface.group_repository import GroupRepository
 from src.domain.repositories_Interface.user_repository import UserRepository
-from src.infrastructure.repositories_implementation.group_message_repository_impl import (
-    GroupMessageRepositoryImpl,
+from src.api.dependencies.repository_dependency import(
+    get_user_repository,
+    get_group_message_repository,
+    get_group_repository
 )
-from src.infrastructure.repositories_implementation.group_repository_impl import (
-    GroupRepositoryImpl,
-)
-from src.infrastructure.repositories_implementation.user_repository_impl import (
-    UserRepositoryImpl,
-)
-
-user_repository = UserRepositoryImpl()
-group_repository = GroupRepositoryImpl()
-group_message_repository = GroupMessageRepositoryImpl()
-
-
-def get_user_repository():
-    return user_repository
-
-
-def get_group_repository():
-    return group_repository
-
-
-def get_group_message_repository():
-    return group_message_repository
 
 
 def get_group_service(

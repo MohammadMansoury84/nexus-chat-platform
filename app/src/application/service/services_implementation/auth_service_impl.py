@@ -11,15 +11,21 @@ from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.logger.CustomLogger import CustomLogger
 from src.domain.entities.User import User
 from src.domain.repositories_Interface.user_repository import UserRepository
+from src.application.security.token_service_interface.token_service import TokenService
+from src.application.DTO.user.token_dto import TokenDTO
 
 
 class AuthServiceImpl(AuthService):
     def __init__(
-        self, user_repository: UserRepository, passweord_hasher: PasswordHasher
+        self, 
+        user_repository: UserRepository, 
+        passweord_hasher: PasswordHasher,
+        token_service: TokenService
     ) -> None:
 
         self._user_repository = user_repository
         self._passweord_hasher = passweord_hasher
+        self._token_service=token_service
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
     def signup(self, username: str, email: str, password: str) -> UserDTO:
@@ -48,8 +54,9 @@ class AuthServiceImpl(AuthService):
         self.custome_logger.info("User created", username=username, email=email)
 
         return UserDTO(id=user.id, username=user.username, email=user.email)
+    
 
-    def login(self, username: str, password: str) -> UserDTO:
+    def login(self, username: str, password: str) -> TokenDTO:
 
         self.custome_logger.debug(
             "Attempting to log in user", username=username, password=password
@@ -57,7 +64,7 @@ class AuthServiceImpl(AuthService):
 
         user = self._user_repository.get_by_username(username=username)
 
-        if username is None:
+        if user is None:
             self.custome_logger.error("Failed to log in user", username=username)
             raise InvalidCredentialsError("Invalid username or password.")
 
@@ -69,9 +76,12 @@ class AuthServiceImpl(AuthService):
             self.custome_logger.error("Failed to log in user", username=username)
             raise InvalidCredentialsError("Invalid username or password.")
 
+        access_token = self._token_service.create_access_token(user_id=user.id)
+
+       
         self.custome_logger.info("User logged in successfully", username=username)
 
-        return UserDTO(id=user.id, username=user.username, email=user.email)
+        return TokenDTO(access_token=access_token,token_type="bearer")
 
     def get_other_logged_in_users_for_show(
         self,

@@ -6,3 +6,12 @@
 08/11/2026 17:51:05 - INFO - User created | username: string | email: string@gmail.com
 08/11/2026 17:54:32 - INFO - User created | username: string | email: string@GG.com
 08/11/2026 17:55:41 - INFO - User created | username: string | email: string@GG.com
+08/13/2026 06:46:41 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 06:53:25 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 06:57:06 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 06:57:10 - INFO - User logged in successfully | username: string
+08/13/2026 07:01:49 - ERROR - Failed to log in user | username: string
+08/13/2026 07:01:57 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 07:02:01 - INFO - User logged in successfully | username: string
+08/13/2026 07:05:31 - INFO - User created | username: string | email: string@gmail.com
+08/13/2026 07:05:39 - INFO - User logged in successfully | username: string

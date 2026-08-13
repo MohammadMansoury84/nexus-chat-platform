@@ -3,6 +3,7 @@ from uuid import UUID
 
 from src.application.DTO.user.user_dto import UserDTO
 from src.application.DTO.user.user_summary_dto import UserSummaryDTO
+from src.application.DTO.user.token_dto import TokenDTO
 
 
 class AuthService(ABC):
@@ -11,7 +12,7 @@ class AuthService(ABC):
         pass
 
     @abstractmethod
-    def login(self, username: str, password: str) -> UserDTO:
+    def login(self, username: str, password: str) -> TokenDTO:
         pass
 
     @abstractmethod
