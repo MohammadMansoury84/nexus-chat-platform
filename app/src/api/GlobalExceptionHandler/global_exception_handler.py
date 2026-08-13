@@ -24,33 +24,69 @@ class GlobalExceptionHandler:
         # self.app.add_exception_handler(
         #     ApplicationError,self.handle_application_error
         # )
-        self.app.add_exception_handler(AuthorizationError, self.handle_authorization_error)
         self.app.add_exception_handler(
-            DuplicateEmailError, self.handle_duplicate_email_error
+            AuthorizationError, 
+            self.handle_authorization_error
+        )
+        
+        self.app.add_exception_handler(
+            DuplicateEmailError, 
+            self.handle_duplicate_email_error
+        )
+
+        self.app.add_exception_handler(
+            DuplicateUsernameError, 
+            self.handle_duplicdate_username_error
+        )
+
+        self.app.add_exception_handler(
+            EmptyDataException, 
+            self.handle_empty_data_exception
+            )
+        
+        self.app.add_exception_handler(
+            GroupNotFoundError, 
+            self.handle_group_not_found_error
+        )
+
+        self.app.add_exception_handler(
+            InvalidCredentialsError, 
+            self.handle_invalid_credentials_error
+        )
+
+        self.app.add_exception_handler(       
+            PrivateChatNotFoundError, 
+            self.handle_private_chat_not_found_error
+        )
+
+        self.app.add_exception_handler(
+            ResponseError,
+            self.handle_response_error
+        )
+
+        self.app.add_exception_handler(
+            UserAlreadyInGroupError, 
+            self.handle_user_already_in_group_error
+        )
+
+        self.app.add_exception_handler(
+            UserNotFoundError, 
+            self.handle_user_not_found_error
+            )
+        
+        self.app.add_exception_handler(
+            UserNotInGroupError, 
+            self.handle_user_not_in_group_error
         )
         self.app.add_exception_handler(
-            DuplicateUsernameError, self.handle_duplicdate_username_error
-        )
-        self.app.add_exception_handler(EmptyDataException, self.handle_empty_data_exception)
+            InvalidAccessTokenError,
+            self.handle_invalid_access_token_error
+            )
+        
         self.app.add_exception_handler(
-            GroupNotFoundError, self.handle_group_not_found_error
-        )
-        self.app.add_exception_handler(
-            InvalidCredentialsError, self.handle_invalid_credentials_error
-        )
-        self.app.add_exception_handler(
-            PrivateChatNotFoundError, self.handle_private_chat_not_found_error
-        )
-        self.app.add_exception_handler(ResponseError, self.handle_response_error)
-        self.app.add_exception_handler(
-            UserAlreadyInGroupError, self.handle_user_already_in_group_error
-        )
-        self.app.add_exception_handler(UserNotFoundError, self.handle_user_not_found_error)
-        self.app.add_exception_handler(
-            UserNotInGroupError, self.handle_user_not_in_group_error
-        )
-        self.app.add_exception_handler(InvalidAccessTokenError,self.handle_invalid_access_token_error)
-        self.app.add_exception_handler(ExpiredAccessTokenError,self.handle_expired_access_token_error)
+            ExpiredAccessTokenError,
+            self.handle_expired_access_token_error
+            )
 
     # async def handle_application_error(self,request: Request , exc:ApplicationError):
     #     return JSONResponse(
@@ -58,13 +94,13 @@ class GlobalExceptionHandler:
     #         content={"detail": str(exc)},
     #     )
 
-    async def handle_invalid_access_token_error(request :Request ,exc :InvalidAccessTokenError):
+    async def handle_invalid_access_token_error(self,request :Request ,exc :InvalidAccessTokenError):
         return JSONResponse(
             status_code=status.HTTP_401_UNAUTHORIZED,
             content={"detail": str(exc)},
         )
 
-    async def handle_expired_access_token_error(request :Request ,exc :ExpiredAccessTokenError):
+    async def handle_expired_access_token_error(self,request :Request ,exc :ExpiredAccessTokenError):
         return JSONResponse(
             status_code=status.HTTP_401_UNAUTHORIZED,
             content={"detail": str(exc)},
