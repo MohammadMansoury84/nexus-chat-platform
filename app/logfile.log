@@ -57,3 +57,20 @@
 08/14/2026 04:53:55 - INFO - User logged in successfully | username: string
 08/14/2026 04:54:23 - INFO - PrivateChat create successfully | sender_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f | receiver_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f
 08/14/2026 04:54:23 - INFO - Message sent successfully | sender_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f | receiver_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f
+08/14/2026 05:25:48 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 05:25:56 - INFO - User logged in successfully | username: string
+08/14/2026 05:27:03 - INFO - User logged in successfully | username: string
+08/14/2026 05:27:22 - INFO - PrivateChat create successfully | sender_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2 | receiver_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2
+08/14/2026 05:27:22 - INFO - Message sent successfully | sender_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2 | receiver_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2
+08/14/2026 05:27:48 - INFO - Message sent successfully | sender_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2 | receiver_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2
+08/14/2026 05:28:25 - INFO - User created | username: stringsss | email: strzzing@gmail.com
+08/14/2026 05:28:44 - INFO - User logged in successfully | username: stringsss
+08/14/2026 05:29:09 - INFO - PrivateChat create successfully | sender_id: 653e4d0c-59b5-4cd0-bfa8-57179430ad40 | receiver_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2
+08/14/2026 05:29:09 - INFO - Message sent successfully | sender_id: 653e4d0c-59b5-4cd0-bfa8-57179430ad40 | receiver_id: 364fcbf2-deef-4bb9-a53c-ace0778be0b2
+08/14/2026 05:30:01 - INFO - User logged in successfully | username: string
+08/14/2026 06:21:59 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 06:22:09 - INFO - User logged in successfully | username: string
+08/14/2026 06:23:05 - INFO - PrivateChat create successfully | sender_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5 | receiver_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5
+08/14/2026 06:23:05 - INFO - Message sent successfully | sender_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5 | receiver_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5
+08/14/2026 06:23:28 - INFO - User logged in successfully | username: string
+08/14/2026 06:24:38 - INFO - User logged in successfully | username: string
