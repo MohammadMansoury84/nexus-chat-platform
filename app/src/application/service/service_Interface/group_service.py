@@ -25,7 +25,7 @@ class GroupService(ABC):
         pass
 
     @abstractmethod
-    def get_group_chat(self, group_id: UUID) -> list[GroupChatMessageDTO] | None:
+    def get_group_chat(self, group_id: UUID,sender_id: UUID) -> list[GroupChatMessageDTO] | None:
         pass
 
     @abstractmethod

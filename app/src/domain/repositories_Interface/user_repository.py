@@ -32,3 +32,7 @@ class UserRepository(ABC):
     @abstractmethod
     def get_logged_in_user_ids(self) -> set[UUID]:
         pass
+
+    @abstractmethod
+    def is_user_logged_in(self, user_id: UUID) -> bool:
+        pass

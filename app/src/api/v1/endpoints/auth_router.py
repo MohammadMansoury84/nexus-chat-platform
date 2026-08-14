@@ -2,12 +2,12 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends,status
 from src.api.dependencies.auth_service_dependency import get_auth_service
-from src.api.schemas.Request.signup_request import SignupRequest
+from src.api.schemas.Request.user.signup_request import SignupRequest
 from src.api.schemas.Response.response import Response
-from src.api.schemas.Response.signup_response import SignupResponse
+from src.api.schemas.Response.user.signup_response import SignupResponse
 from src.application.service.service_Interface.auth_service import AuthService
-from src.api.schemas.Request.login_request import LoginRequest
-from src.api.schemas.Response.login_response import LoginResponse
+from src.api.schemas.Request.user.login_request import LoginRequest
+from src.api.schemas.Response.user.login_response import LoginResponse
 
 auth_router = APIRouter(
     prefix="/auth",
