@@ -11,7 +11,6 @@ class UserService(ABC):
     def get_other_logged_in_users_for_show(
         self,
         current_user_id: UUID,
-        logged_in_user_ids: set[UUID],
     ) -> list[UserSummaryDTO]:
         pass
 

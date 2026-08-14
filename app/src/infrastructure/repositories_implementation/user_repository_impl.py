@@ -41,6 +41,8 @@ class UserRepositoryImpl(UserRepository):
 
     def get_logged_in_user_ids(self) -> set[UUID]:
         return self._logged_in_user_ids
-        
+
+    def is_user_logged_in(self, user_id: UUID) -> bool:
+        return user_id in self._logged_in_user_ids
 
     

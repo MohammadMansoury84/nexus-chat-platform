@@ -2,16 +2,16 @@ from typing import Annotated
 from uuid import UUID
 
 from fastapi import APIRouter, Depends,status
-from src.api.schemas.Response.chat_message_response import ChatMessageResponse
+from src.api.schemas.Response.message.chat_message_response import ChatMessageResponse
 from src.api.schemas.Response.response import Response
 from src.application.service.service_Interface.message_service import MessageService
-from src.api.schemas.Request.send_message_request import SendMessageRequest
-from src.api.schemas.Response.send_message_response import SendMessageResponse
+from src.api.schemas.Request.message.send_message_request import SendMessageRequest
+from src.api.schemas.Response.message.send_message_response import SendMessageResponse
 from src.api.dependencies.auth_service_dependency import get_current_user_id
 from src.api.dependencies.message_service_dependency import get_message_service
 
 message_router = APIRouter(
-    prefix="/message",
+    prefix="/messages",
     tags=["Message"],
     dependencies=[Depends(get_current_user_id)],
 )
@@ -71,16 +71,23 @@ def get_chat(
         user2_id=user2_id,
     )
 
+    data = [
+        ChatMessageResponse(
+            sender_id=message.sender_id,
+            username=message.username,
+            content=message.content,
+            status=message.status,
+        )
+        for message in messages
+    ]
+
     return Response[list[ChatMessageResponse]](
-        data=[
-            ChatMessageResponse(
-                sender_id=message.sender_id,
-                username=message.username,
-                content=message.content,
-                status=message.status,
-            )
-            for message in messages
-        ]
+        data=data,
+        message=(
+            "Chat history retrieved successfully."
+            if messages
+            else "You don't have any chat history with this user."
+        ),
     )
 
 

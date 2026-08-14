@@ -74,3 +74,90 @@
 08/14/2026 06:23:05 - INFO - Message sent successfully | sender_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5 | receiver_id: dbfcd43f-d0dd-463e-baaf-b619a6a681c5
 08/14/2026 06:23:28 - INFO - User logged in successfully | username: string
 08/14/2026 06:24:38 - INFO - User logged in successfully | username: string
+08/14/2026 18:49:37 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 18:49:49 - INFO - User logged in successfully | username: string
+08/14/2026 18:50:08 - INFO - Group created successfully | group_id: cce46ea7-882f-4acb-b4f6-fc7f92e810ca | name: string | creator_id: 86d0c8ba-cce4-451f-9b82-a48315882ebd
+08/14/2026 18:52:06 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 18:52:19 - INFO - User logged in successfully | username: string
+08/14/2026 18:52:38 - INFO - Group created successfully | group_id: ec59ef60-5add-4a4a-83a5-a92a7f981f1e | name: string | creator_id: 1833402c-f8f2-4951-a06a-6692f427a235
+08/14/2026 18:53:52 - INFO - Group created successfully | group_id: e22a80bf-399d-4e8c-8ace-bd340a4cef28 | name: string | creator_id: 1833402c-f8f2-4951-a06a-6692f427a235
+08/14/2026 18:54:03 - WARNING - User not found | user_id: 1833402c-f8f2-4951-a06a-6692f427a235
+08/14/2026 18:54:12 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 18:54:16 - INFO - User logged in successfully | username: string
+08/14/2026 18:54:33 - INFO - Group created successfully | group_id: 379b6061-6981-4412-8007-daa26755168f | name: string | creator_id: 86d0d41f-2f6a-43ba-98af-764fb7050190
+08/14/2026 18:59:36 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 18:59:50 - INFO - User logged in successfully | username: string
+08/14/2026 19:00:11 - INFO - Group created successfully | group_id: 919d15d7-f4f9-4aee-9b05-25abd693cf5c | name: string | creator_id: 389a5541-c81a-4d59-8f6b-e122a4fc711a
+08/14/2026 19:00:42 - WARNING - User is already in the group | user_id: 389a5541-c81a-4d59-8f6b-e122a4fc711a | group_id: 919d15d7-f4f9-4aee-9b05-25abd693cf5c
+08/14/2026 19:00:58 - INFO - User created | username: string11 | email: strin1g@gmail.com
+08/14/2026 19:01:25 - INFO - User added to group successfully | user_id: c3b0e2a6-e76e-4404-8b58-5e8c89830e3e | group_id: 919d15d7-f4f9-4aee-9b05-25abd693cf5c
+08/14/2026 19:10:51 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 19:11:03 - INFO - User logged in successfully | username: string
+08/14/2026 19:11:35 - INFO - Group created successfully | group_id: 9662b636-b489-4935-84ee-3063fe7e47af | name: string | creator_id: b73f0f98-0a65-4765-8947-922bfd705ac9
+08/14/2026 19:12:00 - INFO - User created | username: stwring | email: strinwg@gmail.com
+08/14/2026 19:12:46 - INFO - User logged in successfully | username: stwring
+08/14/2026 19:12:52 - INFO - User added to group successfully | user_id: 3a82ff1f-8289-4624-b622-61f2beb71972 | group_id: 9662b636-b489-4935-84ee-3063fe7e47af
+08/14/2026 19:20:38 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 19:20:50 - INFO - User logged in successfully | username: string
+08/14/2026 19:21:12 - INFO - Group created successfully | group_id: 39bce3aa-4daf-4962-997e-146fc71ebfd4 | name: string | creator_id: 725fd646-f754-4469-9a0c-8675987236db
+08/14/2026 19:21:36 - INFO - User created | username: string1 | email: string1@gmail.com
+08/14/2026 19:21:48 - INFO - User logged in successfully | username: string1
+08/14/2026 19:22:02 - INFO - User added to group successfully | user_id: 8b3660f8-523a-44cc-8d92-f041857f3637 | group_id: 39bce3aa-4daf-4962-997e-146fc71ebfd4
+08/14/2026 19:22:44 - WARNING - User is not the creator of the group | creator_id: 8b3660f8-523a-44cc-8d92-f041857f3637 | group_id: 39bce3aa-4daf-4962-997e-146fc71ebfd4
+08/14/2026 19:23:02 - INFO - Message sent to group successfully | group_id: 39bce3aa-4daf-4962-997e-146fc71ebfd4 | sender_id: 8b3660f8-523a-44cc-8d92-f041857f3637 | content: string
+08/14/2026 19:23:23 - WARNING - Email already exists | email: string1@gmail.com
+08/14/2026 19:23:30 - INFO - User created | username: string11 | email: string11@gmail.com
+08/14/2026 19:23:38 - INFO - User logged in successfully | username: string11
+08/14/2026 19:23:59 - WARNING - Sender is not a member of the group | sender_id: aa14d22e-0d19-44a7-97e7-d1394204816c | group_id: 39bce3aa-4daf-4962-997e-146fc71ebfd4
+08/14/2026 19:29:39 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 19:29:48 - INFO - User logged in successfully | username: string
+08/14/2026 19:30:05 - INFO - Group created successfully | group_id: 470bb2b6-5e1f-434b-87a1-05bcf820481d | name: string | creator_id: c32cbee9-6129-41b3-a281-cb82d52e8ef1
+08/14/2026 19:30:28 - INFO - Message sent to group successfully | group_id: 470bb2b6-5e1f-434b-87a1-05bcf820481d | sender_id: c32cbee9-6129-41b3-a281-cb82d52e8ef1 | content: stringsssss
+08/14/2026 19:30:38 - INFO - Group chat retrieved successfully | group_id: 470bb2b6-5e1f-434b-87a1-05bcf820481d
+08/14/2026 19:30:54 - INFO - Group created successfully | group_id: d2ae0a09-e0ab-4ca8-9e88-5ff59aa39a6e | name: stringsss | creator_id: c32cbee9-6129-41b3-a281-cb82d52e8ef1
+08/14/2026 19:31:08 - INFO - Group chat retrieved successfully | group_id: d2ae0a09-e0ab-4ca8-9e88-5ff59aa39a6e
+08/14/2026 19:31:41 - WARNING - No chat history found
+08/14/2026 19:35:10 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 19:35:38 - INFO - User logged in successfully | username: string
+08/14/2026 19:36:14 - INFO - PrivateChat create successfully | sender_id: 9d880639-77b0-4357-8bdf-340046b55b24 | receiver_id: 9d880639-77b0-4357-8bdf-340046b55b24
+08/14/2026 19:36:14 - INFO - Message sent successfully | sender_id: 9d880639-77b0-4357-8bdf-340046b55b24 | receiver_id: 9d880639-77b0-4357-8bdf-340046b55b24
+08/14/2026 19:36:41 - WARNING - Email already exists | email: string@gmail.com
+08/14/2026 19:36:44 - INFO - User created | username: strin11g | email: string11@gmail.com
+08/14/2026 19:37:10 - WARNING - No chat history found
+08/14/2026 23:50:12 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 23:50:23 - INFO - User logged in successfully | username: string
+08/14/2026 23:50:48 - INFO - Group created successfully | group_id: 6207c6ef-1aac-4d2b-b33b-d97b0fdbb967 | name: string | creator_id: 77d0311e-e8e9-410d-a0de-b579bb6e8e7f
+08/14/2026 23:51:12 - INFO - Message sent to group successfully | group_id: 6207c6ef-1aac-4d2b-b33b-d97b0fdbb967 | sender_id: 77d0311e-e8e9-410d-a0de-b579bb6e8e7f | content: sdddtring
+08/14/2026 23:51:27 - INFO - Group chat retrieved successfully | group_id: 6207c6ef-1aac-4d2b-b33b-d97b0fdbb967
+08/14/2026 23:55:35 - INFO - User logged in successfully | username: string
+08/14/2026 23:56:24 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 23:56:32 - INFO - User logged in successfully | username: string
+08/14/2026 23:56:35 - INFO - User logged in successfully | username: string
+08/14/2026 23:57:02 - INFO - Group created successfully | group_id: 47ed2348-39ba-4dc2-9023-6e393c068ea2 | name: string | creator_id: c9b9b1f5-535d-4524-a307-48e09711a360
+08/14/2026 23:57:21 - INFO - Message sent to group successfully | group_id: 47ed2348-39ba-4dc2-9023-6e393c068ea2 | sender_id: c9b9b1f5-535d-4524-a307-48e09711a360 | content: string
+08/14/2026 23:57:30 - INFO - Group chat retrieved successfully | group_id: 47ed2348-39ba-4dc2-9023-6e393c068ea2
+08/15/2026 00:14:24 - INFO - User created | username: string | email: string@gmail.com
+08/15/2026 00:14:31 - INFO - User logged in successfully | username: string
+08/15/2026 00:14:58 - INFO - Group created successfully | group_id: 70f8f2c3-4ee8-484c-b622-357d07a0fa09 | name: string | creator_id: 5447611e-a35f-4fae-820c-e780d3736be9
+08/15/2026 00:15:18 - INFO - User created | username: strings | email: strings@gmail.com
+08/15/2026 00:15:26 - INFO - User logged in successfully | username: strings
+08/15/2026 00:15:47 - WARNING - User not found | user_id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+08/15/2026 00:17:45 - INFO - User created | username: string | email: string@gmail.com
+08/15/2026 00:17:55 - INFO - User logged in successfully | username: string
+08/15/2026 00:18:20 - WARNING - Email already exists | email: string@gmail.com
+08/15/2026 00:18:27 - INFO - User created | username: stringw | email: stringw@gmail.com
+08/15/2026 00:18:32 - INFO - User logged in successfully | username: stringw
+08/15/2026 00:18:40 - INFO - Group created successfully | group_id: 7fb8d331-23f7-43db-9c29-c4ae12eca905 | name: string | creator_id: fd562406-6f3a-41a5-bcf3-ba44226b9641
+08/15/2026 00:18:42 - INFO - Group created successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2 | name: string | creator_id: fd562406-6f3a-41a5-bcf3-ba44226b9641
+08/15/2026 00:19:31 - INFO - User added to group successfully | user_id: b5f7c79a-199a-4244-b730-a9b2c8dc6c70 | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:19:55 - INFO - show Group members | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:20:27 - INFO - Message sent to group successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2 | sender_id: fd562406-6f3a-41a5-bcf3-ba44226b9641 | content: string
+08/15/2026 00:20:36 - INFO - Group chat retrieved successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:20:50 - INFO - Group chat history deleted successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:20:59 - INFO - Group chat retrieved successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:21:32 - ERROR - Only Admin can delete group chat history | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:36:06 - ERROR - Only group members can see group members. | user_id: b5f7c79a-199a-4244-b730-a9b2c8dc6c70
+08/15/2026 00:36:30 - INFO - User logged in successfully | username: string
+08/15/2026 00:36:58 - INFO - show Group members | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:37:27 - INFO - Group deleted successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/15/2026 00:37:27 - INFO - Group deleted successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2

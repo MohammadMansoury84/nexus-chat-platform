@@ -4,9 +4,9 @@ from uuid import UUID
 from fastapi import APIRouter, Depends,status
 
 
-from src.api.schemas.Response.user_summary_response import UserSummaryResponse
+from src.api.schemas.Response.user.user_summary_response import UserSummaryResponse
 from src.application.service.service_Interface.user_service import UserService
-from src.api.schemas.Response.get_user_by_id_response import GetUserByIdResponse
+from src.api.schemas.Response.user.get_user_by_id_response import GetUserByIdResponse
 from src.api.schemas.Response.response import Response
 from src.api.dependencies.user_service_dependency import get_user_service
 from src.api.dependencies.auth_service_dependency import get_current_user_id
@@ -20,7 +20,7 @@ user_router = APIRouter(
 
 
 @user_router.get(
-        "/by-id//{user_id}",
+        "/by-id/{user_id}",
         response_model=Response[GetUserByIdResponse],
         status_code=status.HTTP_200_OK
         )

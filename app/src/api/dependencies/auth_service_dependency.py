@@ -51,6 +51,13 @@ def get_current_user_id(
 
     user_id=token_service.decode_token(credentials.credentials)
 
+    user = user_repository.get_by_id(user_id)
+
+    if user is None:
+        raise InvalidAccessTokenError(
+            "User associated with token was not found."
+        )
+
 
     if user_id is None:
         raise InvalidAccessTokenError(
