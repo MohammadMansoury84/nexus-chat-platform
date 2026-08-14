@@ -50,3 +50,10 @@
 08/14/2026 03:06:35 - WARNING - Username already exists | username: string
 08/14/2026 03:42:29 - INFO - User created | username: string | email: string@gmail.com
 08/14/2026 03:43:04 - INFO - User logged in successfully | username: string
+08/14/2026 04:48:55 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 04:49:05 - INFO - User logged in successfully | username: string
+08/14/2026 04:50:46 - INFO - User logged in successfully | username: string
+08/14/2026 04:53:44 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 04:53:55 - INFO - User logged in successfully | username: string
+08/14/2026 04:54:23 - INFO - PrivateChat create successfully | sender_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f | receiver_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f
+08/14/2026 04:54:23 - INFO - Message sent successfully | sender_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f | receiver_id: c7ca67e3-07dc-4318-9c12-4419511e2b4f

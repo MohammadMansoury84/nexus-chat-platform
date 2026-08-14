@@ -1,9 +1,13 @@
 from uuid import UUID
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr,ConfigDict
 
 
 class SignupResponse(BaseModel):
+    model_config = ConfigDict(
+        validate_assignment=True,
+    )
+
     id: UUID
     username: str
     email: EmailStr

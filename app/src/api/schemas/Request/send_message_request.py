@@ -1,11 +1,12 @@
+from uuid import UUID
+
 from pydantic import BaseModel, ConfigDict
 
 
-class SignupRequest(BaseModel):
+class SendMessageRequest(BaseModel):
     model_config = ConfigDict(
         validate_assignment=True,
     )
 
-    username: str
-    email: str
-    password: str
+    receiver_id: UUID
+    content: str
