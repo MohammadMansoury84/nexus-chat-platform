@@ -15,14 +15,4 @@ class AuthService(ABC):
     def login(self, username: str, password: str) -> TokenDTO:
         pass
 
-    @abstractmethod
-    def get_other_logged_in_users_for_show(
-        self,
-        current_user_id: UUID,
-        logged_in_user_ids: set[UUID],
-    ) -> list[UserSummaryDTO]:
-        pass
 
-    @abstractmethod
-    def get_all_users(self) -> list[UserDTO]:
-        pass
