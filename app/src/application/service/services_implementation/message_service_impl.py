@@ -68,8 +68,8 @@ class MessageServiceImpl(MessageService):
 
         return MessageDTO(
             id=message.id,
-            sender_id=sender_id,
-            receiver_id=receiver.id,
+            sender_username=sender.username,
+            receiver_username=receiver.username,
             content=message.content,
             status=message.status,
         )
