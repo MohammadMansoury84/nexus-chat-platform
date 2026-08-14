@@ -16,13 +16,12 @@ class UserServiceImpl(UserService):
         
     def get_other_logged_in_users_for_show(
         self,
-        current_user_id: UUID,
-        logged_in_user_ids: set[UUID],
+        current_user_id: UUID, 
     ) -> list[UserSummaryDTO]:
         return [
-            UserSummaryDTO(id=user.id, username=user.username)
+            UserSummaryDTO(id=user.id,email=user.email, username=user.username)
             for user in self._user_repository.list_all()
-            if user.id in logged_in_user_ids and user.id != current_user_id
+            if user.id in self._user_repository.get_logged_in_user_ids() and user.id != current_user_id
         ]
 
     def get_user_by_id(self, user_id: UUID) -> UserDTO | None:
@@ -40,6 +39,6 @@ class UserServiceImpl(UserService):
     def get_all_users(self) -> list[UserSummaryDTO]:
 
         return [
-            UserSummaryDTO(id=user.id, username=user.username)
+            UserSummaryDTO(id=user.id,email=user.email, username=user.username)
             for user in self._user_repository.list_all()
         ]

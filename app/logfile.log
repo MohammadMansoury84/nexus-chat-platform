@@ -34,3 +34,19 @@
 08/14/2026 01:34:16 - INFO - User logged in successfully | username: string
 08/14/2026 01:35:50 - INFO - User created | username: string | email: string@gmail.com
 08/14/2026 01:35:56 - INFO - User logged in successfully | username: string
+08/14/2026 02:51:27 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 02:52:25 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 02:52:43 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 02:53:28 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 02:53:31 - INFO - User logged in successfully | username: string
+08/14/2026 02:59:25 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 02:59:34 - INFO - User logged in successfully | username: string
+08/14/2026 03:00:13 - INFO - User created | username: string1 | email: string1@gmail.com
+08/14/2026 03:00:23 - INFO - User logged in successfully | username: string1
+08/14/2026 03:05:34 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 03:05:42 - INFO - User logged in successfully | username: string
+08/14/2026 03:06:12 - INFO - User created | username: string1 | email: string1@gmail.com
+08/14/2026 03:06:18 - INFO - User logged in successfully | username: string1
+08/14/2026 03:06:35 - WARNING - Username already exists | username: string
+08/14/2026 03:42:29 - INFO - User created | username: string | email: string@gmail.com
+08/14/2026 03:43:04 - INFO - User logged in successfully | username: string

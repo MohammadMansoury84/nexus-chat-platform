@@ -20,3 +20,15 @@ class UserRepository(ABC):
     @abstractmethod
     def list_all(self) -> list[User]:
         pass
+
+    @abstractmethod
+    def add_user_id_to_logged_in_user_ids(self,user_id:UUID)->UUID:
+        pass
+
+    @abstractmethod
+    def remove_user_id_in_logged_in_user_ids(self,user_id:UUID)->None:
+        pass
+
+    @abstractmethod
+    def get_logged_in_user_ids(self) -> set[UUID]:
+        pass

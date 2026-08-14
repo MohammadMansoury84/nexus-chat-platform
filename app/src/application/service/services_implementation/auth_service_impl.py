@@ -77,6 +77,8 @@ class AuthServiceImpl(AuthService):
             raise InvalidCredentialsError("Invalid username or password.")
 
         access_token = self._token_service.create_access_token(user_id=user.id)
+        
+        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.id)
 
        
         self.custome_logger.info("User logged in successfully", username=username)
