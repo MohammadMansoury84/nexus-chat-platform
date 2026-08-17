@@ -1,0 +1,17 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Secrets & Environment Variables
+.env
+**/.env
+
+# Cache & Compiled Files
+.ruff_cache/
+**/__pycache__/
+*.pyc
+**/*.pyc
+
+# Logs
+*.log
+**/*.log
