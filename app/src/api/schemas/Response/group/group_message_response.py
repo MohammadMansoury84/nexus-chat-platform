@@ -1,10 +1,7 @@
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
-
 from src.domain.entities.MessageStatus import MessageStatus
-
-
 
 
 class GroupMessageResponse(BaseModel):

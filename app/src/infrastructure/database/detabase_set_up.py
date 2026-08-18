@@ -8,7 +8,7 @@ _async_engine = create_async_engine(
     echo=setting.echo,
     pool_timeout=setting.pool_timeout,
     pool_size=setting.pool_size,
-    isolated_level=setting.isolated_level,
+    isolation_level=setting.isolation_level,
 )
 
 

@@ -62,7 +62,9 @@ class GroupServiceImpl(GroupService):
             creator_id=creator_id,
         )
 
-        return GroupDTO(group_id=group.id, group_name=group.name, creator_id=group.creator_id)
+        return GroupDTO(
+            group_id=group.id, group_name=group.name, creator_id=group.creator_id
+        )
 
     def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID) -> bool:
 
@@ -95,9 +97,7 @@ class GroupServiceImpl(GroupService):
             raise AuthorizationError("only the creator can add members to the group.")
 
         if not self._user_repository.is_user_logged_in(user_id=user_id):
-            raise AuthorizationError(
-                "User must be logged in before joining the group."
-            )
+            raise AuthorizationError("User must be logged in before joining the group.")
 
         if user in group.members:
             self.custome_logger.warning(
@@ -167,7 +167,9 @@ class GroupServiceImpl(GroupService):
             status=message.status,
         )
 
-    def get_group_chat(self, group_id: UUID,sender_id: UUID) -> list[GroupChatMessageDTO] | None:
+    def get_group_chat(
+        self, group_id: UUID, sender_id: UUID
+    ) -> list[GroupChatMessageDTO] | None:
 
         self.custome_logger.debug("Attempting to get group chat", group_id=group_id)
 
@@ -205,8 +207,6 @@ class GroupServiceImpl(GroupService):
         self.custome_logger.info("Group chat retrieved successfully", group_id=group_id)
         return chat
 
-        
-
     def get_group_by_id(self, group_id: UUID) -> GroupDTO:
         group = self._group_repository.get_by_id(group_id=group_id)
 
@@ -231,9 +231,7 @@ class GroupServiceImpl(GroupService):
 
     def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
 
-        group = self._group_repository.get_by_id(
-            group_id=group_id
-        )
+        group = self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
@@ -263,10 +261,8 @@ class GroupServiceImpl(GroupService):
         raise AuthorizationError("only admin can delete group")
 
     def show_group_member(self, user_id: UUID, group_id: UUID) -> list[GroupMemberDTO]:
-        group = self._group_repository.get_by_id(
-            group_id=group_id
-            )
-        
+        group = self._group_repository.get_by_id(group_id=group_id)
+
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
             raise GroupNotFoundError("Group not found.")
@@ -286,9 +282,7 @@ class GroupServiceImpl(GroupService):
         ]
 
     def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
-        group = self._group_repository.get_by_id(
-            group_id=group_id
-            )
+        group = self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
@@ -320,9 +314,7 @@ class GroupServiceImpl(GroupService):
         user_id: UUID,
     ) -> GroupMembershipActionDTO:
 
-        group = self._group_repository.get_by_id(
-            group_id=group_id
-            )
+        group = self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             raise GroupNotFoundError("Group not found.")
@@ -379,14 +371,14 @@ class GroupServiceImpl(GroupService):
         if group in target_user.joined_groups:
             target_user.joined_groups.remove(group)
 
-            return GroupMembershipActionDTO(
-                action=GroupMembershipAction.USER_REMOVED,
-                group_name=group.name,
-                group_id=group.id,
-                user_id=target_member.id,
-                username=target_member.username,
-            )
-        
+        return GroupMembershipActionDTO(
+            action=GroupMembershipAction.USER_REMOVED,
+            group_name=group.name,
+            group_id=group.id,
+            user_id=target_member.id,
+            username=target_member.username,
+        )
+
     def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
 
         user = self._user_repository.get_by_id(user_id=user_id)

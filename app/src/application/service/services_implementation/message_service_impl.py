@@ -1,9 +1,9 @@
 from uuid import UUID
 
-from src.core.exceptions.AuthorizationError import AuthorizationError
 from src.application.DTO.private_message_dto.chat_message_dto import ChatMessageDTO
 from src.application.DTO.private_message_dto.message_dto import MessageDTO
 from src.application.service.service_Interface.message_service import MessageService
+from src.core.exceptions.AuthorizationError import AuthorizationError
 from src.core.exceptions.PrivateChatNotFoundError import PrivateChatNotFoundError
 from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.logger.CustomLogger import CustomLogger
@@ -41,12 +41,8 @@ class MessageServiceImpl(MessageService):
         if receiver is None:
             raise UserNotFoundError("Receiver not found.")
 
-        if not self._user_repository.is_user_logged_in(
-            user_id=receiver_id
-            ):
-            raise AuthorizationError(
-            "Receiver is not logged in."
-            )
+        if not self._user_repository.is_user_logged_in(user_id=receiver_id):
+            raise AuthorizationError("Receiver is not logged in.")
 
         target_chat = self._get_private_chat(sender_id, receiver_id)
 

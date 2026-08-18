@@ -1,8 +1,8 @@
 import logging
 
+from src.core.config.Setting import Setting
 from src.core.logger.ConsoleHandler import ConsoleHandler
 from src.core.logger.CustomFileHandler import CustomFileHandler
-from src.core.config.Setting import Setting
 
 
 class CustomLogger(logging.Logger):

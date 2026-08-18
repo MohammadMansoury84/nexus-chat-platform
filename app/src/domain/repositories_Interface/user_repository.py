@@ -22,11 +22,11 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    def add_user_id_to_logged_in_user_ids(self,user_id:UUID)->UUID:
+    def add_user_id_to_logged_in_user_ids(self, user_id: UUID) -> UUID:
         pass
 
     @abstractmethod
-    def remove_user_id_in_logged_in_user_ids(self,user_id:UUID)->None:
+    def remove_user_id_in_logged_in_user_ids(self, user_id: UUID) -> None:
         pass
 
     @abstractmethod

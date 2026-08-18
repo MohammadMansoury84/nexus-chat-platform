@@ -1,4 +1,4 @@
-from pydantic import BaseModel,ConfigDict
+from pydantic import BaseModel, ConfigDict
 
 
 class LoginResponse(BaseModel):
@@ -6,6 +6,5 @@ class LoginResponse(BaseModel):
         validate_assignment=True,
     )
 
-    access_token:str
+    access_token: str
     token_type: str
-    

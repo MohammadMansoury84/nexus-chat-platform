@@ -1,6 +1,6 @@
 from uuid import UUID
-from pydantic import BaseModel
 
+from pydantic import BaseModel
 from src.domain.entities.GroupMembershipAction import GroupMembershipAction
 
 

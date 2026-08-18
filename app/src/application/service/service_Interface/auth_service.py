@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
-from uuid import UUID
 
-from src.application.DTO.user.user_dto import UserDTO
-from src.application.DTO.user.user_summary_dto import UserSummaryDTO
 from src.application.DTO.user.token_dto import TokenDTO
+from src.application.DTO.user.user_dto import UserDTO
 
 
 class AuthService(ABC):
@@ -14,5 +12,3 @@ class AuthService(ABC):
     @abstractmethod
     def login(self, username: str, password: str) -> TokenDTO:
         pass
-
-

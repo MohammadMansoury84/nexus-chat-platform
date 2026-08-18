@@ -1,31 +1,27 @@
-from uuid import UUID
-
+from src.application.DTO.user.token_dto import TokenDTO
 from src.application.DTO.user.user_dto import UserDTO
-from src.application.DTO.user.user_summary_dto import UserSummaryDTO
 from src.application.security.password_hasher import PasswordHasher
+from src.application.security.token_service_interface.token_service import TokenService
 from src.application.service.service_Interface.auth_service import AuthService
 from src.core.exceptions.DuplicateEmailError import DuplicateEmailError
 from src.core.exceptions.DuplicateUsernameError import DuplicateUsernameError
 from src.core.exceptions.InvalidCredentialsError import InvalidCredentialsError
-from src.core.exceptions.UserNotFoundError import UserNotFoundError
 from src.core.logger.CustomLogger import CustomLogger
 from src.domain.entities.User import User
 from src.domain.repositories_Interface.user_repository import UserRepository
-from src.application.security.token_service_interface.token_service import TokenService
-from src.application.DTO.user.token_dto import TokenDTO
 
 
 class AuthServiceImpl(AuthService):
     def __init__(
-        self, 
-        user_repository: UserRepository, 
+        self,
+        user_repository: UserRepository,
         passweord_hasher: PasswordHasher,
-        token_service: TokenService
+        token_service: TokenService,
     ) -> None:
 
         self._user_repository = user_repository
         self._passweord_hasher = passweord_hasher
-        self._token_service=token_service
+        self._token_service = token_service
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
     def signup(self, username: str, email: str, password: str) -> UserDTO:
@@ -54,7 +50,6 @@ class AuthServiceImpl(AuthService):
         self.custome_logger.info("User created", username=username, email=email)
 
         return UserDTO(id=user.id, username=user.username, email=user.email)
-    
 
     def login(self, username: str, password: str) -> TokenDTO:
 
@@ -77,12 +72,9 @@ class AuthServiceImpl(AuthService):
             raise InvalidCredentialsError("Invalid username or password.")
 
         access_token = self._token_service.create_access_token(user_id=user.id)
-        
+
         self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.id)
 
-       
         self.custome_logger.info("User logged in successfully", username=username)
 
-        return TokenDTO(access_token=access_token,token_type="bearer")
-
-
+        return TokenDTO(access_token=access_token, token_type="bearer")

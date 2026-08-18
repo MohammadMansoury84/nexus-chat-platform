@@ -1,22 +1,25 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Depends,status
-
-from src.api.schemas.Response.group.group_member_response import GroupMemberResponse
-from src.api.schemas.Response.group.group_membership_action_response import GroupMembershipActionResponse
-from src.api.schemas.Response.group.group_summary_response import GroupSummaryResponse
-from src.api.schemas.Response.group.get_group_by_id_response import GetGroupByIdResponse
-from src.api.schemas.Response.group.group_chat_message_response import GroupChatMessageResponse
-from src.api.schemas.Request.group.send_group_message_request import SendGroupMessageRequest
-from src.api.schemas.Response.group.group_message_response import GroupMessageResponse
-from src.api.schemas.Request.group.add_user_to_group_request import AddUserToGroupRequest
-from src.api.dependencies.group_service_dependency import get_group_service
-from src.application.service.service_Interface.group_service import GroupService
+from fastapi import APIRouter, Depends, status
 from src.api.dependencies.auth_service_dependency import get_current_user_id
+from src.api.dependencies.group_service_dependency import get_group_service
+from src.api.schemas.Request.group.add_user_to_group_request import AddUserToGroupRequest
 from src.api.schemas.Request.group.create_group_request import CreateGroupRequest
+from src.api.schemas.Request.group.send_group_message_request import SendGroupMessageRequest
 from src.api.schemas.Response.group.create_group_response import CreateGroupResponse
+from src.api.schemas.Response.group.get_group_by_id_response import GetGroupByIdResponse
+from src.api.schemas.Response.group.group_chat_message_response import (
+    GroupChatMessageResponse,
+)
+from src.api.schemas.Response.group.group_member_response import GroupMemberResponse
+from src.api.schemas.Response.group.group_membership_action_response import (
+    GroupMembershipActionResponse,
+)
+from src.api.schemas.Response.group.group_message_response import GroupMessageResponse
+from src.api.schemas.Response.group.group_summary_response import GroupSummaryResponse
 from src.api.schemas.Response.response import Response
+from src.application.service.service_Interface.group_service import GroupService
 
 group_router = APIRouter(
     prefix="/groups",
@@ -32,17 +35,8 @@ group_router = APIRouter(
 )
 def create_group(
     request: CreateGroupRequest,
-
-    current_user_id: Annotated[
-        UUID,
-        Depends(get_current_user_id)
-    ],
-
-    group_service: Annotated[
-        GroupService,
-        Depends(get_group_service)
-    ],
-
+    current_user_id: Annotated[UUID, Depends(get_current_user_id)],
+    group_service: Annotated[GroupService, Depends(get_group_service)],
 ) -> Response[CreateGroupResponse]:
 
     group = group_service.create_group(
@@ -56,7 +50,7 @@ def create_group(
             group_name=group.group_name,
             creator_id=group.creator_id,
         ),
-         message="Group created successfully",
+        message="Group created successfully",
     )
 
 
@@ -68,17 +62,8 @@ def create_group(
 def add_user_to_group(
     group_id: UUID,
     request: AddUserToGroupRequest,
-
-    current_user_id: Annotated[
-        UUID,
-        Depends(get_current_user_id)
-    ],
-
-    group_service: Annotated[
-        GroupService,
-        Depends(get_group_service)
-    ],
-
+    current_user_id: Annotated[UUID, Depends(get_current_user_id)],
+    group_service: Annotated[GroupService, Depends(get_group_service)],
 ) -> Response[bool]:
 
     result = group_service.add_user_to_group(
@@ -100,19 +85,15 @@ def add_user_to_group(
 )
 def send_message_to_group(
     group_id: UUID,
-
     request: SendGroupMessageRequest,
-
     current_user_id: Annotated[
         UUID,
         Depends(get_current_user_id),
     ],
-
     group_service: Annotated[
         GroupService,
         Depends(get_group_service),
     ],
-
 ) -> Response[GroupMessageResponse]:
 
     message = group_service.send_message_to_group(
@@ -139,21 +120,14 @@ def send_message_to_group(
 )
 def get_group_chat(
     group_id: UUID,
-    group_service: Annotated[
-        GroupService,
-        Depends(get_group_service)
-    ],
+    group_service: Annotated[GroupService, Depends(get_group_service)],
     current_user_id: Annotated[
         UUID,
         Depends(get_current_user_id),
     ],
-    
 ) -> Response[list[GroupChatMessageResponse]]:
 
-    chat = group_service.get_group_chat(
-        group_id=group_id,
-        sender_id=current_user_id
-    )
+    chat = group_service.get_group_chat(group_id=group_id, sender_id=current_user_id)
 
     data = [
         GroupChatMessageResponse(
@@ -174,7 +148,6 @@ def get_group_chat(
     )
 
 
-
 @group_router.get(
     "/by-id/{group_id}",
     response_model=Response[GetGroupByIdResponse],
@@ -182,22 +155,13 @@ def get_group_chat(
 )
 def get_group_by_id(
     group_id: UUID,
-
-    current_user_id: Annotated[
-        UUID,
-        Depends(get_current_user_id),
-    ],
-
     group_service: Annotated[
         GroupService,
         Depends(get_group_service),
     ],
-
 ) -> Response[GetGroupByIdResponse]:
 
-    group = group_service.get_group_by_id(
-        group_id=group_id
-    )
+    group = group_service.get_group_by_id(group_id=group_id)
 
     return Response[GetGroupByIdResponse](
         data=GetGroupByIdResponse(
@@ -225,9 +189,7 @@ def get_all_groups_for_show_users(
     ],
 ) -> Response[list[GroupSummaryResponse]]:
 
-    groups = group_service.get_all_groups_for_show_users(
-        user_id=current_user_id
-    )
+    groups = group_service.get_all_groups_for_show_users(user_id=current_user_id)
 
     data = [
         GroupSummaryResponse(
@@ -272,11 +234,7 @@ def get_all_groups(
 
     return Response[list[GroupSummaryResponse]](
         data=data,
-        message=(
-            "Groups retrieved successfully."
-            if groups
-            else "No groups found."
-        ),
+        message=("Groups retrieved successfully." if groups else "No groups found."),
     )
 
 
@@ -346,7 +304,6 @@ def show_group_members(
     )
 
 
-
 @group_router.delete(
     "/{group_id}/messages",
     response_model=Response[bool],
@@ -383,17 +340,14 @@ def delete_group_chat_history(
 def remove_user_from_group(
     group_id: UUID,
     user_id: UUID,
-
     current_user_id: Annotated[
         UUID,
         Depends(get_current_user_id),
     ],
-
     group_service: Annotated[
         GroupService,
         Depends(get_group_service),
     ],
-
 ) -> Response[GroupMembershipActionResponse]:
 
     result = group_service.remove_user_from_group(
