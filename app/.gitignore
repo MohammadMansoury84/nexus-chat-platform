@@ -2,10 +2,6 @@
 venv/
 .venv/
 
-# Secrets & Environment Variables
-.env
-**/.env
-
 # Cache & Compiled Files
 .ruff_cache/
 **/__pycache__/
@@ -15,3 +11,6 @@ venv/
 # Logs
 *.log
 **/*.log
+
+.env
+**/.env
