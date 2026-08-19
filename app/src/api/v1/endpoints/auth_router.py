@@ -20,11 +20,11 @@ auth_router = APIRouter(
     response_model=Response[SignupResponse],
     status_code=status.HTTP_201_CREATED,
 )
-def signup(
+async def signup(
     signup_request: SignupRequest,
     auth_service: Annotated[AuthService, Depends(get_auth_service)],
 ) -> Response[SignupResponse]:
-    user = auth_service.signup(
+    user = await auth_service.signup(
         username=signup_request.username,
         email=signup_request.email,
         password=signup_request.password,
@@ -40,11 +40,11 @@ def signup(
     response_model=Response[LoginResponse],
     status_code=status.HTTP_200_OK,
 )
-def login(
+async def login(
     login_request: LoginRequest,
     auth_service: Annotated[AuthService, Depends(get_auth_service)],
 ) -> Response[LoginResponse]:
-    token = auth_service.login(
+    token = await auth_service.login(
         username=login_request.username, password=login_request.password
     )
     return Response[LoginResponse](

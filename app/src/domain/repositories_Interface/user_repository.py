@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from uuid import UUID
 
+from pydantic import EmailStr
 from src.domain.entities.User import User
 
 
@@ -14,11 +15,19 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    def get_by_username(self, username: str) -> User | None:
+    def get_by_username(self, username: str) -> dict | None:
         pass
 
     @abstractmethod
     def list_all(self) -> list[User]:
+        pass
+
+    @abstractmethod
+    def is_email_used(self, email: EmailStr) -> bool:
+        pass
+
+    @abstractmethod
+    def is_username_used(self, username: str) -> bool:
         pass
 
     @abstractmethod

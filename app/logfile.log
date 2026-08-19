@@ -161,3 +161,12 @@
 08/15/2026 00:36:58 - INFO - show Group members | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
 08/15/2026 00:37:27 - INFO - Group deleted successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
 08/15/2026 00:37:27 - INFO - Group deleted successfully | group_id: 4311301c-6848-408e-8305-ad091d3ec5a2
+08/19/2026 12:16:32 - INFO - User created | username: string | email: string@gmail.com
+08/19/2026 12:18:23 - WARNING - Username already exists | username: string
+08/19/2026 13:41:51 - WARNING - Username already exists | username: string
+08/19/2026 13:42:00 - WARNING - Email already exists | email: string@gmail.com
+08/19/2026 13:42:05 - INFO - User created | username: string1 | email: strin1g@gmail.com
+08/19/2026 13:44:03 - INFO - User created | username: string1 | email: strin1g@gmail.com
+08/19/2026 14:21:05 - WARNING - Username already exists | username: string1
+08/19/2026 14:26:16 - INFO - User logged in successfully | username: string1
+08/19/2026 14:26:37 - ERROR - Failed to log in user | username: strin1g1

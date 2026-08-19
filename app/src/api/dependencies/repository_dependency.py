@@ -1,3 +1,6 @@
+from fastapi import Depends
+from sqlalchemy.ext.asyncio import AsyncSession
+from src.api.dependencies.database_dependency import get_session
 from src.domain.repositories_Interface.group_message_repository import (
     GroupMessageRepository,
 )
@@ -17,14 +20,13 @@ from src.infrastructure.repositories_implementation.user_repository_impl import 
     UserRepositoryImpl,
 )
 
-_user_repository = UserRepositoryImpl()
 _group_repository = GroupRepositoryImpl()
 _group_message_repository = GroupMessageRepositoryImpl()
 _private_chat_repository = PrivateChatRepositoryImpl()
 
 
-def get_user_repository() -> UserRepository:
-    return _user_repository
+def get_user_repository(db: AsyncSession = Depends(get_session)) -> UserRepository:
+    return UserRepositoryImpl(db=db)
 
 
 def get_group_repository() -> GroupRepository:

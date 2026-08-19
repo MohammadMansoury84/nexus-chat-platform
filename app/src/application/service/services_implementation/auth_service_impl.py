@@ -24,19 +24,19 @@ class AuthServiceImpl(AuthService):
         self._token_service = token_service
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
-    def signup(self, username: str, email: str, password: str) -> UserDTO:
+    async def signup(self, username: str, email: str, password: str) -> UserDTO:
 
         self.custome_logger.debug(
             "Attempting to sign up user", username=username, email=email, password=password
         )
 
-        if any(user.username == username for user in self._user_repository.list_all()):
+        if await self._user_repository.is_username_used(username=username):
             self.custome_logger.warning("Username already exists", username=username)
 
             message = "Username already exists."
             raise DuplicateUsernameError(message)
 
-        if any(user.email == email for user in self._user_repository.list_all()):
+        if await self._user_repository.is_email_used(email=email):
             self.custome_logger.warning("Email already exists", email=email)
 
             message = "Email already exists."
@@ -51,29 +51,29 @@ class AuthServiceImpl(AuthService):
 
         return UserDTO(id=user.id, username=user.username, email=user.email)
 
-    def login(self, username: str, password: str) -> TokenDTO:
+    async def login(self, username: str, password: str) -> TokenDTO:
 
         self.custome_logger.debug(
             "Attempting to log in user", username=username, password=password
         )
 
-        user = self._user_repository.get_by_username(username=username)
+        user = await self._user_repository.get_by_username(username=username)
 
         if user is None:
             self.custome_logger.error("Failed to log in user", username=username)
             raise InvalidCredentialsError("Invalid username or password.")
 
         is_password__valid = self._passweord_hasher.verify_passwoed(
-            plain_password=password, hashed_password=user.hashed_password
+            plain_password=password, hashed_password=user.get("hashed_password")
         )
 
         if not is_password__valid:
             self.custome_logger.error("Failed to log in user", username=username)
             raise InvalidCredentialsError("Invalid username or password.")
 
-        access_token = self._token_service.create_access_token(user_id=user.id)
+        access_token = self._token_service.create_access_token(user_id=user.get("id"))
 
-        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.id)
+        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.get("id"))
 
         self.custome_logger.info("User logged in successfully", username=username)
 
