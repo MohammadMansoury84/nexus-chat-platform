@@ -21,10 +21,10 @@ user_router = APIRouter(
     response_model=Response[GetUserByIdResponse],
     status_code=status.HTTP_200_OK,
 )
-def get_user_by_id(
+async def get_user_by_id(
     user_id: UUID, user_service: Annotated[UserService, Depends(get_user_service)]
 ) -> Response[GetUserByIdResponse]:
-    user = user_service.get_user_by_id(user_id=user_id)
+    user = await user_service.get_user_by_id(user_id=user_id)
     return Response[GetUserByIdResponse](
         data=GetUserByIdResponse(id=user.id, username=user.username, email=user.email)
     )

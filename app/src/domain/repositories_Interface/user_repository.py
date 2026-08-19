@@ -3,6 +3,8 @@ from uuid import UUID
 
 from pydantic import EmailStr
 from src.domain.entities.User import User
+from src.infrastructure.Brief.get_by_id_brief import GetByIdBrief
+from src.infrastructure.Brief.get_by_username_brief import GetByUserNameBrief
 
 
 class UserRepository(ABC):
@@ -11,11 +13,11 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    def get_by_id(self, user_id: UUID) -> User | None:
+    def get_by_id(self, user_id: UUID) -> GetByIdBrief | None:
         pass
 
     @abstractmethod
-    def get_by_username(self, username: str) -> dict | None:
+    def get_by_username(self, username: str) -> GetByUserNameBrief | None:
         pass
 
     @abstractmethod

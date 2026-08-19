@@ -22,9 +22,9 @@ class UserServiceImpl(UserService):
             and user.id != current_user_id
         ]
 
-    def get_user_by_id(self, user_id: UUID) -> UserDTO | None:
+    async def get_user_by_id(self, user_id: UUID) -> UserDTO | None:
 
-        user = self._user_repository.get_by_id(user_id=user_id)
+        user = await self._user_repository.get_by_id(user_id=user_id)
         if user is None:
             raise UserNotFoundError("User not found.")
 

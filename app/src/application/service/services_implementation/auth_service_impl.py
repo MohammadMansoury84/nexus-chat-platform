@@ -64,16 +64,16 @@ class AuthServiceImpl(AuthService):
             raise InvalidCredentialsError("Invalid username or password.")
 
         is_password__valid = self._passweord_hasher.verify_passwoed(
-            plain_password=password, hashed_password=user.get("hashed_password")
+            plain_password=password, hashed_password=user.hashed_password
         )
 
         if not is_password__valid:
             self.custome_logger.error("Failed to log in user", username=username)
             raise InvalidCredentialsError("Invalid username or password.")
 
-        access_token = self._token_service.create_access_token(user_id=user.get("id"))
+        access_token = self._token_service.create_access_token(user_id=user.id)
 
-        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.get("id"))
+        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.id)
 
         self.custome_logger.info("User logged in successfully", username=username)
 
