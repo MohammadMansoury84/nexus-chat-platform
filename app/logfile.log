@@ -177,3 +177,20 @@
 08/19/2026 15:56:32 - INFO - User logged in successfully | username: string1
 08/19/2026 16:03:43 - INFO - User logged in successfully | username: string1
 08/19/2026 16:07:25 - INFO - User logged in successfully | username: string1
+08/19/2026 16:58:42 - INFO - User logged in successfully | username: string1
+08/19/2026 17:03:05 - INFO - User logged in successfully | username: string1
+08/19/2026 17:08:54 - INFO - User logged in successfully | username: string1
+08/19/2026 17:11:07 - INFO - User logged in successfully | username: string1
+08/19/2026 17:12:16 - INFO - User logged in successfully | username: string1
+08/19/2026 17:15:38 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:15:56 - ERROR - Failed to log in user | username: string22
+08/19/2026 17:16:38 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:18:12 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:20:15 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:20:41 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:22:50 - INFO - User created | username: string22 | email: string11@gmail.com
+08/19/2026 17:29:28 - WARNING - Email already exists | email: string11@gmail.com
+08/19/2026 17:29:44 - INFO - User created | username: string223 | email: string113@gmail.com
+08/19/2026 17:30:25 - INFO - User logged in successfully | username: string223
+08/19/2026 17:31:20 - INFO - User created | username: string2234 | email: string1134@gmail.com
+08/19/2026 17:31:33 - INFO - User logged in successfully | username: string2234

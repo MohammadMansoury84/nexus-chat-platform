@@ -3,8 +3,9 @@ from uuid import UUID
 
 from pydantic import EmailStr
 from src.domain.entities.User import User
-from src.infrastructure.Brief.get_by_id_brief import GetByIdBrief
-from src.infrastructure.Brief.get_by_username_brief import GetByUserNameBrief
+from src.infrastructure.Brief.user.get_by_id_brief import GetByIdBrief
+from src.infrastructure.Brief.user.get_by_username_brief import GetByUserNameBrief
+from src.infrastructure.Brief.user.list_all_brief import ListAllBrief
 
 
 class UserRepository(ABC):
@@ -13,23 +14,23 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    def get_by_id(self, user_id: UUID) -> GetByIdBrief | None:
+    async def get_by_id(self, user_id: UUID) -> GetByIdBrief | None:
         pass
 
     @abstractmethod
-    def get_by_username(self, username: str) -> GetByUserNameBrief | None:
+    async def get_by_username(self, username: str) -> GetByUserNameBrief | None:
         pass
 
     @abstractmethod
-    def list_all(self) -> list[User]:
+    async def list_all(self) -> list[ListAllBrief]:
         pass
 
     @abstractmethod
-    def is_email_used(self, email: EmailStr) -> bool:
+    async def is_email_used(self, email: EmailStr) -> bool:
         pass
 
     @abstractmethod
-    def is_username_used(self, username: str) -> bool:
+    async def is_username_used(self, username: str) -> bool:
         pass
 
     @abstractmethod
@@ -41,7 +42,7 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    def get_logged_in_user_ids(self) -> set[UUID]:
+    async def get_logged_in_user_ids(self) -> set[UUID]:
         pass
 
     @abstractmethod

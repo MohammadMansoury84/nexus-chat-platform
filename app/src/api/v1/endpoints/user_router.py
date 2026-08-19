@@ -35,12 +35,14 @@ async def get_user_by_id(
     response_model=Response[list[UserSummaryResponse]],
     status_code=status.HTTP_200_OK,
 )
-def get_other_logged_in_users_for_show(
+async def get_other_logged_in_users_for_show(
     current_user_id: Annotated[UUID, Depends(get_current_user_id)],
     user_service: Annotated[UserService, Depends(get_user_service)],
 ) -> Response[list[UserSummaryResponse]]:
 
-    users = user_service.get_other_logged_in_users_for_show(current_user_id=current_user_id)
+    users = await user_service.get_other_logged_in_users_for_show(
+        current_user_id=current_user_id
+    )
 
     return Response[list[UserSummaryResponse]](
         data=[
@@ -55,11 +57,11 @@ def get_other_logged_in_users_for_show(
     response_model=Response[list[UserSummaryResponse]],
     status_code=status.HTTP_200_OK,
 )
-def get_all_users(
+async def get_all_users(
     user_service: Annotated[UserService, Depends(get_user_service)],
 ) -> Response[list[UserSummaryResponse]]:
 
-    users = user_service.get_all_users()
+    users = await user_service.get_all_users()
 
     return Response[list[UserSummaryResponse]](
         data=[

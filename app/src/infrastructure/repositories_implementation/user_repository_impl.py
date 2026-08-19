@@ -4,8 +4,9 @@ from sqlalchemy import exists, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.domain.entities.User import User
 from src.domain.repositories_Interface.user_repository import UserRepository
-from src.infrastructure.Brief.get_by_id_brief import GetByIdBrief
-from src.infrastructure.Brief.get_by_username_brief import GetByUserNameBrief
+from src.infrastructure.Brief.user.get_by_id_brief import GetByIdBrief
+from src.infrastructure.Brief.user.get_by_username_brief import GetByUserNameBrief
+from src.infrastructure.Brief.user.list_all_brief import ListAllBrief
 from src.infrastructure.database.orm_models.user_model import UserModel
 
 
@@ -15,7 +16,7 @@ class UserRepositoryImpl(UserRepository):
         self._logged_in_user_ids: set[UUID] = set()
         self._db = db
 
-    async def add(self, user: User) -> User:
+    def add(self, user: User) -> User:
         orm_user = UserModel(
             id=user.id,
             username=user.username,
@@ -51,8 +52,16 @@ class UserRepositoryImpl(UserRepository):
 
         return GetByUserNameBrief(id=row.id, hashed_password=row.hashed_password)
 
-    def list_all(self) -> list[User]:
-        return self._users
+    async def list_all(self) -> list[ListAllBrief]:
+        stmt = select(UserModel)
+        result = await self._db.scalars(statement=stmt)
+        users = result.all()
+        return [
+            ListAllBrief(
+                id=u.id, username=u.username, email=u.email, created_at=u.created_at
+            )
+            for u in users
+        ]
 
     async def is_username_used(self, username: str) -> bool:
         stmt = select(exists().where(UserModel.username == username))
@@ -62,7 +71,7 @@ class UserRepositoryImpl(UserRepository):
         stmt = select(exists().where(UserModel.email == email))
         return await self._db.scalar(stmt)
 
-    def add_user_id_to_logged_in_user_ids(self, user_id: UUID) -> UUID:
+    async def add_user_id_to_logged_in_user_ids(self, user_id: UUID) -> UUID:
         self._logged_in_user_ids.add(user_id)
         return user_id
 
@@ -71,7 +80,7 @@ class UserRepositoryImpl(UserRepository):
         if user_id in self._logged_in_user_ids:
             self._logged_in_user_ids.remove(user_id)
 
-    def get_logged_in_user_ids(self) -> set[UUID]:
+    async def get_logged_in_user_ids(self) -> set[UUID]:
         return self._logged_in_user_ids
 
     def is_user_logged_in(self, user_id: UUID) -> bool:
