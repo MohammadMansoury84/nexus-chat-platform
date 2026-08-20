@@ -12,8 +12,6 @@ from src.infrastructure.database.orm_models.user_model import UserModel
 
 class UserRepositoryImpl(UserRepository):
     def __init__(self, db: AsyncSession) -> None:
-        self._users: list[User] = []
-        self._logged_in_user_ids: set[UUID] = set()
         self._db = db
 
     def add(self, user: User) -> User:
@@ -71,17 +69,17 @@ class UserRepositoryImpl(UserRepository):
         stmt = select(exists().where(UserModel.email == email))
         return await self._db.scalar(stmt)
 
-    async def add_user_id_to_logged_in_user_ids(self, user_id: UUID) -> UUID:
-        self._logged_in_user_ids.add(user_id)
-        return user_id
+    async def get_by_ids(self, user_ids: list[UUID]) -> list[GetByIdBrief]:
+        if not user_ids:
+            return []
 
-    def remove_user_id_in_logged_in_user_ids(self, user_id: UUID) -> None:
+        stmt = select(UserModel.id, UserModel.email, UserModel.username).where(
+            UserModel.id.in_(user_ids)
+        )
 
-        if user_id in self._logged_in_user_ids:
-            self._logged_in_user_ids.remove(user_id)
+        result = await self._db.execute(statement=stmt)
+        rows = result.all()
 
-    async def get_logged_in_user_ids(self) -> set[UUID]:
-        return self._logged_in_user_ids
-
-    def is_user_logged_in(self, user_id: UUID) -> bool:
-        return user_id in self._logged_in_user_ids
+        return [
+            GetByIdBrief(id=row.id, email=row.email, username=row.username) for row in rows
+        ]

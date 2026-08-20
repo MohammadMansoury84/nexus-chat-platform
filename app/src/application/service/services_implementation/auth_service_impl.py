@@ -8,6 +8,9 @@ from src.core.exceptions.DuplicateUsernameError import DuplicateUsernameError
 from src.core.exceptions.InvalidCredentialsError import InvalidCredentialsError
 from src.core.logger.CustomLogger import CustomLogger
 from src.domain.entities.User import User
+from src.domain.repositories_Interface.redis_online_user_repository import (
+    RedisOnlineUserRepository,
+)
 from src.domain.repositories_Interface.user_repository import UserRepository
 
 
@@ -17,11 +20,13 @@ class AuthServiceImpl(AuthService):
         user_repository: UserRepository,
         passweord_hasher: PasswordHasher,
         token_service: TokenService,
+        online_user_repository: RedisOnlineUserRepository,
     ) -> None:
 
         self._user_repository = user_repository
         self._passweord_hasher = passweord_hasher
         self._token_service = token_service
+        self._online_user_repository = online_user_repository
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
     async def signup(self, username: str, email: str, password: str) -> UserDTO:
@@ -73,7 +78,7 @@ class AuthServiceImpl(AuthService):
 
         access_token = self._token_service.create_access_token(user_id=user.id)
 
-        self._user_repository.add_user_id_to_logged_in_user_ids(user_id=user.id)
+        await self._online_user_repository.add_online_user(user_id=user.id)
 
         self.custome_logger.info("User logged in successfully", username=username)
 

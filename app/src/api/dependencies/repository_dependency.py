@@ -1,3 +1,4 @@
+import redis.asyncio as aioredis
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.api.dependencies.database_dependency import get_session
@@ -6,7 +7,11 @@ from src.domain.repositories_Interface.group_message_repository import (
 )
 from src.domain.repositories_Interface.group_repository import GroupRepository
 from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
+from src.domain.repositories_Interface.redis_online_user_repository import (
+    RedisOnlineUserRepository,
+)
 from src.domain.repositories_Interface.user_repository import UserRepository
+from src.infrastructure.redis import get_redis
 from src.infrastructure.repositories_implementation.group_message_repository_impl import (
     GroupMessageRepositoryImpl,
 )
@@ -15,6 +20,9 @@ from src.infrastructure.repositories_implementation.group_repository_impl import
 )
 from src.infrastructure.repositories_implementation.private_chat_repositiry_impl import (
     PrivateChatRepositoryImpl,
+)
+from src.infrastructure.repositories_implementation.redis_online_user_repository_impl import (  # noqa: E501
+    RedisOnlineUserRepositoryImpl,
 )
 from src.infrastructure.repositories_implementation.user_repository_impl import (
     UserRepositoryImpl,
@@ -27,6 +35,12 @@ _private_chat_repository = PrivateChatRepositoryImpl()
 
 def get_user_repository(db: AsyncSession = Depends(get_session)) -> UserRepository:
     return UserRepositoryImpl(db=db)
+
+
+def get_redis_online_user_repository(
+    redis: aioredis.Redis = Depends(get_redis),
+) -> RedisOnlineUserRepository:
+    return RedisOnlineUserRepositoryImpl(redis_client=redis)
 
 
 def get_group_repository() -> GroupRepository:

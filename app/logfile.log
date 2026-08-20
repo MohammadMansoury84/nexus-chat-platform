@@ -194,3 +194,7 @@
 08/19/2026 17:30:25 - INFO - User logged in successfully | username: string223
 08/19/2026 17:31:20 - INFO - User created | username: string2234 | email: string1134@gmail.com
 08/19/2026 17:31:33 - INFO - User logged in successfully | username: string2234
+08/21/2026 03:01:51 - INFO - User created | username: string | email: string@gmail.com
+08/21/2026 03:06:48 - INFO - User logged in successfully | username: string
+08/21/2026 03:07:25 - INFO - User created | username: string1 | email: string1@gmail.com
+08/21/2026 03:07:33 - INFO - User logged in successfully | username: string1
