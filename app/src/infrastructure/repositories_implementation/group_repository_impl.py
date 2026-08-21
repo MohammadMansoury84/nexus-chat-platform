@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from sqlalchemy import or_, select
+from sqlalchemy import delete, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from src.domain.entities.Group import Group
@@ -45,14 +45,23 @@ class GroupRepositoryImpl(GroupRepository):
             created_at=result.created_at,
         )
 
-    async def list_all(self) -> list[Group]:
-        return self._groups
+    async def list_all(self) -> list[GetAllGroupsForShowUsersBrief] | None:
+        stmt = select(GroupModel.id, GroupModel.name)
+        result = await self._db.execute(statement=stmt)
+        rows = result.all()
 
-    async def remove_group(self, group: Group) -> bool:
-        if group in self._groups:
-            self._groups.remove(group)
-            return True
-        return False
+        if rows is None:
+            return None
+
+        return [
+            GetAllGroupsForShowUsersBrief(group_id=row.id, group_name=row.name)
+            for row in rows
+        ]
+
+    async def remove_group(self, group_id: UUID) -> bool:
+        stmt = delete(GroupModel).where(GroupModel.id == group_id)
+        result = await self._db.execute(stmt)
+        return result.rowcount > 0
 
     async def get_group_with_messages(self, group_id: UUID) -> list[GroupChatMessageBrief]:
         stmt = (

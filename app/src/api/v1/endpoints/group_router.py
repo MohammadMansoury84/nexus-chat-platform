@@ -215,14 +215,14 @@ async def get_all_groups_for_show_users(
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(get_current_user_id)],
 )
-def get_all_groups(
+async def get_all_groups(
     group_service: Annotated[
         GroupService,
         Depends(get_group_service),
     ],
 ) -> Response[list[GroupSummaryResponse]]:
 
-    groups = group_service.get_all_groups()
+    groups = await group_service.get_all_groups()
 
     data = [
         GroupSummaryResponse(
@@ -243,7 +243,7 @@ def get_all_groups(
     response_model=Response[bool],
     status_code=status.HTTP_200_OK,
 )
-def delete_group_by_id(
+async def delete_group_by_id(
     group_id: UUID,
     current_user_id: Annotated[
         UUID,
@@ -255,7 +255,7 @@ def delete_group_by_id(
     ],
 ) -> Response[bool]:
 
-    result = group_service.delete_group_by_id(
+    result = await group_service.delete_group_by_id(
         user_id=current_user_id,
         group_id=group_id,
     )

@@ -19,11 +19,11 @@ class GroupRepository(ABC):
         pass
 
     @abstractmethod
-    async def list_all(self) -> list[Group]:
+    async def list_all(self) -> list[GetAllGroupsForShowUsersBrief] | None:
         pass
 
     @abstractmethod
-    async def remove_group(self, group: Group) -> bool:
+    async def remove_group(self, group_id: UUID) -> bool:
         pass
 
     @abstractmethod
