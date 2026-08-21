@@ -228,20 +228,24 @@ class GroupServiceImpl(GroupService):
             for msg in messages
         ]
 
-    def get_group_by_id(self, group_id: UUID) -> GroupDTO:
-        group = self._group_repository.get_by_id(group_id=group_id)
+    async def get_group_by_id(self, group_id: UUID) -> GroupDTO:
+        group = await self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             raise GroupNotFoundError("Group not found.")
 
         return GroupDTO(
-            group_id=group.id, group_name=group.name, creator_id=group.creator_id
+            group_id=group.group_id,
+            group_name=group.group_name,
+            creator_id=group.creator_id,
         )
 
-    def get_all_groups_for_show_users(self, user_id: UUID) -> list[GroupSummaryDTO]:
+    async def get_all_groups_for_show_users(self, user_id: UUID) -> list[GroupSummaryDTO]:
         return [
-            GroupSummaryDTO(group_id=group.id, group_name=group.name)
-            for group in self._get_joined_groups_and_groups_created_users(user_id=user_id)
+            GroupSummaryDTO(group_id=group.group_id, group_name=group.group_name)
+            for group in await self._group_repository.get_all_groups_for_show_users(
+                user_id=user_id
+            )
         ]
 
     def get_all_groups(self) -> list[GroupSummaryDTO]:
@@ -399,19 +403,3 @@ class GroupServiceImpl(GroupService):
             user_id=target_member.id,
             username=target_member.username,
         )
-
-    def _get_joined_groups_and_groups_created_users(self, user_id: UUID) -> list[Group]:
-
-        user = self._user_repository.get_by_id(user_id=user_id)
-        list1 = user.groups_created
-        list2 = user.joined_groups
-
-        merge_list = []
-        seen_ids = set()
-
-        for group in list1 + list2:
-            if group.id not in seen_ids:
-                merge_list.append(group)
-                seen_ids.add(group.id)
-
-        return merge_list

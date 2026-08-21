@@ -227,3 +227,6 @@
 08/22/2026 00:43:28 - INFO - Group chat retrieved successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98
 08/22/2026 00:43:57 - INFO - Message sent to group successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: string1111
 08/22/2026 00:44:01 - INFO - Group chat retrieved successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98
+08/22/2026 00:58:25 - INFO - User logged in successfully | username: string
+08/22/2026 01:43:30 - INFO - User logged in successfully | username: string1
+08/22/2026 01:43:55 - INFO - Group created successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef | name: string22 | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974

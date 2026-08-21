@@ -1,12 +1,16 @@
 from uuid import UUID
 
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from src.domain.entities.Group import Group
 from src.domain.repositories_Interface.group_repository import GroupRepository
+from src.infrastructure.Brief.group.get_all_groups_for_show_users_brief import (
+    GetAllGroupsForShowUsersBrief,
+)
 from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
 from src.infrastructure.Brief.group.group_chat_message_brief import GroupChatMessageBrief
+from src.infrastructure.database.orm_models.group_members_model import GroupMembersModel
 from src.infrastructure.database.orm_models.group_message_model import GroupMessageModel
 from src.infrastructure.database.orm_models.group_model import GroupModel
 
@@ -73,4 +77,25 @@ class GroupRepositoryImpl(GroupRepository):
                 created_at=msg.created_at,
             )
             for msg in group_model.messages
+        ]
+
+    async def get_all_groups_for_show_users(
+        self, user_id: UUID
+    ) -> list[GetAllGroupsForShowUsersBrief]:
+
+        stmt = (
+            select(GroupModel.id, GroupModel.name)
+            .outerjoin(GroupMembersModel, GroupMembersModel.group_id == GroupModel.id)
+            .where(
+                or_(GroupMembersModel.user_id == user_id, GroupModel.creator_id == user_id)
+            )
+            .distinct()
+        )
+
+        result = await self._db.execute(stmt)
+        rows = result.all()
+
+        return [
+            GetAllGroupsForShowUsersBrief(group_id=row.id, group_name=row.name)
+            for row in rows
         ]

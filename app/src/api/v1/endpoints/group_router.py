@@ -153,7 +153,7 @@ async def get_group_chat(
     response_model=Response[GetGroupByIdResponse],
     status_code=status.HTTP_200_OK,
 )
-def get_group_by_id(
+async def get_group_by_id(
     group_id: UUID,
     group_service: Annotated[
         GroupService,
@@ -161,7 +161,7 @@ def get_group_by_id(
     ],
 ) -> Response[GetGroupByIdResponse]:
 
-    group = group_service.get_group_by_id(group_id=group_id)
+    group = await group_service.get_group_by_id(group_id=group_id)
 
     return Response[GetGroupByIdResponse](
         data=GetGroupByIdResponse(
@@ -178,7 +178,7 @@ def get_group_by_id(
     response_model=Response[list[GroupSummaryResponse]],
     status_code=status.HTTP_200_OK,
 )
-def get_all_groups_for_show_users(
+async def get_all_groups_for_show_users(
     current_user_id: Annotated[
         UUID,
         Depends(get_current_user_id),
@@ -189,7 +189,7 @@ def get_all_groups_for_show_users(
     ],
 ) -> Response[list[GroupSummaryResponse]]:
 
-    groups = group_service.get_all_groups_for_show_users(user_id=current_user_id)
+    groups = await group_service.get_all_groups_for_show_users(user_id=current_user_id)
 
     data = [
         GroupSummaryResponse(
