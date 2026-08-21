@@ -21,7 +21,7 @@ message_router = APIRouter(
     "/send_message",
     status_code=status.HTTP_201_CREATED,
 )
-def send_message(
+async def send_message(
     request: SendMessageRequest,
     current_user_id: Annotated[
         UUID,
@@ -33,7 +33,7 @@ def send_message(
     ],
 ) -> Response[SendMessageResponse]:
 
-    message = message_service.send_message(
+    message = await message_service.send_message(
         sender_id=current_user_id, receiver_id=request.receiver_id, content=request.content
     )
 
@@ -54,7 +54,7 @@ def send_message(
     response_model=Response[list[ChatMessageResponse]],
     status_code=status.HTTP_200_OK,
 )
-def get_chat(
+async def get_chat(
     user2_id: UUID,
     current_user_id: Annotated[
         UUID,
@@ -66,7 +66,7 @@ def get_chat(
     ],
 ) -> Response[list[ChatMessageResponse]]:
 
-    messages = message_service.get_chat(
+    messages = await message_service.get_chat(
         user1_id=current_user_id,
         user2_id=user2_id,
     )
@@ -96,7 +96,7 @@ def get_chat(
     response_model=Response[bool],
     status_code=status.HTTP_200_OK,
 )
-def delete_private_chat_history(
+async def delete_private_chat_history(
     user2_id: UUID,
     current_user_id: Annotated[
         UUID,
@@ -108,7 +108,7 @@ def delete_private_chat_history(
     ],
 ) -> Response[bool]:
 
-    deleted = message_service.delete_private_chat_history(
+    deleted = await message_service.delete_private_chat_history(
         user1_id=current_user_id,
         user2_id=user2_id,
     )

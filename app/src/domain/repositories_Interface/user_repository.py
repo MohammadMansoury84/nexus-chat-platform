@@ -10,7 +10,7 @@ from src.infrastructure.Brief.user.list_all_brief import ListAllBrief
 
 class UserRepository(ABC):
     @abstractmethod
-    def add(self, user: User) -> User:
+    async def add(self, user: User) -> User:
         pass
 
     @abstractmethod

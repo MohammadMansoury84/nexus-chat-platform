@@ -7,13 +7,15 @@ from src.application.DTO.private_message_dto.message_dto import MessageDTO
 
 class MessageService(ABC):
     @abstractmethod
-    def send_message(self, sender_id: UUID, receiver_id: UUID, content: str) -> MessageDTO:
+    async def send_message(
+        self, sender_id: UUID, receiver_id: UUID, content: str
+    ) -> MessageDTO:
         pass
 
     @abstractmethod
-    def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[ChatMessageDTO]:
+    async def get_chat(self, user1_id: UUID, user2_id: UUID) -> list[ChatMessageDTO]:
         pass
 
     @abstractmethod
-    def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID) -> bool:
+    async def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID) -> bool:
         pass

@@ -198,3 +198,14 @@
 08/21/2026 03:06:48 - INFO - User logged in successfully | username: string
 08/21/2026 03:07:25 - INFO - User created | username: string1 | email: string1@gmail.com
 08/21/2026 03:07:33 - INFO - User logged in successfully | username: string1
+08/21/2026 06:11:39 - INFO - User logged in successfully | username: string
+08/21/2026 06:16:48 - INFO - User logged in successfully | username: string
+08/21/2026 06:23:01 - INFO - User logged in successfully | username: string
+08/21/2026 06:26:32 - INFO - User logged in successfully | username: string
+08/21/2026 06:26:52 - INFO - PrivateChat create successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/21/2026 06:26:52 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/21/2026 07:34:53 - INFO - User logged in successfully | username: string
+08/21/2026 07:52:59 - INFO - User logged in successfully | username: string
+08/21/2026 07:59:38 - INFO - User logged in successfully | username: string1
+08/21/2026 08:03:40 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/21/2026 08:15:40 - INFO - User logged in successfully | username: string1

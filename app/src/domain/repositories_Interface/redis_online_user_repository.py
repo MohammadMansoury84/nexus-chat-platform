@@ -14,3 +14,7 @@ class RedisOnlineUserRepository(ABC):
     @abstractmethod
     async def get_online_user_ids(self) -> set[UUID]:
         pass
+
+    @abstractmethod
+    async def is_user_logged_in(self, user_id: UUID) -> bool:
+        pass

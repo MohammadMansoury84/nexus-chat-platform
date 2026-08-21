@@ -50,7 +50,7 @@ class AuthServiceImpl(AuthService):
         hashed_password = self._passweord_hasher.hash_password(password=password)
         user = User(username=username, email=email, hashed_password=hashed_password)
 
-        self._user_repository.add(user=user)
+        await self._user_repository.add(user=user)
 
         self.custome_logger.info("User created", username=username, email=email)
 

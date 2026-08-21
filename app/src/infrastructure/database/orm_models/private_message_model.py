@@ -7,6 +7,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
     from src.infrastructure.database.orm_models.private_chat_model import PrivateChatModel
+    from src.infrastructure.database.orm_models.user_model import UserModel
 from src.infrastructure.database.orm_models.base import Base
 
 
@@ -28,7 +29,10 @@ class PrivateMessageModel(Base):
     )
     chat: Mapped["PrivateChatModel"] = relationship(back_populates="messages")
 
+    sender: Mapped["UserModel"] = relationship()
+
 
 from src.infrastructure.database.orm_models.private_chat_model import (
     PrivateChatModel,
 )
+from src.infrastructure.database.orm_models.user_model import UserModel

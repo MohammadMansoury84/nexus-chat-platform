@@ -45,7 +45,7 @@ def get_auth_service(
     )
 
 
-def get_current_user_id(
+async def get_current_user_id(
     credentials: Annotated[HTTPAuthorizationCredentials, Depends(_security)],
     token_service: Annotated[TokenService, Depends(get_token_service)],
     user_repository: Annotated[UserRepository, Depends(get_user_repository)],
@@ -53,7 +53,7 @@ def get_current_user_id(
 
     user_id = token_service.decode_token(credentials.credentials)
 
-    user = user_repository.get_by_id(user_id)
+    user = await user_repository.get_by_id(user_id)
 
     if user is None:
         raise InvalidAccessTokenError("User associated with token was not found.")

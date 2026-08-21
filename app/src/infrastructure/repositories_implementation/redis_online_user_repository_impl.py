@@ -20,3 +20,6 @@ class RedisOnlineUserRepositoryImpl(RedisOnlineUserRepository):
     async def get_online_user_ids(self) -> set[UUID]:
         members = await self._redis.smembers(self._ONLINE_KEY)
         return {UUID(m) for m in members}
+
+    async def is_user_logged_in(self, user_id: UUID) -> bool:
+        return await self._redis.sismember(self._ONLINE_KEY, str(user_id))

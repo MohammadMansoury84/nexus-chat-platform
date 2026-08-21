@@ -14,7 +14,7 @@ class UserRepositoryImpl(UserRepository):
     def __init__(self, db: AsyncSession) -> None:
         self._db = db
 
-    def add(self, user: User) -> User:
+    async def add(self, user: User) -> User:
         orm_user = UserModel(
             id=user.id,
             username=user.username,
