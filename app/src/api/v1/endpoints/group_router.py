@@ -33,13 +33,13 @@ group_router = APIRouter(
     response_model=Response[CreateGroupResponse],
     status_code=status.HTTP_201_CREATED,
 )
-def create_group(
+async def create_group(
     request: CreateGroupRequest,
     current_user_id: Annotated[UUID, Depends(get_current_user_id)],
     group_service: Annotated[GroupService, Depends(get_group_service)],
 ) -> Response[CreateGroupResponse]:
 
-    group = group_service.create_group(
+    group = await group_service.create_group(
         name=request.name,
         creator_id=current_user_id,
     )
@@ -59,14 +59,14 @@ def create_group(
     response_model=Response[bool],
     status_code=status.HTTP_200_OK,
 )
-def add_user_to_group(
+async def add_user_to_group(
     group_id: UUID,
     request: AddUserToGroupRequest,
     current_user_id: Annotated[UUID, Depends(get_current_user_id)],
     group_service: Annotated[GroupService, Depends(get_group_service)],
 ) -> Response[bool]:
 
-    result = group_service.add_user_to_group(
+    result = await group_service.add_user_to_group(
         group_id=group_id,
         creator_id=current_user_id,
         user_id=request.user_id,

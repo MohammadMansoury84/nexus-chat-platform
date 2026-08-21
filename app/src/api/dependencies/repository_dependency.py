@@ -2,6 +2,7 @@ import redis.asyncio as aioredis
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.api.dependencies.database_dependency import get_session
+from src.domain.repositories_Interface.group_member_repository import GroupMemberRepository
 from src.domain.repositories_Interface.group_message_repository import (
     GroupMessageRepository,
 )
@@ -13,6 +14,9 @@ from src.domain.repositories_Interface.redis_online_user_repository import (
 )
 from src.domain.repositories_Interface.user_repository import UserRepository
 from src.infrastructure.redis import get_redis
+from src.infrastructure.repositories_implementation.group_member_repository_impl import (
+    GroupMemberRepositoryImpl,
+)
 from src.infrastructure.repositories_implementation.group_message_repository_impl import (
     GroupMessageRepositoryImpl,
 )
@@ -32,9 +36,6 @@ from src.infrastructure.repositories_implementation.user_repository_impl import 
     UserRepositoryImpl,
 )
 
-_group_repository = GroupRepositoryImpl()
-_group_message_repository = GroupMessageRepositoryImpl()
-
 
 def get_user_repository(db: AsyncSession = Depends(get_session)) -> UserRepository:
     return UserRepositoryImpl(db=db)
@@ -46,12 +47,14 @@ def get_redis_online_user_repository(
     return RedisOnlineUserRepositoryImpl(redis_client=redis)
 
 
-def get_group_repository() -> GroupRepository:
-    return _group_repository
+def get_group_repository(db: AsyncSession = Depends(get_session)) -> GroupRepository:
+    return GroupRepositoryImpl(db=db)
 
 
-def get_group_message_repository() -> GroupMessageRepository:
-    return _group_message_repository
+def get_group_message_repository(
+    db: AsyncSession = Depends(get_session),
+) -> GroupMessageRepository:
+    return GroupMessageRepositoryImpl(db=db)
 
 
 def get_private_chat_repository(
@@ -62,5 +65,10 @@ def get_private_chat_repository(
 
 
 def get_message_repository(db: AsyncSession = Depends(get_session)) -> MassageRepository:
-
     return MassageRepositoryImpl(db=db)
+
+
+def get_group_member_repository(
+    db: AsyncSession = Depends(get_session),
+) -> GroupMemberRepository:
+    return GroupMemberRepositoryImpl(db=db)

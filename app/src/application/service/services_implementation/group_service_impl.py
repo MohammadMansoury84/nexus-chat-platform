@@ -17,10 +17,14 @@ from src.domain.entities.Group import Group
 from src.domain.entities.GroupMembershipAction import GroupMembershipAction
 from src.domain.entities.GroupMessage import GroupMessage
 from src.domain.entities.MessageStatus import MessageStatus
+from src.domain.repositories_Interface.group_member_repository import GroupMemberRepository
 from src.domain.repositories_Interface.group_message_repository import (
     GroupMessageRepository,
 )
 from src.domain.repositories_Interface.group_repository import GroupRepository
+from src.domain.repositories_Interface.redis_online_user_repository import (
+    RedisOnlineUserRepository,
+)
 from src.domain.repositories_Interface.user_repository import UserRepository
 
 
@@ -30,30 +34,34 @@ class GroupServiceImpl(GroupService):
         user_repository: UserRepository,
         group_repository: GroupRepository,
         group_message_repository: GroupMessageRepository,
+        group_member_repository: GroupMemberRepository,
+        online_user_repository: RedisOnlineUserRepository,
     ) -> None:
         self._user_repository = user_repository
         self._group_repository = group_repository
         self._group_message_repository = group_message_repository
+        self._group_member_repository = group_member_repository
+        self._online_user_repository = online_user_repository
 
         self.custome_logger = CustomLogger(self.__class__.__name__)
 
-    def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
+    async def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
 
         self.custome_logger.debug(
             "Attempting to create group", name=name, creator_id=creator_id
         )
 
         group = Group(name=name, creator_id=creator_id)
-        target_user = self._user_repository.get_by_id(user_id=creator_id)
+        target_user = await self._user_repository.get_by_id(user_id=creator_id)
 
         if target_user is None:
             self.custome_logger.warning("User not found", user_id=creator_id)
             raise UserNotFoundError("User not found.")
 
-        target_user.groups_created.append(group)
-        target_user.joined_groups.append(group)
-        group.members.append(target_user)
-        self._group_repository.add(group)
+        await self._group_repository.add(group)
+        await self._group_member_repository.add_member(
+            group_id=group.id, user_id=target_user.id, role="admin"
+        )
 
         self.custome_logger.info(
             "Group created successfully",
@@ -66,7 +74,9 @@ class GroupServiceImpl(GroupService):
             group_id=group.id, group_name=group.name, creator_id=group.creator_id
         )
 
-    def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID) -> bool:
+    async def add_user_to_group(
+        self, group_id: UUID, creator_id: UUID, user_id: UUID
+    ) -> bool:
 
         self.custome_logger.debug(
             "Attempting to add user to group",
@@ -75,8 +85,8 @@ class GroupServiceImpl(GroupService):
             user_id=user_id,
         )
 
-        group = self._group_repository.get_by_id(group_id=group_id)
-        user = self._user_repository.get_by_id(user_id)
+        group = await self._group_repository.get_by_id(group_id=group_id)
+        user = await self._user_repository.get_by_id(user_id)
 
         if user is None:
             self.custome_logger.warning("User not found", user_id=user_id)
@@ -96,18 +106,22 @@ class GroupServiceImpl(GroupService):
             )
             raise AuthorizationError("only the creator can add members to the group.")
 
-        if not self._user_repository.is_user_logged_in(user_id=user_id):
+        if not await self._online_user_repository.is_user_logged_in(user_id=user_id):
             raise AuthorizationError("User must be logged in before joining the group.")
 
-        if user in group.members:
+        if await self._group_member_repository.is_user_in_group(
+            user_id=user_id, group_id=group_id
+        ):
             self.custome_logger.warning(
                 "User is already in the group", user_id=user_id, group_id=group_id
             )
 
             raise UserAlreadyInGroupError("User is already in the group.")
 
-        group.members.append(user)
-        user.joined_groups.append(group)
+        await self._group_member_repository.add_member(
+            group_id=group.group_id,
+            user_id=user_id,
+        )
 
         self.custome_logger.info(
             "User added to group successfully", user_id=user_id, group_id=group_id

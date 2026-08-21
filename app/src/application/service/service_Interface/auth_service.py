@@ -6,9 +6,9 @@ from src.application.DTO.user.user_dto import UserDTO
 
 class AuthService(ABC):
     @abstractmethod
-    def signup(self, username: str, email: str, password: str) -> UserDTO:
+    async def signup(self, username: str, email: str, password: str) -> UserDTO:
         pass
 
     @abstractmethod
-    def login(self, username: str, password: str) -> TokenDTO:
+    async def login(self, username: str, password: str) -> TokenDTO:
         pass

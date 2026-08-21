@@ -2,21 +2,22 @@ from abc import ABC, abstractmethod
 from uuid import UUID
 
 from src.domain.entities.Group import Group
+from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
 
 
 class GroupRepository(ABC):
     @abstractmethod
-    def add(self, group: Group) -> Group:
+    async def add(self, group: Group) -> Group:
         pass
 
     @abstractmethod
-    def get_by_id(self, group_id: UUID) -> Group | None:
+    async def get_by_id(self, group_id: UUID) -> GetGroupByIdBrief | None:
         pass
 
     @abstractmethod
-    def list_all(self) -> list[Group]:
+    async def list_all(self) -> list[Group]:
         pass
 
     @abstractmethod
-    def remove_group(self, group: Group) -> bool:
+    async def remove_group(self, group: Group) -> bool:
         pass

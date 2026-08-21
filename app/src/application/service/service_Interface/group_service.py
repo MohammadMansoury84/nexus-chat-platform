@@ -11,51 +11,55 @@ from src.application.DTO.group.grtoup_dto import GroupDTO
 
 class GroupService(ABC):
     @abstractmethod
-    def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
+    async def create_group(self, name: str, creator_id: UUID) -> GroupDTO:
         pass
 
     @abstractmethod
-    def add_user_to_group(self, group_id: UUID, creator_id: UUID, user_id: UUID) -> bool:
+    async def add_user_to_group(
+        self, group_id: UUID, creator_id: UUID, user_id: UUID
+    ) -> bool:
         pass
 
     @abstractmethod
-    def send_message_to_group(
+    async def send_message_to_group(
         self, group_id: UUID, sender_id: UUID, content: str
     ) -> GroupMessageDTO:
         pass
 
     @abstractmethod
-    def get_group_chat(
+    async def get_group_chat(
         self, group_id: UUID, sender_id: UUID
     ) -> list[GroupChatMessageDTO] | None:
         pass
 
     @abstractmethod
-    def get_group_by_id(self, group_id: UUID) -> GroupDTO:
+    async def get_group_by_id(self, group_id: UUID) -> GroupDTO:
         pass
 
     @abstractmethod
-    def get_all_groups_for_show_users(self, user_id: UUID) -> list[GroupSummaryDTO]:
+    async def get_all_groups_for_show_users(self, user_id: UUID) -> list[GroupSummaryDTO]:
         pass
 
     @abstractmethod
-    def get_all_groups(self) -> list[GroupSummaryDTO]:
+    async def get_all_groups(self) -> list[GroupSummaryDTO]:
         pass
 
     @abstractmethod
-    def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
+    async def delete_group_by_id(self, user_id: UUID, group_id: UUID) -> bool:
         pass
 
     @abstractmethod
-    def show_group_member(self, user_id: UUID, group_id: UUID) -> list[GroupMemberDTO]:
+    async def show_group_member(
+        self, user_id: UUID, group_id: UUID
+    ) -> list[GroupMemberDTO]:
         pass
 
     @abstractmethod
-    def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
+    async def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
         pass
 
     @abstractmethod
-    def remove_user_from_group(
+    async def remove_user_from_group(
         self,
         admin_id: UUID,
         group_id: UUID,
