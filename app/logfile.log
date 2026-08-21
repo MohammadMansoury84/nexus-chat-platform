@@ -223,3 +223,7 @@
 08/21/2026 18:43:40 - WARNING - Sender is not a member of the group | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: d627a866-5274-47dd-82f6-42337da8ad98
 08/21/2026 18:46:42 - WARNING - Sender is not a member of the group | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: d627a866-5274-47dd-82f6-42337da8ad98
 08/21/2026 18:49:59 - INFO - Message sent to group successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: string
+08/22/2026 00:42:23 - INFO - User logged in successfully | username: string
+08/22/2026 00:43:28 - INFO - Group chat retrieved successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98
+08/22/2026 00:43:57 - INFO - Message sent to group successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: string1111
+08/22/2026 00:44:01 - INFO - Group chat retrieved successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98

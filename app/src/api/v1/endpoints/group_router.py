@@ -118,7 +118,7 @@ async def send_message_to_group(
     response_model=Response[list[GroupChatMessageResponse]],
     status_code=status.HTTP_200_OK,
 )
-def get_group_chat(
+async def get_group_chat(
     group_id: UUID,
     group_service: Annotated[GroupService, Depends(get_group_service)],
     current_user_id: Annotated[
@@ -127,7 +127,7 @@ def get_group_chat(
     ],
 ) -> Response[list[GroupChatMessageResponse]]:
 
-    chat = group_service.get_group_chat(group_id=group_id, sender_id=current_user_id)
+    chat = await group_service.get_group_chat(group_id=group_id, sender_id=current_user_id)
 
     data = [
         GroupChatMessageResponse(

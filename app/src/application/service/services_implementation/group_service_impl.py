@@ -183,14 +183,14 @@ class GroupServiceImpl(GroupService):
             status=message.status,
         )
 
-    def get_group_chat(
+    async def get_group_chat(
         self, group_id: UUID, sender_id: UUID
     ) -> list[GroupChatMessageDTO] | None:
 
         self.custome_logger.debug("Attempting to get group chat", group_id=group_id)
 
-        group = self._group_repository.get_by_id(group_id=group_id)
-        sender = self._user_repository.get_by_id(sender_id)
+        group = await self._group_repository.get_by_id(group_id=group_id)
+        sender = await self._user_repository.get_by_id(sender_id)
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
@@ -202,7 +202,9 @@ class GroupServiceImpl(GroupService):
             )
             raise UserNotFoundError("User not found.")
 
-        if sender not in group.members:
+        if not await self._group_member_repository.is_user_in_group(
+            user_id=sender_id, group_id=group_id
+        ):
             self.custome_logger.warning(
                 "Sender is not a member of the group",
                 sender_id=sender_id,
@@ -210,18 +212,21 @@ class GroupServiceImpl(GroupService):
             )
             raise UserNotInGroupError("User is not a member of the group.")
 
-        chat = []
-        for msg in group.messages:
-            sender = self._user_repository.get_by_id(msg.sender_id)
+        messages = await self._group_repository.get_group_with_messages(group_id=group_id)
 
-            chat.append(
-                GroupChatMessageDTO(
-                    sender_id=sender.id, username=sender.username, content=msg.content
-                )
-            )
+        if not messages:
+            return []
 
         self.custome_logger.info("Group chat retrieved successfully", group_id=group_id)
-        return chat
+
+        return [
+            GroupChatMessageDTO(
+                sender_id=msg.sender_id,
+                username=msg.sender_username,
+                content=msg.content,
+            )
+            for msg in messages
+        ]
 
     def get_group_by_id(self, group_id: UUID) -> GroupDTO:
         group = self._group_repository.get_by_id(group_id=group_id)

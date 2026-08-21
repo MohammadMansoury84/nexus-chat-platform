@@ -2,9 +2,12 @@ from uuid import UUID
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 from src.domain.entities.Group import Group
 from src.domain.repositories_Interface.group_repository import GroupRepository
 from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
+from src.infrastructure.Brief.group.group_chat_message_brief import GroupChatMessageBrief
+from src.infrastructure.database.orm_models.group_message_model import GroupMessageModel
 from src.infrastructure.database.orm_models.group_model import GroupModel
 
 
@@ -46,3 +49,28 @@ class GroupRepositoryImpl(GroupRepository):
             self._groups.remove(group)
             return True
         return False
+
+    async def get_group_with_messages(self, group_id: UUID) -> list[GroupChatMessageBrief]:
+        stmt = (
+            select(GroupModel)
+            .where(GroupModel.id == group_id)
+            .options(selectinload(GroupModel.messages).joinedload(GroupMessageModel.sender))
+        )
+
+        result = await self._db.scalars(stmt)
+        group_model = result.unique().first()
+
+        if group_model is None or not group_model.messages:
+            return []
+
+        return [
+            GroupChatMessageBrief(
+                id=msg.id,
+                group_id=msg.group_id,
+                sender_id=msg.sender_id,
+                sender_username=msg.sender.username,
+                content=msg.content,
+                created_at=msg.created_at,
+            )
+            for msg in group_model.messages
+        ]

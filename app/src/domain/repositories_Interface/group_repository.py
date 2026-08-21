@@ -3,6 +3,7 @@ from uuid import UUID
 
 from src.domain.entities.Group import Group
 from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
+from src.infrastructure.Brief.group.group_chat_message_brief import GroupChatMessageBrief
 
 
 class GroupRepository(ABC):
@@ -20,4 +21,8 @@ class GroupRepository(ABC):
 
     @abstractmethod
     async def remove_group(self, group: Group) -> bool:
+        pass
+
+    @abstractmethod
+    async def get_group_with_messages(self, group_id: UUID) -> list[GroupChatMessageBrief]:
         pass
