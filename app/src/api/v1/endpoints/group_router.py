@@ -83,7 +83,7 @@ async def add_user_to_group(
     response_model=Response[GroupMessageResponse],
     status_code=status.HTTP_200_OK,
 )
-def send_message_to_group(
+async def send_message_to_group(
     group_id: UUID,
     request: SendGroupMessageRequest,
     current_user_id: Annotated[
@@ -96,7 +96,7 @@ def send_message_to_group(
     ],
 ) -> Response[GroupMessageResponse]:
 
-    message = group_service.send_message_to_group(
+    message = await group_service.send_message_to_group(
         group_id=group_id,
         sender_id=current_user_id,
         content=request.content,

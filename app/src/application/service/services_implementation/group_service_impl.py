@@ -128,7 +128,7 @@ class GroupServiceImpl(GroupService):
         )
         return True
 
-    def send_message_to_group(
+    async def send_message_to_group(
         self, group_id: UUID, sender_id: UUID, content: str
     ) -> GroupMessageDTO:
 
@@ -139,8 +139,8 @@ class GroupServiceImpl(GroupService):
             content=content,
         )
 
-        group = self._group_repository.get_by_id(group_id=group_id)
-        sender = self._user_repository.get_by_id(sender_id)
+        group = await self._group_repository.get_by_id(group_id=group_id)
+        sender = await self._user_repository.get_by_id(sender_id)
 
         if group is None:
             self.custome_logger.warning("Group not found", group_id=group_id)
@@ -150,7 +150,9 @@ class GroupServiceImpl(GroupService):
             self.custome_logger.warning("Sender not found", sender_id=sender_id)
             raise UserNotFoundError("User not found.")
 
-        if sender not in group.members:
+        if not await self._group_member_repository.is_user_in_group(
+            user_id=sender_id, group_id=group_id
+        ):
             self.custome_logger.warning(
                 "Sender is not a member of the group",
                 sender_id=sender_id,
@@ -160,12 +162,12 @@ class GroupServiceImpl(GroupService):
 
         message = GroupMessage(
             sender_id=sender.id,
-            group_id=group.id,
+            group_id=group.group_id,
             content=content,
             status=MessageStatus.SENT,
         )
-        group.messages.append(message)
-        self._group_message_repository.add(message)
+
+        await self._group_message_repository.add(message)
 
         self.custome_logger.info(
             "Message sent to group successfully",
@@ -176,7 +178,7 @@ class GroupServiceImpl(GroupService):
 
         return GroupMessageDTO(
             sender_id=sender.id,
-            group_id=group.id,
+            group_id=group.group_id,
             content=message.content,
             status=message.status,
         )
