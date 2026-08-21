@@ -236,3 +236,7 @@
 08/22/2026 02:48:05 - INFO - Group deleted successfully | group_id: 45968210-46e5-43e0-b38e-53e990dff29c
 08/22/2026 02:50:23 - INFO - User logged in successfully | username: string
 08/22/2026 02:50:52 - INFO - Group deleted successfully | group_id: d627a866-5274-47dd-82f6-42337da8ad98
+08/22/2026 03:25:26 - INFO - User logged in successfully | username: string
+08/22/2026 03:26:58 - ERROR - Only group members can see group members. | user_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/22/2026 03:27:14 - INFO - User logged in successfully | username: string1
+08/22/2026 03:27:53 - INFO - show Group members | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef

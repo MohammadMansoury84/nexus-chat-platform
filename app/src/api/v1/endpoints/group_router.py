@@ -271,7 +271,7 @@ async def delete_group_by_id(
     response_model=Response[list[GroupMemberResponse]],
     status_code=status.HTTP_200_OK,
 )
-def show_group_members(
+async def show_group_members(
     group_id: UUID,
     current_user_id: Annotated[
         UUID,
@@ -283,7 +283,7 @@ def show_group_members(
     ],
 ) -> Response[list[GroupMemberResponse]]:
 
-    members = group_service.show_group_member(
+    members = await group_service.show_group_member(
         user_id=current_user_id,
         group_id=group_id,
     )

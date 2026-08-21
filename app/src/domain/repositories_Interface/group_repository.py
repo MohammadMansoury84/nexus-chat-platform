@@ -6,6 +6,7 @@ from src.infrastructure.Brief.group.get_all_groups_for_show_users_brief import (
     GetAllGroupsForShowUsersBrief,
 )
 from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
+from src.infrastructure.Brief.group.get_group_member_brief import GetGroupMemberBrief
 from src.infrastructure.Brief.group.group_chat_message_brief import GroupChatMessageBrief
 
 
@@ -35,4 +36,8 @@ class GroupRepository(ABC):
         self, user_id: UUID
     ) -> list[GetAllGroupsForShowUsersBrief]:
 
+        pass
+
+    @abstractmethod
+    async def get_group_members(self, group_id: UUID) -> list[GetGroupMemberBrief]:
         pass

@@ -9,10 +9,12 @@ from src.infrastructure.Brief.group.get_all_groups_for_show_users_brief import (
     GetAllGroupsForShowUsersBrief,
 )
 from src.infrastructure.Brief.group.get_group_by_id_brief import GetGroupByIdBrief
+from src.infrastructure.Brief.group.get_group_member_brief import GetGroupMemberBrief
 from src.infrastructure.Brief.group.group_chat_message_brief import GroupChatMessageBrief
 from src.infrastructure.database.orm_models.group_members_model import GroupMembersModel
 from src.infrastructure.database.orm_models.group_message_model import GroupMessageModel
 from src.infrastructure.database.orm_models.group_model import GroupModel
+from src.infrastructure.database.orm_models.user_model import UserModel
 
 
 class GroupRepositoryImpl(GroupRepository):
@@ -107,4 +109,29 @@ class GroupRepositoryImpl(GroupRepository):
         return [
             GetAllGroupsForShowUsersBrief(group_id=row.id, group_name=row.name)
             for row in rows
+        ]
+
+    async def get_group_members(self, group_id: UUID) -> list[GetGroupMemberBrief]:
+        stmt = (
+            select(GroupModel)
+            .where(GroupModel.id == group_id)
+            .options(
+                selectinload(GroupModel.members)
+                .joinedload(GroupMembersModel.user)
+                .load_only(UserModel.id, UserModel.username, raiseload=True)
+                .raiseload("*")
+            )
+        )
+
+        result = await self._db.scalars(stmt)
+        group = result.unique().first()
+
+        if group is None:
+            return []
+
+        return [
+            GetGroupMemberBrief(
+                member_id=member.user.id, member_username=member.user.username
+            )
+            for member in group.members
         ]
