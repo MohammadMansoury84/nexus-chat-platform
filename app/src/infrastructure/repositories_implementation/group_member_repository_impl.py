@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from sqlalchemy import exists, select
+from sqlalchemy import and_, delete, exists, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.domain.repositories_Interface.group_member_repository import GroupMemberRepository
 from src.infrastructure.database.orm_models.group_members_model import GroupMembersModel
@@ -23,3 +23,12 @@ class GroupMemberRepositoryImpl(GroupMemberRepository):
         )
         result = await self._db.scalar(stmt)
         return bool(result)
+
+    async def remove_user(self, group_id: UUID, user_id: UUID) -> None:
+        stmt = delete(GroupMembersModel).where(
+            and_(
+                GroupMembersModel.group_id == group_id, GroupMembersModel.user_id == user_id
+            )
+        )
+
+        await self._db.execute(statement=stmt)

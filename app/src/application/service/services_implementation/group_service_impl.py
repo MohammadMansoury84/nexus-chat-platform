@@ -321,57 +321,55 @@ class GroupServiceImpl(GroupService):
 
         return True
 
-    def remove_user_from_group(
+    async def remove_user_from_group(
         self,
         admin_id: UUID,
         group_id: UUID,
         user_id: UUID,
     ) -> GroupMembershipActionDTO:
 
-        group = self._group_repository.get_by_id(group_id=group_id)
+        group = await self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             raise GroupNotFoundError("Group not found.")
 
-        target_user = self._user_repository.get_by_id(user_id=user_id)
+        target_user = await self._user_repository.get_by_id(user_id=user_id)
 
         if target_user is None:
             raise UserNotFoundError("User not found.")
 
-        target_member = next(
-            (member for member in group.members if member.id == user_id),
-            None,
+        is_member = self._group_member_repository.is_user_in_group(
+            user_id=user_id, group_id=group_id
         )
 
-        if target_member is None:
+        if not is_member:
             raise UserNotInGroupError("User is not a member of this group.")
 
         if admin_id == user_id:
             if group.creator_id == user_id:
-                self.delete_group_by_id(
+                await self.delete_group_by_id(
                     user_id=user_id,
                     group_id=group_id,
                 )
 
                 return GroupMembershipActionDTO(
                     action=GroupMembershipAction.GROUP_DELETED,
-                    group_id=group.id,
-                    group_name=group.name,
-                    user_id=target_member.id,
-                    username=target_member.username,
+                    group_name=group.group_name,
+                    group_id=group.group_id,
+                    user_id=target_user.id,
+                    username=target_user.username,
                 )
 
-            group.members.remove(target_member)
-
-            if group in target_user.joined_groups:
-                target_user.joined_groups.remove(group)
+            await self._group_member_repository.remove_user(
+                user_id=user_id, group_id=group_id
+            )
 
             return GroupMembershipActionDTO(
                 action=GroupMembershipAction.USER_LEFT,
-                group_name=group.name,
-                group_id=group.id,
-                user_id=target_member.id,
-                username=target_member.username,
+                group_name=group.group_name,
+                group_id=group.group_id,
+                user_id=target_user.id,
+                username=target_user.username,
             )
 
         if group.creator_id != admin_id:
@@ -380,15 +378,12 @@ class GroupServiceImpl(GroupService):
         if group.creator_id == user_id:
             raise AuthorizationError("Group creator cannot be removed.")
 
-        group.members.remove(target_member)
-
-        if group in target_user.joined_groups:
-            target_user.joined_groups.remove(group)
+        await self._group_member_repository.remove_user(group_id=group_id, user_id=user_id)
 
         return GroupMembershipActionDTO(
             action=GroupMembershipAction.USER_REMOVED,
-            group_name=group.name,
-            group_id=group.id,
-            user_id=target_member.id,
-            username=target_member.username,
+            group_name=group.group_name,
+            group_id=group.group_id,
+            user_id=target_user.id,
+            username=target_user.username,
         )

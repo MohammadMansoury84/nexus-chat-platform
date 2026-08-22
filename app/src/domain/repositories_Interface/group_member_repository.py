@@ -10,3 +10,7 @@ class GroupMemberRepository(ABC):
     @abstractmethod
     async def is_user_in_group(self, user_id: UUID, group_id: UUID) -> bool:
         pass
+
+    @abstractmethod
+    async def remove_user(self, group_id: UUID, user_id: UUID) -> None:
+        pass

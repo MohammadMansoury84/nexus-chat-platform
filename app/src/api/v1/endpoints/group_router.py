@@ -337,7 +337,7 @@ async def delete_group_chat_history(
     response_model=Response[GroupMembershipActionResponse],
     status_code=status.HTTP_200_OK,
 )
-def remove_user_from_group(
+async def remove_user_from_group(
     group_id: UUID,
     user_id: UUID,
     current_user_id: Annotated[
@@ -350,7 +350,7 @@ def remove_user_from_group(
     ],
 ) -> Response[GroupMembershipActionResponse]:
 
-    result = group_service.remove_user_from_group(
+    result = await group_service.remove_user_from_group(
         admin_id=current_user_id,
         group_id=group_id,
         user_id=user_id,

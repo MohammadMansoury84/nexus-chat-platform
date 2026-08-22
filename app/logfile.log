@@ -246,3 +246,17 @@
 08/22/2026 04:06:29 - INFO - Group chat history deleted successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
 08/22/2026 04:06:59 - INFO - Message sent to group successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: strin111111g
 08/22/2026 04:07:22 - INFO - Group chat history deleted successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:29:34 - INFO - User logged in successfully | username: string1
+08/22/2026 04:30:08 - INFO - User created | username: string44 | email: string44@gmail.com
+08/22/2026 04:30:19 - INFO - User logged in successfully | username: string44
+08/22/2026 04:30:33 - INFO - User created | username: string45 | email: string45@gmail.com
+08/22/2026 04:30:39 - INFO - User logged in successfully | username: string45
+08/22/2026 04:31:37 - INFO - User added to group successfully | user_id: e0d8e4e3-2914-4a7f-8c2b-0187056a3162 | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:31:54 - INFO - User added to group successfully | user_id: 3b04ee16-6dc0-411d-806e-c98590fcbd07 | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:37:31 - WARNING - User is not the creator of the group | creator_id: 3b04ee16-6dc0-411d-806e-c98590fcbd07 | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:37:48 - WARNING - Username already exists | username: string1
+08/22/2026 04:37:57 - INFO - User logged in successfully | username: string1
+08/22/2026 04:38:41 - INFO - show Group members | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:38:57 - INFO - User added to group successfully | user_id: 3b04ee16-6dc0-411d-806e-c98590fcbd07 | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:39:00 - INFO - show Group members | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 04:39:20 - INFO - Group deleted successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
