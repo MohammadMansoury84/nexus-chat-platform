@@ -293,8 +293,8 @@ class GroupServiceImpl(GroupService):
             for member in await self._group_repository.get_group_members(group_id=group_id)
         ]
 
-    def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
-        group = self._group_repository.get_by_id(group_id=group_id)
+    async def delete_group_chat_history(self, user_id: UUID, group_id: UUID) -> bool:
+        group = await self._group_repository.get_by_id(group_id=group_id)
 
         if group is None:
             self.custome_logger.error("Group not found", group_id=group_id)
@@ -306,7 +306,9 @@ class GroupServiceImpl(GroupService):
             )
             raise AuthorizationError("Only Admin can delete group chat history")
 
-        is_member = any(member.id == user_id for member in group.members)
+        is_member = self._group_member_repository.is_user_in_group(
+            user_id=user_id, group_id=group_id
+        )
 
         if not is_member:
             raise AuthorizationError("Only group members can see group members.")
@@ -315,7 +317,7 @@ class GroupServiceImpl(GroupService):
             "Group chat history deleted successfully", group_id=group_id
         )
 
-        group.messages.clear()
+        await self._group_message_repository.delete_group_chat(group_id=group_id)
 
         return True
 

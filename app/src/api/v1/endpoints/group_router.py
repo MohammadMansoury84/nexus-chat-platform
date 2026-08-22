@@ -309,7 +309,7 @@ async def show_group_members(
     response_model=Response[bool],
     status_code=status.HTTP_200_OK,
 )
-def delete_group_chat_history(
+async def delete_group_chat_history(
     group_id: UUID,
     current_user_id: Annotated[
         UUID,
@@ -321,7 +321,7 @@ def delete_group_chat_history(
     ],
 ) -> Response[bool]:
 
-    result = group_service.delete_group_chat_history(
+    result = await group_service.delete_group_chat_history(
         user_id=current_user_id,
         group_id=group_id,
     )
