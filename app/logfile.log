@@ -260,3 +260,5 @@
 08/22/2026 04:38:57 - INFO - User added to group successfully | user_id: 3b04ee16-6dc0-411d-806e-c98590fcbd07 | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
 08/22/2026 04:39:00 - INFO - show Group members | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
 08/22/2026 04:39:20 - INFO - Group deleted successfully | group_id: 0692e551-426c-4edc-927c-7e27abfa37ef
+08/22/2026 16:21:37 - INFO - User logged in successfully | username: string
+08/22/2026 16:22:57 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
