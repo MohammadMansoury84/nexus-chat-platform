@@ -1,3 +1,4 @@
+from functools import lru_cache
 from typing import Annotated
 from uuid import UUID
 
@@ -13,6 +14,7 @@ from src.infrastructure.websocket.connection_manager import ConnectionManager
 _connection_manager = ConnectionManager()
 
 
+@lru_cache
 def get_connection_manager() -> ConnectionManager:
     return _connection_manager
 
