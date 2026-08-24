@@ -6,7 +6,6 @@ from pydantic import BaseModel, ConfigDict
 class WebSocketResponse(BaseModel):
     model_config = ConfigDict(
         validate_assignment=True,
-        strict=True,
     )
 
     event: str

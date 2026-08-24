@@ -2,7 +2,7 @@ from collections.abc import Awaitable, Callable
 from uuid import UUID
 
 from src.api.schemas.WebSocket.websocket_action import WebSocketAction
-from src.api.schemas.WebSocket.websocket_request import WebSocketRequest
+from src.api.schemas.WebSocket.websocket_request.web_socket_request import WebSocketRequest
 
 WebSocketHandlerFunc = Callable[[UUID, UUID | None, dict], Awaitable[dict]]
 
@@ -23,6 +23,6 @@ class RequestRouter:
         handler = self._routes.get(request.action)
 
         if not handler:
-            raise ValueError("No handler registered for action:")
+            raise ValueError("No handler registered for action")
 
-        return await handler(user_id, request.request_id, request.data)
+        return await handler(user_id, request.data)

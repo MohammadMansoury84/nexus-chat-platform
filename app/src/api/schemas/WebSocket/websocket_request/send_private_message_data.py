@@ -4,10 +4,7 @@ from pydantic import BaseModel, ConfigDict
 
 
 class SendPrivateMessageData(BaseModel):
-    model_config = ConfigDict(
-        validate_assignment=True,
-        strict=True,
-    )
+    model_config = ConfigDict(validate_assignment=True)
 
     receiver_id: UUID
     content: str

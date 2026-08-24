@@ -177,6 +177,7 @@ class GroupServiceImpl(GroupService):
         )
 
         return GroupMessageDTO(
+            id=message.id,
             sender_id=sender.id,
             group_id=group.group_id,
             content=message.content,

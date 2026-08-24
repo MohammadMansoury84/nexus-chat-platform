@@ -7,7 +7,7 @@ from src.infrastructure.websocket.request_router import RequestRouter
 from src.infrastructure.websocket.websocket_router_config import create_websocket_router
 
 
-def get_request_router(
+def get_websocket_request_router(
     request_handler: Annotated[RequestHandler, Depends(get_request_handler)],
 ) -> RequestRouter:
 

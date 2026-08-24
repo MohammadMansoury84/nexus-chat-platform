@@ -1,18 +1,26 @@
 from uuid import UUID
 
-from fastapi import WebSocket, WebSocketDisconnect
+from fastapi import HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import ValidationError
-from src.api.schemas.WebSocket.websocket_request import WebSocketRequest
+from sqlalchemy.ext.asyncio import AsyncSession
+from src.api.schemas.WebSocket.websocket_request.web_socket_request import WebSocketRequest
+from src.api.schemas.WebSocket.websocket_response.websocket_response import (
+    WebSocketResponse,
+)
 from src.infrastructure.websocket.connection_manager import ConnectionManager
 from src.infrastructure.websocket.request_router import RequestRouter
 
 
 class WebSocketHandler:
     def __init__(
-        self, connection_manager: ConnectionManager, request_router: RequestRouter
+        self,
+        connection_manager: ConnectionManager,
+        request_router: RequestRouter,
+        session: AsyncSession,
     ) -> None:
         self._manager = connection_manager
         self._request_router = request_router
+        self._db = session
 
     async def handle(self, websocket: WebSocket, user_id: UUID) -> None:
         await self._manager.connect(user_id=user_id, web_socket=websocket)
@@ -33,28 +41,69 @@ class WebSocketHandler:
         try:
             request = WebSocketRequest.model_validate(data)
 
-            response_payload = await self._request_router.dispatch(
-                user_id=user_id, request=request
-            )
-
-            if response_payload:
-                await self._manager.send_personal(user_id=user_id, message=response_payload)
+            result = await self._request_router.dispatch(user_id=user_id, request=request)
+            await self._db.commit()
+            if result:
+                await self._send_response(user_id=user_id, result=result)
 
         except ValidationError as e:
+            await self._db.rollback()
             await self._manager.send_personal(
                 user_id=user_id,
                 message={
                     "event": "error",
-                    "request_id": data.get("request_id"),
                     "data": {"details": e.errors(include_url=False)},
                 },
             )
-        except ValueError as e:
+        except (ValueError, HTTPException) as e:
+            self._db.rollback()
+            detail = e.detail if isinstance(e, HTTPException) else str(e)
             await self._manager.send_personal(
                 user_id=user_id,
                 message={
                     "event": "error",
-                    "request_id": data.get("request_id"),
+                    "data": {"message": detail},
+                },
+            )
+        except Exception as e:
+            self._db.rollback()
+            await self._manager.send_personal(
+                user_id=user_id,
+                message={
+                    "event": "error",
                     "data": {"message": str(e)},
                 },
             )
+
+    async def _send_response(self, user_id: UUID, result: dict) -> None:
+
+        response: WebSocketResponse = result["response"]
+        payload = response.model_dump(mode="json")
+
+        await self._manager.send_personal(user_id=user_id, message=payload)
+
+        broadcast_payload = payload.copy()
+        broadcast_payload["request_id"] = None
+
+        match response.event:
+            case "private_message":
+                receiver_id = result.get("receiver_id")
+                if receiver_id and receiver_id != user_id:
+                    await self._manager.send_personal(
+                        user_id=receiver_id,
+                        message=broadcast_payload,
+                    )
+
+            case "group_message":
+                member_ids = result.get("member_ids", [])
+                other_members = [
+                    member_id for member_id in member_ids if member_id != user_id
+                ]
+                if other_members:
+                    await self._manager.broadcast_to_users(
+                        user_ids=other_members,
+                        message=broadcast_payload,
+                    )
+
+            case _:
+                pass

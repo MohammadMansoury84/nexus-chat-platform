@@ -1,6 +1,8 @@
+from typing import Any
 from uuid import UUID
 
 from fastapi import WebSocket
+from redis import asyncio
 from src.core.exceptions.WebSocketError import WebSocketConnectionError
 
 
@@ -41,6 +43,16 @@ class ConnectionManager:
             web_socket = self.active_connections.get(user_id)
             if web_socket:
                 self.disconnect(user_id, web_socket)
+
+    async def broadcast_to_users(
+        self, user_ids: list[UUID], message: dict[str:Any]
+    ) -> None:
+
+        tasks = [
+            self.send_personal(user_id=member_id, message=message) for member_id in user_ids
+        ]
+
+        await asyncio.gather(*tasks, return_exceptions=True)
 
     def _get_active_websocket(self, user_id: UUID) -> WebSocket:
         websocket = self.active_connections.get(user_id)

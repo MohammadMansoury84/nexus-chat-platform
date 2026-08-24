@@ -263,3 +263,31 @@
 08/22/2026 16:21:37 - INFO - User logged in successfully | username: string
 08/22/2026 16:22:57 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
 08/23/2026 19:27:54 - INFO - User logged in successfully | username: string
+08/24/2026 00:37:54 - INFO - User logged in successfully | username: string
+08/24/2026 00:49:27 - INFO - User logged in successfully | username: string
+08/24/2026 00:54:24 - INFO - PrivateChat create successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 00:54:24 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 00:56:17 - INFO - PrivateChat create successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 00:56:17 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 00:59:54 - INFO - User logged in successfully | username: string
+08/24/2026 01:06:25 - INFO - PrivateChat create successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 01:06:25 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:25:46 - INFO - User logged in successfully | username: string
+08/24/2026 03:27:00 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:28:17 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:31:00 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:31:59 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:38:38 - INFO - User logged in successfully | username: string
+08/24/2026 03:42:32 - INFO - Group created successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9 | name: strin333333g | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:46:11 - INFO - Message sent to group successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: سلام بچه‌ها، این یک پیام تست از طریق وب‌سوکت است
+08/24/2026 03:46:11 - INFO - show Group members | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/24/2026 03:49:54 - INFO - User logged in successfully | username: string
+08/24/2026 03:50:08 - INFO - Message sent to group successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: string
+08/24/2026 03:54:35 - INFO - Message sent to group successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: string
+08/24/2026 03:54:58 - INFO - Message sent to group successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: سلام بچه‌ها، این یک پیام تست از طریق وب‌سوکت است
+08/24/2026 03:54:58 - INFO - show Group members | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/24/2026 03:56:29 - INFO - Group created successfully | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480 | name: strin333333g11111 | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 03:56:49 - INFO - Message sent to group successfully | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: سلام بچه‌ها، این یک پیام تست از طریق وب‌سوکت است
+08/24/2026 03:56:49 - INFO - show Group members | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480
+08/24/2026 04:07:31 - INFO - User logged in successfully | username: string
+08/24/2026 04:10:01 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
