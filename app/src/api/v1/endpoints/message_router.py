@@ -4,11 +4,13 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, status
 from src.api.dependencies.auth_service_dependency import get_current_user_id
 from src.api.dependencies.message_service_dependency import get_message_service
+from src.api.dependencies.realtime_publisher_dependency import get_realtime_publisher
 from src.api.schemas.Request.message.send_message_request import SendMessageRequest
 from src.api.schemas.Response.message.chat_message_response import ChatMessageResponse
 from src.api.schemas.Response.message.send_message_response import SendMessageResponse
 from src.api.schemas.Response.response import Response
 from src.application.service.service_Interface.message_service import MessageService
+from src.infrastructure.websocket.realtime_publisher import RealTimePublisher
 
 message_router = APIRouter(
     prefix="/messages",
@@ -106,11 +108,19 @@ async def delete_private_chat_history(
         MessageService,
         Depends(get_message_service),
     ],
+    realtime_publisher: Annotated[
+        RealTimePublisher,
+        Depends(get_realtime_publisher),
+    ],
 ) -> Response[bool]:
 
     deleted = await message_service.delete_private_chat_history(
         user1_id=current_user_id,
         user2_id=user2_id,
+    )
+
+    await realtime_publisher.private_chat_deleted(
+        user1_id=current_user_id, user2_id=user2_id, deleted_by=current_user_id
     )
 
     return Response[bool](

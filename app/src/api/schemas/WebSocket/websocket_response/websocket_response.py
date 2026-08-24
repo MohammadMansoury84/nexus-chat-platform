@@ -1,5 +1,3 @@
-from uuid import UUID
-
 from pydantic import BaseModel, ConfigDict
 
 
@@ -9,5 +7,4 @@ class WebSocketResponse(BaseModel):
     )
 
     event: str
-    request_id: UUID | None = None
     data: dict

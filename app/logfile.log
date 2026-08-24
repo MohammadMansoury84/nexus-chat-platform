@@ -291,3 +291,12 @@
 08/24/2026 03:56:49 - INFO - show Group members | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480
 08/24/2026 04:07:31 - INFO - User logged in successfully | username: string
 08/24/2026 04:10:01 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 09:57:48 - INFO - User logged in successfully | username: string
+08/24/2026 09:58:21 - INFO - User logged in successfully | username: string1
+08/24/2026 10:01:23 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 10:03:06 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 10:04:40 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 10:13:41 - INFO - User logged in successfully | username: string
+08/24/2026 10:14:31 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 10:14:46 - INFO - User logged in successfully | username: string1
+08/24/2026 10:17:09 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974

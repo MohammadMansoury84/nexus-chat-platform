@@ -1,8 +1,8 @@
+import asyncio
 from typing import Any
 from uuid import UUID
 
 from fastapi import WebSocket
-from redis import asyncio
 from src.core.exceptions.WebSocketError import WebSocketConnectionError
 
 
