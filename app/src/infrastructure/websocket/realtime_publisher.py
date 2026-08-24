@@ -146,3 +146,24 @@ class RealTimePublisher:
             user_ids=member_ids,
             message=message,
         )
+
+    async def group_chat_deleted(
+        self,
+        group_id: UUID,
+        member_ids: set[UUID],
+        deleted_by: UUID,
+    ) -> None:
+
+        message = {
+            "event": WebSocketAction.GROUP_CHAT_DELETED,
+            "request_id": None,
+            "data": {
+                "group_id": str(group_id),
+                "deleted_by": str(deleted_by),
+            },
+        }
+
+        await self._connection_manager.broadcast_to_users(
+            user_ids=member_ids,
+            message=message,
+        )

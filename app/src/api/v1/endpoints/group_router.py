@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Any
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, status
@@ -21,6 +21,7 @@ from src.api.schemas.Response.group.group_message_response import GroupMessageRe
 from src.api.schemas.Response.group.group_summary_response import GroupSummaryResponse
 from src.api.schemas.Response.response import Response
 from src.application.service.service_Interface.group_service import GroupService
+from src.domain.entities.GroupMembershipAction import GroupMembershipAction
 from src.infrastructure.websocket.realtime_publisher import RealTimePublisher
 
 group_router = APIRouter(
@@ -273,11 +274,28 @@ async def delete_group_by_id(
         GroupService,
         Depends(get_group_service),
     ],
+    realtime_publisher: Annotated[
+        RealTimePublisher,
+        Depends(get_realtime_publisher),
+    ],
 ) -> Response[bool]:
+
+    members = await group_service.show_group_member(
+        user_id=current_user_id,
+        group_id=group_id,
+    )
+
+    member_ids = [member.id for member in members]
 
     result = await group_service.delete_group_by_id(
         user_id=current_user_id,
         group_id=group_id,
+    )
+
+    await realtime_publisher.group_deleted(
+        group_id=group_id,
+        member_ids=member_ids,
+        deleted_by=current_user_id,
     )
 
     return Response[bool](
@@ -339,11 +357,26 @@ async def delete_group_chat_history(
         GroupService,
         Depends(get_group_service),
     ],
+    realtime_publisher: Annotated[
+        RealTimePublisher,
+        Depends(get_realtime_publisher),
+    ],
 ) -> Response[bool]:
 
     result = await group_service.delete_group_chat_history(
         user_id=current_user_id,
         group_id=group_id,
+    )
+
+    members = await group_service.show_group_member(
+        user_id=current_user_id,
+        group_id=group_id,
+    )
+
+    member_ids = [member.id for member in members]
+
+    await realtime_publisher.group_chat_deleted(
+        group_id=group_id, member_ids=member_ids, deleted_by=current_user_id
     )
 
     return Response[bool](
@@ -368,12 +401,32 @@ async def remove_user_from_group(
         GroupService,
         Depends(get_group_service),
     ],
+    realtime_publisher: Annotated[
+        RealTimePublisher,
+        Depends(get_realtime_publisher),
+    ],
 ) -> Response[GroupMembershipActionResponse]:
+
+    members = await group_service.show_group_member(
+        user_id=current_user_id,
+        group_id=group_id,
+    )
+
+    member_ids = [member.id for member in members]
 
     result = await group_service.remove_user_from_group(
         admin_id=current_user_id,
         group_id=group_id,
         user_id=user_id,
+    )
+
+    member_ids.remove(user_id)
+
+    await _process_remove_user_from_group(
+        realtime_publisher=realtime_publisher,
+        result=result,
+        current_user_id=current_user_id,
+        member_ids=member_ids,
     )
 
     return Response[GroupMembershipActionResponse](
@@ -386,3 +439,37 @@ async def remove_user_from_group(
         ),
         message="Group membership updated successfully.",
     )
+
+
+async def _process_remove_user_from_group(
+    realtime_publisher: RealTimePublisher,
+    result: Any,
+    current_user_id: UUID,
+    member_ids: list[UUID],
+) -> None:
+    match result.action:
+        case GroupMembershipAction.USER_REMOVED:
+            await realtime_publisher.group_member_removed(
+                group_id=result.group_id,
+                group_name=result.group_name,
+                user_id=result.user_id,
+                username=result.username,
+                admin_id=current_user_id,
+                remaining_member_ids=member_ids,
+            )
+
+        case GroupMembershipAction.USER_LEFT:
+            await realtime_publisher.group_member_left(
+                group_id=result.group_id,
+                group_name=result.group_name,
+                user_id=result.user_id,
+                username=result.username,
+                remaining_member_ids=member_ids,
+            )
+
+        case GroupMembershipAction.GROUP_DELETED:
+            await realtime_publisher.group_deleted(
+                group_id=result.group_id,
+                member_ids=member_ids,
+                deleted_by=current_user_id,
+            )

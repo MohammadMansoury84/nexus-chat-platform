@@ -3,12 +3,19 @@ from uuid import UUID
 from fastapi import HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import ValidationError
 from sqlalchemy.ext.asyncio import AsyncSession
+from src.api.schemas.WebSocket.websocket_error_code import WebSocketErrorCode
 from src.api.schemas.WebSocket.websocket_request.web_socket_request import WebSocketRequest
+from src.api.schemas.WebSocket.websocket_response.webSocket_error_data import (
+    WebSocketErrorData,
+)
 from src.api.schemas.WebSocket.websocket_response.websocket_response import (
     WebSocketResponse,
 )
 from src.infrastructure.websocket.connection_manager import ConnectionManager
 from src.infrastructure.websocket.request_router import RequestRouter
+from src.infrastructure.websocket.websocket_error_mapper import (
+    map_exception_to_websocket_error,
+)
 
 
 class WebSocketHandler:
@@ -38,6 +45,8 @@ class WebSocketHandler:
             await self._process_message(user_id=user_id, data=data)
 
     async def _process_message(self, user_id: UUID, data: dict) -> None:
+        request_id = data.get("request_id")
+
         try:
             request = WebSocketRequest.model_validate(data)
 
@@ -48,35 +57,45 @@ class WebSocketHandler:
 
         except ValidationError as e:
             await self._db.rollback()
+
+            error_data = WebSocketErrorData(
+                code=WebSocketErrorCode.INVALID_REQUEST,
+                message="Data validation failed",
+                details=e.errors(include_url=False),
+            )
+
             await self._manager.send_personal(
                 user_id=user_id,
                 message={
                     "event": "error",
-                    "data": {"details": e.errors(include_url=False)},
+                    "data": error_data.model_dump(mode="json"),
                 },
             )
-        except (ValueError, HTTPException) as e:
-            self._db.rollback()
-            detail = e.detail if isinstance(e, HTTPException) else str(e)
-            await self._manager.send_personal(
-                user_id=user_id,
-                message={
-                    "event": "error",
-                    "data": {"message": detail},
-                },
-            )
+
         except Exception as e:
-            self._db.rollback()
+            await self._db.rollback()
+
+            error_code = map_exception_to_websocket_error(e)
+
+            if isinstance(e, HTTPException):
+                message = e.detail
+            elif error_code == WebSocketErrorCode.INTERNAL_SERVER_ERROR:
+                message = "An unexpected internal server error occurred."
+            else:
+                message = str(e)
+
+            error_data = WebSocketErrorData(code=error_code, message=message)
+
             await self._manager.send_personal(
                 user_id=user_id,
                 message={
                     "event": "error",
-                    "data": {"message": str(e)},
+                    "request_id": request_id,
+                    "data": error_data.model_dump(mode="json"),
                 },
             )
 
     async def _send_response(self, user_id: UUID, result: dict) -> None:
-
         response: WebSocketResponse = result["response"]
         payload = response.model_dump(mode="json")
 

@@ -4,6 +4,7 @@ from enum import StrEnum
 class WebSocketAction(StrEnum):
     PRIVATE_CHAT_DELETED = "private_chat_deleted"
     SEND_PRIVATE_MESSAGE = "send_private_message"
+    MESSAGE_READ = "message_read"
     SEND_GROUP_MESSAGE = "send_group_message"
     GROUP_MESSAGE = "group_message"
     GROUP_MEMBER_ADDED = "group_member_added"

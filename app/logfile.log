@@ -309,3 +309,28 @@
 08/24/2026 10:55:11 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
 08/24/2026 10:56:55 - INFO - User logged in successfully | username: string44
 08/24/2026 10:57:11 - WARNING - User is already in the group | user_id: e0d8e4e3-2914-4a7f-8c2b-0187056a3162 | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:31:37 - INFO - User logged in successfully | username: string
+08/24/2026 11:32:14 - INFO - User logged in successfully | username: string1
+08/24/2026 11:32:43 - INFO - User logged in successfully | username: string
+08/24/2026 11:33:45 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:35:51 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:38:23 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:45:59 - INFO - User logged in successfully | username: string
+08/24/2026 11:46:37 - INFO - User logged in successfully | username: string1
+08/24/2026 11:47:54 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:47:54 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:48:17 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 11:48:17 - INFO - Group deleted successfully | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 12:00:53 - INFO - User logged in successfully | username: string1
+08/24/2026 12:01:14 - INFO - User logged in successfully | username: string
+08/24/2026 12:02:12 - ERROR - Group not found | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 12:02:46 - ERROR - Group not found | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 12:02:57 - INFO - Group created successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | name: stffffsssring11 | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 12:03:09 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/24/2026 12:03:09 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/24/2026 12:03:18 - INFO - Group chat history deleted successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/24/2026 12:03:18 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/24/2026 12:35:38 - INFO - User logged in successfully | username: string
+08/24/2026 12:36:05 - INFO - User logged in successfully | username: string1
+08/24/2026 13:48:07 - INFO - User logged in successfully | username: string
+08/24/2026 13:48:28 - INFO - User logged in successfully | username: string1
