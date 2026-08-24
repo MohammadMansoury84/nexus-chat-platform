@@ -300,3 +300,12 @@
 08/24/2026 10:14:31 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
 08/24/2026 10:14:46 - INFO - User logged in successfully | username: string1
 08/24/2026 10:17:09 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 10:52:35 - INFO - User logged in successfully | username: string1
+08/24/2026 10:53:09 - INFO - User logged in successfully | username: string
+08/24/2026 10:53:52 - INFO - Group created successfully | group_id: bd290800-404f-4dfe-897c-fd32a3e75264 | name: stffffsssring | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/24/2026 10:54:24 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 10:54:24 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 10:55:11 - INFO - User added to group successfully | user_id: e0d8e4e3-2914-4a7f-8c2b-0187056a3162 | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 10:55:11 - INFO - show Group members | group_id: bd290800-404f-4dfe-897c-fd32a3e75264
+08/24/2026 10:56:55 - INFO - User logged in successfully | username: string44
+08/24/2026 10:57:11 - WARNING - User is already in the group | user_id: e0d8e4e3-2914-4a7f-8c2b-0187056a3162 | group_id: bd290800-404f-4dfe-897c-fd32a3e75264

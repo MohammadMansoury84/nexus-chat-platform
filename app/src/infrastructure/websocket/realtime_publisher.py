@@ -33,7 +33,7 @@ class RealTimePublisher:
         group_id: UUID,
         user_id: UUID,
         added_by: UUID,
-        existing_member_ids: set[UUID],
+        existing_member_ids: list[UUID],
     ) -> None:
 
         message = {
@@ -68,7 +68,7 @@ class RealTimePublisher:
         user_id: UUID,
         username: str,
         admin_id: UUID,
-        remaining_member_ids: set[UUID],
+        remaining_member_ids: list[UUID],
     ) -> None:
 
         removed_user_message = {
@@ -109,7 +109,7 @@ class RealTimePublisher:
         group_name: str,
         user_id: UUID,
         username: str,
-        remaining_member_ids: set[UUID],
+        remaining_member_ids: list[UUID],
     ) -> None:
 
         message = {
@@ -130,7 +130,7 @@ class RealTimePublisher:
     async def group_deleted(
         self,
         group_id: UUID,
-        member_ids: set[UUID],
+        member_ids: list[UUID],
         deleted_by: UUID,
     ) -> None:
 

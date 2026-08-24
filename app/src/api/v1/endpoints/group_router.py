@@ -4,6 +4,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, status
 from src.api.dependencies.auth_service_dependency import get_current_user_id
 from src.api.dependencies.group_service_dependency import get_group_service
+from src.api.dependencies.realtime_publisher_dependency import get_realtime_publisher
 from src.api.schemas.Request.group.add_user_to_group_request import AddUserToGroupRequest
 from src.api.schemas.Request.group.create_group_request import CreateGroupRequest
 from src.api.schemas.Request.group.send_group_message_request import SendGroupMessageRequest
@@ -20,6 +21,7 @@ from src.api.schemas.Response.group.group_message_response import GroupMessageRe
 from src.api.schemas.Response.group.group_summary_response import GroupSummaryResponse
 from src.api.schemas.Response.response import Response
 from src.application.service.service_Interface.group_service import GroupService
+from src.infrastructure.websocket.realtime_publisher import RealTimePublisher
 
 group_router = APIRouter(
     prefix="/groups",
@@ -64,12 +66,30 @@ async def add_user_to_group(
     request: AddUserToGroupRequest,
     current_user_id: Annotated[UUID, Depends(get_current_user_id)],
     group_service: Annotated[GroupService, Depends(get_group_service)],
+    realtime_publisher: Annotated[
+        RealTimePublisher,
+        Depends(get_realtime_publisher),
+    ],
 ) -> Response[bool]:
 
     result = await group_service.add_user_to_group(
         group_id=group_id,
         creator_id=current_user_id,
         user_id=request.user_id,
+    )
+
+    members_ids = [
+        member.id
+        for member in await group_service.show_group_member(
+            user_id=current_user_id, group_id=group_id
+        )
+    ]
+
+    await realtime_publisher.group_member_added(
+        group_id=group_id,
+        user_id=request.user_id,
+        added_by=current_user_id,
+        existing_member_ids=members_ids,
     )
 
     return Response[bool](
