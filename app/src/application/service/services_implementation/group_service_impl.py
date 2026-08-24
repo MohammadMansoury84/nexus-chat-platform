@@ -306,7 +306,7 @@ class GroupServiceImpl(GroupService):
             )
             raise AuthorizationError("Only Admin can delete group chat history")
 
-        is_member = self._group_member_repository.is_user_in_group(
+        is_member = await self._group_member_repository.is_user_in_group(
             user_id=user_id, group_id=group_id
         )
 
@@ -338,7 +338,7 @@ class GroupServiceImpl(GroupService):
         if target_user is None:
             raise UserNotFoundError("User not found.")
 
-        is_member = self._group_member_repository.is_user_in_group(
+        is_member = await self._group_member_repository.is_user_in_group(
             user_id=user_id, group_id=group_id
         )
 
