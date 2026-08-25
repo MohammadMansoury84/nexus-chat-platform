@@ -1137,8 +1137,15 @@ async def messenger_page():
             return
 
         if name == "user_online":
-            state.online_ids.add(data.get("user_id"))
-            render_users_list()
+            uid = data.get("user_id")
+            is_new_user = uid is not None and not any(
+                u["id"] == uid for u in state.users
+            )
+            state.online_ids.add(uid)
+            if is_new_user:
+                await load_users()
+            else:
+                render_users_list()
             render_chat_header()
 
         elif name == "user_offline":
@@ -1208,31 +1215,65 @@ async def messenger_page():
             "group_chat_deleted",
         ):
             group_id = data.get("group_id")
-            group_name = data.get("group_name") or get_group_name(group_id)
-            who = (
-                data.get("username")
-                or data.get("user_name")
-                or get_username(data.get("user_id"))
-                or "Someone"
-            )
+            am_i_the_target = data.get("user_id") == state.my_id
+
+            if name == "group_member_added" and am_i_the_target:
+
+                await refresh_groups()
+                group_name = data.get("group_name") or get_group_name(group_id)
+            else:
+                group_name = data.get("group_name") or get_group_name(group_id)
+                await refresh_groups()
 
             if name == "group_member_added":
-                show_toast(
-                    "person_add", group_name,
-                    f"{who} was added to the group", "success",
-                )
+                if am_i_the_target:
+                    adder = get_username(data.get("added_by"))
+                    show_toast(
+                        "person_add", group_name,
+                        f"{adder} added you to the group", "success",
+                    )
+                else:
+                    who = (
+                        data.get("username")
+                        or get_username(data.get("user_id"))
+                        or "Someone"
+                    )
+                    show_toast(
+                        "person_add", group_name,
+                        f"{who} was added to the group", "success",
+                    )
             elif name == "group_member_removed":
-                show_toast(
-                    "person_remove", group_name,
-                    f"{who} was removed from the group", "warning",
-                )
+                if am_i_the_target:
+                    remover = get_username(data.get("removed_by"))
+                    show_toast(
+                        "person_remove", group_name,
+                        (
+                            f"You were removed from the group by {remover}"
+                            if remover != "Unknown"
+                            else "You were removed from the group"
+                        ),
+                        "warning",
+                    )
+                else:
+                    who = (
+                        data.get("username")
+                        or get_username(data.get("user_id"))
+                        or "Someone"
+                    )
+                    show_toast(
+                        "person_remove", group_name,
+                        f"{who} was removed from the group", "warning",
+                    )
             elif name == "group_member_left":
+                who = (
+                    data.get("username")
+                    or get_username(data.get("user_id"))
+                    or "Someone"
+                )
                 show_toast(
                     "logout", group_name,
                     f"{who} left the group", "warning",
                 )
-
-            await refresh_groups()
 
             if name == "group_deleted":
                 if state.active_id == group_id:
