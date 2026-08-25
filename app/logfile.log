@@ -334,3 +334,563 @@
 08/24/2026 12:36:05 - INFO - User logged in successfully | username: string1
 08/24/2026 13:48:07 - INFO - User logged in successfully | username: string
 08/24/2026 13:48:28 - INFO - User logged in successfully | username: string1
+08/24/2026 16:09:53 - INFO - User logged in successfully | username: string
+08/24/2026 16:10:58 - INFO - User logged in successfully | username: string1
+08/24/2026 16:12:08 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:17:19 - INFO - User logged in successfully | username: string1
+08/24/2026 16:17:47 - INFO - User logged in successfully | username: string
+08/24/2026 16:18:29 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:20:56 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:24:04 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:25:54 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:30:49 - INFO - User logged in successfully | username: string
+08/24/2026 16:31:10 - INFO - User logged in successfully | username: string1
+08/24/2026 16:31:36 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:38:17 - INFO - User logged in successfully | username: string1
+08/24/2026 16:38:36 - INFO - User logged in successfully | username: string
+08/24/2026 16:39:05 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:40:25 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:41:33 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 16:49:08 - INFO - User logged in successfully | username: string
+08/24/2026 16:49:42 - INFO - User logged in successfully | username: string
+08/24/2026 16:50:26 - INFO - User logged in successfully | username: string1
+08/24/2026 16:51:19 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/24/2026 23:22:16 - INFO - User created | username: mamamd111 | email: mansoury762@gmail.com
+08/25/2026 00:05:35 - INFO - User created | username: mamad22 | email: mansoury7622@gmail.com
+08/25/2026 00:06:18 - INFO - User logged in successfully | username: mamad22
+08/25/2026 00:08:02 - INFO - User logged in successfully | username: string
+08/25/2026 00:08:25 - INFO - PrivateChat create successfully | sender_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:08:25 - INFO - Message sent successfully | sender_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:08:40 - INFO - Message sent successfully | sender_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:08:44 - INFO - Message sent successfully | sender_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:09:09 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:09:23 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:09:43 - INFO - Group created successfully | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b | name: تتتت | creator_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:10:10 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 00:10:10 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 00:10:12 - WARNING - User is already in the group | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 00:10:27 - INFO - Group created successfully | group_id: 86915c59-9d10-4985-a9fc-22b030d47642 | name: تتتتتتتدئتنن | creator_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:10:34 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:10:34 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:10:47 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:10:49 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:10:59 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:02 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:04 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:08 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:09 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:12 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:14 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:14 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:14 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 00:11:35 - INFO - Group chat history deleted successfully | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 00:11:35 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 00:12:56 - INFO - Message sent successfully | sender_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:13:06 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:14:31 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 00:45:05 - INFO - User logged in successfully | username: string
+08/25/2026 00:45:18 - INFO - User logged in successfully | username: string1
+08/25/2026 00:45:36 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:45:39 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:45:42 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:45:45 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:46:23 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: sghl
+08/25/2026 00:46:23 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:27 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: uat
+08/25/2026 00:46:27 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:29 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ddd
+08/25/2026 00:46:29 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:31 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ddddddd
+08/25/2026 00:46:31 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:32 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: 1233
+08/25/2026 00:46:32 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:36 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:52 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:46:53 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:01 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: mm
+08/25/2026 00:47:01 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:04 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: mmm
+08/25/2026 00:47:04 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:37 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:40 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:43 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:55 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:47:55 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:48:03 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:48:03 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:48:07 - WARNING - User is already in the group | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:48:15 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: mmm
+08/25/2026 00:48:15 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:48:26 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:50:21 - INFO - Group created successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | name: k,mmk,mm | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:50:24 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:50:31 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:50:33 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:19 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:22 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:26 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:31 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:36 - INFO - Message sent to group successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: mn
+08/25/2026 00:51:36 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:41 - WARNING - Sender is not a member of the group | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:51:49 - WARNING - Sender is not a member of the group | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 00:54:57 - INFO - User logged in successfully | username: string1
+08/25/2026 00:55:01 - INFO - User logged in successfully | username: string
+08/25/2026 00:55:20 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:55:50 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:55:52 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:56:03 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:56:10 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 00:56:42 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 00:56:42 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 00:57:33 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: ddd
+08/25/2026 00:57:33 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 00:57:43 - INFO - Group chat retrieved successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 00:57:44 - INFO - Group chat retrieved successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 00:57:51 - INFO - Group created successfully | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af | name: dddddddd | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 00:58:00 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 00:58:00 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 00:58:09 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 00:59:41 - INFO - User logged in successfully | username: string
+08/25/2026 01:00:04 - INFO - User logged in successfully | username: string1
+08/25/2026 01:00:23 - WARNING - User is not the creator of the group | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 01:00:28 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 01:00:30 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 01:00:34 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 01:00:36 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 01:00:50 - INFO - Group created successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962 | name: kkkkmmm | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:01:04 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:04 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:10 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:01:11 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:01:15 - INFO - Message sent to group successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: mmm
+08/25/2026 01:01:15 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:18 - INFO - Message sent to group successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: mmmm4
+08/25/2026 01:01:18 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:22 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:46 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:01:50 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:00 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:05 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:05 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:14 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:15 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:02:18 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:20:51 - INFO - User logged in successfully | username: string1
+08/25/2026 01:20:58 - INFO - User logged in successfully | username: string
+08/25/2026 01:21:09 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:17 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:19 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:23 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:29 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:30 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:30 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:34 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:36 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:49 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:51 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:54 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:21:59 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:24:09 - INFO - User logged in successfully | username: string
+08/25/2026 01:24:31 - INFO - User logged in successfully | username: string1
+08/25/2026 01:24:49 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:24:53 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: ddd
+08/25/2026 01:24:53 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:04 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:12 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:12 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:17 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:20 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: ccmdjddj
+08/25/2026 01:25:20 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:24 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:27 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:47 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:48 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:49 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:50 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:56 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: dd
+08/25/2026 01:25:56 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:25:59 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:26:02 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:26:02 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:27:18 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:27:19 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:27:19 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:27:26 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: mmjdd
+08/25/2026 01:27:26 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:28:21 - INFO - User logged in successfully | username: string
+08/25/2026 01:28:26 - INFO - User logged in successfully | username: string
+08/25/2026 01:30:21 - INFO - User logged in successfully | username: string
+08/25/2026 01:30:58 - INFO - User logged in successfully | username: string
+08/25/2026 01:31:08 - INFO - User logged in successfully | username: string1
+08/25/2026 01:31:19 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:21 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:23 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: nn
+08/25/2026 01:31:23 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:25 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: nn
+08/25/2026 01:31:25 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:28 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:31 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:34 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:31:43 - ERROR - Only group members can see group members. | user_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:31:50 - ERROR - Only group members can see group members. | user_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:31:54 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:31:55 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 01:32:21 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:21 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:26 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:30 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:33 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:38 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:45 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:32:48 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:33:12 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: jdjd
+08/25/2026 01:33:12 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:33:24 - WARNING - Sender is not a member of the group | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:33:53 - INFO - Group created successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | name: uuuuuuuu | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 01:33:57 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:04 - INFO - User added to group successfully | user_id: e0d8e4e3-2914-4a7f-8c2b-0187056a3162 | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:04 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:11 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:11 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:29 - INFO - Message sent to group successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: jjj
+08/25/2026 01:34:29 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:31 - INFO - Message sent to group successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: hhh
+08/25/2026 01:34:31 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:34 - INFO - Group chat history deleted successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:34 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:36 - INFO - Group chat history deleted successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:36 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:41 - ERROR - Only Admin can delete group chat history | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:34:46 - ERROR - Only Admin can delete group chat history | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:35:04 - INFO - Message sent to group successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: hhh
+08/25/2026 01:35:04 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:43:50 - INFO - User logged in successfully | username: string1
+08/25/2026 01:43:54 - INFO - User logged in successfully | username: string
+08/25/2026 01:44:20 - WARNING - User is not the creator of the group | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 01:44:23 - INFO - Group chat retrieved successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 01:44:25 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:28 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:36 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:36 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:43 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:46 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ینی
+08/25/2026 01:44:46 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:49 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: یئیئی
+08/25/2026 01:44:49 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:44:58 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:03 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:05 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:05 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:10 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:12 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:14 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 01:45:20 - INFO - Group chat retrieved successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 01:45:53 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:46:09 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:46:12 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 01:46:18 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:46:23 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 01:54:39 - INFO - User logged in successfully | username: string
+08/25/2026 01:54:39 - INFO - User logged in successfully | username: string1
+08/25/2026 01:54:59 - INFO - Group created successfully | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990 | name: یییییییییییی | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 01:56:10 - INFO - User logged in successfully | username: string
+08/25/2026 01:56:19 - INFO - User logged in successfully | username: string1
+08/25/2026 01:56:39 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:56:46 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:56:46 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:56:59 - INFO - Message sent to group successfully | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ئد
+08/25/2026 01:56:59 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:57:07 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:57:10 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:57:15 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:57:18 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 01:57:19 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 02:21:54 - INFO - User logged in successfully | username: string1
+08/25/2026 02:22:01 - INFO - User logged in successfully | username: string
+08/25/2026 02:22:13 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:25 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:25 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:33 - INFO - Group chat retrieved successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:35 - INFO - Message sent to group successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ئئی
+08/25/2026 02:22:35 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:46 - INFO - Group chat history deleted successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:46 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:49 - INFO - Group chat history deleted successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:49 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:22:56 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:23:04 - INFO - show Group members | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:23:04 - INFO - Group deleted successfully | group_id: f99fc395-f1f5-42a9-8c68-be0a9f7fc865
+08/25/2026 02:23:20 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 02:23:23 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 02:23:26 - INFO - Message sent to group successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ئدد
+08/25/2026 02:23:26 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 02:23:30 - INFO - Message sent to group successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ددد
+08/25/2026 02:23:30 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 02:25:49 - INFO - User logged in successfully | username: string
+08/25/2026 02:25:55 - INFO - User logged in successfully | username: string1
+08/25/2026 02:26:04 - INFO - Group chat retrieved successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:08 - INFO - Group chat retrieved successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:10 - INFO - Message sent to group successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: ننن
+08/25/2026 02:26:10 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:14 - INFO - Message sent to group successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: دادت
+08/25/2026 02:26:14 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:21 - ERROR - Only Admin can delete group chat history | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:34 - INFO - Group chat history deleted successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:34 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:51 - WARNING - User is not the creator of the group | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 02:26:59 - INFO - Group created successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799 | name: ااااااا | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 02:27:11 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:11 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:20 - INFO - Message sent to group successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: دتتتتت
+08/25/2026 02:27:20 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:23 - INFO - Group chat history deleted successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:23 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:29 - INFO - Message sent to group successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: تتتتت
+08/25/2026 02:27:29 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:34 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:39 - WARNING - Sender is not a member of the group | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:27:42 - WARNING - Sender is not a member of the group | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:29:14 - ERROR - Only group members can see group members. | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 02:29:25 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 02:32:36 - INFO - User logged in successfully | username: string1
+08/25/2026 02:32:46 - INFO - User logged in successfully | username: string
+08/25/2026 02:33:18 - INFO - Group created successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da | name: تتتتتتتتتتتت | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 02:33:28 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:33:28 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:33:36 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:33:39 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:00 - INFO - User logged in successfully | username: string
+08/25/2026 02:35:09 - INFO - User logged in successfully | username: string1
+08/25/2026 02:35:29 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:31 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:33 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:45 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:45 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:35:59 - WARNING - User is not the creator of the group | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:12 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:20 - INFO - Message sent to group successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: اااا
+08/25/2026 02:36:20 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:26 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:26 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:31 - INFO - Group chat retrieved successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:39 - ERROR - Only Admin can delete group chat history | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:44 - INFO - Message sent to group successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: تتتت
+08/25/2026 02:36:44 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:47 - INFO - Group chat history deleted successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 02:36:47 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:16:24 - INFO - User logged in successfully | username: string1
+08/25/2026 03:16:29 - INFO - User logged in successfully | username: string
+08/25/2026 03:16:42 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:16:51 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:16:56 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:19:44 - INFO - User logged in successfully | username: string
+08/25/2026 03:19:49 - INFO - User logged in successfully | username: string1
+08/25/2026 03:20:07 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:20:12 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:20:28 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:20:31 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:23:27 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:23:30 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:24:20 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:26:14 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:27:28 - INFO - User logged in successfully | username: string1
+08/25/2026 03:27:32 - INFO - User logged in successfully | username: string
+08/25/2026 03:35:21 - INFO - User logged in successfully | username: string
+08/25/2026 03:35:27 - INFO - User logged in successfully | username: string1
+08/25/2026 03:35:38 - INFO - Group chat retrieved successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 03:35:45 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:35:52 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:35:52 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:00 - INFO - Message sent to group successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: تتتچ
+08/25/2026 03:36:00 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:04 - INFO - Message sent to group successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: دیددی
+08/25/2026 03:36:04 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:13 - INFO - Group chat history deleted successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:13 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:20 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:24 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:34 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:34 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 03:36:51 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:36:54 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:36:58 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:37:01 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 03:40:02 - INFO - User logged in successfully | username: string1
+08/25/2026 03:40:07 - INFO - User logged in successfully | username: string
+08/25/2026 03:41:07 - INFO - User logged in successfully | username: string
+08/25/2026 03:41:30 - INFO - User logged in successfully | username: string1
+08/25/2026 03:45:24 - INFO - User logged in successfully | username: string1
+08/25/2026 03:45:35 - INFO - User logged in successfully | username: string
+08/25/2026 03:48:36 - INFO - User logged in successfully | username: string
+08/25/2026 03:48:44 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 03:48:52 - INFO - User logged in successfully | username: string1
+08/25/2026 03:49:59 - INFO - User logged in successfully | username: string1
+08/25/2026 03:50:06 - INFO - User logged in successfully | username: string
+08/25/2026 03:56:24 - INFO - User logged in successfully | username: string
+08/25/2026 03:56:37 - INFO - User logged in successfully | username: string
+08/25/2026 03:57:51 - INFO - User logged in successfully | username: string
+08/25/2026 03:58:30 - INFO - User logged in successfully | username: string1
+08/25/2026 04:01:09 - INFO - User logged in successfully | username: string1
+08/25/2026 04:14:49 - INFO - User logged in successfully | username: string1
+08/25/2026 04:15:44 - INFO - User logged in successfully | username: string
+08/25/2026 04:16:00 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 04:16:03 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 04:16:07 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 04:16:12 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 04:16:40 - INFO - Group created successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521 | name: ئیئئیئیئیئیئی | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 04:16:53 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:16:53 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:06 - INFO - Message sent to group successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: یدید
+08/25/2026 04:17:06 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:09 - INFO - Message sent to group successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ددیی
+08/25/2026 04:17:09 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:12 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:15 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:17 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:31 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:31 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:43 - INFO - Message sent to group successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: ددیی
+08/25/2026 04:17:43 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:47 - ERROR - Only Admin can delete group chat history | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:17:55 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 04:18:05 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:06:07 - INFO - User logged in successfully | username: string
+08/25/2026 09:06:18 - INFO - User logged in successfully | username: string1
+08/25/2026 09:06:25 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:06:35 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 09:06:39 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:06:43 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:06:58 - INFO - Group created successfully | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69 | name: ssdcccc | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 09:07:09 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:07:09 - INFO - show Group members | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:07:18 - INFO - Message sent to group successfully | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: xxx
+08/25/2026 09:07:18 - INFO - show Group members | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:07:34 - INFO - show Group members | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:07:57 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:07:57 - INFO - show Group members | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:08:00 - INFO - Group chat retrieved successfully | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:08:11 - INFO - show Group members | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:08:11 - INFO - Group deleted successfully | group_id: 80cafb9f-818c-4403-88f8-c19612f23d69
+08/25/2026 09:10:35 - INFO - User logged in successfully | username: string1
+08/25/2026 09:11:34 - INFO - Group chat retrieved successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:12:17 - INFO - User logged in successfully | username: string1
+08/25/2026 09:24:58 - INFO - User logged in successfully | username: string1
+08/25/2026 09:25:15 - INFO - Group chat retrieved successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:18 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:28 - INFO - User added to group successfully | user_id: 00d907fd-b166-4988-9a0b-599986298ec4 | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:28 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:29 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:39 - INFO - Message sent to group successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: oooo
+08/25/2026 09:25:39 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:25:41 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:26:09 - INFO - User logged in successfully | username: string
+08/25/2026 09:26:30 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:26:36 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:26:47 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 09:27:00 - INFO - Group chat retrieved successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:27:02 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:27:03 - INFO - show Group members | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:27:03 - INFO - Group deleted successfully | group_id: 3dd01de2-5c08-4a32-8fc6-57bc7708f521
+08/25/2026 09:27:10 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 09:27:12 - INFO - show Group members | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 09:27:12 - INFO - Group deleted successfully | group_id: ac2d1696-4904-4683-9fc9-b474d1c181c8
+08/25/2026 09:27:18 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 09:27:19 - INFO - show Group members | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 09:27:19 - INFO - Group deleted successfully | group_id: dce7109f-3568-4b60-ab6e-bef34760c7da
+08/25/2026 09:27:28 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:27:29 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:27:32 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:27:34 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:27:46 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:27:52 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:03 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:06 - ERROR - Only Admin can delete group chat history | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:15 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:21 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:23 - INFO - show Group members | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:23 - INFO - Group deleted successfully | group_id: 7eb35f12-e5c2-4adb-84f1-9d75f6b3d4af
+08/25/2026 09:28:28 - INFO - Group chat retrieved successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 09:28:29 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 09:28:31 - INFO - show Group members | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 09:28:31 - INFO - Group deleted successfully | group_id: 1de567dc-180a-48f3-85ee-d57d9a40a962
+08/25/2026 09:28:35 - INFO - Group chat retrieved successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 09:28:36 - INFO - show Group members | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 09:28:37 - INFO - show Group members | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 09:28:37 - INFO - Group deleted successfully | group_id: 09787826-c246-4816-9572-09e0c846d2d9
+08/25/2026 09:28:43 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 09:28:45 - INFO - show Group members | group_id: 86915c59-9d10-4985-a9fc-22b030d47642
+08/25/2026 09:28:47 - INFO - Group chat retrieved successfully | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 09:28:48 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 09:28:50 - INFO - show Group members | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 09:28:50 - INFO - Group deleted successfully | group_id: 7e861f7c-8c8c-4154-be5d-18d10e4d0990
+08/25/2026 09:28:52 - INFO - Group chat retrieved successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 09:28:55 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 09:28:56 - INFO - show Group members | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 09:28:56 - INFO - Group deleted successfully | group_id: 6366c3ad-a839-42c7-90fc-06be0888781c
+08/25/2026 09:29:01 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:02 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:06 - INFO - show Group members | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480
+08/25/2026 09:29:07 - INFO - show Group members | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480
+08/25/2026 09:29:07 - INFO - Group deleted successfully | group_id: 258cc384-c4c3-4942-9810-f61b66d8b480
+08/25/2026 09:29:09 - INFO - Group chat retrieved successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 09:29:13 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 09:29:14 - INFO - show Group members | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 09:29:14 - INFO - Group deleted successfully | group_id: e9eecdc1-a74b-413a-aced-404c79f81799
+08/25/2026 09:29:19 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:22 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:23 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:25 - INFO - show Group members | group_id: 87473035-0c94-4afa-be9a-9dd3e104069b
+08/25/2026 09:29:32 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:31:34 - INFO - User logged in successfully | username: string1
+08/25/2026 09:31:42 - INFO - User logged in successfully | username: string
+08/25/2026 09:32:20 - INFO - Group created successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b | name: sirlalala | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 09:32:23 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:27 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:27 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:28 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:36 - INFO - Message sent to group successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: eee
+08/25/2026 09:32:36 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:38 - INFO - Message sent to group successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: eeee
+08/25/2026 09:32:38 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:42 - INFO - Message sent to group successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: ee
+08/25/2026 09:32:42 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:45 - INFO - Group chat retrieved successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:49 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:50 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:55 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:32:58 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:00 - ERROR - Only Admin can delete group chat history | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:05 - INFO - Message sent to group successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: eee
+08/25/2026 09:33:05 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:10 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:14 - INFO - Group chat history deleted successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:14 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:19 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:21 - INFO - show Group members | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:33:21 - INFO - Group deleted successfully | group_id: ce0a76a2-423d-48dc-b8a6-504c99a23d8b
+08/25/2026 09:46:17 - INFO - User logged in successfully | username: string
+08/25/2026 09:46:26 - INFO - User logged in successfully | username: string1
+08/25/2026 09:46:38 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: a4632db6-82df-472b-ac0d-c0ad0c92d974
+08/25/2026 09:46:53 - INFO - Group created successfully | group_id: 20b78021-7b9e-4099-b152-030cadc17318 | name: test20 | creator_id: 00d907fd-b166-4988-9a0b-599986298ec4
+08/25/2026 09:46:56 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:01 - INFO - User added to group successfully | user_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:01 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:02 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:06 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:11 - WARNING - User is not the creator of the group | creator_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:12 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:15 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:20 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:21 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:26 - INFO - Message sent to group successfully | group_id: 20b78021-7b9e-4099-b152-030cadc17318 | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | content: eee
+08/25/2026 09:47:26 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:28 - INFO - Message sent to group successfully | group_id: 20b78021-7b9e-4099-b152-030cadc17318 | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | content: eeee
+08/25/2026 09:47:28 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:31 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:34 - INFO - show Group members | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:34 - INFO - Group deleted successfully | group_id: 20b78021-7b9e-4099-b152-030cadc17318
+08/25/2026 09:47:51 - INFO - Message sent successfully | sender_id: 00d907fd-b166-4988-9a0b-599986298ec4 | receiver_id: 79d47929-bea1-4bc5-b6e9-bc69c7ce14df
+08/25/2026 09:53:17 - INFO - User logged in successfully | username: string1
+08/25/2026 10:01:04 - INFO - User logged in successfully | username: string1
+08/25/2026 10:01:16 - INFO - Message sent successfully | sender_id: a4632db6-82df-472b-ac0d-c0ad0c92d974 | receiver_id: 00d907fd-b166-4988-9a0b-599986298ec4

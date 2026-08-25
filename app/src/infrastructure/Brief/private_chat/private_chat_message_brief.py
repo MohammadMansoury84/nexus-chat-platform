@@ -1,3 +1,4 @@
+from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
@@ -11,3 +12,4 @@ class PrivateChatMessageBrief(BaseModel):
     sender_username: str
     content: str
     status: str
+    timestamp: datetime

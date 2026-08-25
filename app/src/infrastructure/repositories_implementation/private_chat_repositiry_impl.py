@@ -3,6 +3,7 @@ from uuid import UUID
 from sqlalchemy import and_, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
+from src.domain.entities.MessageStatus import MessageStatus
 from src.domain.entities.PrivateChat import PrivateChat
 from src.domain.repositories_Interface.private_chat_repositiry import PrivateChatRepository
 from src.infrastructure.Brief.private_chat.private_chat_message_brief import (
@@ -87,7 +88,7 @@ class PrivateChatRepositoryImpl(PrivateChatRepository):
                 sender_username=msg.sender.username,
                 content=msg.content,
                 status=msg.status,
-                created_at=msg.created_at,
+                timestamp=msg.created_at,
             )
             for msg in chat_model.messages
         ]
@@ -96,6 +97,6 @@ class PrivateChatRepositoryImpl(PrivateChatRepository):
         stmt = (
             update(PrivateMessageModel)
             .where(PrivateMessageModel.id.in_(message_ids))
-            .values(status="READ")
+            .values(status=MessageStatus.READ)
         )
         await self._db.execute(stmt)

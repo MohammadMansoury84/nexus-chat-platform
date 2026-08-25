@@ -1,3 +1,4 @@
+from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
@@ -10,3 +11,4 @@ class GroupChatMessageResponse(BaseModel):
     sender_id: UUID
     username: str
     content: str
+    timestamp: datetime

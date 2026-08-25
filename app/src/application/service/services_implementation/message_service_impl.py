@@ -108,7 +108,9 @@ class MessageServiceImpl(MessageService):
             return []
 
         unread_message_ids = [
-            msg.id for msg in messages if msg.sender_id != user1_id and msg.status != "READ"
+            msg.id
+            for msg in messages
+            if msg.sender_id != user1_id and msg.status != MessageStatus.READ
         ]
 
         if unread_message_ids:
@@ -116,7 +118,7 @@ class MessageServiceImpl(MessageService):
 
             for msg in messages:
                 if msg.id in unread_message_ids:
-                    msg.status = "READ"
+                    msg.status = MessageStatus.READ
 
         return [
             ChatMessageDTO(
@@ -124,6 +126,7 @@ class MessageServiceImpl(MessageService):
                 username=msg.sender_username,
                 content=msg.content,
                 status=msg.status,
+                timestamp=msg.timestamp,
             )
             for msg in messages
         ]
@@ -145,3 +148,23 @@ class MessageServiceImpl(MessageService):
         await self._message_repository.delete_messages_by_chat_id(chat_id=chat_id)
 
         return True
+
+    async def mark_chat_as_read(self, reader_id: UUID, chat_partner_id: UUID) -> list[UUID]:
+
+        messages = await self._private_chat_repository.get_private_chat_with_messages(
+            user1_id=reader_id, user2_id=chat_partner_id
+        )
+
+        unread_messages = [
+            message
+            for message in messages
+            if message.sender_id == chat_partner_id and message.status != MessageStatus.READ
+        ]
+
+        if not unread_messages:
+            return []
+
+        unread_message_ids = [msg.id for msg in unread_messages]
+        await self._private_chat_repository.mark_messages_as_read(unread_message_ids)
+
+        return unread_message_ids

@@ -11,8 +11,25 @@ class ConnectionManager:
 
         self.active_connections: dict[UUID, WebSocket] = {}
 
-    async def connect(self, user_id: UUID, web_socket: WebSocket) -> None:
+    async def connect(
+        self,
+        user_id: UUID,
+        web_socket: WebSocket,
+    ) -> None:
+
+        old_web_socket = self.active_connections.get(user_id)
+
+        if old_web_socket:
+            try:
+                await old_web_socket.close(
+                    code=1000,
+                    reason="Replaced by new connection",
+                )
+            except Exception:  # noqa: S110
+                pass
+
         await web_socket.accept()
+
         self.active_connections[user_id] = web_socket
 
     def disconnect(self, user_id: UUID, web_socket: WebSocket) -> None:
@@ -53,6 +70,9 @@ class ConnectionManager:
         ]
 
         await asyncio.gather(*tasks, return_exceptions=True)
+
+    def get_connected_user_ids(self) -> set[UUID]:
+        return set(self.active_connections.keys())
 
     def _get_active_websocket(self, user_id: UUID) -> WebSocket:
         websocket = self.active_connections.get(user_id)

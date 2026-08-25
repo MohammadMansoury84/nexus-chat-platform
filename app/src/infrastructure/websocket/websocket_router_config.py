@@ -14,5 +14,9 @@ def create_websocket_router(request_handler: RequestHandler) -> RequestRouter:
         WebSocketAction.SEND_GROUP_MESSAGE,
         request_handler.handle_send_group_message,
     )
+    router.register_route(
+        WebSocketAction.MESSAGE_READ,
+        request_handler.handel_message_read,
+    )
 
     return router

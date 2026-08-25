@@ -155,6 +155,7 @@ async def get_group_chat(
             sender_id=message.sender_id,
             username=message.username,
             content=message.content,
+            timestamp=message.timestamp,
         )
         for message in chat
     ]

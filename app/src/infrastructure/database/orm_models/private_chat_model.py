@@ -26,7 +26,9 @@ class PrivateChatModel(Base):
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )
     messages: Mapped[list["PrivateMessageModel"]] = relationship(
-        back_populates="chat", cascade="all, delete-orphan"
+        back_populates="chat",
+        cascade="all, delete-orphan",
+        order_by="PrivateMessageModel.created_at",
     )
 
     user1: Mapped["UserModel"] = relationship(

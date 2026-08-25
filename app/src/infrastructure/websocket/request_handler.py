@@ -1,5 +1,6 @@
 from uuid import UUID
 
+from src.api.schemas.WebSocket.websocket_request.message_read_data import MessageReadData
 from src.api.schemas.WebSocket.websocket_request.send_group_message_data import (
     SendGroupMessageData,
 )
@@ -83,4 +84,29 @@ class RequestHandler:
         return {
             "response": response,
             "member_ids": member_ids,
+        }
+
+    async def handel_message_read(
+        self,
+        user_id: UUID,
+        data: dict,
+    ) -> dict:
+        payload = MessageReadData.model_validate(data)
+        read_message_ids = await self._message_service.mark_chat_as_read(
+            reader_id=user_id,
+            chat_partner_id=payload.chat_partner_id,
+        )
+
+        response = WebSocketResponse(
+            event="message_read",
+            data={
+                "reader_id": str(user_id),
+                "chat_partner_id": str(payload.chat_partner_id),
+                "read_message_ids": [str(message_id) for message_id in read_message_ids],
+            },
+        )
+
+        return {
+            "response": response,
+            "receiver_id": payload.chat_partner_id,
         }

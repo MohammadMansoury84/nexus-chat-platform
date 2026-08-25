@@ -79,6 +79,7 @@ async def get_chat(
             username=message.username,
             content=message.content,
             status=message.status,
+            timestamp=message.timestamp,
         )
         for message in messages
     ]

@@ -30,7 +30,8 @@ exclude = [
   "migrations",
   "**/migrations/*.py",
    "src/view",
-   "tests/*.py"
+   "tests/*.py",
+   "app/UI/*.py"
   
 ]
 
@@ -51,6 +52,7 @@ ignore = [
   "PLR0911",
   "S105", 
   "S106", 
+  "SIM105",
   "B008",
   "PLR0917",
   "TC002",

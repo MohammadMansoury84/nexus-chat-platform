@@ -225,6 +225,7 @@ class GroupServiceImpl(GroupService):
                 sender_id=msg.sender_id,
                 username=msg.sender_username,
                 content=msg.content,
+                timestamp=msg.created_at,
             )
             for msg in messages
         ]

@@ -19,3 +19,7 @@ class MessageService(ABC):
     @abstractmethod
     async def delete_private_chat_history(self, user1_id: UUID, user2_id: UUID) -> bool:
         pass
+
+    @abstractmethod
+    async def mark_chat_as_read(self, reader_id: UUID, chat_partner_id: UUID) -> list[UUID]:
+        pass
