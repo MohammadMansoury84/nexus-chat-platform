@@ -1,93 +1,150 @@
-# Messenger
+# Nexus Chat Platform — Branch `dev` (Phase 1)
+### Core Business Logic, CLI Interface & Logging
 
+## Overview
 
+This branch is the foundation of the project. It implements the **core business logic** of the messenger as a plain, layered Python application driven by an interactive **command‑line interface (CLI)**. There is no networking and no database yet — everything runs inside a single process and all data lives in memory for the duration of the run.
 
-## Getting started
+The goal of this phase was to get the domain model, business rules, and a structured logging system right before adding any networking or persistence complexity.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## What This Phase Delivers
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- User signup/login with in‑memory storage
+- Private 1‑to‑1 messaging between logged‑in users, with chat history
+- Group creation, adding members, group messaging, and group chat history
+- A full interactive CLI menu (13 options) built on top of the same services that later phases reuse
+- A custom logging system that writes structured, timestamped log lines to `logfile.log`
+- Strict typing throughout the domain model, using Pydantic v2 models with `strict=True` validation
 
-## Add your files
+## Architecture
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+The code follows a classic layered/MVC‑ish structure so the same services can later be reused by a socket server (Phase 2) and a REST API (Phase 3) without rewriting business logic:
 
 ```
-cd existing_repo
-git remote add origin https://hamgit.ir/sobhan/internship/1405/python/mohammad-mansoury/messenger.git
-git branch -M main
-git push -uf origin main
+src/
+├── entities/          Domain models (Pydantic BaseModel, validated, immutable-ish)
+│   ├── User.py
+│   ├── Group.py
+│   ├── Message.py
+│   ├── MessageStatus.py
+│   ├── PrivateChat.py
+│   ├── PrivateChatMessage.py
+│   ├── GroupMessage.py
+│   └── RequestType.py      (enum scaffolded here, put to use in Phase 2's protocol)
+├── repository/         In-memory data access layer
+│   ├── UserRepository.py
+│   └── GroupRepository.py
+├── service/            Business logic / use cases
+│   ├── AuthService.py
+│   ├── MessageService.py
+│   └── GroupService.py
+├── controllers/         Thin layer between the view and the services
+│   ├── AuthController.py
+│   ├── MessageController.py
+│   └── GroupController.py
+├── controllers_old/     Earlier controller iteration kept for reference
+├── view/
+│   └── userView.py       The interactive CLI (menu loop, input/output)
+├── core/                 Custom logging infrastructure
+│   ├── CustomeLogger.py
+│   ├── ConsoleHandler.py
+│   └── CustomFileHandler.py
+├── Exceptions/           Domain-specific exception hierarchy
+│   ├── ApplicationError.py
+│   ├── AuthorizationError.py
+│   ├── DuplicateEmailError.py
+│   ├── DuplicateUsernameError.py
+│   ├── GroupNotFoundError.py
+│   ├── UserAlreadyInGroupError.py
+│   └── UserNotFoundError.py
+├── config.py              pydantic-settings configuration (.env driven)
+└── main.py                Composition root — wires everything and starts the CLI
 ```
 
-## Integrate with your tools
+### Domain model
 
-- [ ] [Set up project integrations](https://hamgit.ir/sobhan/internship/1405/python/mohammad-mansoury/messenger/-/settings/integrations)
+- **`User`** — `id` (UUID), `username` (4‑20 chars), `email` (validated via `EmailStr`), `password` (6‑150 chars, stored as given — hashing is introduced in a later phase), `created_at`, plus back‑references to `private_chats`, `groups_created`, and `joined_groups`.
+- **`Group`**, **`Message`**, **`PrivateChat`**, **`PrivateChatMessage`**, **`GroupMessage`**, **`MessageStatus`** round out the chat domain.
 
-## Collaborate with your team
+All entities are Pydantic `BaseModel`s with `strict=True` and `validate_assignment=True`, so invalid data is rejected as soon as it is created or mutated, not just at the API boundary.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+### Logging system
 
-## Test and Deploy
+`CustomLogger` (in `src/core/CustomeLogger.py`) subclasses `logging.Logger` and adds a small structured‑logging convenience: any call like
 
-Use the built-in continuous integration in GitLab.
+```python
+logger.info("New client connected", client_address=addr)
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+is rendered as `New client connected | client_address: addr` with a timestamp and level, and can go to two places:
 
-***
+- **`CustomFileHandler`** → always writes to `logfile.log` (level `INFO` and above)
+- **`ConsoleHandler`** → only attached if `SHOW_LOG_IN_CLI=true` in `.env` (level `DEBUG` and above)
 
-# Editing this README
+This means log verbosity in the terminal is configurable without touching code, while the file log always keeps a full record.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Tech Stack
 
-## Suggestions for a good README
+| Concern            | Choice                          |
+|---------------------|----------------------------------|
+| Language            | Python ≥ 3.13                   |
+| Data validation     | Pydantic 2.13                   |
+| Configuration       | pydantic-settings (`.env`)      |
+| Package manager     | [uv](https://docs.astral.sh/uv/)|
+| Linting/formatting  | Ruff (+ pre-commit hook)        |
+| Email validation    | `email-validator`               |
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Configuration
 
-## Name
-Choose a self-explaining name for your project.
+Create a `.env` file in the project root (one already exists in the branch as an example):
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```env
+SHOW_LOG_IN_CLI=false
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## How to Run
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```bash
+# 1. Install dependencies (creates/uses the uv-managed virtual environment)
+uv sync
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+# 2. Run the CLI application
+uv run python -m src.main
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+You'll be greeted with the main menu:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```
+====== Messenger ======
+1. Signup
+2. Login
+3. Send Private Message
+4. Show Private Chat
+5. Change Current User
+6. Show Logged-in Users
+7. Show Groups
+8. Create Group
+9. Add User to Group
+10. Send Message to Group
+11. Show Group Chat
+12. Logout Current User
+13. Exit
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Multiple users can "log in" within the same CLI session (the app tracks a list of logged‑in users and a "current user"), which lets you simulate a conversation between two accounts without leaving the terminal.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Error Handling
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Business‑rule violations are raised as typed exceptions (`DuplicateUsernameError`, `DuplicateEmailError`, `UserNotFoundError`, `GroupNotFoundError`, `UserAlreadyInGroupError`, `AuthorizationError`, …) defined under `src/Exceptions/`. The CLI view catches generic exceptions around each menu action and prints a friendly message instead of crashing.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## Known Limitations (by design, addressed in later phases)
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- All data (users, groups, messages) lives in memory — restarting the app loses everything.
+- Single process, single machine — no real networking; "multiple users" only means multiple in‑memory sessions in the same CLI run.
+- Passwords are not yet hashed.
+- No automated tests yet (introduced in Phase 2).
 
-## License
-For open source projects, say how it is licensed.
+## Code Quality Tooling
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- **Ruff** is configured via `ruff.toml` for linting and formatting.
+- **pre-commit** (`.pre-commit-config.yaml`) runs `ruff-check --fix` and `ruff-format` on every commit.
