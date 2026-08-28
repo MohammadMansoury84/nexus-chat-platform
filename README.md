@@ -1,3 +1,16 @@
+## Summary of the Full Journey
+
+| Branch | Phase | Adds |
+|--------|-------|------|
+| `dev`  | 1 | Domain model, in-memory business logic, CLI, custom logging |
+| `dev2` | 2 | Async TCP client/server, custom protocol, concurrency, pytest |
+| `dev3` | 3 | FastAPI REST API, JWT auth, clean architecture, Swagger docs |
+| `dev4` | 4 | PostgreSQL + async SQLAlchemy + Alembic migrations + Redis |
+| `dev5` | 5 (bonus) | WebSocket real-time push + NiceGUI desktop/web client |
+
+
+
+
 # Nexus Chat Platform — Branch `dev` (Phase 1)
 ### Core Business Logic, CLI Interface & Logging
 
@@ -615,12 +628,4 @@ uv run python main.py
 
 By default this starts a NiceGUI server on `127.0.0.1:8080` and opens a window (native, via `pywebview`) pointed at the `/signup` page. From there you can sign up, log in, and chat — messages sent by one running UI instance appear instantly in another thanks to the WebSocket layer, without any manual refresh.
 
-## Summary of the Full Journey
 
-| Branch | Phase | Adds |
-|--------|-------|------|
-| `dev`  | 1 | Domain model, in-memory business logic, CLI, custom logging |
-| `dev2` | 2 | Async TCP client/server, custom protocol, concurrency, pytest |
-| `dev3` | 3 | FastAPI REST API, JWT auth, clean architecture, Swagger docs |
-| `dev4` | 4 | PostgreSQL + async SQLAlchemy + Alembic migrations + Redis |
-| `dev5` | 5 (bonus) | WebSocket real-time push + NiceGUI desktop/web client |
