@@ -53,7 +53,7 @@ app/src/
 └── main.py                          FastAPI app factory / entry point
 ```
 
-This mirrors classic **Clean Architecture / Hexagonal Architecture**: `domain` has zero dependencies on FastAPI or any storage tech; `application` orchestrates use cases against `domain` interfaces; `infrastructure` provides concrete implementations (still in‑memory here); `api` is a thin HTTP adapter on top of `application`.
+This mirrors classic **Clean Architecture**: `domain` has zero dependencies on FastAPI or any storage tech; `application` orchestrates use cases against `domain` interfaces; `infrastructure` provides concrete implementations (still in‑memory here); `api` is a thin HTTP adapter on top of `application`.
 
 ## API Reference
 
